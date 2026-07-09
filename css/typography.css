@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--dag-ink);
+  background-color: var(--dag-ivory);
+}
+
+h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(52px, 8vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 80px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+h4 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2vw, 36px);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+p {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--dag-ink);
+}
+
+.body-large {
+  font-family: var(--font-sans);
+  font-size: clamp(16px, 1.4vw, 22px);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--dag-muted);
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: var(--dag-muted);
+}
+
+.quote {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.5vw, 40px);
+  font-style: italic;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+strong {
+  font-weight: 600;
+}
+
+::selection {
+  background-color: var(--dag-sand);
+  color: var(--dag-white);
+}

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAG Gioielli | Wireframe — Home</title>
+  <link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══════════════════════════════════════════════════ -->
+<header class="site-header on-hero" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo-box" aria-label="DAG — Home">
+      <span>DAG</span>
+    </a>
+    <nav class="header-nav" aria-label="Principale">
+      <a href="about.html"       class="nav-link">About</a>
+      <a href="philosophy.html"  class="nav-link">Philosophy</a>
+      <a href="collections.html" class="nav-link">Collezioni</a>
+      <a href="stores.html"      class="nav-link">Stores</a>
+      <a href="events.html"      class="nav-link">Eventi</a>
+      <a href="contact.html"     class="nav-link">Contatti</a>
+    </nav>
+    <a href="stores.html" class="header-cta">Trova un rivenditore</a>
+    <button class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- drawer -->
+<div class="drawer-overlay"></div>
+<nav class="mobile-drawer" aria-label="Menu mobile">
+  <button class="drawer-close" aria-label="Chiudi">✕</button>
+  <div class="drawer-nav">
+    <a href="about.html">About</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="collections.html">Collezioni</a>
+    <a href="stores.html">Stores</a>
+    <a href="events.html">Eventi</a>
+    <a href="contact.html">Contatti</a>
+  </div>
+  <div class="drawer-footer">
+    <a href="stores.html" class="btn btn--outline">Trova un rivenditore</a>
+    <a href="contact.html" class="btn btn--filled">Scrivici</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══ 01 · HERO ════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero editoriale">
+  <div class="hero__bg">
+    <div class="hero__bg-label">Immagine hero — mani / gioiello / laboratorio [1920×1080]</div>
+  </div>
+  <div class="hero__gradient"></div>
+  <div class="hero__content">
+    <span class="t-label">Made in Milano — Textile Jewelry</span>
+    <h1 class="t-h1 fade">Gioielli tessili,<br>nati a mano<br>nel laboratorio<br>milanese.</h1>
+    <p class="t-body-lg fade fade-d1" style="max-width:460px;">DAG intreccia pietre, argento e filo in gioielli contemporanei realizzati su richiesta.</p>
+    <div class="btn-row fade fade-d2">
+      <a href="about.html"  class="btn btn--outline-inv">Scopri l'universo DAG</a>
+      <a href="stores.html" class="btn btn--outline-inv">Trova un rivenditore</a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span>Scorri</span></div>
+</section>
+
+<!-- ═══ 02 · MANIFESTO ═══════════════════════════════════════════ -->
+<section class="section section--lg">
+  <div class="wrap">
+    <div class="grid-5-7" style="gap:5rem;">
+      <div>
+        <span class="t-label fade">Il progetto</span>
+        <h2 class="t-h2 fade fade-d1">Non un catalogo.<br>Un atelier digitale.</h2>
+      </div>
+      <div>
+        <p class="t-body-lg fade fade-d2">Ogni gioiello DAG nasce da un processo lento e curato: la scelta delle pietre, il gesto del telaio, l'intreccio con l'argento, il passaggio delle mani. Il sito racconta questo percorso prima ancora del singolo prodotto.</p>
+        <div class="rule mt-md fade fade-d3"></div>
+        <p class="t-body fade fade-d3">Un marchio artigianale con forte radice milanese, elegante, caldo e contemporaneo. Il prodotto è protagonista, ma non è mai separato da ciò che lo rende speciale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 · GRIGLIA EDITORIALE ══════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:5fr 3fr 4fr;grid-template-rows:auto auto;gap:1rem;">
+
+      <!-- grande sx — span 2 righe -->
+      <div class="img-ph ar-3-4 fade" style="grid-row:1/3;">
+        <span class="img-ph__label">Immagine laboratorio<br>[portrait]</span>
+      </div>
+      <!-- top-center -->
+      <div class="img-ph ar-4-3 fade fade-d1">
+        <span class="img-ph__label">Dettaglio mani<br>[landscape]</span>
+      </div>
+      <!-- card testuale -->
+      <div class="fade fade-d2" style="background:var(--wf-surface);padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--wf-border);">
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-muted);">Made in Milano.</p>
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-ghost);">Radici artigianali.</p>
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-ghost);opacity:.55;">Sguardo contemporaneo.</p>
+      </div>
+      <!-- bottom-center -->
+      <div class="img-ph ar-4-3 fade fade-d2">
+        <span class="img-ph__label">Pietre semipreziose<br>[detail]</span>
+      </div>
+      <!-- bottom-dx -->
+      <div class="img-ph ar-4-3 fade fade-d3">
+        <span class="img-ph__label">Gioiello indossato<br>[lifestyle]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 · FULL WIDTH — IL GESTO ══════════════════════════════ -->
+<section class="section" style="padding:0;">
+  <div style="position:relative;overflow:hidden;">
+    <div class="img-ph fade" style="height:80vh;min-height:480px;">
+      <span class="img-ph__label">Immagine full-width — lavorazione telaio [1920×1080]</span>
+    </div>
+    <!-- overlay testo su immagine -->
+    <div style="position:absolute;top:0;left:0;bottom:0;width:48%;background:rgba(0,0,0,0.52);display:flex;align-items:center;padding:3rem var(--pad);">
+      <div>
+        <span class="t-label" style="color:rgba(255,255,255,0.5);">Artigianalità</span>
+        <h2 class="t-h2 fade" style="color:#fff;margin-bottom:1.25rem;">Il valore è nel tempo<br>che precede l'oggetto.</h2>
+        <p class="fade fade-d1" style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:2rem;font-weight:300;max-width:380px;">La lavorazione a telaio trasforma piccole pietre, catena d'argento e filo di lurex in gioielli tessili morbidi, luminosi e unici.</p>
+        <a href="philosophy.html" class="btn btn--outline-inv fade fade-d2">Scopri la filosofia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 05 · COLLECTION INDEX ══════════════════════════════════════
+     Layout: indice verticale a sinistra + immagine a destra.
+     Hover su ogni nome → crossfade immagine + aggiornamento meta.
+     Pattern alto-moda: nessun bottone aggressivo, nessun prezzo.
+  ══════════════════════════════════════════════════════════════════ -->
+<section class="ci-section fade" aria-label="Collezioni in evidenza">
+  <div class="wrap">
+    <div class="ci-layout">
+
+      <!-- ── Sinistra: indice ─────────────────────────────────── -->
+      <div class="ci-left">
+        <span class="t-label">Collezioni</span>
+        <h2 class="ci-headline">Ogni modello<br>ha una voce propria.</h2>
+
+        <ul class="ci-list" id="ciList" role="list">
+
+          <li class="ci-item active" data-ci="0" tabindex="0"
+              aria-label="Muamara Jaipur — Iconico · leggero · luminoso">
+            <span class="ci-n" aria-hidden="true">01</span>
+            <span class="ci-name">Muamara Jaipur</span>
+            <span class="ci-arrow" aria-hidden="true">→</span>
+          </li>
+
+          <li class="ci-item" data-ci="1" tabindex="0"
+              aria-label="Muamara Star — Chic · elegante · charme">
+            <span class="ci-n" aria-hidden="true">02</span>
+            <span class="ci-name">Muamara Star</span>
+            <span class="ci-arrow" aria-hidden="true">→</span>
+          </li>
+
+          <li class="ci-item" data-ci="2" tabindex="0"
+              aria-label="Muamara Precious — Prezioso · raffinato · esclusivo">
+            <span class="ci-n" aria-hidden="true">03</span>
+            <span class="ci-name">Muamara Precious</span>
+            <span class="ci-arrow" aria-hidden="true">→</span>
+          </li>
+
+          <li class="ci-item" data-ci="3" tabindex="0"
+              aria-label="Muamara Holi — Ricamato · intreccio · senza tempo">
+            <span class="ci-n" aria-hidden="true">04</span>
+            <span class="ci-name">Muamara Holi</span>
+            <span class="ci-arrow" aria-hidden="true">→</span>
+          </li>
+
+        </ul>
+
+        <div class="ci-bottom">
+          <a href="collections.html" class="btn--ghost">Esplora tutte le collezioni →</a>
+        </div>
+      </div>
+
+      <!-- ── Destra: immagine + meta ──────────────────────────── -->
+      <div class="ci-right">
+
+        <!-- Stack di immagini sovrapposte; crossfade via JS -->
+        <div class="ci-img-stack" aria-live="polite" aria-atomic="true">
+
+          <div class="ci-img active" data-ci="0">
+            <div class="img-ph ar-3-4">
+              <span class="img-ph__label">Muamara Jaipur<br>ritratto editoriale [3:4]</span>
+            </div>
+          </div>
+
+          <div class="ci-img" data-ci="1">
+            <div class="img-ph ar-3-4">
+              <span class="img-ph__label">Muamara Star<br>ritratto editoriale [3:4]</span>
+            </div>
+          </div>
+
+          <div class="ci-img" data-ci="2">
+            <div class="img-ph ar-3-4">
+              <span class="img-ph__label">Muamara Precious<br>ritratto editoriale [3:4]</span>
+            </div>
+          </div>
+
+          <div class="ci-img" data-ci="3">
+            <div class="img-ph ar-3-4">
+              <span class="img-ph__label">Muamara Holi<br>ritratto editoriale [3:4]</span>
+            </div>
+          </div>
+
+        </div><!-- /stack -->
+
+        <!-- Meta: si aggiorna al cambio item -->
+        <div class="ci-meta">
+          <p class="ci-meta__badge" id="ciMetaBadge">Iconico</p>
+          <p class="ci-meta__words" id="ciMetaWords">leggero · luminoso · versatile</p>
+          <a href="collections.html" class="ci-meta__link" id="ciMetaLink"
+             aria-label="Scopri Muamara Jaipur">Scopri →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 06 · STILL LIFE EDITORIALE ════════════════════════════════ -->
+<!--
+  In produzione:
+  – Sfondo: fotografia ambientata (superficie neutra con luce naturale morbida)
+  – Gioielli: PNG con sfondo trasparente (scontornati) posizionati via CSS
+  – Ogni pezzo appare in sequenza via IntersectionObserver al primo scroll
+-->
+<section class="still-life" aria-label="Still life editoriale DAG">
+
+  <!-- Fotografia di sfondo -->
+  <div class="sl-bg">
+    <div class="img-ph" style="width:100%;height:100%;">
+      <span class="img-ph__label">Fotografia ambientata — superficie con luce naturale morbida<br>lino / marmo / legno chiaro [1920×900]</span>
+    </div>
+    <div class="sl-vignette"></div>
+  </div>
+
+  <!-- ─ Gioiello 1: Muamara Jaipur — bracciale — centro-sinistra ─ -->
+  <div class="sl-piece" style="left:12%;top:36%;">
+    <div class="sl-piece__img" style="width:178px;height:86px;">
+      <span class="sl-piece__ph-label">Muamara Jaipur<br>bracciale scontornato</span>
+    </div>
+    <p class="sl-piece__name">Muamara Jaipur</p>
+  </div>
+
+  <!-- ─ Gioiello 2: Muamara Star — orecchini — alto destra ─ -->
+  <div class="sl-piece" style="right:28%;top:13%;">
+    <div class="sl-piece__img" style="width:72px;height:148px;">
+      <span class="sl-piece__ph-label">Muamara Star<br>orecchini scontornati</span>
+    </div>
+    <p class="sl-piece__name">Muamara Star</p>
+  </div>
+
+  <!-- ─ Gioiello 3: Muamara Precious — collana — destra centrale ─ -->
+  <div class="sl-piece" style="right:11%;top:38%;">
+    <div class="sl-piece__img" style="width:94px;height:188px;">
+      <span class="sl-piece__ph-label">Muamara Precious<br>collana scontornata</span>
+    </div>
+    <p class="sl-piece__name">Muamara Precious</p>
+  </div>
+
+  <!-- ─ Gioiello 4: Muamara Holi — bracciale — basso centro ─ -->
+  <div class="sl-piece" style="left:40%;bottom:19%;">
+    <div class="sl-piece__img" style="width:196px;height:78px;">
+      <span class="sl-piece__ph-label">Muamara Holi<br>bracciale scontornato</span>
+    </div>
+    <p class="sl-piece__name">Muamara Holi</p>
+  </div>
+
+  <!-- ─ Caption editoriale — appare per ultima ─ -->
+  <div class="sl-piece sl-caption" style="left:var(--pad);bottom:2.75rem;">
+    <span class="t-label" style="color:rgba(255,255,255,0.45);margin-bottom:.5rem;">Still life</span>
+    <p class="sl-caption__text">Ogni gioiello è fatto<br>per essere guardato.</p>
+  </div>
+
+  <!-- Nota wireframe -->
+  <div style="position:absolute;bottom:2.75rem;right:var(--pad);z-index:10;pointer-events:none;">
+    <span class="wf-note">PNG scontornati su fotografia — effetto still life</span>
+  </div>
+
+</section>
+
+<!-- ═══ 07 · STORES TEASER ═══════════════════════════════════════ -->
+<section class="section section--lg band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);">
+  <div class="wrap--narrow" style="text-align:center;">
+    <span class="t-label fade">Rivenditori</span>
+    <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.25rem;">Trova DAG<br>vicino a te.</h2>
+    <p class="t-body-lg fade fade-d2" style="margin-bottom:2.5rem;">Una rete selezionata di boutique e concept store accompagna il brand sul territorio.</p>
+    <div class="fade fade-d3" style="display:flex;gap:0;max-width:520px;margin-inline:auto;">
+      <input type="text" placeholder="Inserisci città o provincia" style="flex:1;padding:.85rem 1rem;font-family:var(--font-sans);font-size:13px;font-weight:300;border:1px solid var(--wf-border);border-right:none;background:#fff;color:var(--wf-text);outline:none;" aria-label="Cerca città o provincia">
+      <a href="stores.html" class="btn btn--filled" style="white-space:nowrap;">Cerca</a>
+    </div>
+    <div class="mt-md fade fade-d4">
+      <a href="stores.html" class="btn--ghost">Vai alla pagina Stores →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 08 · EVENTI TEASER ═══════════════════════════════════════ -->
+<section class="section section--lg">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <span class="t-label fade">Nel sistema moda</span>
+        <h2 class="t-h2 fade fade-d1">Eventi e<br>collaborazioni.</h2>
+      </div>
+      <a href="events.html" class="btn btn--outline fade fade-d1">Tutti gli eventi</a>
+    </div>
+
+    <div class="grid-3" style="gap:1.5rem;">
+      <div class="card-col fade">
+        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">Première Classe — Parigi</span></div></div>
+        <div class="card-col__body">
+          <span class="t-label" style="margin-bottom:.25rem;">Fiera</span>
+          <p class="card-col__title">Première Classe</p>
+          <p class="card-col__text">La principale fiera europea dell'accessorio contemporaneo. Parigi.</p>
+          <p class="t-words">Parigi</p>
+        </div>
+      </div>
+      <div class="card-col fade fade-d1">
+        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">WHITE Milano</span></div></div>
+        <div class="card-col__body">
+          <span class="t-label" style="margin-bottom:.25rem;">Fiera</span>
+          <p class="card-col__title">WHITE Milano</p>
+          <p class="card-col__text">La piattaforma dedicata alla moda contemporanea e al design indipendente.</p>
+          <p class="t-words">Milano</p>
+        </div>
+      </div>
+      <div class="card-col fade fade-d2">
+        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">Progetti speciali</span></div></div>
+        <div class="card-col__body">
+          <span class="t-label" style="margin-bottom:.25rem;">Collaborazione</span>
+          <p class="card-col__title">Progetti speciali</p>
+          <p class="card-col__text">Shooting editoriali, capsule e collaborazioni con il sistema moda.</p>
+          <p class="t-words">Milano · Parigi · New York</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 09 · CTA FINALE ══════════════════════════════════════════ -->
+<section class="section band--dark" style="padding-block:5rem;">
+  <div class="wrap--narrow" style="text-align:center;">
+    <span class="t-label fade">Inizia un dialogo</span>
+    <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.25rem;">Vuoi entrare<br>in contatto con DAG?</h2>
+    <p class="t-body-lg fade fade-d2" style="margin-bottom:2.5rem;max-width:420px;margin-inline:auto;">Per informazioni sui gioielli, sui rivenditori o su una collaborazione, scrivici. Leggiamo ogni messaggio con attenzione.</p>
+    <div class="btn-row fade fade-d3" style="justify-content:center;">
+      <a href="contact.html" class="btn btn--outline-inv">Scrivici</a>
+      <a href="contact.html?type=boutique" class="btn btn--outline-inv">Sei una boutique?</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-ph"><span>DAG</span></div>
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano. Ogni pezzo nasce dall'incontro tra pietre, argento, filo e gesto artigianale.</p>
+      <a href="contact.html?type=boutique" class="footer-cta-b">Sei una boutique? Contattaci</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Navigazione</p>
+      <a href="about.html">About</a>
+      <a href="philosophy.html">Philosophy</a>
+      <a href="collections.html">Collezioni</a>
+      <a href="stores.html">Stores</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Brand</p>
+      <a href="events.html">Eventi</a>
+      <a href="contact.html">Contatti</a>
+      <a href="stores.html">Trova un rivenditore</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Contatti</p>
+      <a href="mailto:info@daggioielli.it">info@daggioielli.it</a>
+      <a href="#">Instagram</a>
+      <span class="wf-note">Telefono: da confermare</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 DAG Gioielli. Tutti i diritti riservati.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/hotspots.js"></script>
+<script>
+/* ── Collection index — hover/focus/click to switch ── */
+(function () {
+  var items   = Array.from(document.querySelectorAll('.ci-item'));
+  var imgs    = Array.from(document.querySelectorAll('.ci-img'));
+  var badge   = document.getElementById('ciMetaBadge');
+  var words   = document.getElementById('ciMetaWords');
+  var link    = document.getElementById('ciMetaLink');
+  var meta    = document.querySelector('.ci-meta');
+
+  var DATA = [
+    { badge: 'Iconico',   words: 'leggero · luminoso · versatile',      href: 'collections.html', name: 'Muamara Jaipur' },
+    { badge: 'Iconico',   words: 'chic · elegante · charme',             href: 'collections.html', name: 'Muamara Star' },
+    { badge: 'Precious',  words: 'prezioso · raffinato · esclusivo',     href: 'collections.html', name: 'Muamara Precious' },
+    { badge: 'Essentials',words: 'ricamato · intreccio · senza tempo',   href: 'collections.html', name: 'Muamara Holi' },
+  ];
+
+  var current = 0;
+
+  function activate(idx) {
+    if (idx === current) return;
+    current = idx;
+
+    /* Lista */
+    items.forEach(function (el, i) { el.classList.toggle('active', i === idx); });
+
+    /* Immagini */
+    imgs.forEach(function (el, i)  { el.classList.toggle('active', i === idx); });
+
+    /* Meta — breve flash per il cambio testo */
+    if (meta) meta.classList.add('switching');
+    setTimeout(function () {
+      if (badge) badge.textContent = DATA[idx].badge;
+      if (words) words.textContent = DATA[idx].words;
+      if (link)  { link.href = DATA[idx].href; link.setAttribute('aria-label', 'Scopri ' + DATA[idx].name); }
+      if (meta)  meta.classList.remove('switching');
+    }, 160);
+  }
+
+  items.forEach(function (item, i) {
+    item.addEventListener('mouseenter', function () { activate(i); });
+    item.addEventListener('focus',      function () { activate(i); });
+    item.addEventListener('keydown',    function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(i); }
+    });
+  });
+})();
+</script>
+<script>
+/* Still life — rivelazione sequenziale al primo scroll */
+(function () {
+  var section = document.querySelector('.still-life');
+  if (!section) return;
+  var pieces = Array.from(section.querySelectorAll('.sl-piece'));
+  var STEP = 720; /* ms tra un pezzo e il successivo */
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    pieces.forEach(function(p){ p.classList.add('revealed'); });
+    return;
+  }
+
+  var triggered = false;
+  var io = new IntersectionObserver(function(entries) {
+    if (triggered || !entries[0].isIntersecting) return;
+    triggered = true;
+    pieces.forEach(function(piece, i) {
+      setTimeout(function(){ piece.classList.add('revealed'); }, i * STEP);
+    });
+    io.disconnect();
+  }, { threshold: 0.22 });
+
+  io.observe(section);
+})();
+</script>
+</body>
+</html>

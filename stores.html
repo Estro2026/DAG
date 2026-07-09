@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAG Gioielli | Wireframe — Stores</title>
+  <link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo-box"><span>DAG</span></a>
+    <nav class="header-nav">
+      <a href="about.html"       class="nav-link">About</a>
+      <a href="philosophy.html"  class="nav-link">Philosophy</a>
+      <a href="collections.html" class="nav-link">Collezioni</a>
+      <a href="stores.html"      class="nav-link active">Stores</a>
+      <a href="events.html"      class="nav-link">Eventi</a>
+      <a href="contact.html"     class="nav-link">Contatti</a>
+    </nav>
+    <a href="stores.html" class="header-cta">Trova un rivenditore</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="drawer-overlay"></div>
+<nav class="mobile-drawer">
+  <button class="drawer-close">✕</button>
+  <div class="drawer-nav">
+    <a href="about.html">About</a><a href="philosophy.html">Philosophy</a>
+    <a href="collections.html">Collezioni</a><a href="stores.html">Stores</a>
+    <a href="events.html">Eventi</a><a href="contact.html">Contatti</a>
+  </div>
+</nav>
+
+<main style="padding-top:var(--header-h);">
+
+<!-- ═══ 01 · HERO TESTUALE ═══════════════════════════════════════ -->
+<section class="section section--lg">
+  <div class="wrap" style="text-align:center;">
+    <span class="t-label fade">Rivenditori</span>
+    <h1 class="t-h1 fade fade-d1" style="margin-bottom:1.25rem;">Trova DAG<br>nei migliori rivenditori.</h1>
+    <p class="t-body-lg fade fade-d2" style="max-width:520px;margin-inline:auto;">Una rete selezionata di boutique e concept store accompagna DAG sul territorio.</p>
+  </div>
+</section>
+
+<!-- ═══ 02 · STORE FINDER ═════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <!-- ricerca -->
+    <div class="fade" style="margin-bottom:1.5rem;">
+      <div style="display:flex;gap:0;max-width:580px;">
+        <input id="sf-input" type="text" placeholder="Cerca per città, provincia o regione…" class="sf-input" aria-label="Cerca rivenditore">
+        <button class="sf-btn-search">Cerca</button>
+      </div>
+    </div>
+
+    <!-- filtri regione -->
+    <div class="sf-filters fade fade-d1" style="padding:0;border:none;margin-bottom:1.5rem;">
+      <button class="sf-filter active" data-region="all">Tutte</button>
+      <button class="sf-filter" data-region="Lombardia">Lombardia</button>
+      <button class="sf-filter" data-region="Lazio">Lazio</button>
+      <button class="sf-filter" data-region="Toscana">Toscana</button>
+      <button class="sf-filter" data-region="Piemonte">Piemonte</button>
+      <button class="sf-filter" data-region="Veneto">Veneto</button>
+      <button class="sf-filter" data-region="Emilia-Romagna">Emilia-Romagna</button>
+      <button class="sf-filter" data-region="Campania">Campania</button>
+      <button class="sf-filter" data-region="Sicilia">Sicilia</button>
+    </div>
+
+    <!-- finder: lista + mappa -->
+    <div class="store-finder fade fade-d2">
+
+      <div class="sf-sidebar">
+        <div class="sf-count">
+          <span><span id="sf-count">10</span> rivenditori</span>
+          <button>◎ Usa la mia posizione</button>
+        </div>
+        <div class="sf-results" id="sf-results">
+          <div class="sf-empty"><p style="color:var(--wf-muted);">Caricamento…</p></div>
+        </div>
+      </div>
+
+      <div class="sf-map">
+        <div class="sf-map-ph">
+          <svg width="40" height="48" viewBox="0 0 40 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4C12 4 5 11 5 19C5 30 20 44 20 44C20 44 35 30 35 19C35 11 28 4 20 4Z" stroke="#9B9B9B" stroke-width="1.5" fill="none"/>
+            <circle cx="20" cy="19" r="4" stroke="#9B9B9B" stroke-width="1.5" fill="none"/>
+          </svg>
+          <p style="margin-top:.75rem;font-size:12px;color:var(--wf-muted);max-width:200px;margin-inline:auto;">Mappa interattiva — integrazione Google Maps<br>attiva con il database rivenditori definitivo</p>
+          <span class="wf-note" style="margin-top:.75rem;">Placeholder mappa</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 03 · CTA BOUTIQUE ════════════════════════════════════════ -->
+<section class="section band--surface" style="border-top:1px solid var(--wf-border);">
+  <div class="wrap">
+    <div class="grid-5-7" style="gap:5rem;align-items:center;">
+      <div>
+        <span class="t-label fade">Per le boutique</span>
+        <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.25rem;">Sei una boutique<br>o un concept store?</h2>
+        <p class="t-body-lg fade fade-d2" style="margin-bottom:2rem;">DAG lavora con una rete selezionata di rivenditori. Se vuoi conoscere le collezioni o ricevere informazioni commerciali, entra in contatto con il brand.</p>
+        <a href="contact.html?type=boutique" class="btn btn--filled fade fade-d3">Contattaci come rivenditore</a>
+      </div>
+      <div class="img-ph ar-4-3 fade fade-d1">
+        <span class="img-ph__label">Immagine boutique / interno negozio<br>[landscape 4:3]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-ph"><span>DAG</span></div>
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
+      <a href="contact.html?type=boutique" class="footer-cta-b">Sei una boutique? Contattaci</a>
+    </div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="collections.html">Collezioni</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Brand</p><a href="events.html">Eventi</a><a href="contact.html">Contatti</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><a href="#">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 DAG Gioielli.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="#">Privacy</a><a href="#">Cookie</a></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/stores.js"></script>
+</body>
+</html>

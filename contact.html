@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAG Gioielli | Wireframe — Contatti</title>
+  <link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="header-logo-box"><span>DAG</span></a>
+    <nav class="header-nav">
+      <a href="about.html"       class="nav-link">About</a>
+      <a href="philosophy.html"  class="nav-link">Philosophy</a>
+      <a href="collections.html" class="nav-link">Collezioni</a>
+      <a href="stores.html"      class="nav-link">Stores</a>
+      <a href="events.html"      class="nav-link">Eventi</a>
+      <a href="contact.html"     class="nav-link active">Contatti</a>
+    </nav>
+    <a href="stores.html" class="header-cta">Trova un rivenditore</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="drawer-overlay"></div>
+<nav class="mobile-drawer">
+  <button class="drawer-close">✕</button>
+  <div class="drawer-nav">
+    <a href="about.html">About</a><a href="philosophy.html">Philosophy</a>
+    <a href="collections.html">Collezioni</a><a href="stores.html">Stores</a>
+    <a href="events.html">Eventi</a><a href="contact.html">Contatti</a>
+  </div>
+</nav>
+
+<main style="padding-top:var(--header-h);">
+
+<section class="section section--lg">
+  <div class="wrap">
+    <div class="grid-5-7" style="gap:6rem;align-items:start;">
+
+      <!-- ── LEFT: intro + info ─────────────────── -->
+      <div>
+        <span class="t-label fade">Dialogo</span>
+        <h1 class="t-h1 fade fade-d1" style="margin-bottom:2rem;">Entriamo<br>in contatto.</h1>
+        <p class="t-body-lg fade fade-d2" style="margin-bottom:3rem;">Per informazioni sui gioielli, sui rivenditori o sulle collaborazioni commerciali, scrivici. Leggiamo ogni richiesta con attenzione.</p>
+
+        <!-- contatti diretti -->
+        <div class="fade fade-d3" style="border-top:1px solid var(--wf-border);padding-top:2rem;margin-bottom:2.5rem;">
+          <p class="t-label" style="margin-bottom:1.5rem;">Contatti diretti</p>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;">
+            <div>
+              <p class="t-label" style="margin-bottom:.25rem;">Email</p>
+              <a href="mailto:info@daggioielli.it" style="font-family:var(--font-serif);font-size:22px;">info@daggioielli.it</a>
+            </div>
+            <div>
+              <p class="t-label" style="margin-bottom:.25rem;">Instagram</p>
+              <a href="#" style="font-family:var(--font-serif);font-size:22px;">@daggioielli</a>
+            </div>
+            <div>
+              <p class="t-label" style="margin-bottom:.25rem;">Laboratorio</p>
+              <span class="wf-note">Indirizzo da confermare con la cliente</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- immagine placeholder -->
+        <div class="img-ph ar-4-3 fade fade-d4">
+          <span class="img-ph__label">Immagine laboratorio / packaging<br>[landscape 4:3]</span>
+        </div>
+      </div>
+
+      <!-- ── RIGHT: form ───────────────────────── -->
+      <div class="fade fade-d2">
+
+        <!-- selector tipo -->
+        <p class="t-label" style="margin-bottom:.75rem;">Scrivo come</p>
+        <div class="form-type-sel" role="group" aria-label="Tipo richiedente">
+          <button class="form-type-btn active" data-type="cliente"   type="button">Cliente finale</button>
+          <button class="form-type-btn"         data-type="boutique" type="button">Rivenditore / Boutique</button>
+          <button class="form-type-btn"         data-type="press"    type="button">Press / Collaborazione</button>
+        </div>
+
+        <!-- FORM CLIENTE -->
+        <form id="form-cliente" novalidate aria-label="Form cliente finale">
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label" for="c-nome">Nome</label><input type="text" id="c-nome" class="form-input" autocomplete="given-name" required></div>
+            <div class="form-group"><label class="form-label" for="c-cogn">Cognome</label><input type="text" id="c-cogn" class="form-input" autocomplete="family-name" required></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label" for="c-email">Email</label><input type="email" id="c-email" class="form-input" autocomplete="email" required></div>
+            <div class="form-group"><label class="form-label" for="c-tel">Telefono</label><input type="tel" id="c-tel" class="form-input" autocomplete="tel"></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="c-citta">Città</label><input type="text" id="c-citta" class="form-input"></div>
+          <div class="form-group">
+            <label class="form-label" for="c-tipo">Tipo di richiesta</label>
+            <select id="c-tipo" class="form-select" required>
+              <option value="" disabled selected>Seleziona</option>
+              <option>Informazioni su un gioiello</option>
+              <option>Trovare un rivenditore</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label" for="c-msg">Messaggio</label><textarea id="c-msg" class="form-textarea" placeholder="Raccontaci la tua richiesta…"></textarea></div>
+          <div class="form-group"><label class="form-check"><input type="checkbox" required><span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>.</span></label></div>
+          <button type="submit" class="btn btn--filled" style="width:100%;padding:1rem;">Invia richiesta</button>
+          <p class="form-note">Leggiamo ogni richiesta con attenzione. Ti risponderemo il prima possibile.</p>
+        </form>
+
+        <!-- FORM BOUTIQUE -->
+        <form id="form-boutique" style="display:none;" novalidate aria-label="Form rivenditore boutique">
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label" for="b-nome">Nome referente</label><input type="text" id="b-nome" class="form-input" required></div>
+            <div class="form-group"><label class="form-label" for="b-bou">Nome boutique / Azienda</label><input type="text" id="b-bou" class="form-input" required></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label" for="b-email">Email</label><input type="email" id="b-email" class="form-input" required></div>
+            <div class="form-group"><label class="form-label" for="b-tel">Telefono</label><input type="tel" id="b-tel" class="form-input"></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label" for="b-citta">Città</label><input type="text" id="b-citta" class="form-input"></div>
+            <div class="form-group"><label class="form-label" for="b-paese">Paese</label><input type="text" id="b-paese" class="form-input" value="Italia"></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="b-sito">Sito web / Instagram</label><input type="text" id="b-sito" class="form-input" placeholder="https:// o @username"></div>
+          <div class="form-group"><label class="form-label" for="b-msg">Messaggio</label><textarea id="b-msg" class="form-textarea" placeholder="Presentaci la tua realtà e la tua proposta…"></textarea></div>
+          <div class="form-group"><label class="form-check"><input type="checkbox" required><span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>.</span></label></div>
+          <button type="submit" class="btn btn--filled" style="width:100%;padding:1rem;">Invia richiesta</button>
+          <p class="form-note">Leggiamo ogni richiesta con attenzione. Ti risponderemo il prima possibile.</p>
+        </form>
+
+        <!-- FORM PRESS -->
+        <form id="form-press" style="display:none;" novalidate aria-label="Form press e collaborazioni">
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label" for="p-nome">Nome</label><input type="text" id="p-nome" class="form-input" required></div>
+            <div class="form-group"><label class="form-label" for="p-real">Testata / Progetto / Realtà</label><input type="text" id="p-real" class="form-input" required></div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label" for="p-email">Email</label><input type="email" id="p-email" class="form-input" required></div>
+            <div class="form-group"><label class="form-label" for="p-tel">Telefono</label><input type="tel" id="p-tel" class="form-input"></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="p-msg">Messaggio</label><textarea id="p-msg" class="form-textarea" placeholder="Descrivi il tuo progetto o la tua proposta…"></textarea></div>
+          <div class="form-group"><label class="form-check"><input type="checkbox" required><span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>.</span></label></div>
+          <button type="submit" class="btn btn--filled" style="width:100%;padding:1rem;">Invia richiesta</button>
+          <p class="form-note">Leggiamo ogni richiesta con attenzione. Ti risponderemo il prima possibile.</p>
+        </form>
+
+        <!-- success -->
+        <div id="form-success" style="display:none;text-align:center;padding:4rem 2rem;border:1px solid var(--wf-border);">
+          <p style="font-family:var(--font-serif);font-size:36px;font-weight:500;margin-bottom:1rem;">Grazie.</p>
+          <p class="t-body">La tua richiesta è stata inviata. Ti risponderemo con cura, nel più breve tempo possibile.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-ph"><span>DAG</span></div>
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
+      <a href="contact.html?type=boutique" class="footer-cta-b">Sei una boutique? Contattaci</a>
+    </div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="collections.html">Collezioni</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Brand</p><a href="events.html">Eventi</a><a href="contact.html">Contatti</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><a href="#">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 DAG Gioielli.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="#">Privacy</a><a href="#">Cookie</a></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  const typeBtns = document.querySelectorAll('.form-type-btn');
+  const forms    = { cliente: document.getElementById('form-cliente'), boutique: document.getElementById('form-boutique'), press: document.getElementById('form-press') };
+
+  typeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      Object.values(forms).forEach(f => { if(f) f.style.display = 'none'; });
+      const f = forms[btn.dataset.type];
+      if (f) f.style.display = '';
+    });
+  });
+
+  // pre-select from URL
+  const urlType = new URLSearchParams(location.search).get('type');
+  if (urlType && forms[urlType]) {
+    typeBtns.forEach(b => b.classList.toggle('active', b.dataset.type === urlType));
+    Object.values(forms).forEach(f => { if(f) f.style.display = 'none'; });
+    forms[urlType].style.display = '';
+  }
+
+  // success on submit
+  document.querySelectorAll('form').forEach(f => {
+    f.addEventListener('submit', e => {
+      e.preventDefault();
+      f.style.display = 'none';
+      document.querySelector('.form-type-sel').style.display = 'none';
+      document.getElementById('form-success').style.display = '';
+      document.querySelector('.t-label').style.display = 'none';
+    });
+  });
+</script>
+</body>
+</html>
