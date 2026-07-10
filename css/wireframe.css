@@ -260,17 +260,28 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
   color: #4A4A4A;
   white-space: nowrap;
+  position: relative;
   transition: color 0.22s ease;
 }
 
-/* hover: nero pieno */
+/* underline editoriale: linea 1px che scorre da sinistra */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .nav-link:hover  { color: #000; }
-
-/* click: stesso nero dell'hover */
 .nav-link:active { color: #000; transition: none; }
-
-/* pagina corrente: solo colore, nessuna decorazione */
 .nav-link.active { color: #000; }
+
+.nav-link:hover::after,
+.nav-link:active::after,
+.nav-link.active::after { width: 100%; }
 
 /* on-hero */
 .site-header.on-hero .nav-link        { color: rgba(255,255,255,0.62); }
