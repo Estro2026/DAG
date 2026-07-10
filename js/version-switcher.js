@@ -37,4 +37,9 @@
     .dev-panel { top: calc(var(--header-h) + ${H}px) !important; }
   `;
   document.head.appendChild(s);
+
+  /* fallback diretto per position:sticky (non sempre si ricalcola con CSS tardivo) */
+  const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+  const devPanel = document.querySelector('.dev-panel');
+  if (devPanel) devPanel.style.setProperty('top', (headerH + H) + 'px', 'important');
 })();
