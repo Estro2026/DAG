@@ -77,15 +77,20 @@
 <header class="site-header on-hero" role="banner">
   <div class="header-inner">
     <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
-      <a href="about.html"       class="nav-link">About</a>
-      <a href="philosophy.html"  class="nav-link">Philosophy</a>
-      <a href="collections.html" class="nav-link">Collezioni</a>
+      <a href="about.html"      class="nav-link">About</a>
+      <a href="philosophy.html" class="nav-link">Philosophy</a>
+      <a href="shop.html"       class="nav-link">Shop</a>
     </nav>
     <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
     <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
       <a href="stores.html"  class="nav-link">Stores</a>
-      <a href="events.html"  class="nav-link">Eventi</a>
       <a href="contact.html" class="nav-link">Contatti</a>
+      <a href="cart.html" class="nav-cart" aria-label="Carrello — 0 articoli">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav-cart__count">0</span>
+      </a>
+      <!-- DEV: Wishlist icon — funzionalità da confermare (YITH Wishlist o WooCommerce Wishlist) -->
+      <!-- <a href="account.html#wishlist" class="nav-link" aria-label="Wishlist">♡</a> -->
     </nav>
     <button class="hamburger" aria-label="Apri menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -100,7 +105,7 @@
   <div class="drawer-nav">
     <a href="about.html">About</a>
     <a href="philosophy.html">Philosophy</a>
-    <a href="collections.html">Collezioni</a>
+    <a href="shop.html">Shop</a>
     <a href="stores.html">Stores</a>
     <a href="events.html">Eventi</a>
     <a href="contact.html">Contatti</a>
@@ -268,10 +273,8 @@
         <div class="product-card__body">
           <p class="product-card__category">Bracciale</p>
           <p class="product-card__ref">Muamara Jaipur</p>
-          <!-- slot prezzo — attivare in fase e-commerce -->
-          <!-- <p class="product-card__price">€ —</p> -->
-          <a href="collections.html#muamara-jaipur" class="btn--ghost product-card__cta">Scopri →</a>
-          <!-- CTA e-commerce: sostituire con <button class="btn btn--filled">Acquista</button> -->
+          <p class="product-card__price">€ 185 <span class="wf-note">da verificare</span></p>
+          <a href="product.html?ref=muamara-jaipur" class="btn btn--filled product-card__cta">Acquista</a>
         </div>
       </div>
 
@@ -283,8 +286,8 @@
         <div class="product-card__body">
           <p class="product-card__category">Orecchini</p>
           <p class="product-card__ref">Muamara Star</p>
-          <!-- <p class="product-card__price">€ —</p> -->
-          <a href="collections.html#muamara-star" class="btn--ghost product-card__cta">Scopri →</a>
+          <p class="product-card__price">€ 210 <span class="wf-note">da verificare</span></p>
+          <a href="product.html?ref=muamara-star" class="btn btn--filled product-card__cta">Acquista</a>
         </div>
       </div>
 
@@ -296,8 +299,8 @@
         <div class="product-card__body">
           <p class="product-card__category">Collana</p>
           <p class="product-card__ref">Muamara Precious</p>
-          <!-- <p class="product-card__price">€ —</p> -->
-          <a href="collections.html#muamara-precious" class="btn--ghost product-card__cta">Scopri →</a>
+          <p class="product-card__price">€ 320 <span class="wf-note">da verificare</span></p>
+          <a href="product.html?ref=muamara-precious" class="btn btn--filled product-card__cta">Acquista</a>
         </div>
       </div>
 
@@ -309,8 +312,8 @@
         <div class="product-card__body">
           <p class="product-card__category">Bracciale</p>
           <p class="product-card__ref">Muamara Holi</p>
-          <!-- <p class="product-card__price">€ —</p> -->
-          <a href="collections.html#muamara-holi" class="btn--ghost product-card__cta">Scopri →</a>
+          <p class="product-card__price">€ 165 <span class="wf-note">da verificare</span></p>
+          <a href="product.html?ref=muamara-holi" class="btn btn--filled product-card__cta">Acquista</a>
         </div>
       </div>
 

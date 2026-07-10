@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — DAG Gioielli</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
+      <a href="about.html"      class="nav-link">About</a>
+      <a href="philosophy.html" class="nav-link">Philosophy</a>
+      <a href="shop.html"       class="nav-link">Shop</a>
+    </nav>
+    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
+    <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
+      <a href="stores.html"  class="nav-link">Stores</a>
+      <a href="contact.html" class="nav-link">Contatti</a>
+      <a href="cart.html" class="nav-cart" aria-label="Carrello — 1 articolo">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav-cart__count">1</span>
+      </a>
+    </nav>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="drawer-overlay"></div>
+<nav class="mobile-drawer" aria-label="Menu mobile">
+  <button class="drawer-close" aria-label="Chiudi">✕</button>
+  <div class="drawer-nav">
+    <a href="about.html">About</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="shop.html">Shop</a>
+    <a href="stores.html">Stores</a>
+    <a href="contact.html">Contatti</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
+    <span class="dev-panel__title">⚙ Dev Notes — checkout.html</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort" title="Effort di sviluppo">★★★★★ Effort massimo</span>
+      <span class="dev-panel__pill">WooCommerce</span>
+      <span class="dev-panel__pill">PayPal Business</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">WooCommerce / PayPal</p>
+      <ul class="dev-panel__list">
+        <li>Template: WooCommerce checkout.php override nel tema child</li>
+        <li>Pagamento: plugin WooCommerce PayPal Payments (ufficiale PayPal/Braintree)</li>
+        <li class="warn">Dati fiscali (CF/P.IVA): obbligatori per legge italiana — campo custom con hook woocommerce_checkout_fields</li>
+        <li class="warn">Avviso produzione su ordine: obbligatorio al checkout — Codice del Consumo art. 49 (informazioni precontrattuali)</li>
+        <li class="warn">Diritto di recesso: nota obbligatoria per e-commerce — Codice del Consumo art. 52-59</li>
+        <li>GDPR: checkbox consenso obbligatoria (WooCommerce built-in o plugin GDPR Cookie Consent)</li>
+        <li>Spedizioni: WooCommerce Shipping Zones — configurare zone Italia / Europa / Extra UE</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PAGE TITLE ════════════════════════════════════════════════ -->
+<section class="section" style="padding-top:calc(var(--header-h) + 2rem);padding-bottom:1rem;">
+  <div class="wrap">
+    <span class="t-label">Checkout</span>
+    <h1 class="t-h2" style="margin-top:.5rem;">Completa il tuo ordine.</h1>
+  </div>
+</section>
+
+<!-- ═══ CHECKOUT LAYOUT ═══════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:7fr 5fr;gap:4rem;align-items:start;">
+
+      <!-- COLONNA SX — Form -->
+      <div>
+
+        <!-- Dati di spedizione -->
+        <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Dati di spedizione</h2>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group">
+            <label class="form-label" for="nome">Nome *</label>
+            <input class="form-input" type="text" id="nome" name="nome" placeholder="Mario" autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="cognome">Cognome *</label>
+            <input class="form-input" type="text" id="cognome" name="cognome" placeholder="Rossi" autocomplete="family-name">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group">
+            <label class="form-label" for="email">Email *</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="mario@esempio.it" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="telefono">Telefono</label>
+            <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+39 333 123 4567" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label class="form-label" for="indirizzo">Indirizzo *</label>
+          <input class="form-input" type="text" id="indirizzo" name="indirizzo" placeholder="Via Roma 1" autocomplete="street-address">
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 2fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group">
+            <label class="form-label" for="cap">CAP *</label>
+            <input class="form-input" type="text" id="cap" name="cap" placeholder="20121" autocomplete="postal-code">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="citta">Città *</label>
+            <input class="form-input" type="text" id="citta" name="citta" placeholder="Milano" autocomplete="address-level2">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="provincia">Prov. *</label>
+            <input class="form-input" type="text" id="provincia" name="provincia" placeholder="MI" maxlength="2">
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom:2.5rem;">
+          <label class="form-label" for="paese">Paese *</label>
+          <select class="form-input" id="paese" name="paese" autocomplete="country">
+            <option value="IT" selected>Italia</option>
+            <option value="FR">Francia</option>
+            <option value="DE">Germania</option>
+            <option value="ES">Spagna</option>
+            <option value="GB">Regno Unito</option>
+            <option value="US">Stati Uniti</option>
+            <option value="">Altro...</option>
+          </select>
+        </div>
+
+        <!-- Dati fiscali -->
+        <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Dati fiscali</h2>
+        <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-muted);margin-bottom:1.5rem;">Obbligatori per la fatturazione ai sensi della normativa fiscale italiana.</p>
+
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label class="form-label" for="cf">Codice Fiscale *</label>
+          <input class="form-input" type="text" id="cf" name="codice_fiscale" placeholder="RSSMRA80A01F205X" maxlength="16" style="text-transform:uppercase;">
+        </div>
+
+        <div style="margin-bottom:.75rem;">
+          <label style="display:flex;align-items:center;gap:.5rem;font-family:var(--font-sans);font-size:12px;color:var(--wf-muted);cursor:pointer;">
+            <input type="checkbox" id="acquisto_azienda" name="acquisto_azienda">
+            Acquisto come azienda (inserisci Ragione Sociale e P.IVA)
+          </label>
+        </div>
+        <div style="margin-bottom:2.5rem;opacity:.45;">
+          <div style="display:grid;grid-template-columns:2fr 1fr;gap:1rem;">
+            <div class="form-group">
+              <label class="form-label" for="ragione_sociale">Ragione Sociale</label>
+              <input class="form-input" type="text" id="ragione_sociale" name="ragione_sociale" placeholder="Azienda S.r.l." disabled>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="piva">P.IVA</label>
+              <input class="form-input" type="text" id="piva" name="piva" placeholder="IT01234567890" disabled>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spedizione -->
+        <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Spedizione</h2>
+
+        <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem;">
+          <label style="display:flex;align-items:flex-start;gap:.75rem;font-family:var(--font-sans);font-size:13px;cursor:pointer;padding:.85rem 1rem;border:1px solid var(--wf-text);background:var(--wf-surface);">
+            <input type="radio" name="spedizione" value="italia" checked style="margin-top:2px;flex-shrink:0;">
+            <span>
+              <strong style="font-weight:600;">Italia — GLS</strong><br>
+              <span style="color:var(--wf-muted);font-size:12px;">circa €7–10 · 2-3 giorni lavorativi dalla spedizione</span>
+            </span>
+          </label>
+          <label style="display:flex;align-items:flex-start;gap:.75rem;font-family:var(--font-sans);font-size:13px;cursor:pointer;padding:.85rem 1rem;border:1px solid var(--wf-border);">
+            <input type="radio" name="spedizione" value="europa" style="margin-top:2px;flex-shrink:0;">
+            <span>
+              <strong style="font-weight:600;">Europa — GLS · UPS · FedEx</strong><br>
+              <span style="color:var(--wf-muted);font-size:12px;">circa €15–20 · 5-7 giorni lavorativi dalla spedizione</span>
+            </span>
+          </label>
+          <label style="display:flex;align-items:flex-start;gap:.75rem;font-family:var(--font-sans);font-size:13px;cursor:pointer;padding:.85rem 1rem;border:1px solid var(--wf-border);">
+            <input type="radio" name="spedizione" value="extra_ue" style="margin-top:2px;flex-shrink:0;">
+            <span>
+              <strong style="font-weight:600;">Extra UE — su preventivo</strong><br>
+              <span style="color:var(--wf-muted);font-size:12px;">Dazi e tasse doganali a carico del destinatario · <a href="contact.html" style="color:var(--wf-muted);">contattaci per un preventivo</a></span>
+            </span>
+          </label>
+        </div>
+
+        <!-- Avviso produzione su ordine -->
+        <div class="production-notice" style="margin-bottom:2.5rem;">
+          <strong>⏱ Prodotto su ordine</strong> — Ogni gioiello DAG viene realizzato a mano dopo la conferma del tuo ordine. Tempi di produzione indicativi: 10–15 giorni lavorativi. Riceverai aggiornamenti via email a ogni fase della produzione e della spedizione.
+        </div>
+
+        <!-- Pagamento -->
+        <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Pagamento</h2>
+        <p style="font-family:var(--font-sans);font-size:13px;color:var(--wf-muted);margin-bottom:1.5rem;">Il pagamento avviene tramite PayPal Business in modo sicuro. Puoi pagare con il tuo conto PayPal o con carta di credito/debito.</p>
+
+        <!-- Checkbox legale -->
+        <div style="margin-bottom:1.5rem;">
+          <label style="display:flex;align-items:flex-start;gap:.75rem;font-family:var(--font-sans);font-size:12px;color:var(--wf-muted);cursor:pointer;line-height:1.6;">
+            <input type="checkbox" name="consenso_termini" style="margin-top:3px;flex-shrink:0;">
+            Ho letto e accetto i <a href="privacy.html" style="color:var(--wf-text);">Termini e Condizioni</a> e la <a href="privacy.html" style="color:var(--wf-text);">Privacy Policy</a> di DAG Gioielli.
+          </label>
+        </div>
+        <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-ghost);line-height:1.6;margin-bottom:2rem;">Ai sensi del D.Lgs. 206/2005 (Codice del Consumo), hai diritto di recesso entro 14 giorni dalla ricezione del prodotto. <span class="wf-note">Verificare con legale l'applicabilità per prodotti su ordine personalizzati.</span></p>
+
+        <!-- PayPal button -->
+        <div class="img-ph" style="height:55px;">
+          <span class="img-ph__label" style="font-size:11px;">PayPal — Completa l'ordine · WooCommerce PayPal Payments plugin</span>
+        </div>
+
+      </div>
+
+      <!-- COLONNA DX — Riepilogo ordine -->
+      <div>
+        <div class="order-summary">
+          <p class="order-summary__title">Riepilogo ordine</p>
+
+          <!-- Prodotto -->
+          <div style="display:flex;gap:1rem;padding-bottom:1.25rem;border-bottom:1px solid var(--wf-border);margin-bottom:1.25rem;">
+            <div class="img-ph" style="width:64px;height:64px;flex-shrink:0;">
+              <span class="img-ph__label" style="font-size:8px;">Foto</span>
+            </div>
+            <div style="flex:1;">
+              <p style="font-family:var(--font-sans);font-size:13px;font-weight:500;color:var(--wf-text);margin-bottom:.25rem;">Muamara Jaipur</p>
+              <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-muted);">Colore: — <span class="wf-note">da selezionare</span></p>
+              <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-muted);">Taglia unica · Qtà: 1</p>
+            </div>
+            <p style="font-family:var(--font-sans);font-size:13px;font-weight:500;color:var(--wf-text);flex-shrink:0;">€ 185</p>
+          </div>
+
+          <div class="order-summary__row">
+            <span>Subtotale</span>
+            <span>€ 185</span>
+          </div>
+          <div class="order-summary__row">
+            <span>Spedizione</span>
+            <span style="color:var(--wf-muted);">da calcolare</span>
+          </div>
+          <div class="order-summary__row">
+            <span>IVA (22%)</span>
+            <span style="color:var(--wf-muted);">inclusa</span>
+          </div>
+
+          <div class="order-summary__total">
+            <span>Totale</span>
+            <span>€ 185 <span style="font-family:var(--font-sans);font-size:11px;color:var(--wf-muted);">+ spedizione</span></span>
+          </div>
+
+          <!-- Production notice compatta -->
+          <div class="production-notice" style="margin-top:1.5rem;margin-bottom:0;font-size:11.5px;">
+            <strong>⏱ Produzione su ordine:</strong> 10–15 giorni lavorativi.
+          </div>
+        </div>
+
+        <!-- Link utili -->
+        <div style="margin-top:1.5rem;font-family:var(--font-sans);font-size:12px;color:var(--wf-muted);">
+          <a href="shipping.html" style="color:var(--wf-muted);display:block;margin-bottom:.5rem;">Informazioni sulle spedizioni →</a>
+          <a href="faq.html" style="color:var(--wf-muted);display:block;">Domande frequenti →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-ph"><span>DAG</span></div>
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
+    </div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="shop.html">Shop</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Acquisto</p><a href="shipping.html">Spedizioni</a><a href="faq.html">FAQ</a><a href="contact.html">Contatti</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><a href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 DAG Gioielli.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="privacy.html">Privacy</a><a href="cookie.html">Cookie</a></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

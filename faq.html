@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — DAG Gioielli</title>
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
+      <a href="about.html"      class="nav-link">About</a>
+      <a href="philosophy.html" class="nav-link">Philosophy</a>
+      <a href="shop.html"       class="nav-link">Shop</a>
+    </nav>
+    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
+    <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
+      <a href="stores.html"  class="nav-link">Stores</a>
+      <a href="contact.html" class="nav-link">Contatti</a>
+      <a href="cart.html" class="nav-cart" aria-label="Carrello — 0 articoli">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav-cart__count">0</span>
+      </a>
+    </nav>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="drawer-overlay"></div>
+<nav class="mobile-drawer" aria-label="Menu mobile">
+  <button class="drawer-close" aria-label="Chiudi">✕</button>
+  <div class="drawer-nav">
+    <a href="about.html">About</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="shop.html">Shop</a>
+    <a href="stores.html">Stores</a>
+    <a href="contact.html">Contatti</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
+    <span class="dev-panel__title">⚙ Dev Notes — faq.html</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort" title="Effort di sviluppo">★★ Effort basso</span>
+      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">Elementor</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <ul class="dev-panel__list">
+        <li>Widget accordion: Essential Addons for Elementor (EA Accordion) o Elementor Pro Accordion nativo</li>
+        <li>Alternativa: Accordion widget di JetElements o Dynamic Content for Elementor</li>
+        <li>Struttura FAQ: raggruppate per categoria — replicare la struttura HTML &lt;details&gt;/&lt;summary&gt; nel widget</li>
+        <li>SEO: aggiungere FAQ Schema markup (JSON-LD) — plugin Rank Math Pro o Schema Pro supportano FAQ Page schema automaticamente</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════ -->
+<section class="section section--lg" style="padding-top:calc(var(--header-h) + 3rem);text-align:center;">
+  <div class="wrap--narrow">
+    <span class="t-label fade">FAQ</span>
+    <h1 class="t-h1 fade fade-d1">Domande frequenti.</h1>
+    <p class="t-body-lg fade fade-d2" style="max-width:500px;margin-inline:auto;">Tutto quello che vuoi sapere sui gioielli DAG, gli ordini, le spedizioni e i pagamenti.</p>
+  </div>
+</section>
+
+<!-- ═══ FAQ CONTENT ═══════════════════════════════════════════════ -->
+<section class="section section--lg" style="padding-top:0;">
+  <div class="wrap" style="max-width:800px;">
+
+    <!-- I gioielli -->
+    <div class="faq-group fade">
+      <p class="faq-group__title">I gioielli</p>
+
+      <details class="faq-item">
+        <summary>Cosa sono i gioielli tessili DAG?</summary>
+        <div class="faq-answer">
+          I gioielli tessili DAG sono creazioni artigianali che uniscono tecniche di tessitura a telaio con pietre semipreziose e argento 925. Il risultato è un gioiello morbido, luminoso e unico, diverso da qualsiasi gioiello tradizionale: la struttura portante è un intreccio di fili e pietre anziché un supporto metallico rigido.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Come vengono realizzati?</summary>
+        <div class="faq-answer">
+          Ogni gioiello nasce nel laboratorio milanese di DAG attraverso un processo manuale: selezione delle pietre semipreziose, impostazione del telaio, intreccio del filo di lurex e della catena in argento 925, rifinitura a mano. Ogni pezzo richiede ore di lavoro e attenzione artigianale. Per questo motivo ogni gioiello viene prodotto su ordine dopo l'acquisto.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>I materiali sono certificati?</summary>
+        <div class="faq-answer">
+          L'argento utilizzato è 925/1000 (argento sterling). Le pietre semipreziose sono selezionate direttamente da DAG per qualità e provenienza. <span class="wf-note">Dettagli certificazioni da confermare con il brand prima del go-live.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Posso personalizzare un gioiello?</summary>
+        <div class="faq-answer">
+          Al momento la collezione DAG è disponibile nelle varianti cromatiche presentate nello shop. Per richieste di personalizzazione speciali — ad esempio per eventi, matrimoni o regali aziendali — contattaci direttamente via email o tramite il modulo di contatto. Valutiamo ogni richiesta caso per caso.
+        </div>
+      </details>
+    </div>
+
+    <!-- Ordini e produzione -->
+    <div class="faq-group fade">
+      <p class="faq-group__title">Ordini e produzione</p>
+
+      <details class="faq-item">
+        <summary>Come funziona la produzione su ordine?</summary>
+        <div class="faq-answer">
+          DAG non tiene magazzino: ogni gioiello viene prodotto a mano nel laboratorio milanese dopo che il tuo ordine è confermato e il pagamento ricevuto. Questo garantisce che ogni pezzo sia fresco di lavorazione e realizzato con piena attenzione. I tempi di produzione indicativi sono 10–15 giorni lavorativi.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Quanto tempo ci vuole per ricevere il mio ordine?</summary>
+        <div class="faq-answer">
+          Il tempo totale è composto da: produzione (10–15 giorni lavorativi) + spedizione (2–3 giorni in Italia, 5–7 giorni in Europa). In totale, indicativamente 2–4 settimane dalla conferma dell'ordine. Riceverai aggiornamenti via email a ogni fase.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Posso annullare o modificare un ordine?</summary>
+        <div class="faq-answer">
+          Puoi richiedere la cancellazione o la modifica dell'ordine entro 24 ore dalla conferma, contattandoci all'indirizzo info@daggioielli.it. Dopo l'avvio della produzione non è possibile modificare o annullare l'ordine. <span class="wf-note">Verificare la policy di cancellazione con il legale prima del go-live.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Riceverò aggiornamenti sulla mia produzione?</summary>
+        <div class="faq-answer">
+          Sì. Invieremo email di aggiornamento nelle fasi principali: conferma dell'ordine, avvio della produzione, spedizione con numero di tracciamento. Se hai domande nel frattempo, scrivici sempre a info@daggioielli.it.
+        </div>
+      </details>
+    </div>
+
+    <!-- Spedizioni -->
+    <div class="faq-group fade">
+      <p class="faq-group__title">Spedizioni</p>
+
+      <details class="faq-item">
+        <summary>Dove spedite?</summary>
+        <div class="faq-answer">
+          Spediamo in tutta Italia, in Europa e in molti paesi extra UE. Per spedizioni fuori dall'Unione Europea, ti invitiamo a contattarci prima dell'acquisto per verificare disponibilità e costi doganali.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Quanto costa la spedizione?</summary>
+        <div class="faq-answer">
+          La spedizione in Italia con GLS ha un costo indicativo di €7–10. Per l'Europa (GLS, UPS o FedEx) il costo indicativo è €15–20. I costi esatti vengono calcolati al checkout in base alla destinazione. <span class="wf-note">Tariffe da verificare con corriere prima del go-live.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Quanto tempo ci vuole per la consegna?</summary>
+        <div class="faq-answer">
+          Una volta spedito il pacco, la consegna avviene in 2–3 giorni lavorativi in Italia e 5–7 giorni lavorativi in Europa. Riceverai email con numero di tracking al momento della spedizione.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Cosa succede con i dazi extra UE?</summary>
+        <div class="faq-answer">
+          Per spedizioni fuori dall'Unione Europea, eventuali dazi doganali e tasse di importazione sono a carico del destinatario e dipendono dalle normative del paese di destinazione. Ti consigliamo di verificare i costi doganali applicabili nel tuo paese prima di effettuare l'ordine.
+        </div>
+      </details>
+    </div>
+
+    <!-- Resi e rimborsi -->
+    <div class="faq-group fade">
+      <p class="faq-group__title">Resi e rimborsi</p>
+
+      <details class="faq-item">
+        <summary>Posso restituire un prodotto?</summary>
+        <div class="faq-answer">
+          Accettiamo resi entro 14 giorni dalla ricezione del prodotto, a condizione che il gioiello sia nelle stesse condizioni in cui è stato consegnato (non indossato, nella confezione originale). <span class="wf-note">Verificare con legale l'applicabilità del diritto di recesso per prodotti realizzati su ordine ai sensi dell'art. 59 lett. c) del Codice del Consumo.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Come funziona il diritto di recesso?</summary>
+        <div class="faq-answer">
+          Ai sensi del D.Lgs. 206/2005 (Codice del Consumo), hai diritto di recedere dal contratto entro 14 giorni dalla ricezione del prodotto, senza dover fornire alcuna motivazione. Il rimborso viene erogato entro 14 giorni dalla ricezione del prodotto reso. <span class="wf-note">Nota legale: per i beni confezionati su misura o chiaramente personalizzati (art. 59 lett. c) il diritto di recesso potrebbe non applicarsi — verificare con il legale.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Come richiedo un reso?</summary>
+        <div class="faq-answer">
+          Per avviare un reso, scrivi a info@daggioielli.it indicando il numero dell'ordine e il motivo del reso. Ti risponderemo entro 2 giorni lavorativi con le istruzioni per la restituzione del prodotto. Le spese di spedizione del reso sono a carico del cliente, salvo il caso di prodotto difettoso.
+        </div>
+      </details>
+    </div>
+
+    <!-- Pagamenti -->
+    <div class="faq-group fade">
+      <p class="faq-group__title">Pagamenti</p>
+
+      <details class="faq-item">
+        <summary>Come posso pagare?</summary>
+        <div class="faq-answer">
+          Accettiamo pagamenti tramite PayPal Business. Puoi utilizzare il tuo conto PayPal oppure pagare con carta di credito o debito (Visa, Mastercard, American Express) senza necessità di avere un account PayPal.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Il pagamento è sicuro?</summary>
+        <div class="faq-answer">
+          Sì. Tutti i pagamenti avvengono sulla piattaforma PayPal Business, che garantisce la massima sicurezza delle transazioni. I dati della tua carta non vengono mai condivisi con DAG Gioielli.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Emettete fattura?</summary>
+        <div class="faq-answer">
+          Sì, emettiamo fattura per ogni ordine. Ricordati di inserire il tuo codice fiscale (obbligatorio per la fatturazione in Italia) al momento del checkout. Se effettui l'acquisto come azienda, inserisci anche la ragione sociale e la partita IVA.
+        </div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CTA CONTATTI ══════════════════════════════════════════════ -->
+<section class="section band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);text-align:center;">
+  <div class="wrap--narrow">
+    <span class="t-label fade">Hai ancora domande?</span>
+    <h2 class="t-h2 fade fade-d1" style="margin-bottom:1rem;">Scrivici.</h2>
+    <p class="t-body fade fade-d2" style="margin-bottom:2rem;">Rispondiamo a ogni messaggio con attenzione, di solito entro 1–2 giorni lavorativi.</p>
+    <a href="contact.html" class="btn btn--filled fade fade-d3">Contattaci</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-ph"><span>DAG</span></div>
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
+    </div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="shop.html">Shop</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Acquisto</p><a href="shipping.html">Spedizioni</a><a href="faq.html">FAQ</a><a href="contact.html">Contatti</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><a href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 DAG Gioielli.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="privacy.html">Privacy</a><a href="cookie.html">Cookie</a></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

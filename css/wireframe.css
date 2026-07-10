@@ -1380,3 +1380,235 @@ body.vetrina .vetrina-only { display: block; }
 @media (max-width: 768px) {
   .grid-4.products-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ── Color dot — variant selector ───────────────────────────────── */
+.color-dot {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--wf-img);
+  border: 1.5px solid var(--wf-border);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  flex-shrink: 0;
+}
+.color-dot.active,
+.color-dot:hover { border-color: var(--wf-text); border-width: 2px; }
+
+.color-selector {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+.color-selector__label {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wf-muted);
+  margin-right: .25rem;
+}
+
+/* ── Production notice box ──────────────────────────────────────── */
+.production-notice {
+  background: var(--wf-surface);
+  border: 1px solid var(--wf-border);
+  border-left: 3px solid var(--wf-text);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--wf-text);
+}
+.production-notice strong { font-weight: 600; }
+
+/* ── Breadcrumb ─────────────────────────────────────────────────── */
+.breadcrumb {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--wf-muted);
+  letter-spacing: 0.04em;
+  padding: 1rem 0 0;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.breadcrumb a { color: var(--wf-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--wf-text); }
+.breadcrumb__sep { color: var(--wf-ghost); }
+
+/* ── FAQ accordion ──────────────────────────────────────────────── */
+.faq-group { margin-bottom: 2.5rem; }
+.faq-group__title {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wf-muted);
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--wf-border);
+}
+details.faq-item {
+  border-bottom: 1px solid var(--wf-border);
+}
+details.faq-item summary {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--wf-text);
+  padding: 1.1rem 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+details.faq-item summary::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--wf-muted);
+  flex-shrink: 0;
+}
+details.faq-item[open] summary::after { content: '−'; }
+details.faq-item summary::-webkit-details-marker { display: none; }
+.faq-answer {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--wf-muted);
+  padding-bottom: 1.25rem;
+  max-width: 640px;
+}
+
+/* ── How it works steps ─────────────────────────────────────────── */
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.how-step__n {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--wf-border);
+  line-height: 1;
+  margin-bottom: .75rem;
+}
+.how-step__title {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--wf-text);
+  margin-bottom: .5rem;
+}
+.how-step__body {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--wf-muted);
+}
+@media (max-width: 768px) {
+  .how-steps { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Checkout order summary ─────────────────────────────────────── */
+.order-summary {
+  background: var(--wf-surface);
+  border: 1px solid var(--wf-border);
+  padding: 1.75rem;
+  position: sticky;
+  top: calc(var(--header-h) + 1rem);
+}
+.order-summary__title {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wf-muted);
+  margin-bottom: 1.25rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid var(--wf-border);
+}
+.order-summary__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--wf-text);
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--wf-border);
+}
+.order-summary__total {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--wf-text);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--wf-text);
+}
+
+/* ── Shipping destination cards ─────────────────────────────────── */
+.shipping-card {
+  background: var(--wf-surface);
+  border: 1px solid var(--wf-border);
+  padding: 2rem 1.75rem;
+}
+.shipping-card__zone {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wf-muted);
+  margin-bottom: .75rem;
+}
+.shipping-card__price {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--wf-text);
+  margin-bottom: .5rem;
+}
+.shipping-card__carriers {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--wf-muted);
+  margin-bottom: .5rem;
+}
+.shipping-card__timing {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--wf-ghost);
+  font-style: italic;
+}
+
+/* ── Product card name variant (PLP uses __name instead of __ref) ── */
+.product-card__name {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--wf-ghost);
+  margin-bottom: .9rem;
+}
+.product-card__variants {
+  display: flex;
+  gap: .35rem;
+  margin-bottom: .9rem;
+  flex-wrap: wrap;
+}
