@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bracciali — DAG Gioielli</title>
+  <meta name="description" content="Bracciali tessili DAG: 6 modelli realizzati a mano a Milano con pietre semipreziose, argento 925 e filo di lurex. Produzione su ordine.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.daggioielli.it/bracciali/">
+  <link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
+      <a href="about.html"      class="nav-link">About</a>
+      <a href="philosophy.html" class="nav-link">Philosophy</a>
+      <a href="shop.html"       class="nav-link active">Shop</a>
+    </nav>
+    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
+    <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
+      <a href="stores.html"  class="nav-link">Stores</a>
+      <a href="contact.html" class="nav-link">Contatti</a>
+      <a href="cart.html" class="nav-cart" aria-label="Carrello — 0 articoli">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav-cart__count">0</span>
+      </a>
+    </nav>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="drawer-overlay"></div>
+<nav class="mobile-drawer" aria-label="Menu mobile">
+  <button class="drawer-close" aria-label="Chiudi">✕</button>
+  <div class="drawer-nav">
+    <a href="about.html">About</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="shop.html">Shop</a>
+    <a href="stores.html">Stores</a>
+    <a href="contact.html">Contatti</a>
+  </div>
+</nav>
+
+<main style="padding-top:var(--header-h);">
+
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
+    <span class="dev-panel__title">⚙ Dev Notes — category.html (Categoria prodotto)</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort">★★★ Effort medio</span>
+      <span class="dev-panel__pill">WooCommerce</span>
+      <span class="dev-panel__pill">ACF</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">WooCommerce / WordPress</p>
+      <ul class="dev-panel__list">
+        <li>Template: taxonomy-product_cat.php nel tema child (WooCommerce archive per categoria)</li>
+        <li>URL: /bracciali/ → WooCommerce product category slug</li>
+        <li>Griglia prodotti: WooCommerce loop template (content-product.php override)</li>
+        <li class="warn">Solo B2C — nessun riferimento a prezzi all'ingrosso o B2B</li>
+        <li class="warn">Produzione su ordine: banner obbligatorio in ogni pagina categoria</li>
+        <li>Filtri colore: plugin WooCommerce Product Filters o YITH WooCommerce Ajax Product Filter</li>
+        <li>Paginazione: WooCommerce nativa (6 prodotti per pagina, configurabile)</li>
+        <li>SEO: Rank Math o Yoast — categoria descrizione + meta per /bracciali/</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Struttura URL prevista</p>
+      <ul class="dev-panel__list">
+        <li>/shop/ → shop.html (tutte le categorie)</li>
+        <li>/bracciali/ → category.html (questa pagina)</li>
+        <li>/bracciali/muamara-jaipur/ → product.html (PDP)</li>
+        <li class="warn">In futuro: /orecchini/ · /collane/ (categorie da creare quando disponibili)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BREADCRUMB ════════════════════════════════════════════════ -->
+<div class="wrap" style="padding-top:1.5rem;">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">DAG</a>
+    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+    <a href="shop.html">Shop</a>
+    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+    <span aria-current="page">Bracciali</span>
+  </nav>
+</div>
+
+<!-- ═══ INTESTAZIONE CATEGORIA ════════════════════════════════════ -->
+<section class="section--sm">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+    <div>
+      <span class="t-label">Categoria</span>
+      <h1 class="t-h2" style="margin-top:.25rem;">Bracciali.</h1>
+    </div>
+    <p style="font-family:var(--font-sans);font-size:12px;color:var(--wf-muted);">6 modelli · Taglia unica · Produzione su ordine</p>
+  </div>
+</section>
+
+<!-- ═══ BANNER MADE-TO-ORDER ══════════════════════════════════════ -->
+<div class="wrap" style="margin-bottom:2rem;">
+  <div style="background:var(--wf-surface);border:1px solid var(--wf-border);border-left:3px solid var(--wf-text);padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+    <span style="font-size:18px;" aria-hidden="true">⏱</span>
+    <p style="font-family:var(--font-sans);font-size:12.5px;line-height:1.6;color:var(--wf-text);">
+      <strong>Produzione su ordine</strong> — Ogni bracciale DAG viene realizzato a mano dopo il tuo acquisto. Tempi indicativi: <strong>10–15 giorni lavorativi</strong>. <a href="faq.html" style="color:var(--wf-muted);text-decoration:underline;">Scopri come funziona →</a>
+    </p>
+  </div>
+</div>
+
+<!-- ═══ FILTRI COLORE ═════════════════════════════════════════════ -->
+<section class="section" style="padding-top:0;padding-bottom:1.5rem;">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);">Colore</span>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+        <button class="sf-filter active" style="font-size:10px;padding:.35rem .85rem;">Tutti</button>
+        <span class="color-dot" title="Colore 1" style="cursor:pointer;"></span>
+        <span class="color-dot" title="Colore 2" style="cursor:pointer;"></span>
+        <span class="color-dot" title="Colore 3" style="cursor:pointer;"></span>
+        <span class="color-dot" title="Colore 4" style="cursor:pointer;"></span>
+        <span class="color-dot" title="Colore 5" style="cursor:pointer;"></span>
+        <span class="color-dot" title="Colore 6" style="cursor:pointer;"></span>
+      </div>
+      <span class="wf-note">Nomi colori da definire con la cliente — filtro via YITH WooCommerce Ajax Filter</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GRIGLIA PRODOTTI — 6 bracciali ════════════════════════════ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="grid-3" style="gap:2rem;">
+
+      <!-- Prodotto 1 -->
+      <div class="product-card fade">
+        <a href="product.html" class="product-card__img" aria-label="Muamara Jaipur">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Jaipur<br>scatto editoriale [3:4]</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Bracciale</p>
+          <p class="product-card__ref">Muamara Jaipur</p>
+          <div class="color-selector" style="margin-bottom:.75rem;">
+            <span class="color-dot active"></span><span class="color-dot"></span><span class="color-dot"></span>
+            <span class="color-dot"></span><span class="color-dot"></span><span class="color-dot"></span>
+          </div>
+          <p class="product-card__price">€ 185 <span class="wf-note">da verificare</span></p>
+          <a href="product.html" class="btn btn--filled product-card__cta">Acquista</a>
+        </div>
+      </div>
+
+      <!-- Prodotto 2 -->
+      <div class="product-card fade fade-d1">
+        <a href="product.html" class="product-card__img" aria-label="Muamara Star">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Star<br>scatto editoriale [3:4]</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Bracciale</p>
+          <p class="product-card__ref">Muamara Star</p>
+          <div class="color-selector" style="margin-bottom:.75rem;">
+            <span class="color-dot active"></span><span class="color-dot"></span><span class="color-dot"></span>
+            <span class="color-dot"></span><span class="color-dot"></span><span class="color-dot"></span>
+          </div>
+          <p class="product-card__price">€ 210 <span class="wf-note">da verificare</span></p>
+          <a href="product.html" class="btn btn--filled product-card__cta">Acquista</a>
+        </div>
+      </div>
+
+      <!-- Prodotto 3 -->
+      <div class="product-card fade fade-d2">
+        <a href="product.html" class="product-card__img" aria-label="Muamara Precious">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Precious<br>scatto editoriale [3:4]</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Bracciale</p>
+          <p class="product-card__ref">Muamara Precious</p>
+          <div class="color-selector" style="margin-bottom:.75rem;">
+            <span class="color-dot active"></span><span class="color-dot"></span><span class="color-dot"></span>
+            <span class="color-dot"></span><span class="color-dot"></span><span class="color-dot"></span>
+          </div>
+          <p class="product-card__price">€ 320 <span class="wf-note">da verificare</span></p>
+          <a href="product.html" class="btn btn--filled product-card__cta">Acquista</a>
+        </div>
+      </div>
+
+      <!-- Prodotto 4 -->
+      <div class="product-card fade">
+        <a href="product.html" class="product-card__img" aria-label="Muamara Holi">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Holi<br>scatto editoriale [3:4]</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Bracciale</p>
+          <p class="product-card__ref">Muamara Holi</p>
+          <div class="color-selector" style="margin-bottom:.75rem;">
+            <span class="color-dot active"></span><span class="color-dot"></span><span class="color-dot"></span>
+            <span class="color-dot"></span><span class="color-dot"></span><span class="color-dot"></span>
+          </div>
+          <p class="product-card__price">€ 165 <span class="wf-note">da verificare</span></p>
+          <a href="product.html" class="btn btn--filled product-card__cta">Acquista</a>
+        </div>
+      </div>
+
+      <!-- Prodotto 5 -->
+      <div class="product-card fade fade-d1">
+        <a href="product.html" class="product-card__img" aria-label="Muamara Madras">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Madras<br>scatto editoriale [3:4]</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Bracciale</p>
+          <p class="product-card__ref">Muamara Madras</p>
+          <div class="color-selector" style="margin-bottom:.75rem;">
+            <span class="color-dot active"></span><span class="color-dot"></span><span class="color-dot"></span>
+            <span class="color-dot"></span><span class="color-dot"></span><span class="color-dot"></span>
+          </div>
+          <p class="product-card__price">€ — <span class="wf-note">da definire</span></p>
+          <a href="product.html" class="btn btn--filled product-card__cta">Acquista</a>
+        </div>
+      </div>
+
+      <!-- Prodotto 6 -->
+      <div class="product-card fade fade-d2">
+        <a href="product.html" class="product-card__img" aria-label="Muamara Sun">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Sun<br>scatto editoriale [3:4]</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Bracciale</p>
+          <p class="product-card__ref">Muamara Sun</p>
+          <div class="color-selector" style="margin-bottom:.75rem;">
+            <span class="color-dot active"></span><span class="color-dot"></span><span class="color-dot"></span>
+            <span class="color-dot"></span><span class="color-dot"></span><span class="color-dot"></span>
+          </div>
+          <p class="product-card__price">€ — <span class="wf-note">da definire</span></p>
+          <a href="product.html" class="btn btn--filled product-card__cta">Acquista</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NAVIGAZIONE CATEGORIE ══════════════════════════════════════ -->
+<section class="section--sm band--surface" style="border-top:1px solid var(--wf-border);">
+  <div class="wrap" style="text-align:center;">
+    <span class="t-label">Esplora anche</span>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+      <a href="category.html" class="btn btn--outline" style="font-size:10px;">Bracciali</a>
+      <span class="btn btn--outline" style="font-size:10px;opacity:.4;cursor:not-allowed;">Orecchini <span class="wf-note">— prossimamente</span></span>
+      <span class="btn btn--outline" style="font-size:10px;opacity:.4;cursor:not-allowed;">Collane <span class="wf-note">— prossimamente</span></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-ph"><span>DAG</span></div>
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
+    </div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="shop.html">Shop</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Acquisto</p><a href="shipping.html">Spedizioni</a><a href="faq.html">FAQ</a><a href="contact.html">Contatti</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><a href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 DAG Gioielli.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="privacy.html">Privacy</a><a href="cookie.html">Cookie</a></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

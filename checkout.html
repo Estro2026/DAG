@@ -60,7 +60,8 @@
       <ul class="dev-panel__list">
         <li>Template: WooCommerce checkout.php override nel tema child</li>
         <li>Pagamento: plugin WooCommerce PayPal Payments (ufficiale PayPal/Braintree)</li>
-        <li class="warn">Dati fiscali (CF/P.IVA): obbligatori per legge italiana — campo custom con hook woocommerce_checkout_fields</li>
+        <li class="warn">Solo B2C — nessuna vendita a aziende/rivenditori in questo canale</li>
+        <li class="warn">Codice Fiscale obbligatorio per legge italiana — campo custom con hook woocommerce_checkout_fields</li>
         <li class="warn">Avviso produzione su ordine: obbligatorio al checkout — Codice del Consumo art. 49 (informazioni precontrattuali)</li>
         <li class="warn">Diritto di recesso: nota obbligatoria per e-commerce — Codice del Consumo art. 52-59</li>
         <li>GDPR: checkbox consenso obbligatoria (WooCommerce built-in o plugin GDPR Cookie Consent)</li>
@@ -153,24 +154,7 @@
           <input class="form-input" type="text" id="cf" name="codice_fiscale" placeholder="RSSMRA80A01F205X" maxlength="16" style="text-transform:uppercase;">
         </div>
 
-        <div style="margin-bottom:.75rem;">
-          <label style="display:flex;align-items:center;gap:.5rem;font-family:var(--font-sans);font-size:12px;color:var(--wf-muted);cursor:pointer;">
-            <input type="checkbox" id="acquisto_azienda" name="acquisto_azienda">
-            Acquisto come azienda (inserisci Ragione Sociale e P.IVA)
-          </label>
-        </div>
-        <div style="margin-bottom:2.5rem;opacity:.45;">
-          <div style="display:grid;grid-template-columns:2fr 1fr;gap:1rem;">
-            <div class="form-group">
-              <label class="form-label" for="ragione_sociale">Ragione Sociale</label>
-              <input class="form-input" type="text" id="ragione_sociale" name="ragione_sociale" placeholder="Azienda S.r.l." disabled>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="piva">P.IVA</label>
-              <input class="form-input" type="text" id="piva" name="piva" placeholder="IT01234567890" disabled>
-            </div>
-          </div>
-        </div>
+        <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-ghost);margin-bottom:2.5rem;">Solo acquisti da privati (B2C). Per acquisti aziendali contatta il brand direttamente.</p>
 
         <!-- Spedizione -->
         <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Spedizione</h2>
