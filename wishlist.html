@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist — DAG Gioielli</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/wireframe.css">
+  <style>
+    /* ── Wishlist layout ─────────────────────────────────────── */
+    .wl-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) { .wl-layout { grid-template-columns: 1fr; } }
+
+    /* sidebar liste */
+    .wl-sidebar {
+      position: sticky;
+      top: calc(var(--header-h) + 1.5rem);
+    }
+    .wl-sidebar__title {
+      font-family: var(--font-sans);
+      font-size: 10px; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--wf-ghost);
+      margin-bottom: 1rem;
+    }
+    .wl-list-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .6rem .75rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.18s ease;
+      margin-bottom: 2px;
+    }
+    .wl-list-item:hover { background: var(--wf-surface); }
+    .wl-list-item.active { background: var(--wf-surface); }
+    .wl-list-item__name {
+      font-family: var(--font-sans); font-size: 13px;
+      color: var(--wf-text);
+    }
+    .wl-list-item.active .wl-list-item__name { font-weight: 500; }
+    .wl-list-item__count {
+      font-family: var(--font-sans); font-size: 11px;
+      color: var(--wf-ghost);
+      background: var(--wf-img); border-radius: 20px;
+      padding: 1px 7px;
+    }
+    .wl-new-list {
+      display: flex; align-items: center; gap: .4rem;
+      padding: .6rem .75rem;
+      font-family: var(--font-sans); font-size: 12px;
+      color: var(--wf-muted); cursor: pointer;
+      border: 1px dashed var(--wf-border); border-radius: 2px;
+      margin-top: .75rem; background: none;
+      width: 100%; text-align: left;
+      transition: border-color 0.18s ease, color 0.18s ease;
+    }
+    .wl-new-list:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
+
+    .wl-share {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--wf-border);
+    }
+    .wl-share__label {
+      font-family: var(--font-sans); font-size: 11px;
+      color: var(--wf-ghost); margin-bottom: .5rem;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .wl-share__url {
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .wl-share__input {
+      font-family: var(--font-sans); font-size: 11px;
+      color: var(--wf-muted);
+      background: var(--wf-surface);
+      border: 1px solid var(--wf-border);
+      border-radius: 2px; padding: .4rem .6rem;
+      flex: 1; min-width: 0;
+    }
+    .wl-share__copy {
+      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+      padding: .4rem .7rem;
+      border: 1px solid var(--wf-border); border-radius: 2px;
+      background: none; cursor: pointer; white-space: nowrap;
+      color: var(--wf-text);
+      transition: border-color 0.18s ease;
+    }
+    .wl-share__copy:hover { border-color: var(--wf-accent); }
+
+    /* main area */
+    .wl-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .wl-header__title {
+      font-family: var(--font-serif); font-size: 1.75rem;
+      color: var(--wf-text);
+    }
+    .wl-header__actions {
+      display: flex; align-items: center; gap: .75rem;
+    }
+    .wl-action-btn {
+      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: .45rem .85rem;
+      border: 1px solid var(--wf-border); border-radius: 2px;
+      background: none; cursor: pointer; color: var(--wf-text);
+      transition: border-color 0.18s ease, color 0.18s ease;
+    }
+    .wl-action-btn:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
+    .wl-action-btn--filled {
+      background: var(--wf-accent); color: #fff; border-color: var(--wf-accent);
+    }
+    .wl-action-btn--filled:hover { background: #000; border-color: #000; color: #fff; }
+
+    /* product card wishlist variant */
+    .wl-card {
+      display: flex; flex-direction: column; position: relative;
+    }
+    .wl-card__remove {
+      position: absolute; top: 10px; left: 10px; z-index: 2;
+      background: rgba(255,255,255,0.88); border: none; border-radius: 50%;
+      width: 28px; height: 28px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 14px; color: var(--wf-muted);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .wl-card__remove:hover { background: #fff; color: var(--wf-text); }
+    .wl-card__img { position: relative; display: block; text-decoration: none; margin-bottom: 1rem; overflow: hidden; }
+    .wl-card__img .img-ph { transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .wl-card__img:hover .img-ph { transform: scale(1.02); }
+    .wl-card__body { display: flex; flex-direction: column; gap: .35rem; }
+    .wl-card__category { font-family: var(--font-serif); font-size: 18px; color: var(--wf-text); }
+    .wl-card__ref { font-family: var(--font-sans); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--wf-ghost); }
+    .wl-card__price { font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--wf-text); margin-top: .15rem; }
+    .wl-card__cta {
+      margin-top: .75rem;
+      font-family: var(--font-sans); font-size: 11.5px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: .6rem 1rem;
+      border: 1px solid var(--wf-border); border-radius: 2px;
+      background: none; cursor: pointer; color: var(--wf-text);
+      transition: border-color 0.22s ease, background 0.22s ease, color 0.22s ease;
+      text-align: center;
+    }
+    .wl-card__cta:hover { background: var(--wf-accent); border-color: var(--wf-accent); color: #fff; }
+
+    /* stato vuoto */
+    .wl-empty {
+      text-align: center;
+      padding: 5rem 2rem;
+      border: 1px dashed var(--wf-border);
+      border-radius: 4px;
+    }
+    .wl-empty__icon { font-size: 2.5rem; margin-bottom: 1.25rem; opacity: .35; }
+    .wl-empty__title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--wf-text); margin-bottom: .6rem; }
+    .wl-empty__text { font-family: var(--font-sans); font-size: 13px; color: var(--wf-muted); max-width: 320px; margin: 0 auto 1.75rem; line-height: 1.7; }
+
+    /* modal crea lista */
+    .wl-modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.35);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 200; opacity: 0; pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    .wl-modal-overlay.open { opacity: 1; pointer-events: all; }
+    .wl-modal {
+      background: var(--wf-bg); border: 1px solid var(--wf-border);
+      border-radius: 4px; padding: 2rem; width: 100%; max-width: 380px;
+      transform: translateY(12px); transition: transform 0.22s ease;
+    }
+    .wl-modal-overlay.open .wl-modal { transform: translateY(0); }
+    .wl-modal__title { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 1.25rem; }
+    .wl-modal__label { font-family: var(--font-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wf-muted); margin-bottom: .4rem; display: block; }
+    .wl-modal__input {
+      width: 100%; padding: .65rem .8rem;
+      font-family: var(--font-sans); font-size: 13px;
+      border: 1px solid var(--wf-border); border-radius: 2px; background: var(--wf-surface);
+      color: var(--wf-text); margin-bottom: 1.25rem;
+    }
+    .wl-modal__input:focus { outline: none; border-color: var(--wf-accent); }
+    .wl-modal__actions { display: flex; gap: .75rem; justify-content: flex-end; }
+  </style>
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
+      <a href="about.html"      class="nav-link">About</a>
+      <a href="philosophy.html" class="nav-link">Philosophy</a>
+      <a href="shop.html"       class="nav-link">Shop</a>
+    </nav>
+    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
+    <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
+      <a href="stores.html"  class="nav-link">Stores</a>
+      <a href="contact.html" class="nav-link">Contatti</a>
+      <a href="account.html" class="nav-account" aria-label="Area riservata">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="cart.html" class="nav-cart" aria-label="Carrello — 0 articoli">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav-cart__count">0</span>
+      </a>
+    </nav>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="drawer-overlay"></div>
+<nav class="mobile-drawer" aria-label="Menu mobile">
+  <button class="drawer-close" aria-label="Chiudi">✕</button>
+  <div class="drawer-nav">
+    <a href="about.html">About</a>
+    <a href="philosophy.html">Philosophy</a>
+    <a href="shop.html">Shop</a>
+    <a href="stores.html">Stores</a>
+    <a href="contact.html">Contatti</a>
+    <a href="account.html">Account</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
+    <span class="dev-panel__title">⚙ Dev Notes — wishlist.html</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort" title="Effort di sviluppo">★★★☆ Effort medio-alto</span>
+      <span class="dev-panel__pill">YITH Wishlist</span>
+      <span class="dev-panel__pill">WooCommerce</span>
+      <span class="dev-panel__pill">Account required</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Plugin consigliato: YITH WooCommerce Wishlist</p>
+      <ul class="dev-panel__list">
+        <li><strong>Free:</strong> una sola lista per utente — shortcode <code>[yith_wcwl_wishlist]</code> nella pagina wishlist</li>
+        <li class="warn"><strong>Premium (~€99/anno):</strong> liste multiple per utente, nomi personalizzabili, condivisione via link, wishlist pubblica/privata — necessario per questo wireframe</li>
+        <li>Alternativa: TI WooCommerce Wishlist (gratuito con liste multiple) — meno maturo, meno supporto Elementor</li>
+        <li class="warn">Senza account utente: wishlist salvata in cookie/localStorage — si perde al logout o cambio browser. Consigliare la registrazione</li>
+        <li>Il pulsante "Aggiungi alla wishlist" va aggiunto tramite hook WooCommerce: <code>woocommerce_after_add_to_cart_button</code> o con YITH automaticamente nei template</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Flusso utente (questo wireframe)</p>
+      <ul class="dev-panel__list">
+        <li><strong>Stato A (con prodotti):</strong> sidebar con le liste, griglia prodotti salvati, CTA "Aggiungi al carrello" per singolo item</li>
+        <li><strong>Stato B (lista vuota):</strong> empty state con CTA verso shop — mostrato quando lista attiva è vuota</li>
+        <li><strong>Creare lista:</strong> modal overlay → inserisci nome → crea → la lista appare nella sidebar (solo Premium)</li>
+        <li><strong>Rimuovere prodotto:</strong> tasto × in overlay sull'immagine → prodotto sparisce dalla lista (AJAX via YITH)</li>
+        <li><strong>Spostare prodotto tra liste:</strong> funzione Premium — non mostrata in wireframe ma da prevedere nel template</li>
+        <li><strong>Condivisione:</strong> URL univoco per wishlist pubblica — <code>/wishlist/[token]/</code> — YITH Premium genera il link automaticamente</li>
+        <li class="warn">Aggiunta al carrello dalla wishlist: AJAX — item rimane in wishlist fino a rimozione manuale (comportamento YITH default)</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <ul class="dev-panel__list">
+        <li>Pagina wishlist: creare pagina WordPress "Wishlist" con slug <code>/wishlist/</code>, inserire shortcode YITH nel contenuto (o blocco Gutenberg)</li>
+        <li>Elementor: YITH fornisce widget nativo per Elementor nella versione Premium</li>
+        <li class="warn">Template sidebar con liste: richiede custom template YITH o override PHP in tema child</li>
+        <li>CSS wishlist: sovrascrivere stili YITH nel tema child — molti elementi hanno classi <code>.yith-wcwl-*</code></li>
+        <li>Impostare la pagina wishlist in: <em>YITH → Wishlist → Impostazioni → Pagina wishlist</em></li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Permessi e stato login</p>
+      <ul class="dev-panel__list">
+        <li>Utente non loggato: mostrare modale di login prima di consentire l'aggiunta — evita wishlist anonime disperse</li>
+        <li>Configurabile in YITH: <em>Wishlist → Impostazioni → Wishlist per utenti non loggati → Reindirizza al login</em></li>
+        <li class="warn">Questo wireframe mostra lo stato "utente loggato" — wireframing separato per flow non autenticato non necessario, basta nota</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BREADCRUMB ═════════════════════════════════════════════════ -->
+<nav class="breadcrumb" aria-label="Percorso">
+  <div class="wrap">
+    <ol>
+      <li><a href="index.html">DAG</a></li>
+      <li><a href="account.html">Account</a></li>
+      <li aria-current="page">Wishlist</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ══ MAIN LAYOUT ════════════════════════════════════════════════ -->
+<section class="section section--lg" style="padding-top:2.5rem;">
+  <div class="wrap">
+    <div class="wl-layout">
+
+      <!-- ── SIDEBAR: gestione liste ──────────────────────────── -->
+      <aside class="wl-sidebar">
+        <p class="wl-sidebar__title">Le mie liste</p>
+
+        <!-- Lista attiva -->
+        <div class="wl-list-item active" role="button" tabindex="0" aria-pressed="true">
+          <span class="wl-list-item__name">Lista principale</span>
+          <span class="wl-list-item__count">3</span>
+        </div>
+
+        <!-- Seconda lista esempio -->
+        <div class="wl-list-item" role="button" tabindex="0" aria-pressed="false">
+          <span class="wl-list-item__name">Regali</span>
+          <span class="wl-list-item__count">1</span>
+        </div>
+
+        <!-- Crea nuova lista -->
+        <button class="wl-new-list" id="btnNuovaLista" onclick="document.getElementById('wlModal').classList.add('open')">
+          <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Nuova lista
+        </button>
+
+        <span class="wf-note" style="display:block;margin-top:.6rem;">DEV: liste multiple = YITH Wishlist Premium. Free: solo "Lista principale".</span>
+
+        <!-- Condivisione -->
+        <div class="wl-share">
+          <p class="wl-share__label">Condividi lista</p>
+          <div class="wl-share__url">
+            <input class="wl-share__input" type="text" value="daggioielli.it/wishlist/a3f9b2/" readonly aria-label="Link condivisione wishlist">
+            <button class="wl-share__copy" onclick="this.textContent='Copiato!'">Copia</button>
+          </div>
+          <span class="wf-note" style="display:block;margin-top:.4rem;">DEV: URL generato da YITH Premium — opzione "Lista pubblica" abilitata dall'utente.</span>
+        </div>
+      </aside>
+
+      <!-- ── MAIN: prodotti nella lista ───────────────────────── -->
+      <div>
+        <div class="wl-header">
+          <h1 class="wl-header__title">Lista principale <span style="font-family:var(--font-sans);font-size:14px;color:var(--wf-ghost);font-weight:400;">— 3 prodotti</span></h1>
+          <div class="wl-header__actions">
+            <button class="wl-action-btn">Rinomina lista</button>
+            <button class="wl-action-btn wl-action-btn--filled">Aggiungi tutto al carrello</button>
+          </div>
+        </div>
+        <span class="wf-note" style="display:block;margin-bottom:2rem;">DEV (YITH): "Aggiungi tutto al carrello" = funzione YITH Premium. "Rinomina lista" = YITH Premium. CTA singolo per prodotto = disponibile anche Free via shortcode.</span>
+
+        <!-- Griglia prodotti wishlist (stato A: lista con prodotti) -->
+        <div class="grid-3" style="gap:2rem;">
+
+          <!-- Prodotto 1 — Muamara Jaipur -->
+          <div class="wl-card fade">
+            <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
+            <a href="product.html?ref=muamara-jaipur" class="wl-card__img" aria-label="Muamara Jaipur">
+              <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Jaipur</span></div>
+            </a>
+            <div class="wl-card__body">
+              <p class="wl-card__category">Bracciale</p>
+              <p class="wl-card__ref">Muamara Jaipur</p>
+              <p class="wl-card__price">€ 185</p>
+              <button class="wl-card__cta">Aggiungi al carrello</button>
+            </div>
+          </div>
+
+          <!-- Prodotto 2 — Muamara Star -->
+          <div class="wl-card fade fade-d1">
+            <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
+            <a href="product.html?ref=muamara-star" class="wl-card__img" aria-label="Muamara Star">
+              <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Star</span></div>
+            </a>
+            <div class="wl-card__body">
+              <p class="wl-card__category">Bracciale</p>
+              <p class="wl-card__ref">Muamara Star</p>
+              <p class="wl-card__price">€ 210</p>
+              <button class="wl-card__cta">Aggiungi al carrello</button>
+            </div>
+          </div>
+
+          <!-- Prodotto 3 — Muamara Precious -->
+          <div class="wl-card fade fade-d2">
+            <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
+            <a href="product.html?ref=muamara-precious" class="wl-card__img" aria-label="Muamara Precious">
+              <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Precious</span></div>
+            </a>
+            <div class="wl-card__body">
+              <p class="wl-card__category">Bracciale</p>
+              <p class="wl-card__ref">Muamara Precious</p>
+              <p class="wl-card__price">€ 320</p>
+              <button class="wl-card__cta">Aggiungi al carrello</button>
+            </div>
+          </div>
+
+        </div><!-- /grid -->
+
+        <!-- ── STATO B: lista vuota (esempio commentato) ──────── -->
+        <!--
+        WIREFRAME NOTA: mostrare questo blocco quando la lista è vuota.
+        Nascondere la griglia sopra e mostrare wl-empty al suo posto.
+        DEV: YITH gestisce lo stato vuoto con template yith-wcwl-wishlist-empty.php
+        -->
+        <div class="wl-empty" style="display:none;" aria-hidden="true">
+          <div class="wl-empty__icon">♡</div>
+          <p class="wl-empty__title">Questa lista è vuota</p>
+          <p class="wl-empty__text">Salva i gioielli che ti interessano con il cuore accanto all'immagine. Li trovi qui quando sei pronta.</p>
+          <a href="shop.html" class="btn btn--filled" style="font-size:12px;">Esplora lo Shop</a>
+        </div>
+
+      </div><!-- /main -->
+    </div><!-- /wl-layout -->
+  </div>
+</section>
+
+<!-- ══ MODAL: crea nuova lista ════════════════════════════════════ -->
+<div class="wl-modal-overlay" id="wlModal" role="dialog" aria-modal="true" aria-labelledby="wlModalTitle"
+     onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="wl-modal">
+    <p class="wl-modal__title" id="wlModalTitle">Crea nuova lista</p>
+    <label class="wl-modal__label" for="wlListName">Nome della lista</label>
+    <input class="wl-modal__input" id="wlListName" type="text" placeholder="es. Regali, Sogni, Per me…" maxlength="40">
+    <span class="wf-note" style="display:block;margin-top:-.75rem;margin-bottom:1.25rem;">DEV: nome lista salvato via YITH AJAX — max 40 caratteri. Nomi duplicati: YITH aggiunge suffisso numerico.</span>
+    <div class="wl-modal__actions">
+      <button class="wl-action-btn" onclick="document.getElementById('wlModal').classList.remove('open')">Annulla</button>
+      <button class="wl-action-btn wl-action-btn--filled" onclick="document.getElementById('wlModal').classList.remove('open')">Crea lista</button>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- ══ FOOTER ECOMMERCE ═══════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-ph"><span>DAG</span></div>
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano. Ogni pezzo nasce su ordine nel laboratorio milanese.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Navigazione</p>
+      <a href="about.html">About</a>
+      <a href="philosophy.html">Philosophy</a>
+      <a href="shop.html">Shop</a>
+      <a href="stores.html">Stores</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Acquisto</p>
+      <a href="faq.html">FAQ</a>
+      <a href="shipping.html">Spedizioni</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="account.html">Il mio account</a>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Contatti</p>
+      <a href="mailto:info@daggioielli.it">info@daggioielli.it</a>
+      <a href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener">Instagram</a>
+      <a href="contact.html">Contatti</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 DAG Gioielli. Tutti i diritti riservati.</p>
+    <div style="display:flex;gap:1.5rem;">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookie.html">Cookie Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
