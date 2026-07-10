@@ -3,8 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAG Gioielli | Wireframe — Home</title>
+  <!-- ═══ SEO — rimuovere "Wireframe" dal title in produzione ════════
+       Lunghezza ottimale title: 50-60 caratteri
+       Lunghezza ottimale description: 150-160 caratteri            -->
+  <title>DAG Gioielli | Gioielli Tessili Artigianali a Milano</title>
+  <meta name="description" content="DAG Gioielli crea bracciali, collane e orecchini tessili artigianali a Milano. Pietre semipreziose, argento 925 e lavorazione a telaio fatta a mano.">
+  <meta name="robots" content="index, follow">
+  <!-- ⚠ DEV: aggiornare href con il dominio definitivo prima del go-live -->
+  <link rel="canonical" href="https://www.daggioielli.it/">
+
+  <!-- Open Graph — social sharing (1200×630 px per og:image) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="DAG Gioielli | Gioielli Tessili Artigianali a Milano">
+  <meta property="og:description" content="Gioielli tessili artigianali realizzati a mano a Milano. Pietre semipreziose, argento 925 e lavorazione a telaio.">
+  <meta property="og:image"       content="https://www.daggioielli.it/Assets/og/og-home.jpg">
+  <meta property="og:url"         content="https://www.daggioielli.it/">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:site_name"   content="DAG Gioielli">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="DAG Gioielli | Gioielli Tessili Artigianali">
+  <meta name="twitter:description" content="Gioielli tessili artigianali realizzati a mano a Milano.">
+  <meta name="twitter:image"       content="https://www.daggioielli.it/Assets/og/og-home.jpg">
+
   <link rel="stylesheet" href="css/wireframe.css">
+
+  <!-- ═══ JSON-LD Structured Data ══════════════════════════════════
+       DEV (WordPress): installare Schema Pro o usare Yoast SEO Premium.
+       Rank Math Pro genera Organization + WebSite automaticamente
+       se configurato in Rank Math → Impostazioni generali → Schema.   -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.daggioielli.it/#organization",
+        "name": "DAG Gioielli",
+        "url": "https://www.daggioielli.it",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.daggioielli.it/Assets/logo.svg",
+          "width": 200, "height": 60
+        },
+        "description": "Gioielli tessili artigianali realizzati a mano a Milano. Pietre semipreziose, argento 925 e tessitura a telaio.",
+        "email": "info@daggioielli.it",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Milano",
+          "addressRegion": "MI",
+          "addressCountry": "IT"
+        },
+        "sameAs": [
+          "https://www.instagram.com/daggioielli"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.daggioielli.it/#website",
+        "url": "https://www.daggioielli.it",
+        "name": "DAG Gioielli",
+        "inLanguage": "it-IT",
+        "publisher": { "@id": "https://www.daggioielli.it/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -49,7 +114,101 @@
 
 <main>
 
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
+    <span class="dev-panel__title">⚙ Dev Notes — index.html (Home)</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort" title="Effort di sviluppo">★★★★ Effort alto</span>
+      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">Elementor</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">SEO</p>
+      <ul class="dev-panel__list">
+        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
+        <li class="ok">JSON-LD: Organization + WebSite ✓</li>
+        <li class="warn">Aggiornare canonical con dominio definitivo</li>
+        <li class="warn">Creare Assets/og/og-home.jpg (1200×630px)</li>
+        <li>Plugin: Rank Math Pro o Yoast SEO Premium</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <ul class="dev-panel__list">
+        <li>Template: Elementor Canvas (full-width)</li>
+        <li>Hero: sezione 1 col, background image cover, overlay rgba ★★</li>
+        <li>Manifesto: Inner Section 2 col, Heading + Text Editor ★</li>
+        <li class="warn">Griglia editoriale 03: CSS Grid custom — non nativo Elementor ★★★</li>
+        <li class="warn">Collection Index 05: JS hover crossfade — widget HTML custom ★★★★</li>
+        <li class="warn">Still Life 06: IntersectionObserver + PNG scontornati — custom ★★★★</li>
+        <li>Still Life: JS in functions.php → wp_enqueue_script o plugin Code Snippets</li>
+        <li>Animazioni .fade: Elementor Motion Effects → Entrance Animation</li>
+        <li>Stores Teaser: input decorativo, collegare a stores.html?q= in produzione</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Assets necessari</p>
+      <ul class="dev-panel__list">
+        <li>1 foto hero 1920×1080 (laboratorio / mani / gioiello)</li>
+        <li>1 foto full-width 1920×1080 (tessitura a telaio)</li>
+        <li>5 immagini griglia editoriale (portrait + landscape)</li>
+        <li>4 immagini portrait 3:4 per Collection Index</li>
+        <li>1 foto ambientata 1920×900 (sfondo Still Life)</li>
+        <li>4 PNG scontornati gioielli (sfondo trasparente)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  DEV NOTES — index.html (Home Page)                             ║
+  ║  Effort totale pagina: ★★★★ (alto — sezioni animate,            ║
+  ║  collection index JS, still life IntersectionObserver)          ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  WORDPRESS / ELEMENTOR                                          ║
+  ║  • Template: Elementor Canvas (full-width, zero padding WP)    ║
+  ║  • Header: theme header custom o Elementor Header Builder       ║
+  ║    (Hello Elementor + Elementor Pro). Sticky con JS/CSS. ★★     ║
+  ║  • Animazioni .fade (IntersectionObserver in main.js):          ║
+  ║    replicabile con Elementor Motion Effects > Entrance           ║
+  ║    Animation (Fade In / Slide Up). Nessun plugin extra. ★        ║
+  ║  • Sezione 05 — Collection Index (hover + image crossfade):    ║
+  ║    ⚠ Non replicabile nativamente in Elementor. Richiede         ║
+  ║    widget HTML + CSS/JS custom (incollare da wireframe).        ║
+  ║    Alternativa plugin: JetTabs o Dynamic Content for            ║
+  ║    Elementor con trigger hover. ★★★★                             ║
+  ║  • Sezione 06 — Still Life editoriale (reveal sequenziale):    ║
+  ║    ⚠ Completamente custom JS + CSS. In Elementor: sezione       ║
+  ║    con background image + widget HTML per i gioielli PNG.       ║
+  ║    Il JS (IntersectionObserver + setTimeout) va incollato       ║
+  ║    in Elementor > Custom Code o in un plugin Snippets. ★★★★     ║
+  ║  • PNG scontornati gioielli (still life): fornire come PNG      ║
+  ║    con sfondo trasparente. Caricare in Media Library WP.        ║
+  ║  • Sezione 03 "Come nasce": griglia 3 col + numero seriale —   ║
+  ║    Elementor Inner Section 3 col, widget Icon Box. ★             ║
+  ║  • Sezione 07 CTA dark band: sezione sfondo scuro, widget       ║
+  ║    Heading + Button. ★                                          ║
+  ║                                                                  ║
+  ║  SEO WORDPRESS                                                   ║
+  ║  • Schema Organization + WebSite già nel JSON-LD.              ║
+  ║    In Rank Math: Rank Math → Impostazioni generali → Schema     ║
+  ║    → Organization. Compilare logo e sameAs (Instagram).         ║
+  ║  • OG image: Assets/og/og-home.jpg 1200×630px (da creare)      ║
+  ║  • ⚠ Canonical URL: aggiornare con dominio definitivo           ║
+  ║    in tutti i <link rel="canonical"> prima del go-live.         ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
 <!-- ═══ 01 · HERO ════════════════════════════════════════════════ -->
+<!-- DEV: Hero full-viewport con immagine di sfondo, overlay gradiente,
+     testo e due CTA. Elementor: sezione 1 col stretch, background
+     image cover, min-height 100vh, widget Heading + Text + 2×Button.
+     Overlay via Advanced > Background Overlay rgba. ★★ -->
 <section class="hero" aria-label="Hero editoriale">
   <div class="hero__bg">
     <div class="hero__bg-label">Immagine hero — mani / gioiello / laboratorio [1920×1080]</div>
@@ -68,6 +227,8 @@
 </section>
 
 <!-- ═══ 02 · MANIFESTO ═══════════════════════════════════════════ -->
+<!-- DEV: Layout 2 col testo (5/7). Elementor Inner Section 2 col,
+     widget Heading + Text Editor + Divider. Nessun plugin. ★ -->
 <section class="section section--lg">
   <div class="wrap">
     <div class="grid-5-7" style="gap:5rem;">
@@ -85,6 +246,10 @@
 </section>
 
 <!-- ═══ 03 · GRIGLIA EDITORIALE ══════════════════════════════════ -->
+<!-- DEV: CSS Grid editoriale 5/3/4 col con una card su 2 righe.
+     ⚠ Non replicabile nativamente in Elementor. Usare widget HTML
+     con grid CSS custom, oppure Elementor Pro > Container con
+     layout grid. Alternativa: Metro Grid plugin. ★★★ -->
 <section class="section" style="padding-top:0;">
   <div class="wrap">
     <div style="display:grid;grid-template-columns:5fr 3fr 4fr;grid-template-rows:auto auto;gap:1rem;">
@@ -116,6 +281,11 @@
 </section>
 
 <!-- ═══ 04 · FULL WIDTH — IL GESTO ══════════════════════════════ -->
+<!-- DEV: Immagine full-width con overlay parziale (48% sx) e testo.
+     Elementor: sezione stretch, background image, overlay solo
+     sul lato sinistro via CSS background-image linear-gradient.
+     Alternativa: Inner Section 2 col, col sx con background scuro
+     e testo, col dx con immagine. ★★ -->
 <section class="section" style="padding:0;">
   <div style="position:relative;overflow:hidden;">
     <div class="img-ph fade" style="height:80vh;min-height:480px;">
@@ -134,6 +304,11 @@
 </section>
 
 <!-- ═══ 05 · COLLECTION INDEX ══════════════════════════════════════
+     DEV: Indice editoriale con hover crossfade immagine.
+     ⚠ Richiede CSS + JS custom (vedere wireframe.css e script inline).
+     In WordPress: widget HTML in Elementor + enqueue script custom
+     nel tema child (functions.php wp_enqueue_script).
+     Plugin alternativo: JetTabs con trigger hover. ★★★★
      Layout: indice verticale a sinistra + immagine a destra.
      Hover su ogni nome → crossfade immagine + aggiornamento meta.
      Pattern alto-moda: nessun bottone aggressivo, nessun prezzo.
@@ -230,6 +405,17 @@
 </section>
 
 <!-- ═══ 06 · STILL LIFE EDITORIALE ════════════════════════════════ -->
+<!-- DEV: Sezione completamente custom — sfondo fotografico + PNG
+     scontornati rivelati in sequenza via IntersectionObserver.
+     ⚠ Non replicabile in Elementor senza codice custom.
+     WordPress: incollare l'intera sezione come widget HTML in
+     Elementor, o registrarla come template PHP nel tema child.
+     Il JS (IntersectionObserver + setTimeout stagger 720ms) va in
+     functions.php → wp_enqueue_script o plugin Code Snippets. ★★★★
+     Immagini necessarie:
+       - 1 fotografia ambientata (JPG, 1920×900, sfondo neutro)
+       - 4 PNG scontornati gioielli (sfondo trasparente, alta risoluzione)
+-->
 <!--
   In produzione:
   – Sfondo: fotografia ambientata (superficie neutra con luce naturale morbida)
@@ -292,6 +478,10 @@
 </section>
 
 <!-- ═══ 07 · STORES TEASER ═══════════════════════════════════════ -->
+<!-- DEV: Mini store locator con input città + link a stores.html.
+     L'input è decorativo nel wireframe. In produzione: collegare
+     a stores.html?q={valore} oppure integrare con Google Maps
+     Places Autocomplete JS API. ★★ -->
 <section class="section section--lg band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);">
   <div class="wrap--narrow" style="text-align:center;">
     <span class="t-label fade">Rivenditori</span>

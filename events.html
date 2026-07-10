@@ -3,8 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAG Gioielli | Wireframe — Eventi e Collaborazioni</title>
+  <title>Fiere ed Eventi — DAG Gioielli | Première Classe, WHITE Milano</title>
+  <meta name="description" content="Scopri dove incontrare DAG Gioielli: Première Classe Parigi, WHITE Milano, DNA New York. Fiere internazionali, collaborazioni e press.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.daggioielli.it/events.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Fiere ed Eventi — DAG Gioielli">
+  <meta property="og:description" content="DAG Gioielli a Première Classe Parigi, WHITE Milano e DNA New York. Fiere, collaborazioni e press.">
+  <meta property="og:image"       content="https://www.daggioielli.it/Assets/og/og-events.jpg">
+  <meta property="og:url"         content="https://www.daggioielli.it/events.html">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:site_name"   content="DAG Gioielli">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Fiere ed Eventi — DAG Gioielli">
+  <meta name="twitter:description" content="DAG Gioielli a Première Classe, WHITE Milano e DNA New York.">
+  <meta name="twitter:image"       content="https://www.daggioielli.it/Assets/og/og-events.jpg">
+
   <link rel="stylesheet" href="css/wireframe.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.daggioielli.it/#organization", "name": "DAG Gioielli", "url": "https://www.daggioielli.it" },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.daggioielli.it/events.html",
+        "url": "https://www.daggioielli.it/events.html",
+        "name": "Fiere ed Eventi — DAG Gioielli",
+        "description": "DAG Gioielli a Première Classe Parigi, WHITE Milano e DNA New York.",
+        "publisher": { "@id": "https://www.daggioielli.it/#organization" }
+      },
+      {
+        "@type": "Event",
+        "name": "Première Classe — Parigi",
+        "description": "Fiera europea dedicata all'accessorio di moda contemporaneo. DAG presenta la collezione Muamara.",
+        "location": { "@type": "Place", "name": "Première Classe", "address": { "@type": "PostalAddress", "addressLocality": "Parigi", "addressCountry": "FR" } },
+        "organizer": { "@id": "https://www.daggioielli.it/#organization" },
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -35,7 +78,85 @@
 
 <main>
 
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
+    <span class="dev-panel__title">⚙ Dev Notes — events.html (Fiere ed Eventi)</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort">★★★ Effort medio</span>
+      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">Elementor</span>
+      <span class="dev-panel__pill">ACF Pro</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">SEO</p>
+      <ul class="dev-panel__list">
+        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
+        <li class="ok">JSON-LD: WebPage + Event (Première Classe) ✓</li>
+        <li class="warn">Creare Assets/og/og-events.jpg (1200×630px)</li>
+        <li class="warn">Aggiungere startDate/endDate fiere appena confermati (rich result Google)</li>
+        <li>In Rank Math: tipo pagina "Event", compilare date e location</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <ul class="dev-panel__list">
+        <li>CPT "Fiere" + ACF (nome, tipo, città, immagine, data) ★★</li>
+        <li>Event Card: Loop Grid + template "Fiera Card" (Inner Section 2 col) ★★</li>
+        <li>Alternativa: The Events Calendar (plugin gratuito) ★★</li>
+        <li>Griglia collaborazioni 3 col: Inner Section, Image + Heading + Text ★</li>
+        <li>Archivio stampa: Media Library + plugin FileBird (cartelle archivio)</li>
+        <li class="warn">Contenuto archivio stampa: da completare con la cliente</li>
+        <li>CTA band scura: sezione sfondo #1a1a1a, Heading + 2× Button ★</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Assets necessari</p>
+      <ul class="dev-panel__list">
+        <li>1 foto hero 1920×800 (fiera / showroom)</li>
+        <li>3 foto landscape 4:3 (Première Classe, WHITE, DNA)</li>
+        <li>3 foto landscape 16:9 (collaborazioni: shooting, capsule, press)</li>
+        <li>4 foto archivio stampa quadrate</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  DEV NOTES — events.html                                        ║
+  ║  Effort totale pagina: ★★★ (medio)                              ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  WORDPRESS / ELEMENTOR                                          ║
+  ║  • Fiere: CPT "Fiere" con ACF (nome, tipo, città, immagine,    ║
+  ║    descrizione, data). Plugin: ACF Pro + CPT UI                 ║
+  ║  • Event Card layout: Elementor Loop Grid + template "Fiera     ║
+  ║    Card" (Inner Section 2 col: immagine landscape + corpo).     ║
+  ║    Alternativa: The Events Calendar (plugin gratuito) con       ║
+  ║    template Elementor override. ★★                              ║
+  ║  • Collaborazioni (griglia 3 card): Inner Section 3 col,        ║
+  ║    widget Image + Heading + Text Editor. ★                      ║
+  ║  • Archivio stampa: Media Library WP + galleria o              ║
+  ║    plugin "FileBird" per organizzare cartelle archivio.         ║
+  ║    ⚠ Contenuto da completare con la cliente.                    ║
+  ║  • CTA band scura: Elementor sezione sfondo #1a1a1a,           ║
+  ║    widget Heading + 2× Button. ★                               ║
+  ║                                                                  ║
+  ║  SEO WORDPRESS                                                   ║
+  ║  • Schema Event nel JSON-LD: in Rank Math selezionare           ║
+  ║    "Event" e compilare startDate/endDate quando disponibili.    ║
+  ║  • ⚠ Aggiungere startDate/endDate alle fiere appena            ║
+  ║    confermati — Google li indicizza per rich result.            ║
+  ║  • OG image: Assets/og/og-events.jpg 1200×630px                ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
 <!-- ═══ 01 · HERO ════════════════════════════════════════════════ -->
+<!-- DEV: Hero con immagine fiera/showroom — Elementor sezione 1 col
+     stretch, background image cover, min-height 70vh, overlay dark. ★★ -->
 <section class="hero hero--medium">
   <div class="hero__bg">
     <div class="hero__bg-label">Immagine hero — fiera / showroom / evento [1920×800]</div>

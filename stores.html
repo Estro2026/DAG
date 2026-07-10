@@ -3,8 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAG Gioielli | Wireframe — Stores</title>
+  <title>Trova un Rivenditore — DAG Gioielli | Store Locator Italia</title>
+  <meta name="description" content="Trova le boutique e i concept store che vendono DAG Gioielli in Italia. Cerca per città, provincia o regione e scopri il rivenditore più vicino a te.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.daggioielli.it/stores.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Trova un Rivenditore — DAG Gioielli">
+  <meta property="og:description" content="Boutique e concept store DAG Gioielli in Italia. Cerca per città o regione.">
+  <meta property="og:image"       content="https://www.daggioielli.it/Assets/og/og-stores.jpg">
+  <meta property="og:url"         content="https://www.daggioielli.it/stores.html">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:site_name"   content="DAG Gioielli">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Trova un Rivenditore — DAG Gioielli">
+  <meta name="twitter:description" content="Boutique e concept store DAG Gioielli in Italia.">
+  <meta name="twitter:image"       content="https://www.daggioielli.it/Assets/og/og-stores.jpg">
+
   <link rel="stylesheet" href="css/wireframe.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.daggioielli.it/#organization", "name": "DAG Gioielli", "url": "https://www.daggioielli.it" },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.daggioielli.it/stores.html",
+        "url": "https://www.daggioielli.it/stores.html",
+        "name": "Trova un Rivenditore — DAG Gioielli",
+        "description": "Store locator DAG Gioielli: trova boutique e concept store in Italia.",
+        "publisher": { "@id": "https://www.daggioielli.it/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -34,6 +68,85 @@
 </nav>
 
 <main style="padding-top:var(--header-h);">
+
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
+    <span class="dev-panel__title">⚙ Dev Notes — stores.html (Store Locator)</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort">★★★★ Effort alto</span>
+      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">ACF Pro</span>
+      <span class="dev-panel__pill">Google Maps API</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">SEO</p>
+      <ul class="dev-panel__list">
+        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
+        <li class="ok">JSON-LD: WebPage + Organization ✓</li>
+        <li class="warn">Creare Assets/og/og-stores.jpg (1200×630px)</li>
+        <li>In produzione: schema LocalBusiness per ogni rivenditore CPT</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <ul class="dev-panel__list">
+        <li class="warn">Store Locator: usare plugin dedicato (non Elementor nativo)</li>
+        <li>Plugin consigliato: "Store Locator Plus" (gratuito) ★★</li>
+        <li>Alternativa premium: "Agile Store Locator" (UI moderna) ★★★</li>
+        <li class="warn">CPT "Rivenditori" + ACF (nome, città, regione, lat/lng) ★★★</li>
+        <li class="warn">Google Maps API Key richiesta → Google Cloud Console</li>
+        <li>Maps API: Maps JavaScript + Places API (pay-per-use oltre 28k req/mese)</li>
+        <li class="warn">Geolocalizzazione: solo su HTTPS + gestione GDPR cookie</li>
+        <li>js/stores.js è placeholder — sostituire con WP_Query in produzione</li>
+        <li>CTA boutique: Inner Section 2 col, Image + Text Editor ★</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Assets necessari</p>
+      <ul class="dev-panel__list">
+        <li>Database rivenditori definitivo (nome, indirizzo, città, regione)</li>
+        <li>1 foto landscape 4:3 (interno boutique)</li>
+        <li>OG image: og-stores.jpg 1200×630px</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  DEV NOTES — stores.html                                        ║
+  ║  Effort totale pagina: ★★★★ (alto — store locator dinamico)     ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  WORDPRESS / ELEMENTOR                                          ║
+  ║  • Store Locator: sconsigliato costruire da zero con            ║
+  ║    Elementor. Usare plugin dedicato:                            ║
+  ║    - "Store Locator Plus" (gratuito, robusto) ★★               ║
+  ║    - "WP Store Locator" (Google Maps integrato) ★★             ║
+  ║    - "Agile Store Locator" (premium, UI moderna) ★★★            ║
+  ║  • Database rivenditori: CPT "Rivenditori" con ACF              ║
+  ║    (nome, indirizzo, città, regione, lat/lng, telefono).        ║
+  ║    Plugin: ACF Pro + CPT UI                                     ║
+  ║  • Mappa Google Maps: richiede API Key → Google Cloud Console   ║
+  ║    (Maps JavaScript API + Places API). Costo: pay-per-use       ║
+  ║    dopo 28.000 caricamenti/mese (piano gratuito).               ║
+  ║  • Ricerca e filtri regione: il JS in js/stores.js è           ║
+  ║    un placeholder. In produzione: sostituire con plugin         ║
+  ║    o query WP_Query filtrata per tassonomia regione.            ║
+  ║  • Geolocalizzazione "Usa la mia posizione": JS Geolocation     ║
+  ║    API — funziona solo su HTTPS. ⚠ Richiede gestione           ║
+  ║    consenso GDPR (banner cookie per geolocalizzazione).         ║
+  ║  • CTA boutique: Elementor sezione 2 col, Image + Text. ★       ║
+  ║                                                                  ║
+  ║  SEO WORDPRESS                                                   ║
+  ║  • In produzione: ogni rivenditore CPT dovrebbe avere           ║
+  ║    schema LocalBusiness con indirizzo e coordinate.             ║
+  ║  • OG image: Assets/og/og-stores.jpg 1200×630px                ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
 
 <!-- ═══ 01 · HERO TESTUALE ═══════════════════════════════════════ -->
 <section class="section section--lg">

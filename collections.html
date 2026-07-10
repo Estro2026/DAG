@@ -3,8 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAG Gioielli | Wireframe — Collezioni</title>
+  <title>Collezioni Muamara — DAG Gioielli | Bracciali e Gioielli Tessili</title>
+  <meta name="description" content="Scopri le collezioni Muamara di DAG Gioielli: Jaipur, Star, Precious, Holi, Sun. Bracciali tessili in pietre semipreziose e argento 925, fatti a mano a Milano.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.daggioielli.it/collections.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Collezioni Muamara — DAG Gioielli">
+  <meta property="og:description" content="Bracciali tessili in pietre semipreziose e argento 925, fatti a mano a Milano.">
+  <meta property="og:image"       content="https://www.daggioielli.it/Assets/og/og-collections.jpg">
+  <meta property="og:url"         content="https://www.daggioielli.it/collections.html">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:site_name"   content="DAG Gioielli">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Collezioni Muamara — DAG Gioielli">
+  <meta name="twitter:description" content="Bracciali tessili in pietre semipreziose e argento 925, fatti a mano a Milano.">
+  <meta name="twitter:image"       content="https://www.daggioielli.it/Assets/og/og-collections.jpg">
+
   <link rel="stylesheet" href="css/wireframe.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.daggioielli.it/#organization", "name": "DAG Gioielli", "url": "https://www.daggioielli.it" },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.daggioielli.it/collections.html",
+        "url": "https://www.daggioielli.it/collections.html",
+        "name": "Collezioni Muamara — DAG Gioielli",
+        "description": "Bracciali e gioielli tessili DAG: Muamara Jaipur, Star, Precious, Holi, Sun.",
+        "publisher": { "@id": "https://www.daggioielli.it/#organization" },
+        "hasPart": [
+          { "@type": "Product", "name": "Muamara Jaipur",   "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925, Lurex" },
+          { "@type": "Product", "name": "Muamara Star",     "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925 con oro 1 micron, Lurex" },
+          { "@type": "Product", "name": "Muamara Precious", "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre preziose selezionate, Argento 925" },
+          { "@type": "Product", "name": "Muamara Holi",     "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925" },
+          { "@type": "Product", "name": "Muamara Sun",      "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -34,6 +75,85 @@
 </nav>
 
 <main style="padding-top:var(--header-h);">
+
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
+    <span class="dev-panel__title">⚙ Dev Notes — collections.html (Collezioni)</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort">★★★★ Effort alto</span>
+      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">Elementor Pro</span>
+      <span class="dev-panel__pill">ACF Pro</span>
+      <span class="dev-panel__pill">CPT UI</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">SEO</p>
+      <ul class="dev-panel__list">
+        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
+        <li class="ok">JSON-LD: CollectionPage + Product hasPart (5 modelli) ✓</li>
+        <li class="warn">Creare Assets/og/og-collections.jpg (1200×630px)</li>
+        <li>In produzione: schema Product individuale per CPT collezione</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <ul class="dev-panel__list">
+        <li class="warn">CPT "Collezioni" + ACF (nome, categoria, materiali, immagine) ★★★</li>
+        <li class="warn">Filtri sticky: plugin JetSmartFilters o Ajax Load More ★★★</li>
+        <li>Sezioni alternate 7/5 – 5/7: Loop Grid + template loop Elementor Pro ★★★</li>
+        <li>Griglia 3 card: Inner Section 3 col, Image + Heading + Text ★★</li>
+        <li>Dizionario pietre: ACF Repeater + Loop Grid auto-fill ★★</li>
+        <li>Filtri JS data-cat: incollare script in widget HTML o Code Snippets WP</li>
+        <li>CTA band scura: sezione sfondo #1a1a1a, Heading + 2× Button ★</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Assets necessari</p>
+      <ul class="dev-panel__list">
+        <li>7+ foto editoriali portrait 3:4 (una per collezione)</li>
+        <li>2 foto landscape 16:9 (Holi, Tara)</li>
+        <li>Icone/dot pietre per dizionario (o foto macro pietre)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  DEV NOTES — collections.html                                   ║
+  ║  Effort totale pagina: ★★★★ (alto — struttura editoriale        ║
+  ║  + filtri JS + dizionario pietre)                               ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  WORDPRESS / ELEMENTOR                                          ║
+  ║  • Consigliato: Custom Post Type "Collezioni" con ACF           ║
+  ║    (nome, categoria, materiali, parole-chiave, immagine).       ║
+  ║    Plugin: ACF Pro + CPT UI                                     ║
+  ║  • Filtri sticky: Elementor non supporta nativamente filtri     ║
+  ║    AJAX su CPT senza plugin. Usare "Ajax Load More" o           ║
+  ║    "JetSmartFilters" (JetPlugins). ★★★                          ║
+  ║  • Sezioni collezione alternate (grid-7-5 / grid-5-7):         ║
+  ║    Elementor Loop Grid + template di loop "Collezione Card"     ║
+  ║    (Inner Section 2 col con immagine e testo alternati).        ║
+  ║    Alternativa: template PHP custom nel tema child. ★★★         ║
+  ║  • Griglia 3 card (Madras/Sun/Precious): Loop Grid o           ║
+  ║    Inner Section 3 col con widget Image + Heading + Text. ★★    ║
+  ║  • Dizionario pietre: ACF Repeater "Pietre" + Loop Grid        ║
+  ║    auto-fill grid (repeat auto-fill, minmax 150px). ★★          ║
+  ║  • Filtri JS inline (data-cat/data-filter): funzionano          ║
+  ║    anche in Elementor — incollare il <script> nel widget        ║
+  ║    HTML di Elementor oppure in Snippet personalizzati WP.       ║
+  ║                                                                  ║
+  ║  SEO WORDPRESS                                                   ║
+  ║  • Schema CollectionPage + Product hasPart già nel JSON-LD.    ║
+  ║    In produzione: ogni CPT Collezione dovrebbe avere schema     ║
+  ║    Product individuale (Rank Math → Schema → Product).          ║
+  ║  • OG image: Assets/og/og-collections.jpg 1200×630px           ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
 
 <!-- ═══ 01 · HERO TESTUALE ═══════════════════════════════════════ -->
 <section class="section section--lg">

@@ -3,8 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAG Gioielli | Wireframe — Philosophy</title>
+  <title>Filosofia e Processo — DAG Gioielli | Artigianalità Tessile</title>
+  <meta name="description" content="Come nasce un gioiello DAG: selezione delle pietre, tessitura a telaio, finitura a mano e packaging. Cinque gesti per un solo oggetto.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.daggioielli.it/philosophy.html">
+
+  <meta property="og:type"        content="article">
+  <meta property="og:title"       content="Filosofia e Processo — DAG Gioielli">
+  <meta property="og:description" content="Come nasce un gioiello DAG: selezione delle pietre, tessitura a telaio, finitura a mano.">
+  <meta property="og:image"       content="https://www.daggioielli.it/Assets/og/og-philosophy.jpg">
+  <meta property="og:url"         content="https://www.daggioielli.it/philosophy.html">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:site_name"   content="DAG Gioielli">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Filosofia e Processo — DAG Gioielli">
+  <meta name="twitter:description" content="Come nasce un gioiello DAG: selezione pietre, tessitura a telaio, finitura a mano.">
+  <meta name="twitter:image"       content="https://www.daggioielli.it/Assets/og/og-philosophy.jpg">
+
   <link rel="stylesheet" href="css/wireframe.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.daggioielli.it/#organization", "name": "DAG Gioielli", "url": "https://www.daggioielli.it" },
+      {
+        "@type": "Article",
+        "@id": "https://www.daggioielli.it/philosophy.html",
+        "url": "https://www.daggioielli.it/philosophy.html",
+        "headline": "Il gioiello prima del gioiello — La filosofia di DAG",
+        "description": "Come nasce un gioiello DAG: selezione delle pietre, tessitura a telaio, finitura a mano e packaging.",
+        "author": { "@id": "https://www.daggioielli.it/#organization" },
+        "publisher": { "@id": "https://www.daggioielli.it/#organization" },
+        "inLanguage": "it-IT"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -35,7 +71,83 @@
 
 <main>
 
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
+    <span class="dev-panel__title">⚙ Dev Notes — philosophy.html (Filosofia)</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort">★★★ Effort medio-alto</span>
+      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">Elementor</span>
+      <span class="dev-panel__pill">ACF Pro</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">SEO</p>
+      <ul class="dev-panel__list">
+        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
+        <li class="ok">JSON-LD: Article + Organization ✓</li>
+        <li class="warn">Creare Assets/og/og-philosophy.jpg (1200×630px)</li>
+        <li>In Rank Math: tipo pagina "Article", compilare Author + Publisher</li>
+        <li>Aggiungere dateModified per freshness signal SEO</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <ul class="dev-panel__list">
+        <li>Template: Elementor Canvas</li>
+        <li>Hero: sezione stretch, background image, overlay dark ★★</li>
+        <li class="warn">Step processo 01–05: ACF Repeater + Loop Grid (Elementor Pro) ★★★</li>
+        <li>Alternativa step: widget Text Editor manuali (senza Pro)</li>
+        <li>Immagine full-width: sezione stretch, background image, min-height 55vh ★</li>
+        <li>Griglia 3 luoghi: Inner Section 3 col, Heading + Divider + Text ★</li>
+        <li class="warn">Validare grafia "Jaisalmer / Chesalmer" con la cliente</li>
+        <li>Band scura citazione: sezione sfondo #1a1a1a, Blockquote + Button ★</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Assets necessari</p>
+      <ul class="dev-panel__list">
+        <li>1 foto hero 1920×800 (mani / telaio)</li>
+        <li>1 foto full-width 1920×600 (dettaglio tessitura)</li>
+        <li>1 foto macro portrait 3:4 (dettaglio gioiello)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  DEV NOTES — philosophy.html                                    ║
+  ║  Effort totale pagina: ★★★ (medio-alto)                         ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  WORDPRESS / ELEMENTOR                                          ║
+  ║  • Template: Elementor Canvas (full-width, nessun header WP)   ║
+  ║    oppure Hello Elementor con header/footer custom              ║
+  ║  • Sezione step processo (01–05): ACF Repeater "Processo" +    ║
+  ║    Elementor Loop Grid. Ogni step: numero, titolo, testo.       ║
+  ║    Alternativa: widget Text Editor ripetuto manualmente. ★★     ║
+  ║  • Immagine full-width: sezione stretch + background image      ║
+  ║  • Griglia 3 colonne "Luoghi": Inner Section 3 col con         ║
+  ║    Text Editor + Divider widget. ★                              ║
+  ║  • Citazione produzione su richiesta (band scura): sezione      ║
+  ║    background scuro (#1a1a1a), widget Blockquote o Text Editor  ║
+  ║                                                                  ║
+  ║  SEO WORDPRESS                                                   ║
+  ║  • Schema: Article — in Rank Math selezionare "Article" come   ║
+  ║    tipo pagina e compilare Author + Publisher                    ║
+  ║  • Consiglio: aggiungere data di ultima revisione per           ║
+  ║    freshness signal (Rank Math → Advanced → Article Date)       ║
+  ║  • OG image: Assets/og/og-philosophy.jpg 1200×630px            ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
 <!-- ═══ 01 · HERO ════════════════════════════════════════════════ -->
+<!-- DEV: Hero con overlay e testo — Elementor sezione 1 col,
+     background image cover, min-height 70vh, overlay dark.
+     Testo con widget Heading + Text Editor. ★★ -->
 <section class="hero hero--medium">
   <div class="hero__bg">
     <div class="hero__bg-label">Immagine hero — lavorazione telaio / dettaglio mani [1920×800]</div>
@@ -49,6 +161,10 @@
 </section>
 
 <!-- ═══ 02 · INTRO PROCESSO ══════════════════════════════════════ -->
+<!-- DEV: Layout 2 col intro + 5 step verticali. Step ripetibili
+     con ACF Repeater + Loop Grid in Elementor Pro, oppure
+     codice PHP nel template. Senza Pro: widget Text Editor manuali.
+     Stile step: numero seriale + titolo + corpo. ★★ -->
 <section class="section section--lg">
   <div class="wrap">
     <div class="grid-5-7" style="gap:5rem;margin-bottom:var(--section-v);">
@@ -101,6 +217,9 @@
 </section>
 
 <!-- ═══ 03 · IMMAGINE FULL WIDTH — dettaglio ═════════════════════ -->
+<!-- DEV: Immagine full-width senza testo. Elementor: sezione
+     stretch 100vw, background image cover, min-height 55vh.
+     Nessun widget interno. ★ -->
 <section style="padding:0;">
   <div class="img-ph" style="height:55vh;min-height:360px;width:100%;">
     <span class="img-ph__label">Immagine full-width — dettaglio tessitura a telaio [1920×600]</span>
@@ -108,6 +227,11 @@
 </section>
 
 <!-- ═══ 04 · INTRECCIO LUOGHI ════════════════════════════════════ -->
+<!-- DEV: Griglia 3 colonne (Milano, Arezzo, India) su sfondo
+     band-surface. Elementor: Inner Section 3 col, sfondo #f4f4f4.
+     Ogni colonna: Heading + Divider + Text Editor. ★
+     ⚠ "Jaisalmer / Chesalmer": validare grafia con la cliente
+        prima del go-live. -->
 <section class="section section--lg band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:3.5rem;">
@@ -141,6 +265,9 @@
 </section>
 
 <!-- ═══ 05 · IL VALORE DELL'IMPERFEZIONE ═════════════════════════ -->
+<!-- DEV: Layout 2 col immagine portrait + testo. Elementor:
+     Inner Section 5/7, widget Image (ratio 3:4) + Text Editor
+     con Divider. Animazioni via Motion Effects. ★ -->
 <section class="section section--lg">
   <div class="wrap">
     <div class="grid-5-7" style="gap:5rem;align-items:center;">
@@ -159,6 +286,9 @@
 </section>
 
 <!-- ═══ 06 · PRODUZIONE SU RICHIESTA — band scura ════════════════ -->
+<!-- DEV: Band scura centrata con citazione e CTA. Elementor:
+     sezione sfondo #1a1a1a, testo bianco, widget Blockquote +
+     Divider + Button. Nessun plugin aggiuntivo. ★ -->
 <section class="section band--dark" style="padding-block:5rem;">
   <div class="wrap--narrow" style="text-align:center;">
     <span class="t-label fade">Produzione su richiesta</span>

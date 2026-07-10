@@ -3,8 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAG Gioielli | Wireframe — About</title>
+  <title>Chi Siamo — DAG Gioielli | Brand del Textile Jewelry Italiano</title>
+  <meta name="description" content="DAG Gioielli nasce a Milano dall'incontro tra la tecnica del telaio e le pietre di Jaipur. Scopri la storia del brand e la sua fondatrice.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.daggioielli.it/about.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Chi Siamo — DAG Gioielli">
+  <meta property="og:description" content="La storia di DAG Gioielli: artigianalità milanese, pietre di Jaipur e gioielli tessili fatti a mano.">
+  <meta property="og:image"       content="https://www.daggioielli.it/Assets/og/og-about.jpg">
+  <meta property="og:url"         content="https://www.daggioielli.it/about.html">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:site_name"   content="DAG Gioielli">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Chi Siamo — DAG Gioielli">
+  <meta name="twitter:description" content="La storia di DAG Gioielli: artigianalità milanese e gioielli tessili.">
+  <meta name="twitter:image"       content="https://www.daggioielli.it/Assets/og/og-about.jpg">
+
   <link rel="stylesheet" href="css/wireframe.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.daggioielli.it/#organization",
+        "name": "DAG Gioielli", "url": "https://www.daggioielli.it",
+        "email": "info@daggioielli.it",
+        "address": { "@type": "PostalAddress", "addressLocality": "Milano", "addressCountry": "IT" },
+        "sameAs": ["https://www.instagram.com/daggioielli"]
+      },
+      {
+        "@type": "AboutPage",
+        "@id": "https://www.daggioielli.it/about.html",
+        "url": "https://www.daggioielli.it/about.html",
+        "name": "Chi Siamo — DAG Gioielli",
+        "description": "La storia di DAG Gioielli: artigianalità milanese, pietre di Jaipur e gioielli tessili.",
+        "publisher": { "@id": "https://www.daggioielli.it/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -35,7 +76,86 @@
 
 <main>
 
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
+    <span class="dev-panel__title">⚙ Dev Notes — about.html (Chi Siamo)</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort">★★★ Effort medio</span>
+      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">Elementor</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">SEO</p>
+      <ul class="dev-panel__list">
+        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
+        <li class="ok">JSON-LD: AboutPage + Organization ✓</li>
+        <li class="warn">Creare Assets/og/og-about.jpg (1200×630px)</li>
+        <li>In Rank Math: selezionare "About Page" come tipo pagina</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <ul class="dev-panel__list">
+        <li>Template: Elementor Canvas o Hello Elementor</li>
+        <li>Hero: sezione 1 col, background image cover, min-height 70vh ★★</li>
+        <li>Origine: Inner Section 2 col (7/5), Text Editor + Image ★</li>
+        <li class="warn">Timeline: plugin "Premium Addons Timeline Widget" ★★★</li>
+        <li>Alternativa timeline: ACF Repeater + PHP loop nel tema child</li>
+        <li>Griglia archivio 2×2: Image Gallery widget o Media Gallery WP ★</li>
+        <li>Citazione full-width: sezione stretch, overlay rgba, Text Editor ★</li>
+        <li>CTA: sezione band-surface, Heading + 2× Button ★</li>
+        <li class="warn">Contenuto archivio stampa: da inserire con la cliente</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Assets necessari</p>
+      <ul class="dev-panel__list">
+        <li>1 foto hero 1920×800 (laboratorio / archivio storico)</li>
+        <li>1 foto portrait 3:4 (archivio storico)</li>
+        <li>1 foto full-width 1920×700 (Milano / Navigli / laboratorio)</li>
+        <li>4 foto quadrate archivio (griglia 2×2)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  DEV NOTES — about.html                                         ║
+  ║  Effort totale pagina: ★★★ (medio)                              ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  WORDPRESS / ELEMENTOR                                          ║
+  ║  • Template: Page Builder full-width (Elementor Canvas o        ║
+  ║    Hello Elementor — rimuovere sidebar e padding predefiniti)   ║
+  ║  • Hero con immagine di sfondo: Widget "Inner Section" +        ║
+  ║    background image, overlay via Advanced > Background Overlay  ║
+  ║  • Sezione Timeline: widget Elementor Timeline (plugin          ║
+  ║    "Premium Addons" o "Essential Addons for Elementor")         ║
+  ║    Alternativa: Advanced Custom Fields (ACF) + PHP template     ║
+  ║  • Griglia immagini archivio: widget Image Gallery o            ║
+  ║    Elementor Loop Grid + CPT "Archivio"                         ║
+  ║  • Animazioni fade-in: Elementor > Motion Effects > Entrance    ║
+  ║    Animation (fade, slide up) — no JS custom necessario         ║
+  ║  • Immagine full-width con citazione overlay: sezione           ║
+  ║    Elementor a 1 colonna, background image + Text Editor widget ║
+  ║                                                                  ║
+  ║  SEO WORDPRESS                                                   ║
+  ║  • Plugin: Rank Math Pro o Yoast SEO Premium                    ║
+  ║  • Schema AboutPage già incluso nel JSON-LD — in Rank Math      ║
+  ║    selezionare "About Page" come tipo di pagina                  ║
+  ║  • OG image: creare Assets/og/og-about.jpg 1200×630px           ║
+  ║    e caricare in Rank Math → Social → Facebook Image            ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
 <!-- ═══ 01 · HERO ════════════════════════════════════════════════ -->
+<!-- DEV: Hero con immagine full-width — in Elementor: sezione 1 col,
+     background image cover, min-height 70vh, overlay dark 50%.
+     Testo sovrapposto con widget Heading + Text Editor. ★★ -->
 <section class="hero hero--medium">
   <div class="hero__bg">
     <div class="hero__bg-label">Immagine hero — laboratorio / archivio storico [1920×800]</div>
@@ -49,6 +169,9 @@
 </section>
 
 <!-- ═══ 02 · ORIGINE ═════════════════════════════════════════════ -->
+<!-- DEV: Layout 2 colonne testo+immagine — Elementor: Inner Section
+     2 col (7/5), widget Text Editor + Image. Caption sotto immagine
+     con widget Text. Nessun plugin aggiuntivo. ★ -->
 <section class="section section--lg">
   <div class="wrap">
     <div class="grid-7-5" style="gap:5rem;align-items:start;">
@@ -69,6 +192,10 @@
 </section>
 
 <!-- ═══ 03 · TIMELINE ════════════════════════════════════════════ -->
+<!-- DEV: Timeline verticale — plugin consigliato: "Premium Addons
+     Timeline Widget" o "The Events Calendar" (solo se date reali).
+     Alternativa low-code: ACF repeater field + PHP loop nel template.
+     Con Elementor: Loop Grid + CPT "Timeline" con ACF. ★★★ -->
 <section class="section band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);">
   <div class="wrap--narrow">
     <div style="text-align:center;margin-bottom:3.5rem;">
@@ -96,6 +223,10 @@
 </section>
 
 <!-- ═══ 04 · ARCHIVIO E MEMORIA ══════════════════════════════════ -->
+<!-- DEV: Griglia immagini 2×2 con offset — Elementor Image Gallery
+     widget o Media Gallery nativo WP. Sfalsamento verticale via
+     margin-top negativo replicabile con Advanced > Custom CSS.
+     ⚠ Contenuto archivio da completare con la cliente. ★ -->
 <section class="section section--lg">
   <div class="wrap">
     <div class="grid-5-7" style="gap:5rem;align-items:center;">
@@ -116,6 +247,10 @@
 </section>
 
 <!-- ═══ 05 · MILANO COME RADICE — citazione full width ═══════════ -->
+<!-- DEV: Sezione immagine full-width con citazione overlay.
+     Elementor: sezione 1 col stretch-width, background image cover,
+     overlay rgba via Advanced > Background Overlay. Widget Text
+     Editor centrato con stile quote. ★ -->
 <section class="section" style="padding:0;">
   <div style="position:relative;overflow:hidden;">
     <div class="img-ph" style="height:60vh;min-height:380px;">
@@ -128,6 +263,9 @@
 </section>
 
 <!-- ═══ 06 · CTA ═══════════════════════════════════════════════════ -->
+<!-- DEV: CTA band con due pulsanti — Elementor: sezione band-surface
+     (background #f4f4f4), widget Heading + 2× Button affiancati.
+     Nessun plugin. ★ -->
 <section class="section band--surface" style="border-top:1px solid var(--wf-border);">
   <div class="wrap" style="text-align:center;">
     <h2 class="t-h2 fade" style="margin-bottom:2rem;">Il gesto continua.</h2>

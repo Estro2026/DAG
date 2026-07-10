@@ -3,8 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAG Gioielli | Wireframe — Contatti</title>
+  <title>Contatti — DAG Gioielli | Richiedi Informazioni o Diventa Rivenditore</title>
+  <meta name="description" content="Contatta DAG Gioielli per informazioni sui gioielli, richieste da boutique o collaborazioni press. Rispondiamo a ogni richiesta con cura.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.daggioielli.it/contact.html">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Contatti — DAG Gioielli">
+  <meta property="og:description" content="Contatta DAG Gioielli per informazioni, richieste da boutique o collaborazioni press.">
+  <meta property="og:image"       content="https://www.daggioielli.it/Assets/og/og-contact.jpg">
+  <meta property="og:url"         content="https://www.daggioielli.it/contact.html">
+  <meta property="og:locale"      content="it_IT">
+  <meta property="og:site_name"   content="DAG Gioielli">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Contatti — DAG Gioielli">
+  <meta name="twitter:description" content="Contatta DAG Gioielli: clienti, boutique o press.">
+  <meta name="twitter:image"       content="https://www.daggioielli.it/Assets/og/og-contact.jpg">
+
   <link rel="stylesheet" href="css/wireframe.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.daggioielli.it/#organization", "name": "DAG Gioielli", "url": "https://www.daggioielli.it", "email": "info@daggioielli.it" },
+      {
+        "@type": "ContactPage",
+        "@id": "https://www.daggioielli.it/contact.html",
+        "url": "https://www.daggioielli.it/contact.html",
+        "name": "Contatti — DAG Gioielli",
+        "description": "Contatta DAG Gioielli per informazioni sui gioielli, richieste da boutique o collaborazioni press.",
+        "publisher": { "@id": "https://www.daggioielli.it/#organization" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -35,6 +69,87 @@
 
 <main style="padding-top:var(--header-h);">
 
+<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
+<div class="dev-panel" id="devPanel">
+  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
+    <span class="dev-panel__title">⚙ Dev Notes — contact.html (Contatti)</span>
+    <span style="display:flex;align-items:center;gap:1.25rem;">
+      <span class="dev-panel__effort">★★★★ Effort alto</span>
+      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">Fluent Forms Pro</span>
+      <span class="dev-panel__pill">GDPR</span>
+    </span>
+    <span class="dev-panel__toggle">▾</span>
+  </div>
+  <div class="dev-panel__body">
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">SEO</p>
+      <ul class="dev-panel__list">
+        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
+        <li class="ok">JSON-LD: ContactPage + Organization ✓</li>
+        <li class="warn">Creare Assets/og/og-contact.jpg (1200×630px)</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Elementor / WordPress — Form</p>
+      <ul class="dev-panel__list">
+        <li class="warn">3 form condizionali (Cliente / Boutique / Press): Fluent Forms Pro ★★★★</li>
+        <li>Alternativa: WPForms Pro o CF7 + "Conditional Fields for CF7" ★★★</li>
+        <li>Switch tipo richiedente (JS tab): incollare in widget HTML Elementor</li>
+        <li>Pre-selezione ?type=boutique: mantenere logica JS in produzione</li>
+        <li>Invio email: plugin WP Mail SMTP (gratuito, obbligatorio)</li>
+        <li>CRM opzionale: Fluent CRM o HubSpot WP Plugin</li>
+        <li class="warn">GDPR: link Privacy Policy reale (creare pagina in WP)</li>
+        <li class="warn">Plugin cookie consent: Complianz GDPR o CookieYes</li>
+        <li>Thank you message: usare conferma integrata Fluent Forms (non JS)</li>
+      </ul>
+    </div>
+    <div class="dev-panel__section">
+      <p class="dev-panel__section-title">Assets necessari</p>
+      <ul class="dev-panel__list">
+        <li>1 foto landscape 4:3 (laboratorio / packaging)</li>
+        <li>Pagina Privacy Policy (da creare in WordPress)</li>
+        <li>Indirizzo laboratorio definitivo (da confermare con la cliente)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  DEV NOTES — contact.html                                       ║
+  ║  Effort totale pagina: ★★★★ (alto — 3 form dinamici +          ║
+  ║  switch tipo richiedente + validazione + GDPR)                  ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║  WORDPRESS / ELEMENTOR                                          ║
+  ║  • Form multi-tipo (Cliente / Boutique / Press):                ║
+  ║    Plugin CONSIGLIATO: "Fluent Forms Pro" o "WPForms Pro"       ║
+  ║    (supportano form condizionali su un'unica pagina). ★★★       ║
+  ║    Alternativa: "Contact Form 7" con plugin aggiuntivo          ║
+  ║    "Conditional Fields for CF7". ★★★                            ║
+  ║  • Switch tipo richiedente (3 button tabs): il JS inline        ║
+  ║    presente funziona — in Elementor incollare in widget         ║
+  ║    HTML oppure in Snippets personalizzati WP.                   ║
+  ║  • Pre-selezione via URL (?type=boutique): già implementata     ║
+  ║    nel JS — mantenere la logica in produzione.                  ║
+  ║  • Invio form: integrare con servizi email:                     ║
+  ║    - SMTP: plugin WP Mail SMTP (gratuito)                       ║
+  ║    - CRM: Fluent CRM o HubSpot WP Plugin                       ║
+  ║    - Notifica WhatsApp: Twilio API (avanzato) ★★★★             ║
+  ║  • GDPR / Privacy: ⚠ il checkbox "Privacy Policy" deve        ║
+  ║    linkare alla pagina Privacy reale (da creare in WP).         ║
+  ║    Plugin: "Complianz GDPR" o "CookieYes".                     ║
+  ║  • Messaggio di successo: attualmente gestito via JS            ║
+  ║    (display:none → display:block). In Fluent Forms: usare       ║
+  ║    "Thank You Page" o messaggio di conferma integrato.          ║
+  ║  • Info contatto sinistra: widget Text Editor + widget          ║
+  ║    Image per foto laboratorio. ★                                ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<!-- DEV: Layout 2 colonne (5/7) — sinistra info brand, destra form.
+     In Elementor: Inner Section 2 col, widget Text Editor a sinistra,
+     widget Form (Fluent Forms / WPForms shortcode) a destra. ★★★ -->
 <section class="section section--lg">
   <div class="wrap">
     <div class="grid-5-7" style="gap:6rem;align-items:start;">
