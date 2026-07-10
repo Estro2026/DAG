@@ -188,84 +188,114 @@ img { display: block; max-width: 100%; }
 .rule--center { margin-inline: auto; }
 
 /* ── HEADER ─────────────────────────────── */
+/* ══════════════════════════════════════════
+   SPLIT NAV EDITORIALE
+   Logo centrato, 3 link sx + 3 link dx.
+   Pattern Loewe / The Row — niente box,
+   niente CTA button in header.
+   ══════════════════════════════════════════ */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--header-h);
   z-index: 200;
-  display: flex;
-  align-items: center;
-  background: rgba(247,247,247,0.92);
-  backdrop-filter: blur(10px);
+  background: #fff;
   border-bottom: 1px solid var(--wf-border);
   transition: background var(--transition), border-color var(--transition);
 }
 .site-header.on-hero {
-  background: transparent;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.38) 0%, transparent 100%);
   border-color: transparent;
 }
-.site-header.on-hero .header-logo-box,
+.site-header.on-hero .header-wordmark,
 .site-header.on-hero .nav-link,
-.site-header.on-hero .header-cta {
-  opacity: 0.85;
+.site-header.on-hero .nav-cta {
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.35);
 }
+.site-header.on-hero .nav-link:hover { color: rgba(255,255,255,0.7); }
+.site-header.on-hero .nav-link.active {
+  color: #fff;
+  border-color: rgba(255,255,255,0.85);
+}
+
+/* 3-col grid: left nav | wordmark | right nav */
 .header-inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  height: 100%;
   padding-inline: var(--pad);
-  gap: 2rem;
 }
 
-/* Logo placeholder */
-.header-logo-box {
-  height: 32px;
-  width: 80px;
-  background: var(--wf-img);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--wf-border);
-  flex-shrink: 0;
-}
-.header-logo-box span {
+/* Wordmark centrato — nessun box */
+.header-wordmark {
   font-family: var(--font-serif);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--wf-accent);
-}
-
-/* Nav */
-.header-nav { display: flex; gap: 2rem; align-items: center; }
-.nav-link {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--wf-text);
-  padding-bottom: 2px;
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--transition), color var(--transition);
+  text-decoration: none;
+  padding-right: 0.32em; /* compensa letter-spacing finale */
+  justify-self: center;
+  transition: color var(--transition), opacity var(--transition);
 }
-.nav-link:hover, .nav-link.active { border-color: var(--wf-text); }
+.header-wordmark:hover { opacity: 0.6; }
 
-/* Header CTA */
-.header-cta {
+/* Nav split — sinistra e destra */
+.nav-split {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+.nav-split--left  { justify-content: flex-start; }
+.nav-split--right { justify-content: flex-end; }
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: #4A4A4A;
+  white-space: nowrap;
+  transition: color 0.22s ease;
+}
+
+/* hover: nero pieno */
+.nav-link:hover  { color: #000; }
+
+/* click: stesso nero dell'hover */
+.nav-link:active { color: #000; transition: none; }
+
+/* pagina corrente: solo colore, nessuna decorazione */
+.nav-link.active { color: #000; }
+
+/* on-hero */
+.site-header.on-hero .nav-link        { color: rgba(255,255,255,0.62); }
+.site-header.on-hero .nav-link:hover  { color: #fff; }
+.site-header.on-hero .nav-link:active { color: #fff; }
+.site-header.on-hero .nav-link.active { color: #fff; }
+
+/* Link "Trova rivenditore" — discreto, nella nav destra */
+.nav-cta {
+  font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.55rem 1.2rem;
-  border: 1px solid var(--wf-text);
-  color: var(--wf-text);
+  color: var(--wf-muted);
   white-space: nowrap;
-  transition: background var(--transition), color var(--transition);
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
 }
-.header-cta:hover { background: var(--wf-text); color: var(--wf-bg); }
+.nav-cta:hover {
+  color: var(--wf-text);
+  border-color: var(--wf-text);
+}
 
-/* Hamburger */
+/* Hamburger — solo mobile */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -274,8 +304,16 @@ img { display: block; max-width: 100%; }
   border: none;
   cursor: pointer;
   padding: 6px;
+  grid-column: 3;
+  justify-self: end;
 }
-.hamburger span { display: block; width: 22px; height: 1px; background: var(--wf-text); }
+.hamburger span { display: block; width: 20px; height: 1px; background: var(--wf-text); transition: background var(--transition); }
+.site-header.on-hero .hamburger span { background: #fff; }
+
+/* retrocompatibilità — nasconde il vecchio logo box se rimasto */
+.header-logo-box { display: none; }
+.header-nav { display: none; }
+.header-cta { display: none; }
 
 /* ── MOBILE DRAWER ──────────────────────── */
 .drawer-overlay {
@@ -1175,8 +1213,11 @@ img { display: block; max-width: 100%; }
   .grid-2, .grid-5-7, .grid-7-5 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .header-nav, .header-cta { display: none; }
+  .nav-split { display: none; }
   .hamburger { display: flex; }
+  /* su mobile: wordmark centrato, hamburger a destra */
+  .header-inner { grid-template-columns: 1fr auto 1fr; }
+  .header-wordmark { justify-self: center; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .event-card { grid-template-columns: 1fr; }
   .store-finder { grid-template-columns: 1fr; grid-template-rows: auto minmax(300px, 40vh); }
