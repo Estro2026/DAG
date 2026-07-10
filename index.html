@@ -218,8 +218,8 @@
     <h1 class="t-h1 fade">Gioielli tessili,<br>nati a mano<br>nel laboratorio<br>milanese.</h1>
     <p class="t-body-lg fade fade-d1" style="max-width:460px;">DAG intreccia pietre, argento e filo in gioielli contemporanei realizzati su richiesta.</p>
     <div class="btn-row fade fade-d2">
-      <a href="about.html"  class="btn btn--outline-inv">Scopri l'universo DAG</a>
-      <a href="stores.html" class="btn btn--outline-inv">Trova un rivenditore</a>
+      <a href="collections.html" class="btn btn--outline-inv">Esplora le collezioni</a>
+      <a href="about.html"       class="btn btn--outline-inv">Scopri l'universo DAG</a>
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true"><span>Scorri</span></div>
@@ -244,7 +244,81 @@
   </div>
 </section>
 
-<!-- ═══ 03 · GRIGLIA EDITORIALE ══════════════════════════════════ -->
+<!-- ═══ 03 · PRODOTTI — predisposizione e-commerce ══════════════════
+     Struttura product grid: in fase shop aggiungere prezzo + CTA acquisto.
+     Ora funziona come catalogo editoriale che porta a collections.html.
+  ════════════════════════════════════════════════════════════════════ -->
+<section class="section section--lg" style="border-top:1px solid var(--wf-border);">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <span class="t-label fade">Le collezioni</span>
+        <h2 class="t-h2 fade fade-d1">I gioielli DAG.</h2>
+      </div>
+      <a href="collections.html" class="btn btn--outline fade fade-d1">Vedi tutte le collezioni</a>
+    </div>
+
+    <div class="grid-4 products-grid">
+
+      <!-- Card 1 — Bracciale -->
+      <div class="product-card fade">
+        <a href="collections.html#muamara-jaipur" class="product-card__img" aria-label="Scopri i bracciali DAG">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale — scatto editoriale<br>lifestyle o gioiello indossato</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Bracciale</p>
+          <p class="product-card__ref">Muamara Jaipur</p>
+          <!-- slot prezzo — attivare in fase e-commerce -->
+          <!-- <p class="product-card__price">€ —</p> -->
+          <a href="collections.html#muamara-jaipur" class="btn--ghost product-card__cta">Scopri →</a>
+          <!-- CTA e-commerce: sostituire con <button class="btn btn--filled">Acquista</button> -->
+        </div>
+      </div>
+
+      <!-- Card 2 — Orecchini -->
+      <div class="product-card fade fade-d1">
+        <a href="collections.html#muamara-star" class="product-card__img" aria-label="Scopri gli orecchini DAG">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Orecchini — scatto editoriale<br>dettaglio o indossato</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Orecchini</p>
+          <p class="product-card__ref">Muamara Star</p>
+          <!-- <p class="product-card__price">€ —</p> -->
+          <a href="collections.html#muamara-star" class="btn--ghost product-card__cta">Scopri →</a>
+        </div>
+      </div>
+
+      <!-- Card 3 — Collana -->
+      <div class="product-card fade fade-d2">
+        <a href="collections.html#muamara-precious" class="product-card__img" aria-label="Scopri le collane DAG">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Collana — scatto editoriale<br>su superficie neutra</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Collana</p>
+          <p class="product-card__ref">Muamara Precious</p>
+          <!-- <p class="product-card__price">€ —</p> -->
+          <a href="collections.html#muamara-precious" class="btn--ghost product-card__cta">Scopri →</a>
+        </div>
+      </div>
+
+      <!-- Card 4 — Bracciale -->
+      <div class="product-card fade fade-d3">
+        <a href="collections.html#muamara-holi" class="product-card__img" aria-label="Scopri i bracciali DAG">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale — scatto editoriale<br>ambientato laboratorio</span></div>
+        </a>
+        <div class="product-card__body">
+          <p class="product-card__category">Bracciale</p>
+          <p class="product-card__ref">Muamara Holi</p>
+          <!-- <p class="product-card__price">€ —</p> -->
+          <a href="collections.html#muamara-holi" class="btn--ghost product-card__cta">Scopri →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 04 · GRIGLIA EDITORIALE ══════════════════════════════════ -->
 <!-- DEV: CSS Grid editoriale 5/3/4 col con una card su 2 righe.
      ⚠ Non replicabile nativamente in Elementor. Usare widget HTML
      con grid CSS custom, oppure Elementor Pro > Container con
@@ -302,106 +376,6 @@
   </div>
 </section>
 
-<!-- ═══ 05 · COLLECTION INDEX ══════════════════════════════════════
-     DEV: Indice editoriale con hover crossfade immagine.
-     ⚠ Richiede CSS + JS custom (vedere wireframe.css e script inline).
-     In WordPress: widget HTML in Elementor + enqueue script custom
-     nel tema child (functions.php wp_enqueue_script).
-     Plugin alternativo: JetTabs con trigger hover. ★★★★
-     Layout: indice verticale a sinistra + immagine a destra.
-     Hover su ogni nome → crossfade immagine + aggiornamento meta.
-     Pattern alto-moda: nessun bottone aggressivo, nessun prezzo.
-  ══════════════════════════════════════════════════════════════════ -->
-<section class="ci-section fade" aria-label="Collezioni in evidenza">
-  <div class="wrap">
-    <div class="ci-layout">
-
-      <!-- ── Sinistra: indice ─────────────────────────────────── -->
-      <div class="ci-left">
-        <span class="t-label">Collezioni</span>
-        <h2 class="ci-headline">Ogni modello<br>ha una voce propria.</h2>
-
-        <ul class="ci-list" id="ciList" role="list">
-
-          <li class="ci-item active" data-ci="0" tabindex="0"
-              aria-label="Muamara Jaipur — Iconico · leggero · luminoso">
-            <span class="ci-n" aria-hidden="true">01</span>
-            <span class="ci-name">Muamara Jaipur</span>
-            <span class="ci-arrow" aria-hidden="true">→</span>
-          </li>
-
-          <li class="ci-item" data-ci="1" tabindex="0"
-              aria-label="Muamara Star — Chic · elegante · charme">
-            <span class="ci-n" aria-hidden="true">02</span>
-            <span class="ci-name">Muamara Star</span>
-            <span class="ci-arrow" aria-hidden="true">→</span>
-          </li>
-
-          <li class="ci-item" data-ci="2" tabindex="0"
-              aria-label="Muamara Precious — Prezioso · raffinato · esclusivo">
-            <span class="ci-n" aria-hidden="true">03</span>
-            <span class="ci-name">Muamara Precious</span>
-            <span class="ci-arrow" aria-hidden="true">→</span>
-          </li>
-
-          <li class="ci-item" data-ci="3" tabindex="0"
-              aria-label="Muamara Holi — Ricamato · intreccio · senza tempo">
-            <span class="ci-n" aria-hidden="true">04</span>
-            <span class="ci-name">Muamara Holi</span>
-            <span class="ci-arrow" aria-hidden="true">→</span>
-          </li>
-
-        </ul>
-
-        <div class="ci-bottom">
-          <a href="collections.html" class="btn--ghost">Esplora tutte le collezioni →</a>
-        </div>
-      </div>
-
-      <!-- ── Destra: immagine + meta ──────────────────────────── -->
-      <div class="ci-right">
-
-        <!-- Stack di immagini sovrapposte; crossfade via JS -->
-        <div class="ci-img-stack" aria-live="polite" aria-atomic="true">
-
-          <div class="ci-img active" data-ci="0">
-            <div class="img-ph ar-3-4">
-              <span class="img-ph__label">Muamara Jaipur<br>ritratto editoriale [3:4]</span>
-            </div>
-          </div>
-
-          <div class="ci-img" data-ci="1">
-            <div class="img-ph ar-3-4">
-              <span class="img-ph__label">Muamara Star<br>ritratto editoriale [3:4]</span>
-            </div>
-          </div>
-
-          <div class="ci-img" data-ci="2">
-            <div class="img-ph ar-3-4">
-              <span class="img-ph__label">Muamara Precious<br>ritratto editoriale [3:4]</span>
-            </div>
-          </div>
-
-          <div class="ci-img" data-ci="3">
-            <div class="img-ph ar-3-4">
-              <span class="img-ph__label">Muamara Holi<br>ritratto editoriale [3:4]</span>
-            </div>
-          </div>
-
-        </div><!-- /stack -->
-
-        <!-- Meta: si aggiorna al cambio item -->
-        <div class="ci-meta">
-          <p class="ci-meta__badge" id="ciMetaBadge">Iconico</p>
-          <p class="ci-meta__words" id="ciMetaWords">leggero · luminoso · versatile</p>
-          <a href="collections.html" class="ci-meta__link" id="ciMetaLink"
-             aria-label="Scopri Muamara Jaipur">Scopri →</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ 06 · STILL LIFE EDITORIALE ════════════════════════════════ -->
 <!-- DEV: Sezione completamente custom — sfondo fotografico + PNG
@@ -432,36 +406,36 @@
   </div>
 
   <!-- ─ Gioiello 1: Muamara Jaipur — bracciale — centro-sinistra ─ -->
-  <div class="sl-piece" style="left:12%;top:36%;">
+  <a href="collections.html#muamara-jaipur" class="sl-piece" style="left:12%;top:36%;">
     <div class="sl-piece__img" style="width:178px;height:86px;">
       <span class="sl-piece__ph-label">Muamara Jaipur<br>bracciale scontornato</span>
     </div>
     <p class="sl-piece__name">Muamara Jaipur</p>
-  </div>
+  </a>
 
   <!-- ─ Gioiello 2: Muamara Star — orecchini — alto destra ─ -->
-  <div class="sl-piece" style="right:28%;top:13%;">
+  <a href="collections.html#muamara-star" class="sl-piece" style="right:28%;top:13%;">
     <div class="sl-piece__img" style="width:72px;height:148px;">
       <span class="sl-piece__ph-label">Muamara Star<br>orecchini scontornati</span>
     </div>
     <p class="sl-piece__name">Muamara Star</p>
-  </div>
+  </a>
 
   <!-- ─ Gioiello 3: Muamara Precious — collana — destra centrale ─ -->
-  <div class="sl-piece" style="right:11%;top:38%;">
+  <a href="collections.html#muamara-precious" class="sl-piece" style="right:11%;top:38%;">
     <div class="sl-piece__img" style="width:94px;height:188px;">
       <span class="sl-piece__ph-label">Muamara Precious<br>collana scontornata</span>
     </div>
     <p class="sl-piece__name">Muamara Precious</p>
-  </div>
+  </a>
 
   <!-- ─ Gioiello 4: Muamara Holi — bracciale — basso centro ─ -->
-  <div class="sl-piece" style="left:40%;bottom:19%;">
+  <a href="collections.html#muamara-holi" class="sl-piece" style="left:40%;bottom:19%;">
     <div class="sl-piece__img" style="width:196px;height:78px;">
       <span class="sl-piece__ph-label">Muamara Holi<br>bracciale scontornato</span>
     </div>
     <p class="sl-piece__name">Muamara Holi</p>
-  </div>
+  </a>
 
   <!-- ─ Caption editoriale — appare per ultima ─ -->
   <div class="sl-piece sl-caption" style="left:var(--pad);bottom:2.75rem;">
@@ -578,69 +552,21 @@
     <div class="footer-col">
       <p class="footer-col-title">Contatti</p>
       <a href="mailto:info@daggioielli.it">info@daggioielli.it</a>
-      <a href="#">Instagram</a>
+      <a href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener">Instagram</a>
       <span class="wf-note">Telefono: da confermare</span>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2024 DAG Gioielli. Tutti i diritti riservati.</p>
     <div style="display:flex;gap:1.5rem;">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Cookie Policy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookie.html">Cookie Policy</a>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
 <script src="js/hotspots.js"></script>
-<script>
-/* ── Collection index — hover/focus/click to switch ── */
-(function () {
-  var items   = Array.from(document.querySelectorAll('.ci-item'));
-  var imgs    = Array.from(document.querySelectorAll('.ci-img'));
-  var badge   = document.getElementById('ciMetaBadge');
-  var words   = document.getElementById('ciMetaWords');
-  var link    = document.getElementById('ciMetaLink');
-  var meta    = document.querySelector('.ci-meta');
-
-  var DATA = [
-    { badge: 'Iconico',   words: 'leggero · luminoso · versatile',      href: 'collections.html', name: 'Muamara Jaipur' },
-    { badge: 'Iconico',   words: 'chic · elegante · charme',             href: 'collections.html', name: 'Muamara Star' },
-    { badge: 'Precious',  words: 'prezioso · raffinato · esclusivo',     href: 'collections.html', name: 'Muamara Precious' },
-    { badge: 'Essentials',words: 'ricamato · intreccio · senza tempo',   href: 'collections.html', name: 'Muamara Holi' },
-  ];
-
-  var current = 0;
-
-  function activate(idx) {
-    if (idx === current) return;
-    current = idx;
-
-    /* Lista */
-    items.forEach(function (el, i) { el.classList.toggle('active', i === idx); });
-
-    /* Immagini */
-    imgs.forEach(function (el, i)  { el.classList.toggle('active', i === idx); });
-
-    /* Meta — breve flash per il cambio testo */
-    if (meta) meta.classList.add('switching');
-    setTimeout(function () {
-      if (badge) badge.textContent = DATA[idx].badge;
-      if (words) words.textContent = DATA[idx].words;
-      if (link)  { link.href = DATA[idx].href; link.setAttribute('aria-label', 'Scopri ' + DATA[idx].name); }
-      if (meta)  meta.classList.remove('switching');
-    }, 160);
-  }
-
-  items.forEach(function (item, i) {
-    item.addEventListener('mouseenter', function () { activate(i); });
-    item.addEventListener('focus',      function () { activate(i); });
-    item.addEventListener('keydown',    function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(i); }
-    });
-  });
-})();
-</script>
 <script>
 /* Still life — rivelazione sequenziale al primo scroll */
 (function () {
