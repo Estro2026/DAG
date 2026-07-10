@@ -1320,6 +1320,61 @@ body.vetrina .vetrina-only { display: block; }
 .site-header.on-hero .nav-cart:hover { color: #fff; }
 .site-header.on-hero .nav-cart__count { background: rgba(255,255,255,0.9); color: #1a1a1a; }
 
+/* ── Icona account nav ───────────────────────────────────────────── */
+.nav-account {
+  display: flex;
+  align-items: center;
+  color: var(--wf-text);
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+.nav-account:hover { color: #000; }
+.nav-account svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.4; }
+.site-header.on-hero .nav-account { color: rgba(255,255,255,0.62); }
+.site-header.on-hero .nav-account:hover { color: #fff; }
+
+/* ── Wishlist button (card overlay + PDP) ────────────────────────── */
+.wishlist-btn {
+  background: rgba(255,255,255,0.88);
+  border: none;
+  border-radius: 50%;
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+.wishlist-btn:hover { background: #fff; transform: scale(1.08); }
+.wishlist-btn svg { width: 16px; height: 16px; stroke: var(--wf-text); fill: none; stroke-width: 1.5; }
+.wishlist-btn.active svg { fill: var(--wf-text); }
+
+/* overlay sull'immagine carta prodotto */
+.product-card__img { position: relative; }
+.product-card__wishlist {
+  position: absolute;
+  top: 10px; right: 10px;
+  z-index: 2;
+}
+
+/* wishlist come link secondario nel PDP */
+.btn--wishlist {
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  width: 100%;
+  padding: .75rem;
+  font-family: var(--font-sans);
+  font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wf-text);
+  background: transparent;
+  border: 1px solid var(--wf-border);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.22s ease, color 0.22s ease;
+  text-decoration: none;
+}
+.btn--wishlist:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
+.btn--wishlist svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.5; flex-shrink: 0; }
+
 /* ── Product card ────────────────────────────────────────────────── */
 .product-card {
   display: flex;

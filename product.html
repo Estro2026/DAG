@@ -20,6 +20,9 @@
     <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
       <a href="stores.html"  class="nav-link">Stores</a>
       <a href="contact.html" class="nav-link">Contatti</a>
+      <a href="account.html" class="nav-account" aria-label="Area riservata">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
       <a href="cart.html" class="nav-cart" aria-label="Carrello — 0 articoli">
         <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         <span class="nav-cart__count">0</span>
@@ -38,6 +41,7 @@
     <a href="shop.html">Shop</a>
     <a href="stores.html">Stores</a>
     <a href="contact.html">Contatti</a>
+    <a href="account.html">Account</a>
   </div>
 </nav>
 
@@ -148,6 +152,11 @@
         <!-- CTA Aggiungi al carrello -->
         <button class="btn btn--filled" style="width:100%;padding:1rem;font-size:13px;letter-spacing:0.08em;margin-bottom:1rem;">Aggiungi al carrello</button>
 
+        <button class="btn--wishlist" aria-label="Salva in wishlist">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Salva in wishlist
+        </button>
+
         <!-- PayPal button placeholder -->
         <div class="img-ph" style="height:45px;margin-bottom:1.25rem;">
           <span class="img-ph__label" style="font-size:10px;">PayPal button — WooCommerce PayPal Payments plugin</span>
@@ -220,9 +229,14 @@
     </div>
     <div class="grid-3" style="gap:2rem;">
       <div class="product-card fade">
-        <a href="product.html?ref=muamara-star" class="product-card__img">
-          <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Star</span></div>
-        </a>
+        <div style="position:relative;">
+          <a href="product.html?ref=muamara-star" class="product-card__img">
+            <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Star</span></div>
+          </a>
+          <button class="wishlist-btn product-card__wishlist" aria-label="Salva in wishlist" title="Salva in wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
         <div class="product-card__body">
           <p class="product-card__category">Orecchini</p>
           <p class="product-card__name">Muamara Star</p>
@@ -231,9 +245,14 @@
         </div>
       </div>
       <div class="product-card fade fade-d1">
-        <a href="product.html?ref=muamara-holi" class="product-card__img">
-          <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Holi</span></div>
-        </a>
+        <div style="position:relative;">
+          <a href="product.html?ref=muamara-holi" class="product-card__img">
+            <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Holi</span></div>
+          </a>
+          <button class="wishlist-btn product-card__wishlist" aria-label="Salva in wishlist" title="Salva in wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
         <div class="product-card__body">
           <p class="product-card__category">Bracciale</p>
           <p class="product-card__name">Muamara Holi</p>
@@ -242,9 +261,14 @@
         </div>
       </div>
       <div class="product-card fade fade-d2">
-        <a href="product.html?ref=muamara-precious" class="product-card__img">
-          <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Precious</span></div>
-        </a>
+        <div style="position:relative;">
+          <a href="product.html?ref=muamara-precious" class="product-card__img">
+            <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Precious</span></div>
+          </a>
+          <button class="wishlist-btn product-card__wishlist" aria-label="Salva in wishlist" title="Salva in wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
         <div class="product-card__body">
           <p class="product-card__category">Collana</p>
           <p class="product-card__name">Muamara Precious</p>
