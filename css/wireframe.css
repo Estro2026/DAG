@@ -73,16 +73,7 @@ img { display: block; max-width: 100%; }
   gap: 0.5rem;
   width: 100%;
 }
-.img-ph::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, transparent 48%, var(--wf-img-dark) 48%, var(--wf-img-dark) 52%, transparent 52%),
-    linear-gradient(45deg, transparent 48%, var(--wf-img-dark) 48%, var(--wf-img-dark) 52%, transparent 52%);
-  background-size: 24px 24px;
-  opacity: 0.35;
-}
+.img-ph::before { content: none; }
 .img-ph__label {
   position: relative;
   font-family: var(--font-sans);
