@@ -68,9 +68,38 @@ function wlToast(msg) {
 function wlBuildPopover(btn, ref, cardData) {
   document.querySelectorAll('.wl-popover').forEach(p => p.remove());
   const data = wlLoad();
+  const isInAny = wlHas(data, ref);
   const pop = document.createElement('div');
   pop.className = 'wl-popover';
-  pop.style.cssText = 'position:absolute;z-index:100;background:#fff;border:1px solid #cacaca;border-radius:3px;padding:.5rem 0;min-width:180px;box-shadow:0 4px 16px rgba(0,0,0,.12);font-family:var(--font-sans);font-size:12.5px;';
+  pop.style.cssText = 'position:absolute;z-index:100;background:#fff;border:1px solid #cacaca;border-radius:3px;padding:.5rem 0;min-width:190px;box-shadow:0 4px 16px rgba(0,0,0,.12);font-family:var(--font-sans);font-size:12.5px;';
+
+  /* ── Se già salvato: mostra "Rimuovi dalla wishlist" in cima ── */
+  if (isInAny) {
+    const removeRow = document.createElement('button');
+    removeRow.style.cssText = 'display:flex;align-items:center;gap:.6rem;width:100%;padding:.55rem 1rem;background:none;border:none;cursor:pointer;color:#b94040;text-align:left;transition:background .15s;font-weight:500;';
+    removeRow.onmouseenter = () => removeRow.style.background = '#fff5f5';
+    removeRow.onmouseleave = () => removeRow.style.background = 'none';
+    removeRow.innerHTML = `<svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg> Rimuovi dalla wishlist`;
+    removeRow.onclick = (e) => {
+      e.stopPropagation();
+      const d = wlLoad();
+      d.lists.forEach(l => { l.items = l.items.filter(i => i.ref !== ref); });
+      wlSave(d);
+      wlToast('Rimosso dalla wishlist');
+      wlUpdateBtns();
+      pop.remove();
+    };
+    pop.appendChild(removeRow);
+
+    const divTop = document.createElement('div');
+    divTop.style.cssText = 'border-top:1px solid #efefef;margin:.4rem 0;';
+    pop.appendChild(divTop);
+
+    const moveLabel = document.createElement('p');
+    moveLabel.style.cssText = 'padding:.2rem 1rem .3rem;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#9b9b9b;';
+    moveLabel.textContent = 'Sposta in';
+    pop.appendChild(moveLabel);
+  }
 
   data.lists.forEach(list => {
     const inList = wlListHas(list, ref);
@@ -78,7 +107,7 @@ function wlBuildPopover(btn, ref, cardData) {
     row.style.cssText = 'display:flex;align-items:center;gap:.6rem;width:100%;padding:.5rem 1rem;background:none;border:none;cursor:pointer;color:#1a1a1a;text-align:left;transition:background .15s;';
     row.onmouseenter = () => row.style.background = '#f5f5f5';
     row.onmouseleave = () => row.style.background = 'none';
-    row.innerHTML = `<span style="font-size:14px;line-height:1;">${inList ? '♥' : '♡'}</span> ${list.name}`;
+    row.innerHTML = `<span style="font-size:14px;line-height:1;color:${inList?'#1a1a1a':'#9b9b9b'}">${inList ? '♥' : '♡'}</span> ${list.name}`;
     row.onclick = (e) => {
       e.stopPropagation();
       const d = wlLoad();
