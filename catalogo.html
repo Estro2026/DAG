@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scarica il catalogo — DAG Gioielli</title>
+  <meta name="description" content="Scarica il catalogo delle collezioni DAG Gioielli. Compila il form per ricevere il catalogo Stones, Textured o il catalogo completo.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
+      <a href="about.html"       class="nav-link">About</a>
+      <a href="philosophy.html"  class="nav-link">Philosophy</a>
+      <a href="collections.html" class="nav-link">Collezioni</a>
+    </nav>
+    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
+    <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
+      <a href="stores.html"  class="nav-link">Stores</a>
+      <a href="events.html"  class="nav-link">Eventi</a>
+      <a href="contact.html" class="nav-link">Contatti</a>
+    </nav>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="drawer-overlay"></div>
+<nav class="mobile-drawer">
+  <button class="drawer-close">✕</button>
+  <div class="drawer-nav">
+    <a href="about.html">About</a><a href="philosophy.html">Philosophy</a>
+    <a href="collections.html">Collezioni</a><a href="stores.html">Stores</a>
+    <a href="events.html">Eventi</a><a href="contact.html">Contatti</a>
+  </div>
+</nav>
+
+<main style="padding-top:var(--header-h);">
+
+<section class="section section--lg" style="padding-top:calc(var(--header-h) + 5rem);padding-bottom:4rem;">
+  <div class="wrap" style="max-width:680px;">
+
+    <span class="t-label fade">Catalogo</span>
+    <h1 class="t-h1 fade fade-d1" style="margin-bottom:.75rem;">Scarica il catalogo.</h1>
+    <p class="t-body-lg fade fade-d2" style="margin-bottom:3rem;">Compila il form per ricevere il catalogo DAG. Puoi scegliere una singola collezione o scaricare il catalogo completo.</p>
+
+    <!-- FORM CATALOGO -->
+    <form id="form-catalogo" novalidate aria-label="Form richiesta catalogo" class="fade fade-d3">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="cat-nome">Nome</label>
+          <input type="text" id="cat-nome" class="form-input" autocomplete="given-name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cat-cogn">Cognome</label>
+          <input type="text" id="cat-cogn" class="form-input" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" for="cat-email">Email</label>
+          <input type="email" id="cat-email" class="form-input" autocomplete="email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cat-tel">Telefono <span style="color:var(--wf-ghost);font-size:11px;">(facoltativo)</span></label>
+          <input type="tel" id="cat-tel" class="form-input" autocomplete="tel">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cat-azienda">Azienda <span style="color:var(--wf-ghost);font-size:11px;">(facoltativo)</span></label>
+        <input type="text" id="cat-azienda" class="form-input" autocomplete="organization">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cat-catalogo">Catalogo richiesto</label>
+        <select id="cat-catalogo" class="form-select" required>
+          <option value="" disabled selected>Seleziona</option>
+          <option value="stones">Collezione Stones</option>
+          <option value="textured">Collezione Textured</option>
+          <option value="completo">Catalogo completo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-check">
+          <input type="checkbox" id="cat-privacy" required>
+          <span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>.</span>
+        </label>
+      </div>
+      <button type="submit" class="btn btn--filled" style="width:100%;padding:1rem;">Richiedi il catalogo</button>
+      <p class="form-note" style="margin-top:.75rem;">Riceverai il link di download all'indirizzo email indicato.</p>
+    </form>
+
+    <!-- STATO: GRAZIE -->
+    <div id="cat-thankyou" style="display:none;text-align:center;padding:3rem 0;">
+      <p class="t-h2" style="margin-bottom:1rem;">Grazie.</p>
+      <p class="t-body-lg" style="margin-bottom:2rem;">Il catalogo è pronto per il download.</p>
+      <a id="cat-download-link" href="#" download class="btn btn--filled" style="padding:.9rem 2.5rem;">
+        Scarica il catalogo
+      </a>
+      <p class="form-note" style="margin-top:1.5rem;"><span class="wf-note">In produzione: il link punta al PDF reale su server o CDN.</span></p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo-ph"><span>DAG</span></div>
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
+      <a href="contact.html?type=boutique" class="footer-cta-b">Sei una boutique? Contattaci</a>
+    </div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="collections.html">Collezioni</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Brand</p><a href="events.html">Eventi</a><a href="contact.html">Contatti</a><a href="catalogo.html">Scarica il catalogo</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><a href="#">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 DAG Gioielli.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="#">Privacy</a><a href="#">Cookie</a></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+  const form = document.getElementById('form-catalogo');
+  const thankyou = document.getElementById('cat-thankyou');
+  const dlLink = document.getElementById('cat-download-link');
+
+  /* mappa catalogo → file placeholder (sostituire con URL PDF reali) */
+  const files = {
+    stones:   'assets/catalogo-stones.pdf',
+    textured: 'assets/catalogo-textured.pdf',
+    completo: 'assets/catalogo-dag-completo.pdf',
+  };
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    const cat = document.getElementById('cat-catalogo').value;
+    dlLink.href = files[cat] || '#';
+    dlLink.download = (files[cat] || 'catalogo-dag').split('/').pop();
+
+    form.style.display = 'none';
+    thankyou.style.display = 'block';
+    thankyou.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+</script>
+<script src="js/version-switcher.js"></script>
+</body>
+</html>
