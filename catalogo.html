@@ -48,30 +48,42 @@
     <p class="t-body-lg fade fade-d2" style="margin-bottom:3rem;">Compila il form per ricevere il catalogo DAG. Puoi scegliere una singola collezione o scaricare il catalogo completo.</p>
 
     <!-- FORM CATALOGO -->
+    <style>
+      .field-error { border-color: #c0392b !important; }
+      .error-msg { display: none; color: #c0392b; font-size: 11px; margin-top: .3rem; }
+      .error-msg.visible { display: block; }
+      .form-check.field-error { outline: 1px solid #c0392b; border-radius: 3px; padding: 4px; }
+    </style>
+
     <form id="form-catalogo" novalidate aria-label="Form richiesta catalogo" class="fade fade-d3">
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label" for="cat-nome">Nome</label>
           <input type="text" id="cat-nome" class="form-input" autocomplete="given-name" required>
+          <span class="error-msg" id="err-nome">Inserisci il tuo nome.</span>
         </div>
         <div class="form-group">
           <label class="form-label" for="cat-cogn">Cognome</label>
           <input type="text" id="cat-cogn" class="form-input" autocomplete="family-name" required>
+          <span class="error-msg" id="err-cogn">Inserisci il tuo cognome.</span>
         </div>
       </div>
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label" for="cat-email">Email</label>
           <input type="email" id="cat-email" class="form-input" autocomplete="email" required>
+          <span class="error-msg" id="err-email">Inserisci un indirizzo email valido.</span>
         </div>
         <div class="form-group">
-          <label class="form-label" for="cat-tel">Telefono <span style="color:var(--wf-ghost);font-size:11px;">(facoltativo)</span></label>
-          <input type="tel" id="cat-tel" class="form-input" autocomplete="tel">
+          <label class="form-label" for="cat-tel">Telefono</label>
+          <input type="tel" id="cat-tel" class="form-input" autocomplete="tel" required>
+          <span class="error-msg" id="err-tel">Inserisci il tuo numero di telefono.</span>
         </div>
       </div>
       <div class="form-group">
-        <label class="form-label" for="cat-azienda">Azienda <span style="color:var(--wf-ghost);font-size:11px;">(facoltativo)</span></label>
-        <input type="text" id="cat-azienda" class="form-input" autocomplete="organization">
+        <label class="form-label" for="cat-azienda">Azienda</label>
+        <input type="text" id="cat-azienda" class="form-input" autocomplete="organization" required>
+        <span class="error-msg" id="err-azienda">Inserisci il nome dell'azienda.</span>
       </div>
       <div class="form-group">
         <label class="form-label" for="cat-catalogo">Catalogo richiesto</label>
@@ -81,12 +93,14 @@
           <option value="textured">Collezione Textured</option>
           <option value="completo">Catalogo completo</option>
         </select>
+        <span class="error-msg" id="err-catalogo">Seleziona il catalogo desiderato.</span>
       </div>
       <div class="form-group">
-        <label class="form-check">
+        <label class="form-check" id="check-privacy-label">
           <input type="checkbox" id="cat-privacy" required>
           <span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>.</span>
         </label>
+        <span class="error-msg" id="err-privacy">Devi accettare la Privacy Policy per procedere.</span>
       </div>
       <button type="submit" class="btn btn--filled" style="width:100%;padding:1rem;">Richiedi il catalogo</button>
       <p class="form-note" style="margin-top:.75rem;">Riceverai il link di download all'indirizzo email indicato.</p>
@@ -127,23 +141,59 @@
 <script src="js/main.js"></script>
 <script>
 (function () {
-  const form = document.getElementById('form-catalogo');
+  const form    = document.getElementById('form-catalogo');
   const thankyou = document.getElementById('cat-thankyou');
-  const dlLink = document.getElementById('cat-download-link');
+  const dlLink  = document.getElementById('cat-download-link');
 
-  /* mappa catalogo → file placeholder (sostituire con URL PDF reali) */
   const files = {
     stones:   'assets/catalogo-stones.pdf',
     textured: 'assets/catalogo-textured.pdf',
     completo: 'assets/catalogo-dag-completo.pdf',
   };
 
+  /* — validazione campo singolo — */
+  function validateField(input) {
+    const errEl = document.getElementById('err-' + input.id.replace('cat-', ''));
+    let msg = '';
+
+    if (input.type === 'checkbox') {
+      if (!input.checked) msg = errEl ? errEl.textContent : 'Campo obbligatorio.';
+    } else if (!input.value.trim()) {
+      msg = errEl ? errEl.textContent : 'Campo obbligatorio.';
+    } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+      msg = 'Inserisci un indirizzo email valido.';
+    }
+
+    if (errEl) { errEl.classList.toggle('visible', !!msg); }
+    input.classList.toggle('field-error', !!msg);
+    if (input.type === 'checkbox') {
+      document.getElementById('check-privacy-label').classList.toggle('field-error', !!msg);
+    }
+    return !msg;
+  }
+
+  /* — feedback live dopo il primo tentativo di invio — */
+  let submitted = false;
+  form.querySelectorAll('input, select').forEach(function (el) {
+    el.addEventListener('input', function () { if (submitted) validateField(el); });
+    el.addEventListener('change', function () { if (submitted) validateField(el); });
+  });
+
+  /* — submit — */
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
+    submitted = true;
+
+    const fields = form.querySelectorAll('input, select');
+    let valid = true;
+    fields.forEach(function (el) { if (!validateField(el)) valid = false; });
+    if (!valid) {
+      form.querySelector('.field-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
 
     const cat = document.getElementById('cat-catalogo').value;
-    dlLink.href = files[cat] || '#';
+    dlLink.href     = files[cat] || '#';
     dlLink.download = (files[cat] || 'catalogo-dag').split('/').pop();
 
     form.style.display = 'none';
