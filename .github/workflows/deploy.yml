@@ -2,7 +2,7 @@ name: Deploy DAG Wireframe
 
 on:
   push:
-    branches: [main, ecommerce]
+    branches: [main, ecommerce, mockup]
   workflow_dispatch:
 
 permissions:
@@ -32,6 +32,12 @@ jobs:
         with:
           ref: ecommerce
           path: site/ecommerce
+
+      - name: Checkout mockup
+        uses: actions/checkout@v4
+        with:
+          ref: mockup
+          path: site/mockup
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
