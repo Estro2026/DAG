@@ -79,12 +79,7 @@
     <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
       <a href="about.html"       class="nav-link">About</a>
       <a href="philosophy.html"  class="nav-link">Philosophy</a>
-      <span class="nav-link nav-has-dropdown" tabindex="0">Collezioni
-        <div class="nav-dropdown" role="menu">
-          <a href="stones.html"   role="menuitem">Stones</a>
-          <a href="textured.html" role="menuitem">Textured</a>
-        </div>
-      </span>
+      <a href="collections.html" class="nav-link">Collezioni</a>
     </nav>
     <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
     <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
@@ -106,10 +101,6 @@
     <a href="about.html">About</a>
     <a href="philosophy.html">Philosophy</a>
     <a href="collections.html">Collezioni</a>
-    <div class="drawer-sub">
-      <a href="stones.html">Stones</a>
-      <a href="textured.html">Textured</a>
-    </div>
     <a href="stores.html">Stores</a>
     <a href="events.html">Eventi</a>
     <a href="contact.html">Contatti</a>
@@ -264,40 +255,23 @@
       <h2 class="t-h2 fade fade-d1">I gioielli DAG.</h2>
     </div>
 
-    <div class="grid-2">
+    <!-- Box unico — Le collezioni -->
+    <a href="collections.html" class="fade" aria-label="Scopri le collezioni DAG"
+       style="display:block;position:relative;overflow:hidden;aspect-ratio:21/9;text-decoration:none;">
+      <div class="img-ph" style="position:absolute;inset:0;width:100%;height:100%;">
+        <span class="img-ph__label">Le Collezioni DAG — Stones &amp; Textured — [immagine da fornire]</span>
+      </div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 55%,transparent 100%);"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;padding:2.5rem 2.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;">
+        <p style="font-family:var(--font-serif);font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;font-weight:400;line-height:1.1;margin:0;">Stones &amp; Textured</p>
+        <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;">Scopri le collezioni →</span>
+      </div>
+    </a>
 
-      <!-- Box 1 — Stones -->
-      <a href="stones.html" class="fade" aria-label="Scopri la collezione Stones"
-         style="display:block;position:relative;overflow:hidden;aspect-ratio:16/9;text-decoration:none;">
-        <div class="img-ph" style="position:absolute;inset:0;width:100%;height:100%;">
-          <span class="img-ph__label">Collezione Stones — [immagine da fornire]</span>
-        </div>
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 55%,transparent 100%);"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem 2rem;display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;">
-          <p style="font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;font-weight:400;line-height:1.1;margin:0;">Stones</p>
-          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;">Scopri la collezione →</span>
-        </div>
-      </a>
-
-      <!-- Box 2 — Textured -->
-      <a href="textured.html" class="fade fade-d1" aria-label="Scopri la collezione Textured"
-         style="display:block;position:relative;overflow:hidden;aspect-ratio:16/9;text-decoration:none;">
-        <div class="img-ph" style="position:absolute;inset:0;width:100%;height:100%;">
-          <span class="img-ph__label">Collezione Textured — [immagine da fornire]</span>
-        </div>
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.65) 0%,rgba(0,0,0,.1) 55%,transparent 100%);"></div>
-        <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem 2rem;display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;">
-          <p style="font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;font-weight:400;line-height:1.1;margin:0;">Textured</p>
-          <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;border-bottom:1px solid rgba(255,255,255,.6);padding-bottom:2px;">Scopri la collezione →</span>
-        </div>
-      </a>
-
-    </div>
-
-
-    <!-- CTA catalogo -->
-    <div class="fade fade-d2" style="text-align:center;margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--wf-border);">
-      <a href="catalogo.html" class="btn btn--filled" style="padding:.9rem 2.5rem;">Scarica il catalogo delle collezioni</a>
+    <!-- CTA -->
+    <div class="btn-row fade fade-d2" style="margin-top:2.5rem;justify-content:center;">
+      <a href="stores.html"  class="btn btn--filled">Scopri i rivenditori</a>
+      <a href="contact.html" class="btn btn--outline">Richiedi informazioni</a>
     </div>
 
   </div>
@@ -533,7 +507,6 @@
       <a href="events.html">Eventi</a>
       <a href="contact.html">Contatti</a>
       <a href="stores.html">Trova un rivenditore</a>
-      <a href="catalogo.html">Scarica il catalogo</a>
     </div>
     <div class="footer-col">
       <p class="footer-col-title">Contatti</p>

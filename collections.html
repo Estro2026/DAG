@@ -54,12 +54,7 @@
     <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
       <a href="about.html"       class="nav-link">About</a>
       <a href="philosophy.html"  class="nav-link">Philosophy</a>
-      <span class="nav-link nav-has-dropdown active" tabindex="0">Collezioni
-        <div class="nav-dropdown" role="menu">
-          <a href="stones.html"   role="menuitem">Stones</a>
-          <a href="textured.html" role="menuitem">Textured</a>
-        </div>
-      </span>
+      <a href="collections.html" class="nav-link active">Collezioni</a>
     </nav>
     <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
     <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
@@ -78,16 +73,25 @@
   <div class="drawer-nav">
     <a href="about.html">About</a><a href="philosophy.html">Philosophy</a>
     <a href="collections.html">Collezioni</a>
-    <div class="drawer-sub">
-      <a href="stones.html">Stones</a>
-      <a href="textured.html">Textured</a>
-    </div>
     <a href="stores.html">Stores</a>
     <a href="events.html">Eventi</a><a href="contact.html">Contatti</a>
   </div>
 </nav>
 
-<main style="padding-top:var(--header-h);">
+<main>
+
+<!-- ══ HERO ═══════════════════════════════════════════════════════ -->
+<section class="hero hero--medium" aria-label="Hero Collezioni">
+  <div class="hero__bg">
+    <div class="hero__bg-label">Hero Collezioni — immagine editoriale [1920×1080]</div>
+  </div>
+  <div class="hero__gradient"></div>
+  <div class="hero__content">
+    <span class="t-label fade">Collezione SS26</span>
+    <h1 class="t-h1 fade fade-d1">Le Collezioni.</h1>
+    <p class="t-body-lg fade fade-d2">Gioielli tessili realizzati a mano nel laboratorio milanese. Pietre semipreziose, argento 925 e filo di lurex: ogni pezzo porta il segno del gesto e della luce.</p>
+  </div>
+</section>
 
 <!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
 <div class="dev-panel" id="devPanel">
@@ -168,217 +172,57 @@
   ╚══════════════════════════════════════════════════════════════════╝
 -->
 
-<!-- ═══ 01 · HERO TESTUALE ═══════════════════════════════════════ -->
+<!-- ═══ STONES ════════════════════════════════════════════════════ -->
+<section class="section section--lg" style="border-top:1px solid var(--wf-border);">
+  <div class="wrap">
+
+    <div style="margin-bottom:3rem;">
+      <span class="t-label fade">Collezione SS26</span>
+      <h2 class="t-h2 fade fade-d1">Stones.</h2>
+      <p class="t-body-lg fade fade-d2" style="max-width:600px;margin-top:1rem;">Pietre semipreziose intrecciate a mano con argento 925 e filo di lurex. Ogni pezzo nasce da una selezione cromatica precisa e da un gesto artigianale irripetibile. La luce incontra la materia, il colore diventa forma.</p>
+    </div>
+
+    <!-- Gallery Stones: 4 placeholder -->
+    <div class="grid-4 fade fade-d1" style="margin-bottom:3rem;">
+      <div class="img-ph ar-3-4"><span class="img-ph__label">Stones — immagine 1 [portrait 3:4]</span></div>
+      <div class="img-ph ar-3-4"><span class="img-ph__label">Stones — immagine 2 [portrait 3:4]</span></div>
+      <div class="img-ph ar-3-4"><span class="img-ph__label">Stones — immagine 3 [portrait 3:4]</span></div>
+      <div class="img-ph ar-3-4"><span class="img-ph__label">Stones — immagine 4 [portrait 3:4]</span></div>
+    </div>
+
+    <div class="btn-row fade fade-d2">
+      <a href="stores.html"  class="btn btn--filled">Consulta i rivenditori</a>
+      <a href="contact.html" class="btn btn--outline">Richiedi informazioni</a>
+    </div>
+
+  </div>
+</section>
+
+<div style="border-top:1px solid var(--wf-border);"></div>
+
+<!-- ═══ TEXTURED ══════════════════════════════════════════════════ -->
 <section class="section section--lg">
   <div class="wrap">
-    <span class="t-label fade">Archivio editoriale</span>
-    <h1 class="t-h1 fade fade-d1" style="margin-bottom:2rem;">Collezioni che nascono<br>dal gesto e dal colore.</h1>
-    <div style="max-width:520px;">
-      <p class="t-body-lg fade fade-d2">Ogni modello DAG ha un ritmo, una materia e una voce propria. Le collezioni raccontano l'equilibrio tra luce, pietre, argento e textile jewelry.</p>
+
+    <div style="margin-bottom:3rem;">
+      <span class="t-label fade">Collezione SS26</span>
+      <h2 class="t-h2 fade fade-d1">Textured.</h2>
+      <p class="t-body-lg fade fade-d2" style="max-width:600px;margin-top:1rem;">Superficie, gesto, materia. Una collezione che esplora la trama come linguaggio estetico: tessuto, colore e forma in dialogo costante. Ogni pezzo porta il segno della mano e la memoria del telaio.</p>
     </div>
-  </div>
-</section>
 
-<!-- ═══ FILTRI — sticky ═══════════════════════════════════════════ -->
-<div style="position:sticky;top:var(--header-h);z-index:50;background:rgba(247,247,247,0.95);backdrop-filter:blur(8px);border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);padding-block:.9rem;">
-  <div class="wrap" style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;">
-    <span class="t-label" style="margin:0 1rem 0 0;">Esplora</span>
-    <button class="sf-filter active" data-filter="all">Tutti i modelli</button>
-    <button class="sf-filter" data-filter="iconici">Iconici</button>
-    <button class="sf-filter" data-filter="statement">Statement</button>
-    <button class="sf-filter" data-filter="precious">Precious</button>
-    <button class="sf-filter" data-filter="essentials">Essentials</button>
-  </div>
-</div>
-
-<!-- ═══ 02 · MUAMARA JAIPUR — grande ═════════════════════════════ -->
-<section id="muamara-jaipur" class="section section--lg" data-cat="iconici">
-  <div class="wrap">
-    <div class="grid-7-5" style="gap:4rem;align-items:center;">
-      <div class="img-ph ar-3-4 fade">
-        <span class="img-ph__label">Muamara Jaipur<br>Immagine editoriale [portrait 3:4]</span>
-      </div>
-      <div>
-        <span class="t-label fade">Iconico · Il fondativo</span>
-        <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.5rem;">Muamara<br>Jaipur</h2>
-        <p class="t-body-lg fade fade-d2" style="margin-bottom:1.25rem;">Il modello fondativo del brand. Piccole pietre intrecciate a mano con catena d'argento e filo di lurex. Da qui prende forma tutto l'universo DAG.</p>
-        <div class="rule fade fade-d3"></div>
-        <div class="fade fade-d3" style="margin-top:1.25rem;">
-          <p class="t-label" style="margin-bottom:.5rem;">Materiali</p>
-          <p class="t-body">Pietre semipreziose 3 mm · Argento 925 · Filo di lurex · Tessitura a telaio</p>
-        </div>
-        <p class="t-words fade fade-d4" style="margin-top:1.25rem;font-size:13px;">Iconico · leggero · luminoso · versatile · morbido</p>
-        <div class="btn-row fade fade-d4" style="margin-top:2rem;">
-          <a href="stores.html"  class="btn btn--filled">Trova un rivenditore</a>
-          <a href="contact.html" class="btn btn--outline">Richiedi informazioni</a>
-        </div>
-      </div>
+    <!-- Gallery Textured: 4 placeholder -->
+    <div class="grid-4 fade fade-d1" style="margin-bottom:3rem;">
+      <div class="img-ph ar-3-4"><span class="img-ph__label">Textured — immagine 1 [portrait 3:4]</span></div>
+      <div class="img-ph ar-3-4"><span class="img-ph__label">Textured — immagine 2 [portrait 3:4]</span></div>
+      <div class="img-ph ar-3-4"><span class="img-ph__label">Textured — immagine 3 [portrait 3:4]</span></div>
+      <div class="img-ph ar-3-4"><span class="img-ph__label">Textured — immagine 4 [portrait 3:4]</span></div>
     </div>
-  </div>
-</section>
 
-<div style="border-top:1px solid var(--wf-border);"></div>
-
-<!-- ═══ 03 · MUAMARA STAR ════════════════════════════════════════ -->
-<section id="muamara-star" class="section section--lg" data-cat="iconici">
-  <div class="wrap">
-    <div class="grid-5-7" style="gap:4rem;align-items:center;">
-      <div>
-        <span class="t-label fade">Iconico · Il geometrico</span>
-        <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.5rem;">Muamara<br>Star</h2>
-        <p class="t-body-lg fade fade-d2" style="margin-bottom:1.25rem;">Un disegno raffinato, tra geometria e luce. Uno dei modelli più riconoscibili dell'universo DAG. Il cielo stellato interpretato attraverso la tessitura artigianale.</p>
-        <div class="rule fade fade-d3"></div>
-        <div class="fade fade-d3" style="margin-top:1.25rem;">
-          <p class="t-label" style="margin-bottom:.5rem;">Materiali</p>
-          <p class="t-body">Pietre semipreziose · Argento 925 con 1 micron d'oro · Filo di lurex · Tessitura a telaio</p>
-        </div>
-        <p class="t-words fade fade-d4" style="margin-top:1.25rem;font-size:13px;">Chic · elegante · raffinato · charme · cielo stellato</p>
-        <div class="btn-row fade fade-d4" style="margin-top:2rem;">
-          <a href="stores.html"  class="btn btn--filled">Trova un rivenditore</a>
-          <a href="contact.html" class="btn btn--outline">Richiedi informazioni</a>
-        </div>
-      </div>
-      <div class="img-ph ar-3-4 fade fade-d1">
-        <span class="img-ph__label">Muamara Star<br>Immagine editoriale [portrait 3:4]</span>
-      </div>
+    <div class="btn-row fade fade-d2">
+      <a href="stores.html"  class="btn btn--filled">Consulta i rivenditori</a>
+      <a href="contact.html" class="btn btn--outline">Richiedi informazioni</a>
     </div>
-  </div>
-</section>
 
-<div style="border-top:1px solid var(--wf-border);"></div>
-
-<!-- ═══ 04 · GRIGLIA 3 CARD ═══════════════════════════════════════ -->
-<section id="muamara-precious" class="section section--lg">
-  <div class="wrap">
-    <div class="grid-3">
-
-      <div class="card-col fade" data-cat="statement">
-        <div class="card-col__img"><div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Madras</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Statement</span>
-          <p class="card-col__title">Muamara Madras</p>
-          <p class="card-col__text">Un bracciale di carattere, costruito sul dialogo tra pietre, colore e presenza. Non passa inosservato.</p>
-          <p class="t-words">Importante · appariscente · contrasto</p>
-          <div style="margin-top:1rem;"><a href="stores.html" class="btn btn--outline" style="font-size:9px;padding:.6rem 1.1rem;">Trova rivenditore</a></div>
-        </div>
-      </div>
-
-      <div class="card-col fade fade-d1" data-cat="iconici">
-        <div class="card-col__img"><div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Sun</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Iconico</span>
-          <p class="card-col__title">Muamara Sun</p>
-          <p class="card-col__text">Quando la luce incontra il colore: un modello deciso, energico, contemporaneo.</p>
-          <p class="t-words">Luminoso · solare · deciso · sportivo-elegante</p>
-          <div style="margin-top:1rem;"><a href="stores.html" class="btn btn--outline" style="font-size:9px;padding:.6rem 1.1rem;">Trova rivenditore</a></div>
-        </div>
-      </div>
-
-      <div class="card-col fade fade-d2" data-cat="precious">
-        <div class="card-col__img"><div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Precious</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Precious</span>
-          <p class="card-col__title">Muamara Precious</p>
-          <p class="card-col__text">La linea più preziosa, con pietre selezionate verso un registro sofisticato.</p>
-          <p class="t-words">Prezioso · raffinato · fascino senza tempo</p>
-          <div style="margin-top:1rem;"><a href="stores.html" class="btn btn--outline" style="font-size:9px;padding:.6rem 1.1rem;">Trova rivenditore</a></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div style="border-top:1px solid var(--wf-border);"></div>
-
-<!-- ═══ 05 · HOLI + TARA — 2 card orizzontali ════════════════════ -->
-<section id="muamara-holi" class="section" data-cat="essentials">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-      <div class="card-col fade">
-        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">Muamara Holi [landscape]</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Essentials</span>
-          <p class="card-col__title">Muamara Holi</p>
-          <p class="card-col__text">Racconto dell'incontro tra materiali, colore e artigianalità, con elementi in argento lavorati a mano.</p>
-          <p class="t-words">Ricamato · intreccio di culture · senza tempo</p>
-        </div>
-      </div>
-      <div class="card-col fade fade-d1">
-        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">Muamara Tara [landscape]</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Essentials</span>
-          <p class="card-col__title">Muamara Tara</p>
-          <p class="card-col__text">Un intreccio delicato di luce, colore e gesto artigianale. Rinascita, albero in fiore, artigianalità.</p>
-          <p class="t-words">Delicato · rinascita · artigianalità</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 06 · DIZIONARIO PIETRE ═══════════════════════════════════ -->
-<section class="section band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <span class="t-label fade">Materiali</span>
-      <h2 class="t-h2 fade fade-d1">Le pietre dell'universo DAG.</h2>
-      <p class="t-body-lg fade fade-d2" style="max-width:440px;margin-inline:auto;margin-top:1rem;">Ogni pietra porta una storia cromatica e materica. La selezione è parte essenziale del processo.</p>
-    </div>
-    <div class="fade fade-d1" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;">
-      <!-- ogni card pietra: box grigio + nome + micro copy -->
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Rubitormalina</p>
-        <p class="t-caption">Rosso vibrante</p>
-      </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Granato</p>
-        <p class="t-caption">Rosso profondo</p>
-      </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Spinello nero</p>
-        <p class="t-caption">Notte assoluta</p>
-      </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Labradorite</p>
-        <p class="t-caption">Iridescenza lunare</p>
-      </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Zaffiro</p>
-        <p class="t-caption">Blu profondo</p>
-      </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Pietra di luna</p>
-        <p class="t-caption">Luce diffusa</p>
-      </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Tormalina</p>
-        <p class="t-caption">Sfumatura cromatica</p>
-      </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Diopside</p>
-        <p class="t-caption">Verde profondo</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CTA ════════════════════════════════════════════════════════ -->
-<section class="section band--dark" style="padding-block:5rem;">
-  <div class="wrap--narrow" style="text-align:center;">
-    <h2 class="t-h2 fade" style="color:#fff;margin-bottom:2rem;">Ogni gioiello<br>attende di essere tuo.</h2>
-    <div class="btn-row fade fade-d1" style="justify-content:center;">
-      <a href="stores.html"  class="btn btn--outline-inv">Trova un rivenditore</a>
-      <a href="contact.html" class="btn btn--outline-inv">Richiedi informazioni</a>
-    </div>
   </div>
 </section>
 
@@ -402,18 +246,6 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-  document.querySelectorAll('.sf-filter[data-filter]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.sf-filter[data-filter]').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      document.querySelectorAll('[data-cat]').forEach(el => {
-        el.style.display = (f === 'all' || el.dataset.cat === f) ? '' : 'none';
-      });
-    });
-  });
-</script>
 <script src="js/version-switcher.js"></script>
 </body>
 </html>
