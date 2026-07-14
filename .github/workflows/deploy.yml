@@ -2,7 +2,7 @@ name: Deploy DAG Wireframe
 
 on:
   push:
-    branches: [main, ecommerce, mockup]
+    branches: [main, ecommerce]
   workflow_dispatch:
 
 permissions:
