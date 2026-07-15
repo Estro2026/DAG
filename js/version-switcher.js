@@ -1,12 +1,12 @@
 /* ── Version switcher — solo wireframe, rimuovere in produzione ── */
 (function () {
-  const path        = window.location.pathname;
-  const isEcommerce = path.includes('/ecommerce/');
-  const page        = path.split('/').pop() || 'index.html';
+  var path        = window.location.pathname;
+  var isEcommerce = path.includes('/ecommerce/');
+  var page        = path.split('/').pop() || 'index.html';
 
   /* ── 1. Barra switcher (28px, fixed top:0) ── */
-  const SW_H = 28;
-  const bar  = document.createElement('div');
+  var SW_H = 28;
+  var bar  = document.createElement('div');
   bar.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10000;display:flex;align-items:center;justify-content:center;gap:2rem;background:#1a1a1a;height:' + SW_H + 'px;font-family:system-ui,sans-serif;font-size:11px;';
 
   [['Vetrina', isEcommerce ? '../' + page : null],
@@ -34,11 +34,16 @@
 
   /* ── 3. Sposta site-header e body sotto switcher + dev-panel ── */
   requestAnimationFrame(function() {
-    var devH  = devPanel ? (devPanel.querySelector('.dev-panel__bar') ? devPanel.querySelector('.dev-panel__bar').offsetHeight : 0) : 0;
-    var total = SW_H + devH;
+    var devBarEl = devPanel ? devPanel.querySelector('.dev-panel__bar') : null;
+    var devH     = devBarEl ? devBarEl.offsetHeight : 0;
+    var total    = SW_H + devH;
     var HEADER_H = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 72;
+    var isHero   = !!document.querySelector('.site-header.on-hero');
     var s = document.createElement('style');
-    s.textContent = '.site-header { top: ' + total + 'px !important; } body { padding-top: ' + (total + HEADER_H) + 'px !important; }';
+    /* sulle pagine hero il header si sovrappone all'immagine:
+       il body non ha bisogno del padding dell'header, solo della barra switcher */
+    var bodyPad = isHero ? total : (total + HEADER_H);
+    s.textContent = '.site-header { top: ' + total + 'px !important; } body { padding-top: ' + bodyPad + 'px !important; }';
     document.head.appendChild(s);
   });
 })();

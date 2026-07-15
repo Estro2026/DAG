@@ -1328,6 +1328,19 @@ body.vetrina .ecom-only  { display: none !important; }
 body.vetrina .vetrina-only { display: block; }
 .vetrina-only { display: none; }
 
+/* ── Icona account nav ───────────────────────────────────────────── */
+.nav-account {
+  color: #4A4A4A;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.22s ease;
+}
+.nav-account:hover { color: #000; }
+.nav-account svg { width: 18px; height: 18px; }
+.site-header.on-hero .nav-account       { color: rgba(255,255,255,0.62); }
+.site-header.on-hero .nav-account:hover { color: #fff; }
+
 /* ── Icona carrello nav ──────────────────────────────────────────── */
 .nav-cart {
   display: flex;
