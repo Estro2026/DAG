@@ -123,11 +123,15 @@
 
       <!-- COLONNA DX — Info prodotto -->
       <div style="position:sticky;top:calc(var(--header-h) + 1.5rem);">
-        <span class="t-label" style="display:block;margin-bottom:.75rem;">Bracciale · Iconico</span>
+        <span class="t-label" style="display:block;margin-bottom:.75rem;">Bracciale · Realizzato su ordine</span>
         <h1 style="font-family:var(--font-serif);font-size:clamp(24px,3vw,36px);font-weight:400;line-height:1.1;color:var(--wf-text);margin-bottom:.75rem;">Muamara Jaipur</h1>
-        <p style="font-family:var(--font-sans);font-size:20px;font-weight:500;color:var(--wf-text);margin-bottom:1.75rem;">
-          € 185 <span class="wf-note" style="font-size:11px;font-weight:400;">da verificare</span>
+        <p style="font-family:var(--font-sans);font-size:20px;font-weight:500;color:var(--wf-text);margin-bottom:1rem;">
+          € — <span class="wf-note" style="font-size:11px;font-weight:400;">da definire</span>
         </p>
+        <div style="display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-sans);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--wf-muted);border:1px solid var(--wf-border);padding:.35rem .75rem;margin-bottom:1.5rem;">
+          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Realizzato su ordine · 10–15 giorni
+        </div>
 
         <!-- Selettore colore -->
         <div class="color-selector">
@@ -142,15 +146,25 @@
         <span class="wf-note" style="display:block;margin-top:-.5rem;margin-bottom:1.25rem;">DEV: WooCommerce product variations — attributo colore (pa_colore)</span>
 
         <!-- Taglia -->
-        <p style="font-family:var(--font-sans);font-size:12px;color:var(--wf-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.75rem;">Taglia unica</p>
+        <div style="margin-bottom:1.75rem;">
+          <p style="font-family:var(--font-sans);font-size:12px;color:var(--wf-muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:.4rem;">Taglia Unica</p>
+          <p style="font-family:var(--font-sans);font-size:12px;color:var(--wf-muted);">Lunghezza standard: <strong style="color:var(--wf-text);">— cm</strong> <span class="wf-note">da definire</span></p>
+        </div>
+
+        <!-- Campo misura personalizzata -->
+        <div style="margin-bottom:1.5rem;">
+          <label style="font-family:var(--font-sans);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--wf-muted);display:block;margin-bottom:.5rem;">Misura polso (opzionale)</label>
+          <input type="text" placeholder="es. 17 cm — lascia vuoto per la misura standard" style="width:100%;padding:.65rem .85rem;border:1px solid var(--wf-border);background:transparent;color:var(--wf-text);font-family:var(--font-sans);font-size:13px;box-sizing:border-box;">
+          <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-muted);margin-top:.4rem;">Se hai un polso fuori misura, indicalo qui. Il gioiello verrà realizzato su misura senza costi aggiuntivi.</p>
+        </div>
 
         <!-- Avviso produzione su ordine -->
         <div class="production-notice">
-          <strong>⏱ Prodotto su ordine</strong> — Tempi di produzione: 10–15 giorni lavorativi dalla conferma del pagamento. Riceverai aggiornamenti via email a ogni fase.
+          <strong>⏱ Realizzato su ordine</strong> — Ogni gioiello DAG viene realizzato a mano dopo la conferma del tuo ordine. Non esiste magazzino: il tuo bracciale nasce per te. Tempi di produzione: 10–15 giorni lavorativi. Riceverai aggiornamenti via email a ogni fase.
         </div>
 
-        <!-- CTA Aggiungi al carrello -->
-        <button class="btn btn--filled" style="width:100%;padding:1rem;font-size:13px;letter-spacing:0.08em;margin-bottom:1rem;">Aggiungi al carrello</button>
+        <!-- CTA Ordina -->
+        <button class="btn btn--filled" style="width:100%;padding:1rem;font-size:13px;letter-spacing:0.08em;margin-bottom:1rem;">Ordina ora</button>
 
         <button class="btn--wishlist" aria-label="Salva in wishlist">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -230,7 +244,7 @@
     <div class="grid-3" style="gap:2rem;">
       <div class="product-card fade">
         <div style="position:relative;">
-          <a href="product.html?ref=muamara-star" class="product-card__img">
+          <a href="product.html?ref=star" class="product-card__img">
             <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Star</span></div>
           </a>
           <button class="wishlist-btn product-card__wishlist" aria-label="Salva in wishlist" title="Salva in wishlist">
@@ -238,42 +252,42 @@
           </button>
         </div>
         <div class="product-card__body">
-          <p class="product-card__category">Orecchini</p>
+          <p class="product-card__category">Bracciale · Su ordine</p>
           <p class="product-card__name">Muamara Star</p>
-          <p class="product-card__price">€ 210 <span class="wf-note">da verificare</span></p>
-          <a href="product.html?ref=muamara-star" class="btn btn--filled product-card__cta">Acquista</a>
+          <p class="product-card__price">€ — <span class="wf-note">da definire</span></p>
+          <a href="product.html?ref=star" class="btn btn--filled product-card__cta">Ordina</a>
         </div>
       </div>
       <div class="product-card fade fade-d1">
         <div style="position:relative;">
-          <a href="product.html?ref=muamara-holi" class="product-card__img">
-            <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Holi</span></div>
+          <a href="product.html?ref=sun" class="product-card__img">
+            <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Sun</span></div>
           </a>
           <button class="wishlist-btn product-card__wishlist" aria-label="Salva in wishlist" title="Salva in wishlist">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </button>
         </div>
         <div class="product-card__body">
-          <p class="product-card__category">Bracciale</p>
-          <p class="product-card__name">Muamara Holi</p>
-          <p class="product-card__price">€ 165 <span class="wf-note">da verificare</span></p>
-          <a href="product.html?ref=muamara-holi" class="btn btn--filled product-card__cta">Acquista</a>
+          <p class="product-card__category">Bracciale · Su ordine</p>
+          <p class="product-card__name">Muamara Sun</p>
+          <p class="product-card__price">€ — <span class="wf-note">da definire</span></p>
+          <a href="product.html?ref=sun" class="btn btn--filled product-card__cta">Ordina</a>
         </div>
       </div>
       <div class="product-card fade fade-d2">
         <div style="position:relative;">
-          <a href="product.html?ref=muamara-precious" class="product-card__img">
-            <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Precious</span></div>
+          <a href="product.html?ref=stones" class="product-card__img">
+            <div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Stones</span></div>
           </a>
           <button class="wishlist-btn product-card__wishlist" aria-label="Salva in wishlist" title="Salva in wishlist">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </button>
         </div>
         <div class="product-card__body">
-          <p class="product-card__category">Collana</p>
-          <p class="product-card__name">Muamara Precious</p>
-          <p class="product-card__price">€ 320 <span class="wf-note">da verificare</span></p>
-          <a href="product.html?ref=muamara-precious" class="btn btn--filled product-card__cta">Acquista</a>
+          <p class="product-card__category">Bracciale · Su ordine</p>
+          <p class="product-card__name">Muamara Stones</p>
+          <p class="product-card__price">€ — <span class="wf-note">da definire</span></p>
+          <a href="product.html?ref=stones" class="btn btn--filled product-card__cta">Ordina</a>
         </div>
       </div>
     </div>

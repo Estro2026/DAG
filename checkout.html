@@ -91,54 +91,61 @@
       <!-- COLONNA SX — Form -->
       <div>
 
-        <!-- Dati di spedizione -->
-        <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Dati di spedizione</h2>
+        <!-- ── Dati di fatturazione ──────────────────────────── -->
+        <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Dati di fatturazione</h2>
+        <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-muted);margin-bottom:1.5rem;">Obbligatori per ogni ordine. DAG Gioielli emette fattura per tutti gli acquisti.</p>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
           <div class="form-group">
-            <label class="form-label" for="nome">Nome *</label>
-            <input class="form-input" type="text" id="nome" name="nome" placeholder="Mario" autocomplete="given-name">
+            <label class="form-label" for="fat-nome">Nome *</label>
+            <input class="form-input" type="text" id="fat-nome" name="fat_nome" placeholder="Mario" autocomplete="given-name" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="cognome">Cognome *</label>
-            <input class="form-input" type="text" id="cognome" name="cognome" placeholder="Rossi" autocomplete="family-name">
+            <label class="form-label" for="fat-cognome">Cognome *</label>
+            <input class="form-input" type="text" id="fat-cognome" name="fat_cognome" placeholder="Rossi" autocomplete="family-name" required>
           </div>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
           <div class="form-group">
             <label class="form-label" for="email">Email *</label>
-            <input class="form-input" type="email" id="email" name="email" placeholder="mario@esempio.it" autocomplete="email">
+            <input class="form-input" type="email" id="email" name="email" placeholder="mario@esempio.it" autocomplete="email" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="telefono">Telefono</label>
-            <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+39 333 123 4567" autocomplete="tel">
+            <label class="form-label" for="telefono">Telefono *</label>
+            <input class="form-input" type="tel" id="telefono" name="telefono" placeholder="+39 333 123 4567" autocomplete="tel" required>
           </div>
         </div>
 
         <div class="form-group" style="margin-bottom:1rem;">
-          <label class="form-label" for="indirizzo">Indirizzo *</label>
-          <input class="form-input" type="text" id="indirizzo" name="indirizzo" placeholder="Via Roma 1" autocomplete="street-address">
+          <label class="form-label" for="cf">Codice Fiscale *</label>
+          <input class="form-input" type="text" id="cf" name="codice_fiscale" placeholder="RSSMRA80A01F205X" maxlength="16" style="text-transform:uppercase;" required>
+          <span class="wf-note" style="display:block;margin-top:.3rem;">DEV: validazione formato CF — hook woocommerce_checkout_fields</span>
+        </div>
+
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label class="form-label" for="fat-indirizzo">Indirizzo di fatturazione *</label>
+          <input class="form-input" type="text" id="fat-indirizzo" name="fat_indirizzo" placeholder="Via Roma 1" autocomplete="billing street-address" required>
         </div>
 
         <div style="display:grid;grid-template-columns:1fr 2fr 1fr;gap:1rem;margin-bottom:1rem;">
           <div class="form-group">
-            <label class="form-label" for="cap">CAP *</label>
-            <input class="form-input" type="text" id="cap" name="cap" placeholder="20121" autocomplete="postal-code">
+            <label class="form-label" for="fat-cap">CAP *</label>
+            <input class="form-input" type="text" id="fat-cap" name="fat_cap" placeholder="20121" autocomplete="billing postal-code" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="citta">Città *</label>
-            <input class="form-input" type="text" id="citta" name="citta" placeholder="Milano" autocomplete="address-level2">
+            <label class="form-label" for="fat-citta">Città *</label>
+            <input class="form-input" type="text" id="fat-citta" name="fat_citta" placeholder="Milano" autocomplete="billing address-level2" required>
           </div>
           <div class="form-group">
-            <label class="form-label" for="provincia">Prov. *</label>
-            <input class="form-input" type="text" id="provincia" name="provincia" placeholder="MI" maxlength="2">
+            <label class="form-label" for="fat-prov">Prov. *</label>
+            <input class="form-input" type="text" id="fat-prov" name="fat_provincia" placeholder="MI" maxlength="2" required>
           </div>
         </div>
 
-        <div class="form-group" style="margin-bottom:2.5rem;">
-          <label class="form-label" for="paese">Paese *</label>
-          <select class="form-input" id="paese" name="paese" autocomplete="country">
+        <div class="form-group" style="margin-bottom:2rem;">
+          <label class="form-label" for="fat-paese">Paese *</label>
+          <select class="form-input" id="fat-paese" name="fat_paese" autocomplete="billing country" required>
             <option value="IT" selected>Italia</option>
             <option value="FR">Francia</option>
             <option value="DE">Germania</option>
@@ -149,16 +156,48 @@
           </select>
         </div>
 
-        <!-- Dati fiscali -->
-        <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Dati fiscali</h2>
-        <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-muted);margin-bottom:1.5rem;">Obbligatori per la fatturazione ai sensi della normativa fiscale italiana.</p>
-
-        <div class="form-group" style="margin-bottom:1rem;">
-          <label class="form-label" for="cf">Codice Fiscale *</label>
-          <input class="form-input" type="text" id="cf" name="codice_fiscale" placeholder="RSSMRA80A01F205X" maxlength="16" style="text-transform:uppercase;">
-        </div>
-
         <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-ghost);margin-bottom:2.5rem;">Solo acquisti da privati (B2C). Per acquisti aziendali contatta il brand direttamente.</p>
+
+        <!-- ── Indirizzo di spedizione ────────────────────────── -->
+        <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Indirizzo di spedizione</h2>
+
+        <label id="ship-same-label" style="display:flex;align-items:center;gap:.75rem;font-family:var(--font-sans);font-size:13px;cursor:pointer;margin-bottom:1.5rem;">
+          <input type="checkbox" id="ship-same" name="ship_same" checked style="flex-shrink:0;">
+          Stesso indirizzo di fatturazione
+        </label>
+
+        <div id="ship-fields" style="display:none;">
+          <div class="form-group" style="margin-bottom:1rem;">
+            <label class="form-label" for="spe-indirizzo">Indirizzo di spedizione *</label>
+            <input class="form-input" type="text" id="spe-indirizzo" name="spe_indirizzo" placeholder="Via Roma 1" autocomplete="shipping street-address">
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 2fr 1fr;gap:1rem;margin-bottom:1rem;">
+            <div class="form-group">
+              <label class="form-label" for="spe-cap">CAP *</label>
+              <input class="form-input" type="text" id="spe-cap" name="spe_cap" placeholder="20121" autocomplete="shipping postal-code">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="spe-citta">Città *</label>
+              <input class="form-input" type="text" id="spe-citta" name="spe_citta" placeholder="Milano" autocomplete="shipping address-level2">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="spe-prov">Prov. *</label>
+              <input class="form-input" type="text" id="spe-prov" name="spe_provincia" placeholder="MI" maxlength="2">
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:2rem;">
+            <label class="form-label" for="spe-paese">Paese *</label>
+            <select class="form-input" id="spe-paese" name="spe_paese" autocomplete="shipping country">
+              <option value="IT" selected>Italia</option>
+              <option value="FR">Francia</option>
+              <option value="DE">Germania</option>
+              <option value="ES">Spagna</option>
+              <option value="GB">Regno Unito</option>
+              <option value="US">Stati Uniti</option>
+              <option value="">Altro...</option>
+            </select>
+          </div>
+        </div>
 
         <!-- Spedizione -->
         <h2 style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--wf-border);">Spedizione</h2>
@@ -187,9 +226,16 @@
           </label>
         </div>
 
+        <!-- Nota misura -->
+        <div style="margin-bottom:2.5rem;">
+          <label style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--wf-muted);display:block;margin-bottom:.5rem;">Richiesta misura (opzionale)</label>
+          <input class="form-input" type="text" name="nota_misura" placeholder="es. polso 17 cm — lascia vuoto per la misura standard">
+          <p style="font-family:var(--font-sans);font-size:11px;color:var(--wf-muted);margin-top:.4rem;">Se hai un polso fuori misura, indicalo qui. Il gioiello verrà realizzato su misura senza costi aggiuntivi.</p>
+        </div>
+
         <!-- Avviso produzione su ordine -->
         <div class="production-notice" style="margin-bottom:2.5rem;">
-          <strong>⏱ Prodotto su ordine</strong> — Ogni gioiello DAG viene realizzato a mano dopo la conferma del tuo ordine. Tempi di produzione indicativi: 10–15 giorni lavorativi. Riceverai aggiornamenti via email a ogni fase della produzione e della spedizione.
+          <strong>⏱ Realizzato su ordine</strong> — Ogni gioiello DAG viene realizzato a mano dopo la conferma del tuo ordine. Non esiste magazzino: il tuo bracciale nasce per te. Tempi di produzione indicativi: 10–15 giorni lavorativi. Riceverai aggiornamenti via email a ogni fase della produzione e della spedizione.
         </div>
 
         <!-- Pagamento -->
@@ -289,6 +335,13 @@
   </div>
 </footer>
 <script src="js/main.js"></script>
+<script>
+  const shipSame = document.getElementById('ship-same');
+  const shipFields = document.getElementById('ship-fields');
+  shipSame.addEventListener('change', () => {
+    shipFields.style.display = shipSame.checked ? 'none' : 'block';
+  });
+</script>
 <script src="js/version-switcher.js"></script>
 </body>
 </html>
