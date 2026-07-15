@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collezioni Muamara — DAG Gioielli | Bracciali e Gioielli Tessili</title>
-  <meta name="description" content="Scopri le collezioni Muamara di DAG Gioielli: Jaipur, Star, Precious, Holi, Sun. Bracciali tessili in pietre semipreziose e argento 925, fatti a mano a Milano.">
+  <title>Collezioni Muamara — DAG Gioielli | Bracciali Tessili Artigianali</title>
+  <meta name="description" content="Scopri le collezioni Muamara di DAG Gioielli: Jaipur, Jaipur Fiori, Sun, Stones, Star, Textured. Bracciali tessili in 6 colori, Taglia Unica. Fatti a mano a Milano.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.daggioielli.it/collections.html">
 
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="Collezioni Muamara — DAG Gioielli">
-  <meta property="og:description" content="Bracciali tessili in pietre semipreziose e argento 925, fatti a mano a Milano.">
+  <meta property="og:description" content="Bracciali tessili in pietre semipreziose e argento 925, 6 modelli × 6 colori, fatti a mano a Milano.">
   <meta property="og:image"       content="https://www.daggioielli.it/Assets/og/og-collections.jpg">
   <meta property="og:url"         content="https://www.daggioielli.it/collections.html">
   <meta property="og:locale"      content="it_IT">
@@ -33,19 +33,159 @@
         "@id": "https://www.daggioielli.it/collections.html",
         "url": "https://www.daggioielli.it/collections.html",
         "name": "Collezioni Muamara — DAG Gioielli",
-        "description": "Bracciali e gioielli tessili DAG: Muamara Jaipur, Star, Precious, Holi, Sun.",
+        "description": "Bracciali tessili DAG: Jaipur, Jaipur Fiori, Sun, Stones, Star, Textured. 6 modelli × 6 colori, Taglia Unica.",
         "publisher": { "@id": "https://www.daggioielli.it/#organization" },
         "hasPart": [
-          { "@type": "Product", "name": "Muamara Jaipur",   "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925, Lurex" },
-          { "@type": "Product", "name": "Muamara Star",     "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925 con oro 1 micron, Lurex" },
-          { "@type": "Product", "name": "Muamara Precious", "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre preziose selezionate, Argento 925" },
-          { "@type": "Product", "name": "Muamara Holi",     "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925" },
-          { "@type": "Product", "name": "Muamara Sun",      "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925" }
+          { "@type": "Product", "name": "Muamara Jaipur",       "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925, Lurex" },
+          { "@type": "Product", "name": "Muamara Jaipur Fiori", "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925, Lurex" },
+          { "@type": "Product", "name": "Muamara Sun",          "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925" },
+          { "@type": "Product", "name": "Muamara Stones",       "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925" },
+          { "@type": "Product", "name": "Muamara Star",         "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925 con oro 1 micron, Lurex" },
+          { "@type": "Product", "name": "Muamara Textured",     "brand": { "@type": "Brand", "name": "DAG Gioielli" }, "material": "Pietre semipreziose, Argento 925" }
         ]
       }
     ]
   }
   </script>
+
+  <style>
+    /* ── filtri modello ───────────────────────────────────────── */
+    .filter-bar {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      padding: 1.25rem var(--pad);
+      border-bottom: 1px solid var(--wf-border);
+      position: sticky;
+      top: var(--header-h);
+      background: var(--wf-bg);
+      z-index: 90;
+    }
+    .sf-filter {
+      padding: .45rem 1.1rem;
+      border: 1px solid var(--wf-border);
+      background: transparent;
+      color: var(--wf-text);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+    .sf-filter.active,
+    .sf-filter:hover {
+      background: var(--wf-text);
+      color: var(--wf-bg);
+    }
+
+    /* ── model section ────────────────────────────────────────── */
+    .model-section {
+      border-top: 1px solid var(--wf-border);
+    }
+    .model-header {
+      padding: 3.5rem var(--pad) 2rem;
+    }
+    .model-header .t-label {
+      display: block;
+      margin-bottom: .75rem;
+    }
+    .model-header h2 {
+      margin-bottom: .75rem;
+    }
+    .model-header p {
+      max-width: 540px;
+      color: var(--wf-muted);
+      font-size: 15px;
+    }
+    .model-meta {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+      font-size: 12px;
+      color: var(--wf-muted);
+      font-family: var(--font-sans);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    /* ── product card ─────────────────────────────────────────── */
+    .variants-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 0 var(--pad) 3.5rem;
+    }
+    @media (max-width: 900px) {
+      .variants-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .variants-grid { grid-template-columns: 1fr; }
+    }
+    .variant-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .variant-card__img-wrap {
+      position: relative;
+    }
+    .wishlist-btn {
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+      width: 34px;
+      height: 34px;
+      background: var(--wf-bg);
+      border: 1px solid var(--wf-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+    }
+    .wishlist-btn svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--wf-text);
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .variant-card__body {
+      padding: .9rem 0 0;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .variant-card__model {
+      font-size: 11px;
+      font-family: var(--font-sans);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--wf-muted);
+      margin-bottom: .25rem;
+    }
+    .variant-card__color {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      margin-bottom: .3rem;
+    }
+    .variant-card__size {
+      font-size: 12px;
+      color: var(--wf-muted);
+      margin-bottom: .75rem;
+    }
+    .variant-card__price {
+      font-size: 16px;
+      font-family: var(--font-sans);
+      margin-bottom: .85rem;
+    }
+    .variant-card__actions {
+      display: flex;
+      gap: .5rem;
+      margin-top: auto;
+    }
+    .variant-card__actions .btn--filled {
+      flex: 1;
+    }
+  </style>
 </head>
 <body>
 
@@ -89,297 +229,736 @@
 <!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
 <div class="dev-panel" id="devPanel">
   <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
-    <span class="dev-panel__title">⚙ Dev Notes — collections.html (Collezioni)</span>
+    <span class="dev-panel__title">⚙ Dev Notes — collections.html (Collezioni e-commerce)</span>
     <span style="display:flex;align-items:center;gap:1.25rem;">
       <span class="dev-panel__effort">★★★★ Effort alto</span>
-      <span class="dev-panel__pill">WordPress</span>
+      <span class="dev-panel__pill">WooCommerce</span>
       <span class="dev-panel__pill">Elementor Pro</span>
       <span class="dev-panel__pill">ACF Pro</span>
-      <span class="dev-panel__pill">CPT UI</span>
     </span>
     <span class="dev-panel__toggle">▾</span>
   </div>
   <div class="dev-panel__body">
     <div class="dev-panel__section">
-      <p class="dev-panel__section-title">SEO</p>
+      <p class="dev-panel__section-title">Struttura</p>
       <ul class="dev-panel__list">
-        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
-        <li class="ok">JSON-LD: CollectionPage + Product hasPart (5 modelli) ✓</li>
-        <li class="warn">Creare Assets/og/og-collections.jpg (1200×630px)</li>
-        <li>In produzione: schema Product individuale per CPT collezione</li>
+        <li>6 modelli · 6 varianti colore ciascuno · Taglia Unica</li>
+        <li>I nomi colore sono placeholder — aggiornare con i colori definitivi</li>
+        <li>I prezzi € — sono placeholder — aggiornare prima del go-live</li>
+        <li class="warn">Colori definitivi delle 6 varianti: da specificare per ogni modello</li>
       </ul>
     </div>
     <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <p class="dev-panel__section-title">WooCommerce</p>
       <ul class="dev-panel__list">
-        <li class="warn">CPT "Collezioni" + ACF (nome, categoria, materiali, immagine) ★★★</li>
-        <li class="warn">Filtri sticky: plugin JetSmartFilters o Ajax Load More ★★★</li>
-        <li>Sezioni alternate 7/5 – 5/7: Loop Grid + template loop Elementor Pro ★★★</li>
-        <li>Griglia 3 card: Inner Section 3 col, Image + Heading + Text ★★</li>
-        <li>Dizionario pietre: ACF Repeater + Loop Grid auto-fill ★★</li>
-        <li>Filtri JS data-cat: incollare script in widget HTML o Code Snippets WP</li>
-        <li>CTA band scura: sezione sfondo #1a1a1a, Heading + 2× Button ★</li>
+        <li class="warn">Prodotto con varianti: WooCommerce Product Variations ★★★</li>
+        <li>Attributo "Colore" con 6 opzioni per modello + attributo "Taglia" = Unica</li>
+        <li>Filtro sticky: JetSmartFilters o WooCommerce Product Filters ★★★</li>
+        <li>Wishlist: YITH WooCommerce Wishlist ★★</li>
+        <li>Griglia: Elementor Loop Grid con template carta prodotto ★★★</li>
       </ul>
     </div>
     <div class="dev-panel__section">
       <p class="dev-panel__section-title">Assets necessari</p>
       <ul class="dev-panel__list">
-        <li>7+ foto editoriali portrait 3:4 (una per collezione)</li>
-        <li>2 foto landscape 16:9 (Holi, Tara)</li>
-        <li>Icone/dot pietre per dizionario (o foto macro pietre)</li>
+        <li>36 foto prodotto 3:4 (1 per variante colore × modello)</li>
+        <li>6 foto hero per ogni modello (opzionale)</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!--
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║  DEV NOTES — collections.html                                   ║
-  ║  Effort totale pagina: ★★★★ (alto — struttura editoriale        ║
-  ║  + filtri JS + dizionario pietre)                               ║
-  ╠══════════════════════════════════════════════════════════════════╣
-  ║  WORDPRESS / ELEMENTOR                                          ║
-  ║  • Consigliato: Custom Post Type "Collezioni" con ACF           ║
-  ║    (nome, categoria, materiali, parole-chiave, immagine).       ║
-  ║    Plugin: ACF Pro + CPT UI                                     ║
-  ║  • Filtri sticky: Elementor non supporta nativamente filtri     ║
-  ║    AJAX su CPT senza plugin. Usare "Ajax Load More" o           ║
-  ║    "JetSmartFilters" (JetPlugins). ★★★                          ║
-  ║  • Sezioni collezione alternate (grid-7-5 / grid-5-7):         ║
-  ║    Elementor Loop Grid + template di loop "Collezione Card"     ║
-  ║    (Inner Section 2 col con immagine e testo alternati).        ║
-  ║    Alternativa: template PHP custom nel tema child. ★★★         ║
-  ║  • Griglia 3 card (Madras/Sun/Precious): Loop Grid o           ║
-  ║    Inner Section 3 col con widget Image + Heading + Text. ★★    ║
-  ║  • Dizionario pietre: ACF Repeater "Pietre" + Loop Grid        ║
-  ║    auto-fill grid (repeat auto-fill, minmax 150px). ★★          ║
-  ║  • Filtri JS inline (data-cat/data-filter): funzionano          ║
-  ║    anche in Elementor — incollare il <script> nel widget        ║
-  ║    HTML di Elementor oppure in Snippet personalizzati WP.       ║
-  ║                                                                  ║
-  ║  SEO WORDPRESS                                                   ║
-  ║  • Schema CollectionPage + Product hasPart già nel JSON-LD.    ║
-  ║    In produzione: ogni CPT Collezione dovrebbe avere schema     ║
-  ║    Product individuale (Rank Math → Schema → Product).          ║
-  ║  • OG image: Assets/og/og-collections.jpg 1200×630px           ║
-  ╚══════════════════════════════════════════════════════════════════╝
--->
-
-<!-- ═══ 01 · HERO TESTUALE ═══════════════════════════════════════ -->
-<section class="section section--lg">
-  <div class="wrap">
-    <div class="grid-5-7" style="gap:5rem;align-items:flex-end;">
-      <div>
-        <span class="t-label fade">Archivio editoriale</span>
-        <h1 class="t-h1 fade fade-d1">Collezioni che nascono dal gesto e dal colore.</h1>
-      </div>
-      <div>
-        <p class="t-body-lg fade fade-d2">Ogni modello DAG ha un ritmo, una materia e una voce propria. Le collezioni raccontano l'equilibrio tra luce, pietre, argento e textile jewelry.</p>
-      </div>
-    </div>
+<!-- ══ HERO ═══════════════════════════════════════════════════════ -->
+<section class="hero hero--medium">
+  <div class="hero__bg img-ph" aria-hidden="true">
+    <span class="img-ph__label">Hero — bracciali Muamara in primo piano<br>foto ambientata laboratorio</span>
+  </div>
+  <div class="hero__gradient"></div>
+  <div class="hero__content">
+    <span class="t-label fade" style="color:rgba(255,255,255,0.6);">Le Collezioni</span>
+    <h1 class="t-h1 fade fade-d1" style="color:#fff;">Muamara.</h1>
+    <p class="fade fade-d2" style="color:rgba(255,255,255,0.75);max-width:480px;font-size:16px;line-height:1.65;">
+      Sei modelli. Sei colori ciascuno. Un'unica taglia che abbraccia ogni polso.
+    </p>
   </div>
 </section>
 
-<!-- ═══ FILTRI — sticky ═══════════════════════════════════════════ -->
-<div style="position:sticky;top:var(--header-h);z-index:50;background:rgba(247,247,247,0.95);backdrop-filter:blur(8px);border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);padding-block:.9rem;">
-  <div class="wrap" style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;">
-    <span class="t-label" style="margin:0 1rem 0 0;">Esplora</span>
-    <button class="sf-filter active" data-filter="all">Tutti i modelli</button>
-    <button class="sf-filter" data-filter="iconici">Iconici</button>
-    <button class="sf-filter" data-filter="statement">Statement</button>
-    <button class="sf-filter" data-filter="precious">Precious</button>
-    <button class="sf-filter" data-filter="essentials">Essentials</button>
-  </div>
+<!-- ══ FILTER BAR ═════════════════════════════════════════════════ -->
+<div class="filter-bar" role="navigation" aria-label="Filtra per modello">
+  <button class="sf-filter active" data-filter="all">Tutti</button>
+  <button class="sf-filter" data-filter="jaipur">Jaipur</button>
+  <button class="sf-filter" data-filter="jaipur-fiori">Jaipur Fiori</button>
+  <button class="sf-filter" data-filter="sun">Sun</button>
+  <button class="sf-filter" data-filter="stones">Stones</button>
+  <button class="sf-filter" data-filter="star">Star</button>
+  <button class="sf-filter" data-filter="textured">Textured</button>
 </div>
 
-<!-- ═══ 02 · MUAMARA JAIPUR — grande ═════════════════════════════ -->
-<section id="muamara-jaipur" class="section section--lg" data-cat="iconici">
-  <div class="wrap">
-    <div class="grid-7-5" style="gap:4rem;align-items:center;">
-      <div class="img-ph ar-3-4 fade">
-        <span class="img-ph__label">Muamara Jaipur<br>Immagine editoriale [portrait 3:4]</span>
-      </div>
-      <div>
-        <span class="t-label fade">Iconico · Il fondativo</span>
-        <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.5rem;">Muamara<br>Jaipur</h2>
-        <p class="t-body-lg fade fade-d2" style="margin-bottom:1.25rem;">Il modello fondativo del brand. Piccole pietre intrecciate a mano con catena d'argento e filo di lurex. Da qui prende forma tutto l'universo DAG.</p>
-        <div class="rule fade fade-d3"></div>
-        <div class="fade fade-d3" style="margin-top:1.25rem;">
-          <p class="t-label" style="margin-bottom:.5rem;">Materiali</p>
-          <p class="t-body">Pietre semipreziose 3 mm · Argento 925 · Filo di lurex · Tessitura a telaio</p>
-        </div>
-        <p class="t-words fade fade-d4" style="margin-top:1.25rem;font-size:13px;">Iconico · leggero · luminoso · versatile · morbido</p>
-        <div class="btn-row fade fade-d4" style="margin-top:2rem;">
-          <a href="stores.html"  class="btn btn--filled">Trova un rivenditore</a>
-          <a href="contact.html" class="btn btn--outline">Richiedi informazioni</a>
-        </div>
-      </div>
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- MODELLO 1 — JAIPUR                                            -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section class="model-section" data-cat="jaipur">
+  <div class="model-header wrap">
+    <span class="t-label">Bracciale · Taglia Unica</span>
+    <h2 class="t-h2 fade">Jaipur.</h2>
+    <p class="fade fade-d1">Ispirato ai mercati di Jaipur, questo bracciale intreccia pietre semipreziose e lurex con una lavorazione a telaio che riporta il calore della Città Rosa.</p>
+    <div class="model-meta">
+      <span>Materiali · Pietre semipreziose</span>
+      <span>Argento 925</span>
+      <span>Lurex</span>
     </div>
+  </div>
+  <div class="variants-grid">
+
+    <!-- Variante 1 -->
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-1" aria-label="Jaipur — Variante 1">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur<br>Colore 1</span></div>
+        </a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur</p>
+        <p class="variant-card__color">Colore 1 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions">
+          <a href="product.html?ref=jaipur-1" class="btn btn--filled">Acquista</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Variante 2 -->
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-2" aria-label="Jaipur — Variante 2">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur<br>Colore 2</span></div>
+        </a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur</p>
+        <p class="variant-card__color">Colore 2 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions">
+          <a href="product.html?ref=jaipur-2" class="btn btn--filled">Acquista</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Variante 3 -->
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-3" aria-label="Jaipur — Variante 3">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur<br>Colore 3</span></div>
+        </a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur</p>
+        <p class="variant-card__color">Colore 3 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions">
+          <a href="product.html?ref=jaipur-3" class="btn btn--filled">Acquista</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Variante 4 -->
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-4" aria-label="Jaipur — Variante 4">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur<br>Colore 4</span></div>
+        </a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur</p>
+        <p class="variant-card__color">Colore 4 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions">
+          <a href="product.html?ref=jaipur-4" class="btn btn--filled">Acquista</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Variante 5 -->
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-5" aria-label="Jaipur — Variante 5">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur<br>Colore 5</span></div>
+        </a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur</p>
+        <p class="variant-card__color">Colore 5 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions">
+          <a href="product.html?ref=jaipur-5" class="btn btn--filled">Acquista</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Variante 6 -->
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-6" aria-label="Jaipur — Variante 6">
+          <div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur<br>Colore 6</span></div>
+        </a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur</p>
+        <p class="variant-card__color">Colore 6 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions">
+          <a href="product.html?ref=jaipur-6" class="btn btn--filled">Acquista</a>
+        </div>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<div style="border-top:1px solid var(--wf-border);"></div>
-
-<!-- ═══ 03 · MUAMARA STAR ════════════════════════════════════════ -->
-<section id="muamara-star" class="section section--lg" data-cat="iconici">
-  <div class="wrap">
-    <div class="grid-5-7" style="gap:4rem;align-items:center;">
-      <div>
-        <span class="t-label fade">Iconico · Il geometrico</span>
-        <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.5rem;">Muamara<br>Star</h2>
-        <p class="t-body-lg fade fade-d2" style="margin-bottom:1.25rem;">Un disegno raffinato, tra geometria e luce. Uno dei modelli più riconoscibili dell'universo DAG. Il cielo stellato interpretato attraverso la tessitura artigianale.</p>
-        <div class="rule fade fade-d3"></div>
-        <div class="fade fade-d3" style="margin-top:1.25rem;">
-          <p class="t-label" style="margin-bottom:.5rem;">Materiali</p>
-          <p class="t-body">Pietre semipreziose · Argento 925 con 1 micron d'oro · Filo di lurex · Tessitura a telaio</p>
-        </div>
-        <p class="t-words fade fade-d4" style="margin-top:1.25rem;font-size:13px;">Chic · elegante · raffinato · charme · cielo stellato</p>
-        <div class="btn-row fade fade-d4" style="margin-top:2rem;">
-          <a href="stores.html"  class="btn btn--filled">Trova un rivenditore</a>
-          <a href="contact.html" class="btn btn--outline">Richiedi informazioni</a>
-        </div>
-      </div>
-      <div class="img-ph ar-3-4 fade fade-d1">
-        <span class="img-ph__label">Muamara Star<br>Immagine editoriale [portrait 3:4]</span>
-      </div>
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- MODELLO 2 — JAIPUR FIORI                                      -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section class="model-section" data-cat="jaipur-fiori">
+  <div class="model-header wrap">
+    <span class="t-label">Bracciale · Taglia Unica</span>
+    <h2 class="t-h2 fade">Jaipur Fiori.</h2>
+    <p class="fade fade-d1">La variante floreale del Jaipur. Motivi vegetali si intrecciano alle pietre semipreziose in una tessitura più elaborata, pensata per chi ama un gioiello che racconta una storia.</p>
+    <div class="model-meta">
+      <span>Materiali · Pietre semipreziose</span>
+      <span>Argento 925</span>
+      <span>Lurex</span>
     </div>
+  </div>
+  <div class="variants-grid">
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-fiori-1"><div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur Fiori<br>Colore 1</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur Fiori</p>
+        <p class="variant-card__color">Colore 1 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=jaipur-fiori-1" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-fiori-2"><div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur Fiori<br>Colore 2</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur Fiori</p>
+        <p class="variant-card__color">Colore 2 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=jaipur-fiori-2" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-fiori-3"><div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur Fiori<br>Colore 3</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur Fiori</p>
+        <p class="variant-card__color">Colore 3 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=jaipur-fiori-3" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-fiori-4"><div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur Fiori<br>Colore 4</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur Fiori</p>
+        <p class="variant-card__color">Colore 4 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=jaipur-fiori-4" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-fiori-5"><div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur Fiori<br>Colore 5</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur Fiori</p>
+        <p class="variant-card__color">Colore 5 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=jaipur-fiori-5" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=jaipur-fiori-6"><div class="img-ph ar-3-4"><span class="img-ph__label">Jaipur Fiori<br>Colore 6</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Jaipur Fiori</p>
+        <p class="variant-card__color">Colore 6 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=jaipur-fiori-6" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<div style="border-top:1px solid var(--wf-border);"></div>
-
-<!-- ═══ 04 · GRIGLIA 3 CARD ═══════════════════════════════════════ -->
-<section id="muamara-precious" class="section section--lg">
-  <div class="wrap">
-    <div class="grid-3">
-
-      <div class="card-col fade" data-cat="statement">
-        <div class="card-col__img"><div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Madras</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Statement</span>
-          <p class="card-col__title">Muamara Madras</p>
-          <p class="card-col__text">Un bracciale di carattere, costruito sul dialogo tra pietre, colore e presenza. Non passa inosservato.</p>
-          <p class="t-words">Importante · appariscente · contrasto</p>
-          <div style="margin-top:1rem;"><a href="stores.html" class="btn btn--outline" style="font-size:9px;padding:.6rem 1.1rem;">Trova rivenditore</a></div>
-        </div>
-      </div>
-
-      <div class="card-col fade fade-d1" data-cat="iconici">
-        <div class="card-col__img"><div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Sun</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Iconico</span>
-          <p class="card-col__title">Muamara Sun</p>
-          <p class="card-col__text">Quando la luce incontra il colore: un modello deciso, energico, contemporaneo.</p>
-          <p class="t-words">Luminoso · solare · deciso · sportivo-elegante</p>
-          <div style="margin-top:1rem;"><a href="stores.html" class="btn btn--outline" style="font-size:9px;padding:.6rem 1.1rem;">Trova rivenditore</a></div>
-        </div>
-      </div>
-
-      <div class="card-col fade fade-d2" data-cat="precious">
-        <div class="card-col__img"><div class="img-ph ar-3-4"><span class="img-ph__label">Muamara Precious</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Precious</span>
-          <p class="card-col__title">Muamara Precious</p>
-          <p class="card-col__text">La linea più preziosa, con pietre selezionate verso un registro sofisticato.</p>
-          <p class="t-words">Prezioso · raffinato · fascino senza tempo</p>
-          <div style="margin-top:1rem;"><a href="stores.html" class="btn btn--outline" style="font-size:9px;padding:.6rem 1.1rem;">Trova rivenditore</a></div>
-        </div>
-      </div>
-
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- MODELLO 3 — SUN                                               -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section class="model-section" data-cat="sun">
+  <div class="model-header wrap">
+    <span class="t-label">Bracciale · Taglia Unica</span>
+    <h2 class="t-h2 fade">Sun.</h2>
+    <p class="fade fade-d1">Leggero e luminoso. Il Sun porta con sé la luce del giorno attraverso pietre che catturano e restituiscono ogni riflesso. Un gioiello da indossare sempre.</p>
+    <div class="model-meta">
+      <span>Materiali · Pietre semipreziose</span>
+      <span>Argento 925</span>
     </div>
+  </div>
+  <div class="variants-grid">
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=sun-1"><div class="img-ph ar-3-4"><span class="img-ph__label">Sun<br>Colore 1</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Sun</p>
+        <p class="variant-card__color">Colore 1 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=sun-1" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=sun-2"><div class="img-ph ar-3-4"><span class="img-ph__label">Sun<br>Colore 2</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Sun</p>
+        <p class="variant-card__color">Colore 2 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=sun-2" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=sun-3"><div class="img-ph ar-3-4"><span class="img-ph__label">Sun<br>Colore 3</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Sun</p>
+        <p class="variant-card__color">Colore 3 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=sun-3" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=sun-4"><div class="img-ph ar-3-4"><span class="img-ph__label">Sun<br>Colore 4</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Sun</p>
+        <p class="variant-card__color">Colore 4 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=sun-4" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=sun-5"><div class="img-ph ar-3-4"><span class="img-ph__label">Sun<br>Colore 5</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Sun</p>
+        <p class="variant-card__color">Colore 5 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=sun-5" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=sun-6"><div class="img-ph ar-3-4"><span class="img-ph__label">Sun<br>Colore 6</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Sun</p>
+        <p class="variant-card__color">Colore 6 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=sun-6" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<div style="border-top:1px solid var(--wf-border);"></div>
-
-<!-- ═══ 05 · HOLI + TARA — 2 card orizzontali ════════════════════ -->
-<section id="muamara-holi" class="section" data-cat="essentials">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
-      <div class="card-col fade">
-        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">Muamara Holi [landscape]</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Essentials</span>
-          <p class="card-col__title">Muamara Holi</p>
-          <p class="card-col__text">Racconto dell'incontro tra materiali, colore e artigianalità, con elementi in argento lavorati a mano.</p>
-          <p class="t-words">Ricamato · intreccio di culture · senza tempo</p>
-        </div>
-      </div>
-      <div class="card-col fade fade-d1">
-        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">Muamara Tara [landscape]</span></div></div>
-        <div class="card-col__body">
-          <span class="t-label" style="margin-bottom:.25rem;">Essentials</span>
-          <p class="card-col__title">Muamara Tara</p>
-          <p class="card-col__text">Un intreccio delicato di luce, colore e gesto artigianale. Rinascita, albero in fiore, artigianalità.</p>
-          <p class="t-words">Delicato · rinascita · artigianalità</p>
-        </div>
-      </div>
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- MODELLO 4 — STONES                                            -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section class="model-section" data-cat="stones">
+  <div class="model-header wrap">
+    <span class="t-label">Bracciale · Taglia Unica</span>
+    <h2 class="t-h2 fade">Stones.</h2>
+    <p class="fade fade-d1">Pietre semipreziose selezionate, disposte secondo ritmi che ricordano la tessitura. Ogni pietra è unica, ogni bracciale è diverso dall'altro.</p>
+    <div class="model-meta">
+      <span>Materiali · Pietre semipreziose</span>
+      <span>Argento 925</span>
+      <span>Lurex</span>
     </div>
+  </div>
+  <div class="variants-grid">
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=stones-1"><div class="img-ph ar-3-4"><span class="img-ph__label">Stones<br>Colore 1</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Stones</p>
+        <p class="variant-card__color">Colore 1 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=stones-1" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=stones-2"><div class="img-ph ar-3-4"><span class="img-ph__label">Stones<br>Colore 2</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Stones</p>
+        <p class="variant-card__color">Colore 2 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=stones-2" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=stones-3"><div class="img-ph ar-3-4"><span class="img-ph__label">Stones<br>Colore 3</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Stones</p>
+        <p class="variant-card__color">Colore 3 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=stones-3" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=stones-4"><div class="img-ph ar-3-4"><span class="img-ph__label">Stones<br>Colore 4</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Stones</p>
+        <p class="variant-card__color">Colore 4 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=stones-4" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=stones-5"><div class="img-ph ar-3-4"><span class="img-ph__label">Stones<br>Colore 5</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Stones</p>
+        <p class="variant-card__color">Colore 5 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=stones-5" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=stones-6"><div class="img-ph ar-3-4"><span class="img-ph__label">Stones<br>Colore 6</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Stones</p>
+        <p class="variant-card__color">Colore 6 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=stones-6" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<!-- ═══ 06 · DIZIONARIO PIETRE ═══════════════════════════════════ -->
-<section class="section band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:3rem;">
-      <span class="t-label fade">Materiali</span>
-      <h2 class="t-h2 fade fade-d1">Le pietre dell'universo DAG.</h2>
-      <p class="t-body-lg fade fade-d2" style="max-width:440px;margin-inline:auto;margin-top:1rem;">Ogni pietra porta una storia cromatica e materica. La selezione è parte essenziale del processo.</p>
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- MODELLO 5 — STAR                                              -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section class="model-section" data-cat="star">
+  <div class="model-header wrap">
+    <span class="t-label">Bracciale · Taglia Unica</span>
+    <h2 class="t-h2 fade">Star.</h2>
+    <p class="fade fade-d1">Dettagli in argento 925 con oro 1 micron si fondono al lurex in una trama che cattura la luce. Lo Star è il pezzo da sera, pensato per brillare.</p>
+    <div class="model-meta">
+      <span>Materiali · Pietre semipreziose</span>
+      <span>Argento 925 con oro 1 micron</span>
+      <span>Lurex</span>
     </div>
-    <div class="fade fade-d1" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;">
-      <!-- ogni card pietra: box grigio + nome + micro copy -->
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Rubitormalina</p>
-        <p class="t-caption">Rosso vibrante</p>
+  </div>
+  <div class="variants-grid">
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=star-1"><div class="img-ph ar-3-4"><span class="img-ph__label">Star<br>Colore 1</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
       </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Granato</p>
-        <p class="t-caption">Rosso profondo</p>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Star</p>
+        <p class="variant-card__color">Colore 1 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=star-1" class="btn btn--filled">Acquista</a></div>
       </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Spinello nero</p>
-        <p class="t-caption">Notte assoluta</p>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=star-2"><div class="img-ph ar-3-4"><span class="img-ph__label">Star<br>Colore 2</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
       </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Labradorite</p>
-        <p class="t-caption">Iridescenza lunare</p>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Star</p>
+        <p class="variant-card__color">Colore 2 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=star-2" class="btn btn--filled">Acquista</a></div>
       </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Zaffiro</p>
-        <p class="t-caption">Blu profondo</p>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=star-3"><div class="img-ph ar-3-4"><span class="img-ph__label">Star<br>Colore 3</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
       </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Pietra di luna</p>
-        <p class="t-caption">Luce diffusa</p>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Star</p>
+        <p class="variant-card__color">Colore 3 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=star-3" class="btn btn--filled">Acquista</a></div>
       </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Tormalina</p>
-        <p class="t-caption">Sfumatura cromatica</p>
+    </article>
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=star-4"><div class="img-ph ar-3-4"><span class="img-ph__label">Star<br>Colore 4</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
       </div>
-      <div style="border:1px solid var(--wf-border);padding:1.25rem 1rem;background:var(--wf-bg);text-align:center;">
-        <div style="width:28px;height:28px;border-radius:50%;background:var(--wf-img-dark);margin:0 auto .75rem;"></div>
-        <p style="font-family:var(--font-serif);font-size:15px;font-weight:500;margin-bottom:.2rem;">Diopside</p>
-        <p class="t-caption">Verde profondo</p>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Star</p>
+        <p class="variant-card__color">Colore 4 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=star-4" class="btn btn--filled">Acquista</a></div>
       </div>
-    </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=star-5"><div class="img-ph ar-3-4"><span class="img-ph__label">Star<br>Colore 5</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Star</p>
+        <p class="variant-card__color">Colore 5 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=star-5" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=star-6"><div class="img-ph ar-3-4"><span class="img-ph__label">Star<br>Colore 6</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Star</p>
+        <p class="variant-card__color">Colore 6 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=star-6" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
-<!-- ═══ CTA ════════════════════════════════════════════════════════ -->
-<section class="section band--dark" style="padding-block:5rem;">
-  <div class="wrap--narrow" style="text-align:center;">
-    <h2 class="t-h2 fade" style="color:#fff;margin-bottom:2rem;">Ogni gioiello<br>attende di essere tuo.</h2>
-    <div class="btn-row fade fade-d1" style="justify-content:center;">
-      <a href="stores.html"  class="btn btn--outline-inv">Trova un rivenditore</a>
-      <a href="contact.html" class="btn btn--outline-inv">Richiedi informazioni</a>
+<!-- ══════════════════════════════════════════════════════════════ -->
+<!-- MODELLO 6 — TEXTURED                                          -->
+<!-- ══════════════════════════════════════════════════════════════ -->
+<section class="model-section" data-cat="textured">
+  <div class="model-header wrap">
+    <span class="t-label">Bracciale · Taglia Unica</span>
+    <h2 class="t-h2 fade">Textured.</h2>
+    <p class="fade fade-d1">La superficie irregolare del Textured è il risultato di una tecnica di tessitura densa che crea volume e tatto. Un gioiello che si sente prima ancora di essere visto.</p>
+    <div class="model-meta">
+      <span>Materiali · Pietre semipreziose</span>
+      <span>Argento 925</span>
     </div>
+  </div>
+  <div class="variants-grid">
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=textured-1"><div class="img-ph ar-3-4"><span class="img-ph__label">Textured<br>Colore 1</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Textured</p>
+        <p class="variant-card__color">Colore 1 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=textured-1" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=textured-2"><div class="img-ph ar-3-4"><span class="img-ph__label">Textured<br>Colore 2</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Textured</p>
+        <p class="variant-card__color">Colore 2 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=textured-2" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=textured-3"><div class="img-ph ar-3-4"><span class="img-ph__label">Textured<br>Colore 3</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Textured</p>
+        <p class="variant-card__color">Colore 3 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=textured-3" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=textured-4"><div class="img-ph ar-3-4"><span class="img-ph__label">Textured<br>Colore 4</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Textured</p>
+        <p class="variant-card__color">Colore 4 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=textured-4" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d1">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=textured-5"><div class="img-ph ar-3-4"><span class="img-ph__label">Textured<br>Colore 5</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Textured</p>
+        <p class="variant-card__color">Colore 5 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=textured-5" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+    <article class="variant-card fade fade-d2">
+      <div class="variant-card__img-wrap">
+        <a href="product.html?ref=textured-6"><div class="img-ph ar-3-4"><span class="img-ph__label">Textured<br>Colore 6</span></div></a>
+        <button class="wishlist-btn" aria-label="Salva in wishlist"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+      </div>
+      <div class="variant-card__body">
+        <p class="variant-card__model">Muamara Textured</p>
+        <p class="variant-card__color">Colore 6 <span class="wf-note">da definire</span></p>
+        <p class="variant-card__size">Taglia Unica</p>
+        <p class="variant-card__price">€ — <span class="wf-note">da definire</span></p>
+        <div class="variant-card__actions"><a href="product.html?ref=textured-6" class="btn btn--filled">Acquista</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══ CTA BAND ════════════════════════════════════════════════════ -->
+<section class="section" style="background:#1a1a1a;padding:4rem var(--pad);text-align:center;">
+  <p class="t-label fade" style="color:rgba(255,255,255,0.4);">DAG Gioielli</p>
+  <h2 class="t-h2 fade fade-d1" style="color:#fff;margin-bottom:1.5rem;">Ogni gioiello attende di essere tuo.</h2>
+  <div class="fade fade-d2" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="stores.html" class="btn btn--outline-inv">Trova un rivenditore</a>
+    <a href="contact.html" class="btn btn--outline-inv">Richiedi informazioni</a>
   </div>
 </section>
 
