@@ -1383,23 +1383,23 @@ body.vetrina .vetrina-only { display: block; }
 .product-card__img:hover .img-ph { transform: scale(1.02); }
 
 .product-card__body { flex: 1; display: flex; flex-direction: column; }
-/* categoria — protagonista */
-.product-card__category {
+/* nome modello — protagonista */
+.product-card__ref {
   font-family: var(--font-serif);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--wf-text);
-  margin-bottom: .3rem;
+  margin-bottom: .25rem;
   line-height: 1.2;
 }
-/* nome prodotto — discreto, secondario */
-.product-card__ref {
+/* categoria — secondaria */
+.product-card__category {
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0.08em;
-  color: var(--wf-ghost);
-  margin-bottom: .9rem;
+  letter-spacing: 0.06em;
+  color: var(--wf-muted);
+  margin-bottom: .85rem;
 }
 .product-card__price {
   font-family: var(--font-sans);
