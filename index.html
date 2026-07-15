@@ -313,19 +313,19 @@
      sul lato sinistro via CSS background-image linear-gradient.
      Alternativa: Inner Section 2 col, col sx con background scuro
      e testo, col dx con immagine. ★★ -->
-<section class="section" style="padding:0;">
-  <div style="position:relative;overflow:hidden;">
-    <div class="img-ph fade" style="height:80vh;min-height:480px;">
-      <span class="img-ph__label">Immagine full-width — lavorazione telaio [1920×1080]</span>
-    </div>
-    <!-- overlay testo su immagine -->
-    <div style="position:absolute;top:0;left:0;bottom:0;width:48%;background:rgba(0,0,0,0.52);display:flex;align-items:center;padding:3rem var(--pad);">
-      <div>
-        <span class="t-label" style="color:rgba(255,255,255,0.5);">Artigianalità</span>
-        <h2 class="t-h2 fade" style="color:#fff;margin-bottom:1.25rem;">Il valore è nel tempo<br>che precede l'oggetto.</h2>
-        <p class="fade fade-d1" style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:2rem;font-weight:300;max-width:380px;">La lavorazione a telaio trasforma piccole pietre, catena d'argento e filo di lurex in gioielli tessili morbidi, luminosi e unici.</p>
-        <a href="philosophy.html" class="btn btn--outline-inv fade fade-d2">Scopri la filosofia</a>
-      </div>
+<section class="section" style="padding:0;position:relative;overflow:hidden;">
+  <div class="img-ph fade" style="height:80vh;min-height:480px;">
+    <span class="img-ph__label">Immagine full-width — lavorazione telaio [1920×1080]</span>
+  </div>
+  <!-- overlay sfondo sinistra -->
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.58) 0%,rgba(0,0,0,.58) 52%,transparent 72%);pointer-events:none;"></div>
+  <!-- testo allineato con .wrap come le altre sezioni -->
+  <div class="wrap" style="position:absolute;inset:0;display:flex;align-items:center;">
+    <div style="max-width:420px;">
+      <span class="t-label" style="color:rgba(255,255,255,0.5);">Artigianalità</span>
+      <h2 class="t-h2 fade" style="color:#fff;margin-bottom:1.25rem;">Il valore è nel tempo<br>che precede l'oggetto.</h2>
+      <p class="fade fade-d1" style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:2rem;font-weight:300;">La lavorazione a telaio trasforma piccole pietre, catena d'argento e filo di lurex in gioielli tessili morbidi, luminosi e unici.</p>
+      <a href="philosophy.html" class="btn btn--outline-inv fade fade-d2">Scopri la filosofia</a>
     </div>
   </div>
 </section>
