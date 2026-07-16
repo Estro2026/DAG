@@ -1366,31 +1366,7 @@ body.vetrina .vetrina-only { display: block; }
 .btn--wishlist:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
 .btn--wishlist svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.5; flex-shrink: 0; }
 
-/* ── Product card ────────────────────────────────────────────────── */
-.wishlist-btn {
-  position: absolute;
-  top: .75rem;
-  right: .75rem;
-  width: 34px;
-  height: 34px;
-  background: var(--wf-bg);
-  border: 1px solid var(--wf-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-  transition: border-color 0.2s ease;
-}
-.wishlist-btn:hover { border-color: var(--wf-text); }
-.wishlist-btn svg {
-  width: 15px;
-  height: 15px;
-  stroke: var(--wf-text);
-  fill: none;
-  stroke-width: 1.5;
-}
-
+/* ── Product card */
 .product-card {
   display: flex;
   flex-direction: column;
