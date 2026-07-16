@@ -1369,29 +1369,27 @@ body.vetrina .vetrina-only { display: block; }
 .site-header.on-hero .nav-cart:hover { color: #fff; }
 .site-header.on-hero .nav-cart__count { background: rgba(255,255,255,0.9); color: #1a1a1a; }
 
-/* ── Product card ────────────────────────────────────────────────── */
+/* ── Wishlist button (card overlay + PDP) ────────────────────────── */
 .wishlist-btn {
-  position: absolute;
-  top: .75rem;
-  right: .75rem;
-  width: 34px;
-  height: 34px;
-  background: var(--wf-bg);
-  border: 1px solid var(--wf-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255,255,255,0.88);
+  border: none;
+  border-radius: 50%;
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
   cursor: pointer;
-  padding: 0;
-  transition: border-color 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
 }
-.wishlist-btn:hover { border-color: var(--wf-text); }
-.wishlist-btn svg {
-  width: 15px;
-  height: 15px;
-  stroke: var(--wf-text);
-  fill: none;
-  stroke-width: 1.5;
+.wishlist-btn:hover { background: #fff; transform: scale(1.08); }
+.wishlist-btn svg { width: 16px; height: 16px; stroke: var(--wf-text); fill: none; stroke-width: 1.5; }
+.wishlist-btn.active svg { fill: var(--wf-text); }
+
+/* overlay sull'immagine carta prodotto */
+.product-card__img { position: relative; }
+.product-card__wishlist {
+  position: absolute;
+  top: 10px; right: 10px;
+  z-index: 2;
 }
 
 .product-card {
