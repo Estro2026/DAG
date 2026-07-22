@@ -165,8 +165,7 @@
 <!-- ═══ 01 · HERO ════════════════════════════════════════════════ -->
 <section class="hero hero--home" aria-label="Hero editoriale">
   <div class="hero__bg">
-    <img src="../Assets/foto/dag1920x108001.webp" alt="Bracciali tessili DAG" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;">
-    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.18);"></div>
+    <div class="hero__bg-label">Immagine hero — mani / gioiello / laboratorio [1920×1080]</div>
   </div>
   <div class="hero__gradient"></div>
   <div class="hero__content">
@@ -335,26 +334,26 @@
     <div style="display:grid;grid-template-columns:5fr 3fr 4fr;grid-template-rows:auto auto;gap:1rem;">
 
       <!-- grande sx — span 2 righe -->
-      <div class="img-ph ar-3-4 fade" style="grid-row:1/3;overflow:hidden;">
-        <img src="../Assets/foto/dag90001.webp" alt="Bracciali e collana DAG indossati" style="width:100%;height:100%;object-fit:cover;">
+      <div class="img-ph ar-3-4 fade" style="grid-row:1/3;">
+        <span class="img-ph__label">Immagine laboratorio<br>[portrait]</span>
       </div>
       <!-- top-center -->
-      <div class="fade fade-d1" style="overflow:hidden;aspect-ratio:3/4;margin-top:-3.5rem;position:relative;z-index:2;">
-        <img src="../Assets/foto/dagorizz02.webp" alt="Bracciali DAG" style="width:100%;height:100%;object-fit:cover;">
+      <div class="img-ph ar-4-3 fade fade-d1" style="margin-top:-3.5rem;position:relative;z-index:2;">
+        <span class="img-ph__label">Dettaglio mani<br>[landscape]</span>
       </div>
       <!-- card testuale -->
-      <div class="fade fade-d2" style="background:#C6633E;padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:flex-end;border:none;">
-        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:#F2EDE4;">Made in Milano.</p>
-        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:#F2EDE4;">Radici artigianali.</p>
-        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:#F2EDE4;">Sguardo contemporaneo.</p>
+      <div class="fade fade-d2" style="background:var(--wf-surface);padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--wf-border);">
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-muted);">Made in Milano.</p>
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-ghost);">Radici artigianali.</p>
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-ghost);opacity:.55;">Sguardo contemporaneo.</p>
       </div>
       <!-- bottom-center -->
-      <div class="img-ph ar-4-3 fade fade-d2" style="overflow:hidden;">
-        <img src="../Assets/foto/dag90004.webp" alt="Strumenti dell'atelier DAG" style="width:100%;height:100%;object-fit:cover;">
+      <div class="img-ph ar-4-3 fade fade-d2">
+        <span class="img-ph__label">Pietre semipreziose<br>[detail]</span>
       </div>
       <!-- bottom-dx -->
-      <div class="img-ph ar-4-3 fade fade-d3" style="overflow:hidden;">
-        <img src="../Assets/foto/dagorizz03.webp" alt="Bracciali DAG in pietre verdi" style="width:100%;height:100%;object-fit:cover;">
+      <div class="img-ph ar-4-3 fade fade-d3">
+        <span class="img-ph__label">Gioiello indossato<br>[lifestyle]</span>
       </div>
     </div>
   </div>
@@ -370,8 +369,8 @@
     <p class="fade fade-d1" style="font-size:15px;color:rgba(242,237,228,0.82);line-height:1.7;margin-bottom:2rem;font-weight:300;max-width:480px;">Nessuno stampo, nessuna produzione seriale: sono le variazioni della materia e del gesto a rendere ogni gioiello naturalmente irripetibile.</p>
     <a href="philosophy.html" class="btn btn--outline-inv fade fade-d2" style="align-self:flex-start;">Scopri la filosofia</a>
   </div>
-  <div class="fade" style="overflow:hidden;aspect-ratio:1/1;align-self:stretch;">
-    <img src="../Assets/foto/dag90002.webp" alt="L'atelier DAG al lavoro" style="width:100%;height:100%;object-fit:cover;">
+  <div class="img-ph fade" style="aspect-ratio:1/1;align-self:stretch;">
+    <span class="img-ph__label">Foto atelier DAG<br>[1:1 square]</span>
   </div>
 </section>
 
@@ -387,7 +386,9 @@
 
   <!-- Fotografia di sfondo -->
   <div class="sl-bg">
-    <img src="../Assets/foto/dag1920x108002.webp" alt="Composizione gioielli DAG" style="width:100%;height:100%;object-fit:cover;">
+    <div class="img-ph" style="width:100%;height:100%;">
+      <span class="img-ph__label">Fotografia ambientata — superficie con luce naturale morbida<br>lino / marmo / legno chiaro [1920×900]</span>
+    </div>
     <div class="sl-vignette"></div>
   </div>
 
