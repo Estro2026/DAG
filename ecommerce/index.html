@@ -29,10 +29,7 @@
 
   <link rel="stylesheet" href="../css/wireframe.css">
 
-  <!-- ═══ JSON-LD Structured Data ══════════════════════════════════
-       DEV (WordPress): installare Schema Pro o usare Yoast SEO Premium.
-       Rank Math Pro genera Organization + WebSite automaticamente
-       se configurato in Rank Math → Impostazioni generali → Schema.   -->
+  <!-- ═══ JSON-LD Structured Data ══════════════════════════════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -109,6 +106,10 @@
     <a href="contact.html">Contatti</a>
     <a href="account.html">Account</a>
   </div>
+  <div class="drawer-footer">
+    <a href="stores.html" class="btn btn--outline">Trova un rivenditore</a>
+    <a href="contact.html" class="btn btn--filled">Scrivici</a>
+  </div>
 </nav>
 
 <main>
@@ -116,11 +117,11 @@
 <!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
 <div class="dev-panel" id="devPanel">
   <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
-    <span class="dev-panel__title">⚙ Dev Notes — index.html (Home)</span>
+    <span class="dev-panel__title">⚙ Dev Notes — index.html (Home E-commerce)</span>
     <span style="display:flex;align-items:center;gap:1.25rem;">
       <span class="dev-panel__effort" title="Effort di sviluppo">★★★★ Effort alto</span>
       <span class="dev-panel__pill">WordPress</span>
-      <span class="dev-panel__pill">Elementor</span>
+      <span class="dev-panel__pill">WooCommerce</span>
     </span>
     <span class="dev-panel__toggle">▾</span>
   </div>
@@ -136,17 +137,15 @@
       </ul>
     </div>
     <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Elementor / WordPress</p>
+      <p class="dev-panel__section-title">WooCommerce / WordPress</p>
       <ul class="dev-panel__list">
         <li>Template: Elementor Canvas (full-width)</li>
         <li>Hero: sezione 1 col, background image cover, overlay rgba ★★</li>
         <li>Manifesto: Inner Section 2 col, Heading + Text Editor ★</li>
-        <li class="warn">Griglia editoriale 03: CSS Grid custom — non nativo Elementor ★★★</li>
-        <li class="warn">Collection Index 05: JS hover crossfade — widget HTML custom ★★★★</li>
-        <li class="warn">Still Life 06: IntersectionObserver + PNG scontornati — custom ★★★★</li>
-        <li>Still Life: JS in functions.php → wp_enqueue_script o plugin Code Snippets</li>
+        <li class="warn">Griglia editoriale: CSS Grid custom — non nativo Elementor ★★★</li>
+        <li class="warn">Still Life: IntersectionObserver + PNG scontornati — custom ★★★★</li>
+        <li>Griglia prodotti: WooCommerce shortcode [products] o blocco Products ★★</li>
         <li>Animazioni .fade: Elementor Motion Effects → Entrance Animation</li>
-        <li>Stores Teaser: input decorativo, collegare a stores.html?q= in produzione</li>
       </ul>
     </div>
     <div class="dev-panel__section">
@@ -155,100 +154,54 @@
         <li>1 foto hero 1920×1080 (laboratorio / mani / gioiello)</li>
         <li>1 foto full-width 1920×1080 (tessitura a telaio)</li>
         <li>5 immagini griglia editoriale (portrait + landscape)</li>
-        <li>4 immagini portrait 3:4 per Collection Index</li>
         <li>1 foto ambientata 1920×900 (sfondo Still Life)</li>
         <li>4 PNG scontornati gioielli (sfondo trasparente)</li>
+        <li>6 foto prodotto 3:4 per griglia collezioni</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!--
-  ╔══════════════════════════════════════════════════════════════════╗
-  ║  DEV NOTES — index.html (Home Page)                             ║
-  ║  Effort totale pagina: ★★★★ (alto — sezioni animate,            ║
-  ║  collection index JS, still life IntersectionObserver)          ║
-  ╠══════════════════════════════════════════════════════════════════╣
-  ║  WORDPRESS / ELEMENTOR                                          ║
-  ║  • Template: Elementor Canvas (full-width, zero padding WP)    ║
-  ║  • Header: theme header custom o Elementor Header Builder       ║
-  ║    (Hello Elementor + Elementor Pro). Sticky con JS/CSS. ★★     ║
-  ║  • Animazioni .fade (IntersectionObserver in main.js):          ║
-  ║    replicabile con Elementor Motion Effects > Entrance           ║
-  ║    Animation (Fade In / Slide Up). Nessun plugin extra. ★        ║
-  ║  • Sezione 05 — Collection Index (hover + image crossfade):    ║
-  ║    ⚠ Non replicabile nativamente in Elementor. Richiede         ║
-  ║    widget HTML + CSS/JS custom (incollare da wireframe).        ║
-  ║    Alternativa plugin: JetTabs o Dynamic Content for            ║
-  ║    Elementor con trigger hover. ★★★★                             ║
-  ║  • Sezione 06 — Still Life editoriale (reveal sequenziale):    ║
-  ║    ⚠ Completamente custom JS + CSS. In Elementor: sezione       ║
-  ║    con background image + widget HTML per i gioielli PNG.       ║
-  ║    Il JS (IntersectionObserver + setTimeout) va incollato       ║
-  ║    in Elementor > Custom Code o in un plugin Snippets. ★★★★     ║
-  ║  • PNG scontornati gioielli (still life): fornire come PNG      ║
-  ║    con sfondo trasparente. Caricare in Media Library WP.        ║
-  ║  • Sezione 03 "Come nasce": griglia 3 col + numero seriale —   ║
-  ║    Elementor Inner Section 3 col, widget Icon Box. ★             ║
-  ║  • Sezione 07 CTA dark band: sezione sfondo scuro, widget       ║
-  ║    Heading + Button. ★                                          ║
-  ║                                                                  ║
-  ║  SEO WORDPRESS                                                   ║
-  ║  • Schema Organization + WebSite già nel JSON-LD.              ║
-  ║    In Rank Math: Rank Math → Impostazioni generali → Schema     ║
-  ║    → Organization. Compilare logo e sameAs (Instagram).         ║
-  ║  • OG image: Assets/og/og-home.jpg 1200×630px (da creare)      ║
-  ║  • ⚠ Canonical URL: aggiornare con dominio definitivo           ║
-  ║    in tutti i <link rel="canonical"> prima del go-live.         ║
-  ╚══════════════════════════════════════════════════════════════════╝
--->
-
 <!-- ═══ 01 · HERO ════════════════════════════════════════════════ -->
-<!-- DEV: Hero full-viewport con immagine di sfondo, overlay gradiente,
-     testo e due CTA. Elementor: sezione 1 col stretch, background
-     image cover, min-height 100vh, widget Heading + Text + 2×Button.
-     Overlay via Advanced > Background Overlay rgba. ★★ -->
-<section class="hero" aria-label="Hero editoriale">
+<section class="hero hero--home" aria-label="Hero editoriale">
   <div class="hero__bg">
-    <div class="hero__bg-label">Immagine hero — mani / gioiello / laboratorio [1920×1080]</div>
+    <img src="../Assets/foto/dag1920x108001.webp" alt="Bracciali tessili DAG" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;">
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,0.18);"></div>
   </div>
   <div class="hero__gradient"></div>
   <div class="hero__content">
-    <span class="t-label">Made in Milano — Textile Jewelry</span>
-    <h1 class="t-h1 fade">Gioielli tessili,<br>nati a mano<br>nel laboratorio<br>milanese.</h1>
-    <p class="t-body-lg fade fade-d1" style="max-width:460px;">DAG intreccia pietre, argento e filo in gioielli contemporanei realizzati su richiesta.</p>
+    <span class="t-label">Textile Jewelry · Made in Milano</span>
+    <h1 class="t-h1 fade">Storie intrecciate<br>da indossare.</h1>
+    <p class="t-body-lg fade fade-d1" style="max-width:520px;">DAG intreccia pietre, argento e filo in gioielli contemporanei realizzati su ordine nel laboratorio milanese.</p>
     <div class="btn-row fade fade-d2">
-      <a href="collections.html" class="btn btn--outline-inv">Esplora le collezioni</a>
-      <a href="about.html"       class="btn btn--outline-inv">Scopri l'universo DAG</a>
+      <a href="#le-collezioni" class="btn btn--outline-inv">Esplora le collezioni</a>
+      <a href="about.html"     class="btn btn--outline-inv">Scopri l'universo DAG</a>
     </div>
   </div>
   <div class="scroll-cue" aria-hidden="true"><span>Scorri</span></div>
 </section>
 
 <!-- ═══ 02 · MANIFESTO ═══════════════════════════════════════════ -->
-<!-- DEV: Layout 2 col testo (5/7). Elementor Inner Section 2 col,
-     widget Heading + Text Editor + Divider. Nessun plugin. ★ -->
-<section class="section section--lg">
+<section class="section section--lg band--terra">
   <div class="wrap">
-    <div class="grid-5-7" style="gap:5rem;">
+    <span class="t-label fade" style="margin-bottom:2.5rem;">Il progetto</span>
+    <div class="grid-5-7" style="gap:5rem;align-items:flex-start;">
       <div>
-        <span class="t-label fade">Il progetto</span>
-        <h2 class="t-h2 fade fade-d1">Non un catalogo.<br>Un atelier digitale.</h2>
+        <h2 class="t-h2 fade fade-d1">Un sapere antico.<br>Uno sguardo<br>contemporaneo.</h2>
       </div>
       <div>
-        <p class="t-body-lg fade fade-d2">Ogni gioiello DAG nasce da un processo lento e curato: la scelta delle pietre, il gesto del telaio, l'intreccio con l'argento, il passaggio delle mani. Il sito racconta questo percorso prima ancora del singolo prodotto.</p>
+        <p class="t-body-lg fade fade-d2">DAG nasce da un sapere familiare legato all'oreficeria milanese. Oggi quel sapere incontra pietre semipreziose selezionate in India, il gesto del telaio e una ricerca contemporanea fatta di materia, colore e leggerezza.</p>
         <div class="rule mt-md fade fade-d3"></div>
-        <p class="t-body fade fade-d3">Un marchio artigianale con forte radice milanese, elegante, caldo e contemporaneo. Il prodotto è protagonista, ma non è mai separato da ciò che lo rende speciale.</p>
+        <p class="t-body fade fade-d3">Ogni creazione custodisce la storia da cui nasce, ma trova una forma nuova nel modo personale in cui viene indossata. Ogni pezzo nasce su ordine, in 10–15 giorni.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 03 · PRODOTTI — predisposizione e-commerce ══════════════════
-     Struttura product grid: in fase shop aggiungere prezzo + CTA acquisto.
-     Ora funziona come catalogo editoriale che porta a collections.html.
-  ════════════════════════════════════════════════════════════════════ -->
-<section class="section section--lg" style="border-top:1px solid var(--wf-border);">
+<!-- ═══ 03 · COLLEZIONI ═══════════════════════════════════════════
+     Struttura product grid: prezzo + CTA ordine.
+  ════════════════════════════════════════════════════════════════ -->
+<section id="le-collezioni" class="section section--lg" style="border-top:1px solid var(--wf-border);">
   <div class="wrap">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
       <div>
@@ -258,7 +211,7 @@
       <a href="collections.html" class="btn btn--outline fade fade-d1">Trova il tuo gioiello</a>
     </div>
 
-        <div class="grid-3 products-grid">
+    <div class="grid-3 products-grid">
 
       <!-- Card 1 — Jaipur -->
       <div class="product-card fade">
@@ -377,89 +330,68 @@
      ⚠ Non replicabile nativamente in Elementor. Usare widget HTML
      con grid CSS custom, oppure Elementor Pro > Container con
      layout grid. Alternativa: Metro Grid plugin. ★★★ -->
-<section class="section" style="padding-top:0;">
+<section class="section" style="padding-block:clamp(5rem,9vw,8rem);">
   <div class="wrap">
     <div style="display:grid;grid-template-columns:5fr 3fr 4fr;grid-template-rows:auto auto;gap:1rem;">
 
       <!-- grande sx — span 2 righe -->
-      <div class="img-ph ar-3-4 fade" style="grid-row:1/3;">
-        <span class="img-ph__label">Immagine laboratorio<br>[portrait]</span>
+      <div class="img-ph ar-3-4 fade" style="grid-row:1/3;overflow:hidden;">
+        <img src="../Assets/foto/dag90001.webp" alt="Bracciali e collana DAG indossati" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <!-- top-center -->
-      <div class="img-ph ar-4-3 fade fade-d1">
-        <span class="img-ph__label">Dettaglio mani<br>[landscape]</span>
+      <div class="fade fade-d1" style="overflow:hidden;aspect-ratio:3/4;margin-top:-3.5rem;position:relative;z-index:2;">
+        <img src="../Assets/foto/dagorizz02.webp" alt="Bracciali DAG" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <!-- card testuale -->
-      <div class="fade fade-d2" style="background:var(--wf-surface);padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--wf-border);">
-        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-muted);">Made in Milano.</p>
-        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-ghost);">Radici artigianali.</p>
-        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:var(--wf-ghost);opacity:.55;">Sguardo contemporaneo.</p>
+      <div class="fade fade-d2" style="background:#C6633E;padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:flex-end;border:none;">
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:#F2EDE4;">Made in Milano.</p>
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:#F2EDE4;">Radici artigianali.</p>
+        <p style="font-family:var(--font-serif);font-size:clamp(20px,2.5vw,32px);line-height:1.1;color:#F2EDE4;">Sguardo contemporaneo.</p>
       </div>
       <!-- bottom-center -->
-      <div class="img-ph ar-4-3 fade fade-d2">
-        <span class="img-ph__label">Pietre semipreziose<br>[detail]</span>
+      <div class="img-ph ar-4-3 fade fade-d2" style="overflow:hidden;">
+        <img src="../Assets/foto/dag90004.webp" alt="Strumenti dell'atelier DAG" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <!-- bottom-dx -->
-      <div class="img-ph ar-4-3 fade fade-d3">
-        <span class="img-ph__label">Gioiello indossato<br>[lifestyle]</span>
+      <div class="img-ph ar-4-3 fade fade-d3" style="overflow:hidden;">
+        <img src="../Assets/foto/dagorizz03.webp" alt="Bracciali DAG in pietre verdi" style="width:100%;height:100%;object-fit:cover;">
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 04 · FULL WIDTH — IL GESTO ══════════════════════════════ -->
-<!-- DEV: Immagine full-width con overlay parziale (48% sx) e testo.
-     Elementor: sezione stretch, background image, overlay solo
-     sul lato sinistro via CSS background-image linear-gradient.
-     Alternativa: Inner Section 2 col, col sx con background scuro
-     e testo, col dx con immagine. ★★ -->
-<section class="section" style="padding:0;position:relative;overflow:hidden;">
-  <div class="img-ph fade" style="height:80vh;min-height:480px;">
-    <span class="img-ph__label">Immagine full-width — lavorazione telaio [1920×1080]</span>
+<!-- ═══ 05 · ARTIGIANALITÀ ════════════════════════════════════════ -->
+<!-- DEV: Layout 2 col — testo su fondo terra + immagine. ★★ -->
+<section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));align-items:center;">
+  <div style="background:var(--wf-terra);display:flex;flex-direction:column;justify-content:center;padding:clamp(2.5rem,6vw,6rem);align-self:stretch;">
+    <span class="t-label" style="color:rgba(242,237,228,0.6);">Artigianalità</span>
+    <h2 class="t-h2 fade" style="color:#F2EDE4;margin-bottom:1.25rem;">La bellezza di ciò<br>che non si ripete.</h2>
+    <p class="fade fade-d1" style="font-size:15px;color:rgba(242,237,228,0.82);line-height:1.7;margin-bottom:1.25rem;font-weight:300;max-width:480px;">Sul telaio, pietre semipreziose, catena d'argento e fili di lurex vengono lavorati a mano, un passaggio alla volta.</p>
+    <p class="fade fade-d1" style="font-size:15px;color:rgba(242,237,228,0.82);line-height:1.7;margin-bottom:2rem;font-weight:300;max-width:480px;">Nessuno stampo, nessuna produzione seriale: sono le variazioni della materia e del gesto a rendere ogni gioiello naturalmente irripetibile.</p>
+    <a href="philosophy.html" class="btn btn--outline-inv fade fade-d2" style="align-self:flex-start;">Scopri la filosofia</a>
   </div>
-  <!-- overlay sfondo sinistra -->
-  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.58) 0%,rgba(0,0,0,.58) 52%,transparent 72%);pointer-events:none;"></div>
-  <!-- testo allineato con .wrap come le altre sezioni -->
-  <div class="wrap" style="position:absolute;inset:0;display:flex;align-items:center;">
-    <div style="max-width:420px;">
-      <span class="t-label" style="color:rgba(255,255,255,0.5);">Artigianalità</span>
-      <h2 class="t-h2 fade" style="color:#fff;margin-bottom:1.25rem;">Il valore è nel tempo<br>che precede l'oggetto.</h2>
-      <p class="fade fade-d1" style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:2rem;font-weight:300;">La lavorazione a telaio trasforma piccole pietre, catena d'argento e filo di lurex in gioielli tessili morbidi, luminosi e unici.</p>
-      <a href="philosophy.html" class="btn btn--outline-inv fade fade-d2">Scopri la filosofia</a>
-    </div>
+  <div class="fade" style="overflow:hidden;aspect-ratio:1/1;align-self:stretch;">
+    <img src="../Assets/foto/dag90002.webp" alt="L'atelier DAG al lavoro" style="width:100%;height:100%;object-fit:cover;">
   </div>
 </section>
-
 
 <!-- ═══ 06 · STILL LIFE EDITORIALE ════════════════════════════════ -->
 <!-- DEV: Sezione completamente custom — sfondo fotografico + PNG
      scontornati rivelati in sequenza via IntersectionObserver.
-     ⚠ Non replicabile in Elementor senza codice custom.
-     WordPress: incollare l'intera sezione come widget HTML in
-     Elementor, o registrarla come template PHP nel tema child.
-     Il JS (IntersectionObserver + setTimeout stagger 720ms) va in
-     functions.php → wp_enqueue_script o plugin Code Snippets. ★★★★
+     ⚠ Non replicabile in Elementor senza codice custom. ★★★★
      Immagini necessarie:
        - 1 fotografia ambientata (JPG, 1920×900, sfondo neutro)
        - 4 PNG scontornati gioielli (sfondo trasparente, alta risoluzione)
--->
-<!--
-  In produzione:
-  – Sfondo: fotografia ambientata (superficie neutra con luce naturale morbida)
-  – Gioielli: PNG con sfondo trasparente (scontornati) posizionati via CSS
-  – Ogni pezzo appare in sequenza via IntersectionObserver al primo scroll
 -->
 <section class="still-life" aria-label="Still life editoriale DAG">
 
   <!-- Fotografia di sfondo -->
   <div class="sl-bg">
-    <div class="img-ph" style="width:100%;height:100%;">
-      <span class="img-ph__label">Fotografia ambientata — superficie con luce naturale morbida<br>lino / marmo / legno chiaro [1920×900]</span>
-    </div>
+    <img src="../Assets/foto/dag1920x108002.webp" alt="Composizione gioielli DAG" style="width:100%;height:100%;object-fit:cover;">
     <div class="sl-vignette"></div>
   </div>
 
-  <!-- ─ Gioiello 1: Muamara Jaipur — bracciale — centro-sinistra ─ -->
+  <!-- ─ Gioiello 1: Muamara Jaipur ─ -->
   <a href="collections.html#muamara-jaipur" class="sl-piece" style="left:12%;top:36%;">
     <div class="sl-piece__img" style="width:178px;height:86px;">
       <span class="sl-piece__ph-label">Muamara Jaipur<br>bracciale scontornato</span>
@@ -467,7 +399,7 @@
     <p class="sl-piece__name">Muamara Jaipur</p>
   </a>
 
-  <!-- ─ Gioiello 2: Muamara Star — orecchini — alto destra ─ -->
+  <!-- ─ Gioiello 2: Muamara Star ─ -->
   <a href="collections.html#muamara-star" class="sl-piece" style="right:28%;top:13%;">
     <div class="sl-piece__img" style="width:72px;height:148px;">
       <span class="sl-piece__ph-label">Muamara Star<br>orecchini scontornati</span>
@@ -475,7 +407,7 @@
     <p class="sl-piece__name">Muamara Star</p>
   </a>
 
-  <!-- ─ Gioiello 3: Muamara Precious — collana — destra centrale ─ -->
+  <!-- ─ Gioiello 3: Muamara Precious ─ -->
   <a href="collections.html#muamara-precious" class="sl-piece" style="right:11%;top:38%;">
     <div class="sl-piece__img" style="width:94px;height:188px;">
       <span class="sl-piece__ph-label">Muamara Precious<br>collana scontornata</span>
@@ -483,7 +415,7 @@
     <p class="sl-piece__name">Muamara Precious</p>
   </a>
 
-  <!-- ─ Gioiello 4: Muamara Holi — bracciale — basso centro ─ -->
+  <!-- ─ Gioiello 4: Muamara Holi ─ -->
   <a href="collections.html#muamara-holi" class="sl-piece" style="left:40%;bottom:19%;">
     <div class="sl-piece__img" style="width:196px;height:78px;">
       <span class="sl-piece__ph-label">Muamara Holi<br>bracciale scontornato</span>
@@ -491,35 +423,22 @@
     <p class="sl-piece__name">Muamara Holi</p>
   </a>
 
-  <!-- ─ Caption editoriale — appare per ultima ─ -->
+  <!-- ─ Caption editoriale ─ -->
   <div class="sl-piece sl-caption" style="left:var(--pad);bottom:2.75rem;">
     <span class="t-label" style="color:rgba(255,255,255,0.45);margin-bottom:.5rem;">Still life</span>
     <p class="sl-caption__text">Ogni gioiello è fatto<br>per essere guardato.</p>
   </div>
 
-  <!-- Nota wireframe -->
-  <div style="position:absolute;bottom:2.75rem;right:var(--pad);z-index:10;pointer-events:none;">
-    <span class="wf-note">PNG scontornati su fotografia — effetto still life</span>
-  </div>
-
 </section>
 
 <!-- ═══ 07 · STORES TEASER ═══════════════════════════════════════ -->
-<!-- DEV: Mini store locator con input città + link a stores.html.
-     L'input è decorativo nel wireframe. In produzione: collegare
-     a stores.html?q={valore} oppure integrare con Google Maps
-     Places Autocomplete JS API. ★★ -->
-<section class="section section--lg band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);">
+<section class="section section--lg" style="background:#A35D42;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12);">
   <div class="wrap--narrow" style="text-align:center;">
     <span class="t-label fade">Rivenditori</span>
-    <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.25rem;">Trova DAG<br>vicino a te.</h2>
-    <p class="t-body-lg fade fade-d2" style="margin-bottom:2.5rem;">Una rete selezionata di boutique e concept store accompagna il brand sul territorio.</p>
-    <div class="fade fade-d3" style="display:flex;gap:0;max-width:520px;margin-inline:auto;">
-      <input type="text" placeholder="Inserisci città o provincia" style="flex:1;padding:.85rem 1rem;font-family:var(--font-sans);font-size:13px;font-weight:300;border:1px solid var(--wf-border);border-right:none;background:#fff;color:var(--wf-text);outline:none;" aria-label="Cerca città o provincia">
-      <a href="stores.html" class="btn btn--filled" style="white-space:nowrap;">Cerca</a>
-    </div>
-    <div class="mt-md fade fade-d4">
-      <a href="stores.html" class="btn--ghost">Vai alla pagina Stores →</a>
+    <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.25rem;">Trova DAG<br>nei migliori rivenditori.</h2>
+    <p class="t-body-lg fade fade-d2" style="margin-bottom:2.5rem;">Una rete selezionata di boutique e concept store accompagna DAG sul territorio.</p>
+    <div class="fade fade-d3" style="display:flex;justify-content:center;">
+      <a href="stores.html" class="btn btn--filled">Consulta i rivenditori</a>
     </div>
   </div>
 </section>
@@ -555,7 +474,7 @@
         </div>
       </div>
       <div class="card-col fade fade-d2">
-        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">Progetti speciali</span></div></div>
+        <div class="card-col__img"><div class="img-ph ar-16-9"><span class="img-ph__label">Collaborazioni</span></div></div>
         <div class="card-col__body">
           <span class="t-label" style="margin-bottom:.25rem;">Collaborazione</span>
           <p class="card-col__title">Progetti speciali</p>
@@ -568,13 +487,13 @@
 </section>
 
 <!-- ═══ 09 · CTA FINALE ══════════════════════════════════════════ -->
-<section class="section band--dark" style="padding-block:5rem;">
+<section class="section" style="padding-block:5rem;background:#A35D42;">
   <div class="wrap--narrow" style="text-align:center;">
-    <span class="t-label fade">Inizia un dialogo</span>
-    <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.25rem;">Vuoi entrare<br>in contatto con DAG?</h2>
-    <p class="t-body-lg fade fade-d2" style="margin-bottom:2.5rem;max-width:420px;margin-inline:auto;">Per informazioni sui gioielli, sui rivenditori o su una collaborazione, scrivici. Leggiamo ogni messaggio con attenzione.</p>
+    <span class="t-label fade" style="color:rgba(242,237,228,0.6);">Inizia un dialogo</span>
+    <h2 class="t-h2 fade fade-d1" style="margin-bottom:1.25rem;color:#F2EDE4;">Ogni nuovo intreccio<br>comincia da un incontro.</h2>
+    <p class="t-body-lg fade fade-d2" style="margin-bottom:2.5rem;max-width:460px;margin-inline:auto;color:rgba(242,237,228,0.82);">Per informazioni sui gioielli, sui rivenditori o su una collaborazione, scrivici.</p>
     <div class="btn-row fade fade-d3" style="justify-content:center;">
-      <a href="contact.html" class="btn btn--outline-inv">Scrivici</a>
+      <a href="contact.html" class="btn btn--outline-inv">Contattaci</a>
       <a href="contact.html?type=boutique" class="btn btn--outline-inv">Sei una boutique?</a>
     </div>
   </div>
@@ -619,7 +538,6 @@
   </div>
 </footer>
 
-
 <script src="../js/main.js"></script>
 <script src="../js/hotspots.js"></script>
 <script>
@@ -628,7 +546,7 @@
   var section = document.querySelector('.still-life');
   if (!section) return;
   var pieces = Array.from(section.querySelectorAll('.sl-piece'));
-  var STEP = 720; /* ms tra un pezzo e il successivo */
+  var STEP = 720;
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     pieces.forEach(function(p){ p.classList.add('revealed'); });
