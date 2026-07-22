@@ -362,12 +362,12 @@
 <!-- ═══ 05 · ARTIGIANALITÀ ════════════════════════════════════════ -->
 <!-- DEV: Layout 2 col — testo su fondo terra + immagine. ★★ -->
 <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));align-items:center;">
-  <div style="background:#2a2a2a;display:flex;flex-direction:column;justify-content:center;padding:clamp(2.5rem,6vw,6rem);align-self:stretch;">
-    <span class="t-label" style="color:rgba(255,255,255,0.45);">Artigianalità</span>
-    <h2 class="t-h2 fade" style="color:#fff;margin-bottom:1.25rem;">La bellezza di ciò<br>che non si ripete.</h2>
-    <p class="fade fade-d1" style="font-size:15px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:1.25rem;font-weight:300;max-width:480px;">Sul telaio, pietre semipreziose, catena d'argento e fili di lurex vengono lavorati a mano, un passaggio alla volta.</p>
-    <p class="fade fade-d1" style="font-size:15px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:2rem;font-weight:300;max-width:480px;">Nessuno stampo, nessuna produzione seriale: sono le variazioni della materia e del gesto a rendere ogni gioiello naturalmente irripetibile.</p>
-    <a href="philosophy.html" class="btn btn--outline-inv fade fade-d2" style="align-self:flex-start;">Scopri la filosofia</a>
+  <div style="background:#bebebe;display:flex;flex-direction:column;justify-content:center;padding:clamp(2.5rem,6vw,6rem);align-self:stretch;">
+    <span class="t-label" style="color:rgba(0,0,0,0.45);">Artigianalità</span>
+    <h2 class="t-h2 fade" style="color:var(--wf-text);margin-bottom:1.25rem;">La bellezza di ciò<br>che non si ripete.</h2>
+    <p class="fade fade-d1" style="font-size:15px;color:var(--wf-text);line-height:1.7;margin-bottom:1.25rem;font-weight:300;max-width:480px;">Sul telaio, pietre semipreziose, catena d'argento e fili di lurex vengono lavorati a mano, un passaggio alla volta.</p>
+    <p class="fade fade-d1" style="font-size:15px;color:var(--wf-text);line-height:1.7;margin-bottom:2rem;font-weight:300;max-width:480px;">Nessuno stampo, nessuna produzione seriale: sono le variazioni della materia e del gesto a rendere ogni gioiello naturalmente irripetibile.</p>
+    <a href="philosophy.html" class="btn btn--outline fade fade-d2" style="align-self:flex-start;">Scopri la filosofia</a>
   </div>
   <div class="img-ph fade" style="aspect-ratio:1/1;align-self:stretch;">
     <span class="img-ph__label">Foto atelier DAG<br>[1:1 square]</span>
@@ -375,60 +375,69 @@
 </section>
 
 <!-- ═══ 06 · STILL LIFE EDITORIALE ════════════════════════════════ -->
-<!-- DEV: Sezione completamente custom — sfondo fotografico + PNG
-     scontornati rivelati in sequenza via IntersectionObserver.
-     ⚠ Non replicabile in Elementor senza codice custom. ★★★★
-     Immagini necessarie:
-       - 1 fotografia ambientata (JPG, 1920×900, sfondo neutro)
-       - 4 PNG scontornati gioielli (sfondo trasparente, alta risoluzione)
--->
-<section class="still-life" aria-label="Still life editoriale DAG">
+<!-- DEV: Placeholder fotografico con pin hotspot interattivi.
+     Click sul pin → scheda prodotto. ★★★★ -->
+<section class="still-life" id="stillLife" aria-label="Still life interattivo DAG">
 
-  <!-- Fotografia di sfondo -->
-  <div class="sl-bg">
-    <div class="img-ph" style="width:100%;height:100%;">
-      <span class="img-ph__label">Fotografia ambientata — superficie con luce naturale morbida<br>lino / marmo / legno chiaro [1920×900]</span>
+  <figure class="sl-scene" id="slScene">
+
+    <!-- Pin 1 · Muamara Jaipur -->
+    <button class="sl-pin" type="button" data-piece="jaipur" style="left:34%;top:38%;" aria-label="Scopri Muamara Jaipur"></button>
+    <!-- Pin 2 · Muamara Jaipur Fiori -->
+    <button class="sl-pin" type="button" data-piece="jaipur-fiori" style="left:52%;top:28%;" aria-label="Scopri Muamara Jaipur Fiori"></button>
+    <!-- Pin 3 · Muamara Sun -->
+    <button class="sl-pin" type="button" data-piece="sun" style="left:66%;top:52%;" aria-label="Scopri Muamara Sun"></button>
+    <!-- Pin 4 · Muamara Stones -->
+    <button class="sl-pin" type="button" data-piece="stones" style="left:22%;top:60%;" aria-label="Scopri Muamara Stones"></button>
+
+    <!-- Scheda: Muamara Jaipur -->
+    <div class="sl-card" data-card="jaipur" role="dialog" aria-label="Muamara Jaipur">
+      <button class="sl-card__close" type="button" aria-label="Chiudi">&times;</button>
+      <div class="sl-card__img"><div class="img-ph" style="width:100%;aspect-ratio:3/4;"><span class="img-ph__label">Muamara Jaipur</span></div></div>
+      <span class="sl-card__coll">Collezione Muamara</span>
+      <h3 class="sl-card__name">Jaipur</h3>
+      <p class="sl-card__desc">Bracciale tessile in pietre semipreziose e filo intrecciato a mano sul telaio milanese. Realizzato su ordine in 10–15 giorni.</p>
+      <a class="sl-card__cta" href="product.html?ref=jaipur">Scopri il prodotto →</a>
     </div>
-    <div class="sl-vignette"></div>
-  </div>
 
-  <!-- ─ Gioiello 1: Muamara Jaipur ─ -->
-  <a href="collections.html#muamara-jaipur" class="sl-piece" style="left:12%;top:36%;">
-    <div class="sl-piece__img" style="width:178px;height:86px;">
-      <span class="sl-piece__ph-label">Muamara Jaipur<br>bracciale scontornato</span>
+    <!-- Scheda: Muamara Jaipur Fiori -->
+    <div class="sl-card" data-card="jaipur-fiori" role="dialog" aria-label="Muamara Jaipur Fiori">
+      <button class="sl-card__close" type="button" aria-label="Chiudi">&times;</button>
+      <div class="sl-card__img"><div class="img-ph" style="width:100%;aspect-ratio:3/4;"><span class="img-ph__label">Muamara Jaipur Fiori</span></div></div>
+      <span class="sl-card__coll">Collezione Muamara</span>
+      <h3 class="sl-card__name">Jaipur Fiori</h3>
+      <p class="sl-card__desc">Variante floreale del Jaipur: pietre dai toni caldi alternate a motivi intrecciati che evocano giardini in fiore. Su ordine in 10–15 giorni.</p>
+      <a class="sl-card__cta" href="product.html?ref=jaipur-fiori">Scopri il prodotto →</a>
     </div>
-    <p class="sl-piece__name">Muamara Jaipur</p>
-  </a>
 
-  <!-- ─ Gioiello 2: Muamara Star ─ -->
-  <a href="collections.html#muamara-star" class="sl-piece" style="right:28%;top:13%;">
-    <div class="sl-piece__img" style="width:72px;height:148px;">
-      <span class="sl-piece__ph-label">Muamara Star<br>orecchini scontornati</span>
+    <!-- Scheda: Muamara Sun -->
+    <div class="sl-card" data-card="sun" role="dialog" aria-label="Muamara Sun">
+      <button class="sl-card__close" type="button" aria-label="Chiudi">&times;</button>
+      <div class="sl-card__img"><div class="img-ph" style="width:100%;aspect-ratio:3/4;"><span class="img-ph__label">Muamara Sun</span></div></div>
+      <span class="sl-card__coll">Collezione Muamara</span>
+      <h3 class="sl-card__name">Sun</h3>
+      <p class="sl-card__desc">Bracciale luminoso in pietre ambrate e filo dorato. Il calore del sole condensato in un intreccio leggero e quotidiano.</p>
+      <a class="sl-card__cta" href="product.html?ref=sun">Scopri il prodotto →</a>
     </div>
-    <p class="sl-piece__name">Muamara Star</p>
-  </a>
 
-  <!-- ─ Gioiello 3: Muamara Precious ─ -->
-  <a href="collections.html#muamara-precious" class="sl-piece" style="right:11%;top:38%;">
-    <div class="sl-piece__img" style="width:94px;height:188px;">
-      <span class="sl-piece__ph-label">Muamara Precious<br>collana scontornata</span>
+    <!-- Scheda: Muamara Stones -->
+    <div class="sl-card" data-card="stones" role="dialog" aria-label="Muamara Stones">
+      <button class="sl-card__close" type="button" aria-label="Chiudi">&times;</button>
+      <div class="sl-card__img"><div class="img-ph" style="width:100%;aspect-ratio:3/4;"><span class="img-ph__label">Muamara Stones</span></div></div>
+      <span class="sl-card__coll">Collezione Muamara</span>
+      <h3 class="sl-card__name">Stones</h3>
+      <p class="sl-card__desc">Un mosaico di pietre semipreziose selezionate in India, tenute insieme dal gesto del telaio. Il pezzo più ricco della composizione.</p>
+      <a class="sl-card__cta" href="product.html?ref=stones">Scopri il prodotto →</a>
     </div>
-    <p class="sl-piece__name">Muamara Precious</p>
-  </a>
 
-  <!-- ─ Gioiello 4: Muamara Holi ─ -->
-  <a href="collections.html#muamara-holi" class="sl-piece" style="left:40%;bottom:19%;">
-    <div class="sl-piece__img" style="width:196px;height:78px;">
-      <span class="sl-piece__ph-label">Muamara Holi<br>bracciale scontornato</span>
+    <!-- Placeholder sfondo -->
+    <div class="img-ph" style="width:100%;height:100%;position:absolute;inset:0;z-index:0;">
+      <span class="img-ph__label">Fotografia ambientata — superficie con luce naturale morbida [1920×900]</span>
     </div>
-    <p class="sl-piece__name">Muamara Holi</p>
-  </a>
 
-  <!-- ─ Caption editoriale ─ -->
-  <div class="sl-piece sl-caption" style="left:var(--pad);bottom:2.75rem;">
-    <span class="t-label" style="color:rgba(255,255,255,0.45);margin-bottom:.5rem;">Still life</span>
-    <p class="sl-caption__text">Ogni gioiello è fatto<br>per essere guardato.</p>
-  </div>
+  </figure>
+
+  <div class="sl-sheet-backdrop" id="slBackdrop"></div>
 
 </section>
 
@@ -540,31 +549,59 @@
 </footer>
 
 <script src="../js/main.js"></script>
-<script src="../js/hotspots.js"></script>
 <script>
-/* Still life — rivelazione sequenziale al primo scroll */
+/* Still life interattivo — pin → scheda prodotto */
 (function () {
-  var section = document.querySelector('.still-life');
-  if (!section) return;
-  var pieces = Array.from(section.querySelectorAll('.sl-piece'));
-  var STEP = 720;
+  var scene = document.getElementById('slScene');
+  if (!scene) return;
+  var pins = scene.querySelectorAll('.sl-pin');
+  var cards = scene.querySelectorAll('.sl-card');
+  var backdrop = document.getElementById('slBackdrop');
+  var isTouch = window.matchMedia('(max-width: 768px)');
+  var openKey = null;
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    pieces.forEach(function(p){ p.classList.add('revealed'); });
-    return;
+  function cardFor(key) { return scene.querySelector('.sl-card[data-card="' + key + '"]'); }
+  function pinFor(key)  { return scene.querySelector('.sl-pin[data-piece="' + key + '"]'); }
+
+  function close() {
+    if (!openKey) return;
+    var c = cardFor(openKey), p = pinFor(openKey);
+    if (c) c.classList.remove('is-open');
+    if (p) p.classList.remove('is-active');
+    backdrop.classList.remove('is-visible');
+    openKey = null;
   }
 
-  var triggered = false;
-  var io = new IntersectionObserver(function(entries) {
-    if (triggered || !entries[0].isIntersecting) return;
-    triggered = true;
-    pieces.forEach(function(piece, i) {
-      setTimeout(function(){ piece.classList.add('revealed'); }, i * STEP);
-    });
-    io.disconnect();
-  }, { threshold: 0.22 });
+  function open(key) {
+    if (openKey === key) { close(); return; }
+    close();
+    var c = cardFor(key), p = pinFor(key);
+    if (!c) return;
+    c.classList.add('is-open');
+    if (p) p.classList.add('is-active');
+    if (isTouch.matches) backdrop.classList.add('is-visible');
+    openKey = key;
+  }
 
-  io.observe(section);
+  pins.forEach(function (pin) {
+    var key = pin.getAttribute('data-piece');
+    pin.addEventListener('click', function (e) { e.stopPropagation(); open(key); });
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      pin.addEventListener('mouseenter', function () { if (!isTouch.matches) open(key); });
+    }
+  });
+
+  cards.forEach(function (card) {
+    card.addEventListener('click', function (e) { e.stopPropagation(); });
+    var x = card.querySelector('.sl-card__close');
+    if (x) x.addEventListener('click', function (e) { e.stopPropagation(); close(); });
+  });
+
+  backdrop.addEventListener('click', close);
+  document.addEventListener('click', function (e) {
+    if (openKey && !scene.contains(e.target)) close();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
 })();
 </script>
 <script src="../js/version-switcher.js"></script>
