@@ -367,67 +367,85 @@
 </section>
 
 <!-- ═══ 06 · STILL LIFE EDITORIALE ════════════════════════════════ -->
-<!-- DEV: Foto editoriale bracciali con pin hotspot interattivi.
-     Click sul pin → scheda prodotto sovrapposta. ★★★★ -->
-<section class="section" style="padding-block:clamp(3rem,5vw,5rem);">
-  <div class="wrap">
+<!-- DEV: Sezione con sfondo e padding laterale, immagine 1320×550 centrata.
+     Pin hotspot interattivi → scheda prodotto sovrapposta. ★★★★ -->
+<section style="background:var(--wf-surface);padding:clamp(2.5rem,5vw,4.5rem) var(--pad);">
 
-    <!-- Contenitore immagine + pin + schede -->
-    <!-- Contenitore relativo: l'immagine definisce l'altezza, le schede escono sopra -->
-    <div id="slScene" style="position:relative;width:100%;">
+  <!-- Contenitore relativo: max-width immagine. Schede posizionate assolute qui dentro. -->
+  <div id="slScene" style="position:relative;max-width:1320px;margin-inline:auto;">
 
-      <!-- Placeholder immagine — stile wireframe standard -->
-      <div class="img-ph" style="width:100%;aspect-ratio:1320/550;">
-        <span class="img-ph__label">Foto editoriale — bracciali Muamara indossati [1320×550]</span>
+    <!-- Placeholder immagine 1320×550 — bracciali indossati in scena -->
+    <div class="img-ph" style="width:100%;aspect-ratio:1320/550;">
+      <span class="img-ph__label">Foto editoriale — bracciali Muamara indossati [1320×550]</span>
+    </div>
+
+    <!-- Pin hotspot sovrapposti all'immagine -->
+    <button class="sl-pin" type="button" data-piece="jaipur"
+            style="position:absolute;left:32%;top:52%;" aria-label="Muamara Jaipur"></button>
+    <button class="sl-pin" type="button" data-piece="jaipur-fiori"
+            style="position:absolute;left:45%;top:38%;" aria-label="Muamara Jaipur Fiori"></button>
+    <button class="sl-pin" type="button" data-piece="sun"
+            style="position:absolute;left:25%;top:68%;" aria-label="Muamara Sun"></button>
+    <button class="sl-pin" type="button" data-piece="stones"
+            style="position:absolute;left:38%;top:64%;" aria-label="Muamara Stones"></button>
+
+    <!-- Schede prodotto — nascoste di default, aperte al click del pin.
+         Layout: immagine prodotto landscape → etichetta collezione → nome → descrizione → CTA -->
+
+    <div class="sl-card" data-card="jaipur" role="dialog" aria-label="Muamara Jaipur"
+         style="display:none;position:absolute;top:4%;right:2%;width:290px;background:#fff;border:1px solid var(--wf-border);box-shadow:0 8px 32px rgba(0,0,0,.14);z-index:20;">
+      <button class="sl-card__close" type="button" aria-label="Chiudi"
+              style="position:absolute;top:10px;right:12px;background:none;border:none;font-size:18px;line-height:1;cursor:pointer;color:var(--wf-muted);z-index:1;">&times;</button>
+      <div class="img-ph" style="width:100%;aspect-ratio:4/3;flex-shrink:0;"></div>
+      <div style="padding:1.1rem 1.25rem 1.5rem;">
+        <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--wf-muted);display:block;margin-bottom:.45rem;">Collezione Muamara</span>
+        <h3 style="font-family:var(--font-serif);font-size:1.55rem;font-weight:400;color:var(--wf-text);margin:0 0 .6rem;line-height:1.2;">Jaipur</h3>
+        <p style="font-family:var(--font-sans);font-size:12.5px;font-style:italic;color:var(--wf-muted);line-height:1.65;margin:0 0 1.1rem;">Toni tenui di luce lunare intrecciati filo su filo. Un bracciale che porta con sé la calma delle prime ore del mattino.</p>
+        <a href="product.html?ref=jaipur" style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--wf-text);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;">Scopri il prodotto →</a>
       </div>
+    </div>
 
-      <!-- Pin sovrapposti all'immagine -->
-      <button class="sl-pin" type="button" data-piece="jaipur"       style="position:absolute;left:28%;top:45%;" aria-label="Scopri Muamara Jaipur"></button>
-      <button class="sl-pin" type="button" data-piece="jaipur-fiori" style="position:absolute;left:40%;top:35%;" aria-label="Scopri Muamara Jaipur Fiori"></button>
-      <button class="sl-pin" type="button" data-piece="sun"          style="position:absolute;left:55%;top:55%;" aria-label="Scopri Muamara Sun"></button>
-      <button class="sl-pin" type="button" data-piece="stones"       style="position:absolute;left:20%;top:62%;" aria-label="Scopri Muamara Stones"></button>
-
-      <!-- Schede prodotto — nascoste di default, visibili al click sul pin -->
-      <div class="sl-card" data-card="jaipur" role="dialog" aria-label="Muamara Jaipur" style="display:none;">
-        <button class="sl-card__close" type="button" aria-label="Chiudi">&times;</button>
-        <div class="sl-card__img"><div class="img-ph" style="width:100%;aspect-ratio:1/1;"></div></div>
-        <span class="sl-card__coll">Collezione Muamara</span>
-        <h3 class="sl-card__name">Jaipur</h3>
-        <p class="sl-card__desc">Bracciale tessile in pietre semipreziose e filo intrecciato a mano sul telaio milanese. Su ordine in 10–15 giorni.</p>
-        <a class="sl-card__cta" href="product.html?ref=jaipur">Scopri il prodotto →</a>
+    <div class="sl-card" data-card="jaipur-fiori" role="dialog" aria-label="Muamara Jaipur Fiori"
+         style="display:none;position:absolute;top:4%;right:2%;width:290px;background:#fff;border:1px solid var(--wf-border);box-shadow:0 8px 32px rgba(0,0,0,.14);z-index:20;">
+      <button class="sl-card__close" type="button" aria-label="Chiudi"
+              style="position:absolute;top:10px;right:12px;background:none;border:none;font-size:18px;line-height:1;cursor:pointer;color:var(--wf-muted);z-index:1;">&times;</button>
+      <div class="img-ph" style="width:100%;aspect-ratio:4/3;flex-shrink:0;"></div>
+      <div style="padding:1.1rem 1.25rem 1.5rem;">
+        <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--wf-muted);display:block;margin-bottom:.45rem;">Collezione Muamara</span>
+        <h3 style="font-family:var(--font-serif);font-size:1.55rem;font-weight:400;color:var(--wf-text);margin:0 0 .6rem;line-height:1.2;">Jaipur Fiori</h3>
+        <p style="font-family:var(--font-sans);font-size:12.5px;font-style:italic;color:var(--wf-muted);line-height:1.65;margin:0 0 1.1rem;">Variante floreale del Jaipur: pietre dai toni caldi che evocano giardini in fiore, intrecciati filo su filo.</p>
+        <a href="product.html?ref=jaipur-fiori" style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--wf-text);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;">Scopri il prodotto →</a>
       </div>
+    </div>
 
-      <div class="sl-card" data-card="jaipur-fiori" role="dialog" aria-label="Muamara Jaipur Fiori" style="display:none;">
-        <button class="sl-card__close" type="button" aria-label="Chiudi">&times;</button>
-        <div class="sl-card__img"><div class="img-ph" style="width:100%;aspect-ratio:1/1;"></div></div>
-        <span class="sl-card__coll">Collezione Muamara</span>
-        <h3 class="sl-card__name">Jaipur Fiori</h3>
-        <p class="sl-card__desc">Variante floreale del Jaipur: pietre dai toni caldi alternate a motivi intrecciati. Su ordine in 10–15 giorni.</p>
-        <a class="sl-card__cta" href="product.html?ref=jaipur-fiori">Scopri il prodotto →</a>
+    <div class="sl-card" data-card="sun" role="dialog" aria-label="Muamara Sun"
+         style="display:none;position:absolute;top:4%;right:2%;width:290px;background:#fff;border:1px solid var(--wf-border);box-shadow:0 8px 32px rgba(0,0,0,.14);z-index:20;">
+      <button class="sl-card__close" type="button" aria-label="Chiudi"
+              style="position:absolute;top:10px;right:12px;background:none;border:none;font-size:18px;line-height:1;cursor:pointer;color:var(--wf-muted);z-index:1;">&times;</button>
+      <div class="img-ph" style="width:100%;aspect-ratio:4/3;flex-shrink:0;"></div>
+      <div style="padding:1.1rem 1.25rem 1.5rem;">
+        <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--wf-muted);display:block;margin-bottom:.45rem;">Collezione Muamara</span>
+        <h3 style="font-family:var(--font-serif);font-size:1.55rem;font-weight:400;color:var(--wf-text);margin:0 0 .6rem;line-height:1.2;">Sun</h3>
+        <p style="font-family:var(--font-sans);font-size:12.5px;font-style:italic;color:var(--wf-muted);line-height:1.65;margin:0 0 1.1rem;">Pietre ambrate e filo dorato per un bracciale che porta con sé il calore del sole. Leggero, luminoso, quotidiano.</p>
+        <a href="product.html?ref=sun" style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--wf-text);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;">Scopri il prodotto →</a>
       </div>
+    </div>
 
-      <div class="sl-card" data-card="sun" role="dialog" aria-label="Muamara Sun" style="display:none;">
-        <button class="sl-card__close" type="button" aria-label="Chiudi">&times;</button>
-        <div class="sl-card__img"><div class="img-ph" style="width:100%;aspect-ratio:1/1;"></div></div>
-        <span class="sl-card__coll">Collezione Muamara</span>
-        <h3 class="sl-card__name">Sun</h3>
-        <p class="sl-card__desc">Bracciale luminoso in pietre ambrate e filo dorato. Intreccio leggero per uso quotidiano.</p>
-        <a class="sl-card__cta" href="product.html?ref=sun">Scopri il prodotto →</a>
+    <div class="sl-card" data-card="stones" role="dialog" aria-label="Muamara Stones"
+         style="display:none;position:absolute;top:4%;right:2%;width:290px;background:#fff;border:1px solid var(--wf-border);box-shadow:0 8px 32px rgba(0,0,0,.14);z-index:20;">
+      <button class="sl-card__close" type="button" aria-label="Chiudi"
+              style="position:absolute;top:10px;right:12px;background:none;border:none;font-size:18px;line-height:1;cursor:pointer;color:var(--wf-muted);z-index:1;">&times;</button>
+      <div class="img-ph" style="width:100%;aspect-ratio:4/3;flex-shrink:0;"></div>
+      <div style="padding:1.1rem 1.25rem 1.5rem;">
+        <span style="font-family:var(--font-sans);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--wf-muted);display:block;margin-bottom:.45rem;">Collezione Muamara</span>
+        <h3 style="font-family:var(--font-serif);font-size:1.55rem;font-weight:400;color:var(--wf-text);margin:0 0 .6rem;line-height:1.2;">Stones</h3>
+        <p style="font-family:var(--font-sans);font-size:12.5px;font-style:italic;color:var(--wf-muted);line-height:1.65;margin:0 0 1.1rem;">Un mosaico di pietre semipreziose selezionate in India, tenute insieme dal gesto del telaio. Il pezzo più ricco della composizione.</p>
+        <a href="product.html?ref=stones" style="font-family:var(--font-sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--wf-text);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;">Scopri il prodotto →</a>
       </div>
+    </div>
 
-      <div class="sl-card" data-card="stones" role="dialog" aria-label="Muamara Stones" style="display:none;">
-        <button class="sl-card__close" type="button" aria-label="Chiudi">&times;</button>
-        <div class="sl-card__img"><div class="img-ph" style="width:100%;aspect-ratio:1/1;"></div></div>
-        <span class="sl-card__coll">Collezione Muamara</span>
-        <h3 class="sl-card__name">Stones</h3>
-        <p class="sl-card__desc">Mosaico di pietre semipreziose selezionate in India, tenute insieme dal gesto del telaio.</p>
-        <a class="sl-card__cta" href="product.html?ref=stones">Scopri il prodotto →</a>
-      </div>
-
-    </div><!-- /slScene -->
-
-    <div class="sl-sheet-backdrop" id="slBackdrop"></div>
-  </div>
+  </div><!-- /slScene -->
+  <div class="sl-sheet-backdrop" id="slBackdrop"></div>
 </section>
 
 <!-- ═══ 07 · STORES TEASER ═══════════════════════════════════════ -->
