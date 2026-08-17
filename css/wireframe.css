@@ -1711,6 +1711,10 @@ body.vetrina .vetrina-only { display: block; }
 .site-header:not(.on-hero) .nav-link { color: rgba(255,255,255,0.82); }
 .site-header:not(.on-hero) .nav-link:hover,
 .site-header:not(.on-hero) .nav-link.active { color: #fff; }
+.site-header:not(.on-hero) .nav-account,
+.site-header:not(.on-hero) .nav-cart { color: rgba(255,255,255,0.82); }
+.site-header:not(.on-hero) .nav-account:hover,
+.site-header:not(.on-hero) .nav-cart:hover { color: #fff; }
 .site-header:not(.on-hero) .header-wordmark,
 .site-header:not(.on-hero) .nav-cta { color: #fff; }
 .site-header:not(.on-hero) .nav-cta:hover { color:#fff; border-color:#fff; }
