@@ -41,15 +41,16 @@
   </script>
 </head>
 <body>
+<template id="__bundler_thumbnail" data-bg-color="#4a2d1e"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#4a2d1e"/><text x="50" y="62" font-family="Georgia,serif" font-size="34" fill="#e8dccb" text-anchor="middle">DAG</text></svg></template>
 
 <header class="site-header" role="banner">
   <div class="header-inner">
     <nav class="nav-split nav-split--left" aria-label="Navigazione principale">
       <a href="about.html"       class="nav-link">About</a>
-      <a href="philosophy.html"  class="nav-link">Philosophy</a>
+      <a href="filosofia.html"  class="nav-link">Filosofia</a>
       <a href="collections.html" class="nav-link">Collezioni</a>
     </nav>
-    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
+    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home"><img class="wordmark-logo wordmark-logo--light" src="assets/dag_logo_bianco.webp" alt="DAG Gioielli"><img class="wordmark-logo wordmark-logo--dark" src="assets/dag_logo.webp" alt="DAG Gioielli"></a>
     <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
       <a href="stores.html"  class="nav-link">Stores</a>
       <a href="events.html"  class="nav-link">Eventi</a>
@@ -64,7 +65,7 @@
 <nav class="mobile-drawer">
   <button class="drawer-close">✕</button>
   <div class="drawer-nav">
-    <a href="about.html">About</a><a href="philosophy.html">Philosophy</a>
+    <a href="about.html">About</a><a href="filosofia.html">Filosofia</a>
     <a href="collections.html">Collezioni</a>
     <a href="stores.html">Stores</a>
     <a href="events.html">Eventi</a><a href="contact.html">Contatti</a>
@@ -113,7 +114,7 @@
       <ul class="dev-panel__list">
         <li>1 foto landscape 4:3 (laboratorio / packaging)</li>
         <li>Pagina Privacy Policy (da creare in WordPress)</li>
-        <li>Indirizzo laboratorio definitivo (da confermare con la cliente)</li>
+        <li>Civici e CAP delle due sedi (via Marghera / via Frua) da confermare</li>
       </ul>
     </div>
   </div>
@@ -177,8 +178,12 @@
               <a href="#" style="font-family:var(--font-serif);font-size:22px;">@daggioielli</a>
             </div>
             <div>
-              <p class="t-label" style="margin-bottom:.25rem;">Laboratorio</p>
-              <span class="wf-note">Indirizzo da confermare con la cliente</span>
+              <p class="t-label" style="margin-bottom:.25rem;">Sede legale</p>
+              <p style="font-family:var(--font-serif);font-size:22px;">Via Marghera — Milano</p>
+            </div>
+            <div>
+              <p class="t-label" style="margin-bottom:.25rem;">Sede operativa — laboratorio</p>
+              <p style="font-family:var(--font-serif);font-size:22px;">Via Frua — Milano</p>
             </div>
           </div>
         </div>
@@ -378,17 +383,17 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-grid">
     <div>
-      <div class="footer-logo-ph"><span>DAG</span></div>
+      <img src="assets/dag_logo_bianco.webp" alt="DAG Gioielli" style="width:60px;height:auto;margin-bottom:1.25rem;opacity:.92;">
       <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
-      <a href="contact.html?type=boutique" class="footer-cta-b">Sei una boutique? Contattaci</a>
+      
     </div>
-    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="collections.html">Collezioni</a><a href="stores.html">Stores</a></div>
-    <div class="footer-col"><p class="footer-col-title">Brand</p><a href="events.html">Eventi</a><a href="contact.html">Contatti</a></div>
-    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><a href="#">Instagram</a></div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="filosofia.html">Filosofia</a><a href="collections.html">Collezioni</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Brand</p><a href="events.html">Eventi</a><a href="contact.html">Contatti</a><a href="stores.html">Trova un rivenditore</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><span class="footer-phone">Telefono: +39 02 0000 0000</span><a class="footer-ig" href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a></div>
   </div>
   <div class="footer-bottom">
-    <p>© 2024 DAG Gioielli.</p>
-    <div style="display:flex;gap:1.5rem;"><a href="#">Privacy</a><a href="#">Cookie</a></div>
+    <p>© 2024 DAG Gioielli. Tutti i diritti riservati.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div>
   </div>
 </footer>
 
@@ -480,7 +485,6 @@
     });
   });
 })();
-</script>
-<script src="js/version-switcher.js"></script>
+</script>
 </body>
 </html>
