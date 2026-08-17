@@ -1391,7 +1391,11 @@ img { display: block; max-width: 100%; }
 .sl-card[data-card="jaipur2"],
 .sl-card[data-card="precious"],
 .sl-card[data-card="holi"],
-.sl-card[data-card="star"]     { left: 58%; top: 5%; }
+.sl-card[data-card="star"],
+.sl-card[data-card="jaipur-fiori"],
+.sl-card[data-card="sun"],
+.sl-card[data-card="stones"],
+.sl-card[data-card="textured"]  { left: 58%; top: 5%; }
 
 /* Backdrop (usato solo su mobile per il bottom sheet) */
 .sl-sheet-backdrop {
