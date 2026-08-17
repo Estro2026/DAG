@@ -49,10 +49,10 @@
       <a href="philosophy.html"  class="nav-link">Philosophy</a>
       <a href="collections.html" class="nav-link">Collezioni</a>
     </nav>
-    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
+    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home"><img class="wordmark-logo wordmark-logo--light" src="../assets/dag_logo_bianco.webp" alt="DAG Gioielli"><img class="wordmark-logo wordmark-logo--dark" src="../assets/dag_logo.webp" alt="DAG Gioielli"></a>
     <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
       <a href="stores.html"  class="nav-link">Stores</a>
-      <a href="events.html"  class="nav-link">Events</a>
+      <a href="events.html"  class="nav-link">Eventi</a>
       <a href="contact.html" class="nav-link active">Contatti</a>
       <a href="account.html" class="nav-account" aria-label="Area riservata">
         <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -62,19 +62,19 @@
         <span class="nav-cart__count">0</span>
       </a>
     </nav>
-    <button class="hamburger" aria-label="Apri menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 <div class="drawer-overlay"></div>
-<nav class="mobile-drawer" aria-label="Menu mobile">
-  <button class="drawer-close" aria-label="Chiudi">✕</button>
+<nav class="mobile-drawer">
+  <button class="drawer-close">✕</button>
   <div class="drawer-nav">
-    <a href="about.html">About</a>
-    <a href="philosophy.html">Philosophy</a>
+    <a href="about.html">About</a><a href="philosophy.html">Philosophy</a>
     <a href="collections.html">Collezioni</a>
     <a href="stores.html">Stores</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contatti</a>
+    <a href="events.html">Eventi</a><a href="contact.html">Contatti</a>
     <a href="account.html">Account</a>
   </div>
 </nav>
@@ -121,7 +121,7 @@
       <ul class="dev-panel__list">
         <li>1 foto landscape 4:3 (laboratorio / packaging)</li>
         <li>Pagina Privacy Policy (da creare in WordPress)</li>
-        <li>Indirizzo laboratorio definitivo (da confermare con la cliente)</li>
+        <li>Civici e CAP delle due sedi (via Marghera / via Frua) da confermare</li>
       </ul>
     </div>
   </div>
@@ -169,7 +169,7 @@
       <!-- ── LEFT: intro + info ─────────────────── -->
       <div>
         <span class="t-label fade">Dialogo</span>
-        <h1 class="t-h1 fade fade-d1" style="margin-bottom:2rem;">Entriamo in&nbsp;contatto.</h1>
+        <h1 class="t-h1 fade fade-d1" style="margin-bottom:2rem;">Entriamo <span style="white-space:nowrap">in&nbsp;contatto.</span></h1>
         <p class="t-body-lg fade fade-d2" style="margin-bottom:3rem;">Per informazioni sui gioielli, sui rivenditori o sulle collaborazioni commerciali, scrivici. Leggiamo ogni richiesta con attenzione.</p>
 
         <!-- contatti diretti -->
@@ -200,6 +200,13 @@
       <!-- ── RIGHT: form ───────────────────────── -->
       <div class="fade fade-d2">
 
+        <style>
+          .field-error { border-color: #c0392b !important; }
+          .error-msg { display: none; color: #c0392b; font-size: 11px; margin-top: .3rem; }
+          .error-msg.visible { display: block; }
+          .form-check.field-error { outline: 1px solid #c0392b; border-radius: 3px; padding: 4px; }
+        </style>
+
         <!-- selector tipo -->
         <p class="t-label" style="margin-bottom:.75rem;">Scrivo come</p>
         <div class="form-type-sel" role="group" aria-label="Tipo richiedente">
@@ -211,25 +218,55 @@
         <!-- FORM CLIENTE -->
         <form id="form-cliente" novalidate aria-label="Form cliente finale">
           <div class="form-grid">
-            <div class="form-group"><label class="form-label" for="c-nome">Nome</label><input type="text" id="c-nome" class="form-input" autocomplete="given-name" required></div>
-            <div class="form-group"><label class="form-label" for="c-cogn">Cognome</label><input type="text" id="c-cogn" class="form-input" autocomplete="family-name" required></div>
+            <div class="form-group">
+              <label class="form-label" for="c-nome">Nome *</label>
+              <input type="text" id="c-nome" class="form-input" autocomplete="given-name" required>
+              <span class="error-msg" id="err-c-nome">Inserisci il tuo nome.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-cogn">Cognome *</label>
+              <input type="text" id="c-cogn" class="form-input" autocomplete="family-name" required>
+              <span class="error-msg" id="err-c-cogn">Inserisci il tuo cognome.</span>
+            </div>
           </div>
           <div class="form-grid">
-            <div class="form-group"><label class="form-label" for="c-email">Email</label><input type="email" id="c-email" class="form-input" autocomplete="email" required></div>
-            <div class="form-group"><label class="form-label" for="c-tel">Telefono</label><input type="tel" id="c-tel" class="form-input" autocomplete="tel"></div>
+            <div class="form-group">
+              <label class="form-label" for="c-email">Email *</label>
+              <input type="email" id="c-email" class="form-input" autocomplete="email" required>
+              <span class="error-msg" id="err-c-email">Inserisci un indirizzo email valido.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-tel">Telefono *</label>
+              <input type="tel" id="c-tel" class="form-input" autocomplete="tel" required>
+              <span class="error-msg" id="err-c-tel">Inserisci il tuo numero di telefono.</span>
+            </div>
           </div>
-          <div class="form-group"><label class="form-label" for="c-citta">Città</label><input type="text" id="c-citta" class="form-input"></div>
           <div class="form-group">
-            <label class="form-label" for="c-tipo">Tipo di richiesta</label>
+            <label class="form-label" for="c-citta">Città *</label>
+            <input type="text" id="c-citta" class="form-input" required>
+            <span class="error-msg" id="err-c-citta">Inserisci la tua città.</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="c-tipo">Tipo di richiesta *</label>
             <select id="c-tipo" class="form-select" required>
               <option value="" disabled selected>Seleziona</option>
               <option>Informazioni su un gioiello</option>
               <option>Trovare un rivenditore</option>
               <option>Altro</option>
             </select>
+            <span class="error-msg" id="err-c-tipo">Seleziona il tipo di richiesta.</span>
           </div>
-          <div class="form-group"><label class="form-label" for="c-msg">Messaggio</label><textarea id="c-msg" class="form-textarea" placeholder="Raccontaci la tua richiesta…"></textarea></div>
-          <div class="form-group"><label class="form-check"><input type="checkbox" required><span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>.</span></label></div>
+          <div class="form-group">
+            <label class="form-label" for="c-msg">Messaggio</label>
+            <textarea id="c-msg" class="form-textarea" placeholder="Raccontaci la tua richiesta…"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-check" id="lbl-c-privacy">
+              <input type="checkbox" id="c-privacy" required>
+              <span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>. *</span>
+            </label>
+            <span class="error-msg" id="err-c-privacy">Devi accettare la Privacy Policy per procedere.</span>
+          </div>
           <button type="submit" class="btn btn--filled" style="width:100%;padding:1rem;">Invia richiesta</button>
           <p class="form-note">Leggiamo ogni richiesta con attenzione. Ti risponderemo il prima possibile.</p>
         </form>
@@ -237,20 +274,56 @@
         <!-- FORM BOUTIQUE -->
         <form id="form-boutique" style="display:none;" novalidate aria-label="Form rivenditore boutique">
           <div class="form-grid">
-            <div class="form-group"><label class="form-label" for="b-nome">Nome referente</label><input type="text" id="b-nome" class="form-input" required></div>
-            <div class="form-group"><label class="form-label" for="b-bou">Nome boutique / Azienda</label><input type="text" id="b-bou" class="form-input" required></div>
+            <div class="form-group">
+              <label class="form-label" for="b-nome">Nome referente *</label>
+              <input type="text" id="b-nome" class="form-input" required>
+              <span class="error-msg" id="err-b-nome">Inserisci il nome del referente.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="b-bou">Nome boutique / Azienda *</label>
+              <input type="text" id="b-bou" class="form-input" required>
+              <span class="error-msg" id="err-b-bou">Inserisci il nome della boutique o azienda.</span>
+            </div>
           </div>
           <div class="form-grid">
-            <div class="form-group"><label class="form-label" for="b-email">Email</label><input type="email" id="b-email" class="form-input" required></div>
-            <div class="form-group"><label class="form-label" for="b-tel">Telefono</label><input type="tel" id="b-tel" class="form-input"></div>
+            <div class="form-group">
+              <label class="form-label" for="b-email">Email *</label>
+              <input type="email" id="b-email" class="form-input" required>
+              <span class="error-msg" id="err-b-email">Inserisci un indirizzo email valido.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="b-tel">Telefono *</label>
+              <input type="tel" id="b-tel" class="form-input" required>
+              <span class="error-msg" id="err-b-tel">Inserisci il numero di telefono.</span>
+            </div>
           </div>
           <div class="form-grid">
-            <div class="form-group"><label class="form-label" for="b-citta">Città</label><input type="text" id="b-citta" class="form-input"></div>
-            <div class="form-group"><label class="form-label" for="b-paese">Paese</label><input type="text" id="b-paese" class="form-input" value="Italia"></div>
+            <div class="form-group">
+              <label class="form-label" for="b-citta">Città *</label>
+              <input type="text" id="b-citta" class="form-input" required>
+              <span class="error-msg" id="err-b-citta">Inserisci la città.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="b-paese">Paese *</label>
+              <input type="text" id="b-paese" class="form-input" value="Italia" required>
+              <span class="error-msg" id="err-b-paese">Inserisci il paese.</span>
+            </div>
           </div>
-          <div class="form-group"><label class="form-label" for="b-sito">Sito web / Instagram</label><input type="text" id="b-sito" class="form-input" placeholder="https:// o @username"></div>
-          <div class="form-group"><label class="form-label" for="b-msg">Messaggio</label><textarea id="b-msg" class="form-textarea" placeholder="Presentaci la tua realtà e la tua proposta…"></textarea></div>
-          <div class="form-group"><label class="form-check"><input type="checkbox" required><span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>.</span></label></div>
+          <div class="form-group">
+            <label class="form-label" for="b-sito">Sito web / Instagram</label>
+            <input type="text" id="b-sito" class="form-input" placeholder="https:// o @username">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="b-msg">Messaggio</label>
+            <textarea id="b-msg" class="form-textarea" placeholder="Presentaci la tua realtà e la tua proposta…"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-check" id="lbl-b-privacy">
+              <input type="checkbox" id="b-privacy" required>
+              <span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>. *</span>
+            </label>
+            <span class="error-msg" id="err-b-privacy">Devi accettare la Privacy Policy per procedere.</span>
+          </div>
           <button type="submit" class="btn btn--filled" style="width:100%;padding:1rem;">Invia richiesta</button>
           <p class="form-note">Leggiamo ogni richiesta con attenzione. Ti risponderemo il prima possibile.</p>
         </form>
@@ -258,15 +331,40 @@
         <!-- FORM PRESS -->
         <form id="form-press" style="display:none;" novalidate aria-label="Form press e collaborazioni">
           <div class="form-grid">
-            <div class="form-group"><label class="form-label" for="p-nome">Nome</label><input type="text" id="p-nome" class="form-input" required></div>
-            <div class="form-group"><label class="form-label" for="p-real">Testata / Progetto / Realtà</label><input type="text" id="p-real" class="form-input" required></div>
+            <div class="form-group">
+              <label class="form-label" for="p-nome">Nome *</label>
+              <input type="text" id="p-nome" class="form-input" required>
+              <span class="error-msg" id="err-p-nome">Inserisci il tuo nome.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="p-real">Testata / Progetto / Realtà *</label>
+              <input type="text" id="p-real" class="form-input" required>
+              <span class="error-msg" id="err-p-real">Inserisci la testata o il nome del progetto.</span>
+            </div>
           </div>
           <div class="form-grid">
-            <div class="form-group"><label class="form-label" for="p-email">Email</label><input type="email" id="p-email" class="form-input" required></div>
-            <div class="form-group"><label class="form-label" for="p-tel">Telefono</label><input type="tel" id="p-tel" class="form-input"></div>
+            <div class="form-group">
+              <label class="form-label" for="p-email">Email *</label>
+              <input type="email" id="p-email" class="form-input" required>
+              <span class="error-msg" id="err-p-email">Inserisci un indirizzo email valido.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="p-tel">Telefono *</label>
+              <input type="tel" id="p-tel" class="form-input" required>
+              <span class="error-msg" id="err-p-tel">Inserisci il tuo numero di telefono.</span>
+            </div>
           </div>
-          <div class="form-group"><label class="form-label" for="p-msg">Messaggio</label><textarea id="p-msg" class="form-textarea" placeholder="Descrivi il tuo progetto o la tua proposta…"></textarea></div>
-          <div class="form-group"><label class="form-check"><input type="checkbox" required><span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>.</span></label></div>
+          <div class="form-group">
+            <label class="form-label" for="p-msg">Messaggio</label>
+            <textarea id="p-msg" class="form-textarea" placeholder="Descrivi il tuo progetto o la tua proposta…"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-check" id="lbl-p-privacy">
+              <input type="checkbox" id="p-privacy" required>
+              <span>Ho letto e accetto la <a href="#" style="border-bottom:1px solid currentColor;">Privacy Policy</a>. *</span>
+            </label>
+            <span class="error-msg" id="err-p-privacy">Devi accettare la Privacy Policy per procedere.</span>
+          </div>
           <button type="submit" class="btn btn--filled" style="width:100%;padding:1rem;">Invia richiesta</button>
           <p class="form-note">Leggiamo ogni richiesta con attenzione. Ti risponderemo il prima possibile.</p>
         </form>
@@ -282,78 +380,114 @@
   </div>
 </section>
 
+
 </main>
 
 <footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
+  <div class="footer-grid" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;">
     <div>
-      <a href="index.html" class="footer-logo-ph" aria-label="DAG Gioielli"><span>DAG</span></a>
-      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano. Ogni pezzo nasce su ordine nel laboratorio milanese.</p>
+      <img src="../assets/dag_logo_bianco.webp" alt="DAG Gioielli" style="width:60px;height:auto;margin-bottom:1.25rem;opacity:.92;">
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
     </div>
-    <div class="footer-col">
-      <p class="footer-col-title">Navigazione</p>
-      <a href="about.html">About</a>
-      <a href="philosophy.html">Philosophy</a>
-      <a href="collections.html">Collezioni</a>
-      <a href="stores.html">Stores</a>
-    </div>
-    <div class="footer-col">
-      <p class="footer-col-title">Acquisto</p>
-      <a href="faq.html">FAQ</a>
-      <a href="shipping.html">Spedizioni</a>
-      <a href="wishlist.html">Wishlist</a>
-      <a href="account.html">Il mio account</a>
-    </div>
-    <div class="footer-col">
-      <p class="footer-col-title">Contatti</p>
-      <a href="mailto:info@daggioielli.it">info@daggioielli.it</a>
-      <a href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener">Instagram</a>
-      <a href="contact.html">Contatti</a>
-    </div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="collections.html">Collezioni</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Acquisto</p><a href="faq.html">FAQ</a><a href="shipping.html">Spedizioni</a><a href="wishlist.html">Wishlist</a><a href="account.html">Il mio account</a></div>
+    <div class="footer-col"><p class="footer-col-title">Brand</p><a href="events.html">Eventi</a><a href="contact.html">Contatti</a><a href="stores.html">Trova un rivenditore</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><span class="footer-phone">Telefono: +39 02 0000 0000</span><a class="footer-ig" href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a></div>
   </div>
   <div class="footer-bottom">
     <p>© 2024 DAG Gioielli. Tutti i diritti riservati.</p>
-    <div style="display:flex;gap:1.5rem;">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="cookie.html">Cookie Policy</a>
-    </div>
+    <div style="display:flex;gap:1.5rem;"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div>
   </div>
 </footer>
 
 <script src="../js/main.js"></script>
 <script>
+(function () {
+  /* ── tab switching ── */
   const typeBtns = document.querySelectorAll('.form-type-btn');
-  const forms    = { cliente: document.getElementById('form-cliente'), boutique: document.getElementById('form-boutique'), press: document.getElementById('form-press') };
+  const forms = {
+    cliente:  document.getElementById('form-cliente'),
+    boutique: document.getElementById('form-boutique'),
+    press:    document.getElementById('form-press'),
+  };
 
-  typeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      typeBtns.forEach(b => b.classList.remove('active'));
+  typeBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      typeBtns.forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      Object.values(forms).forEach(f => { if(f) f.style.display = 'none'; });
-      const f = forms[btn.dataset.type];
+      Object.values(forms).forEach(function (f) { if (f) f.style.display = 'none'; });
+      var f = forms[btn.dataset.type];
       if (f) f.style.display = '';
     });
   });
 
-  // pre-select from URL
-  const urlType = new URLSearchParams(location.search).get('type');
+  /* ── pre-select from URL ── */
+  var urlType = new URLSearchParams(location.search).get('type');
   if (urlType && forms[urlType]) {
-    typeBtns.forEach(b => b.classList.toggle('active', b.dataset.type === urlType));
-    Object.values(forms).forEach(f => { if(f) f.style.display = 'none'; });
+    typeBtns.forEach(function (b) { b.classList.toggle('active', b.dataset.type === urlType); });
+    Object.values(forms).forEach(function (f) { if (f) f.style.display = 'none'; });
     forms[urlType].style.display = '';
   }
 
-  // success on submit
-  document.querySelectorAll('form').forEach(f => {
-    f.addEventListener('submit', e => {
+  /* ── validation ── */
+  function validateField(input) {
+    var errEl = document.getElementById('err-' + input.id);
+    var msg = '';
+
+    if (input.type === 'checkbox') {
+      if (!input.checked) msg = errEl ? errEl.textContent : 'Campo obbligatorio.';
+      if (errEl) errEl.classList.toggle('visible', !!msg);
+      var lblId = 'lbl-' + input.id.replace('-privacy', '') + '-privacy';
+      var lbl = document.getElementById(lblId) || input.closest('label');
+      if (lbl) lbl.classList.toggle('field-error', !!msg);
+    } else if (input.tagName === 'SELECT') {
+      if (!input.value) msg = errEl ? errEl.textContent : 'Campo obbligatorio.';
+      if (errEl) errEl.classList.toggle('visible', !!msg);
+      input.classList.toggle('field-error', !!msg);
+    } else {
+      if (!input.value.trim()) {
+        msg = errEl ? errEl.textContent : 'Campo obbligatorio.';
+      } else if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
+        msg = 'Inserisci un indirizzo email valido.';
+      }
+      if (errEl) { errEl.classList.toggle('visible', !!msg); }
+      input.classList.toggle('field-error', !!msg);
+    }
+    return !msg;
+  }
+
+  /* ── per-form submit handler ── */
+  Object.values(forms).forEach(function (form) {
+    if (!form) return;
+    var submitted = false;
+
+    form.querySelectorAll('input, select, textarea').forEach(function (el) {
+      if (!el.required) return;
+      el.addEventListener('input',  function () { if (submitted) validateField(el); });
+      el.addEventListener('change', function () { if (submitted) validateField(el); });
+    });
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      f.style.display = 'none';
+      submitted = true;
+
+      var required = form.querySelectorAll('input[required], select[required]');
+      var valid = true;
+      required.forEach(function (el) { if (!validateField(el)) valid = false; });
+
+      if (!valid) {
+        var first = form.querySelector('.field-error');
+        if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      form.style.display = 'none';
       document.querySelector('.form-type-sel').style.display = 'none';
       document.getElementById('form-success').style.display = '';
       document.querySelector('.t-label').style.display = 'none';
     });
   });
+})();
 </script>
-<script src="../js/version-switcher.js"></script>
 </body>
 </html>
