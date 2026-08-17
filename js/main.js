@@ -12,10 +12,12 @@ if (!reduced) {
 /* ── Header sticky / transparent ─── */
 const header = document.querySelector('.site-header');
 if (header) {
-  const hasHero = !!document.querySelector('.hero');
+  const heroEl = document.querySelector('.hero');
+  const hasHero = !!heroEl;
   if (hasHero) header.classList.add('on-hero');
+  const heroThreshold = () => heroEl ? heroEl.offsetHeight - header.offsetHeight - 8 : 80;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) header.classList.remove('on-hero');
+    if (window.scrollY > heroThreshold()) header.classList.remove('on-hero');
     else if (hasHero) header.classList.add('on-hero');
   }, { passive: true });
 }
