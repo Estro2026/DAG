@@ -698,7 +698,7 @@ img { display: block; max-width: 100%; }
 .footer-cta-b:hover { background: rgba(255,255,255,0.1); }
 .footer-col-title { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; color: rgba(247,247,247,0.4); margin-bottom: 1rem; }
 .footer-col a { display: block; font-size: 12px; color: rgba(247,247,247,0.55); margin-bottom: 0.5rem; transition: color var(--transition); }
-.footer-phone { display: block; font-size: 12px; color: rgba(247,247,247,0.55); margin: 0 0 0.55rem; }
+.footer-phone { display: block; font-size: 12px; color: rgba(247,247,247,0.55); margin: 0 0 0.55rem; white-space: nowrap; }
 .footer-col .footer-ig { display: inline-flex; align-items: center; margin-top: 0.1rem; color: rgba(247,247,247,0.55); transition: color var(--transition); }
 .footer-col .footer-ig:hover { color: rgba(247,247,247,0.9); }
 .footer-col a:hover { color: rgba(247,247,247,0.9); }
