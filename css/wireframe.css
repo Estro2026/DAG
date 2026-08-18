@@ -1797,6 +1797,10 @@ body.vetrina .vetrina-only { display: block; }
   gap: 4rem;
   align-items: start;
 }
+.pdp-gallery {
+  position: sticky;
+  top: calc(var(--header-h) + 1.5rem);
+}
 .pdp-gallery__main {
   height: calc(100vh - var(--header-h) - 10rem);
   max-height: 580px;
