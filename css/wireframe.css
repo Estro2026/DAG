@@ -39,7 +39,7 @@
 html { scroll-behavior: smooth; }
 /* Offset per header fisso: le pagine senza hero lasciano spazio in alto */
 body { padding-top: var(--header-h); }
-body:has(.hero) { padding-top: 0; }
+body:has(.hero):not(:has(.breadcrumb)) { padding-top: 0; }
 /* Pannello Dev Notes rimosso in vetrina */
 .dev-panel { display: none !important; }
 body {
