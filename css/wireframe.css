@@ -2307,3 +2307,31 @@ img, svg, video, iframe { max-width: 100%; }
 .wl-modal__input { width: 100%; padding: .65rem .8rem; font-family: var(--font-sans); font-size: 13px; border: 1px solid var(--wf-border); border-radius: 2px; background: var(--wf-surface); color: var(--wf-text); margin-bottom: 1.25rem; }
 .wl-modal__input:focus { outline: none; border-color: var(--wf-accent); }
 .wl-modal__actions { display: flex; gap: .75rem; justify-content: flex-end; }
+
+/* ══ Breadcrumb ══════════════════════════════════════════════════════ */
+.breadcrumb {
+  border-bottom: 1px solid var(--wf-border);
+  background: var(--wf-surface);
+}
+.breadcrumb ol {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  list-style: none;
+  padding: .65rem 0;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--wf-muted);
+}
+.breadcrumb li + li::before {
+  content: '/';
+  color: var(--wf-ghost);
+}
+.breadcrumb a {
+  color: var(--wf-muted);
+  text-decoration: none;
+  transition: color .15s;
+}
+.breadcrumb a:hover { color: var(--wf-text); }
+.breadcrumb [aria-current="page"] { color: var(--wf-text); }
