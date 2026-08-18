@@ -1802,13 +1802,10 @@ body.vetrina .vetrina-only { display: block; }
   top: calc(var(--header-h) + 1.5rem);
 }
 .pdp-gallery__main {
-  height: calc(100vh - var(--header-h) - 10rem);
-  max-height: 580px;
   overflow: hidden;
 }
 .pdp-gallery__main .img-ph {
-  height: 100%;
-  aspect-ratio: unset;
+  aspect-ratio: 3/4;
 }
 .pdp-gallery__thumbs {
   display: grid;
