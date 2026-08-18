@@ -2254,12 +2254,12 @@ img, svg, video, iframe { max-width: 100%; }
 .wl-sidebar { position: sticky; top: calc(var(--header-h) + 1.5rem); }
 .wl-sidebar__title { font-family: var(--font-sans); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wf-ghost); margin-bottom: 1rem; }
 
-.wl-list-item { display: flex; align-items: center; gap: .5rem; justify-content: space-between; padding: .6rem .75rem; border-radius: 2px; cursor: pointer; transition: background 0.18s ease; margin-bottom: 2px; }
+.wl-list-item { display: flex; align-items: center; justify-content: space-between; padding: .6rem .75rem; border-radius: 2px; cursor: pointer; transition: background 0.18s ease; margin-bottom: 2px; }
 .wl-list-item:hover { background: var(--wf-surface); }
 .wl-list-item.active { background: var(--wf-surface); }
 .wl-list-item__name { font-family: var(--font-sans); font-size: 13px; color: var(--wf-text); }
 .wl-list-item.active .wl-list-item__name { font-weight: 500; }
-.wl-list-item__count { font-family: var(--font-sans); font-size: 11px; color: var(--wf-ghost); background: var(--wf-img); border-radius: 20px; padding: 1px 7px; }
+.wl-list-item__count { font-family: var(--font-sans); font-size: 10px; color: var(--wf-ghost); background: var(--wf-img); border-radius: 50%; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
 .wl-new-list { display: flex; align-items: center; gap: .4rem; padding: .6rem .75rem; font-family: var(--font-sans); font-size: 12px; color: var(--wf-muted); cursor: pointer; border: 1px dashed var(--wf-border); border-radius: 2px; margin-top: .75rem; background: none; width: 100%; text-align: left; transition: border-color 0.18s ease, color 0.18s ease; }
 .wl-new-list:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
