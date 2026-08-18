@@ -1790,17 +1790,27 @@ body.vetrina .vetrina-only { display: block; }
 
 
 /* ══ Product Detail Page (PDP) ══════════════════════════════════════ */
+.pdp-hero { padding-top: 1.5rem; padding-bottom: 2rem; }
 .pdp-layout {
   display: grid;
   grid-template-columns: 7fr 5fr;
   gap: 4rem;
   align-items: start;
 }
+.pdp-gallery__main {
+  height: calc(100vh - var(--header-h) - 6rem);
+  max-height: 680px;
+  overflow: hidden;
+}
+.pdp-gallery__main .img-ph {
+  height: 100%;
+  aspect-ratio: unset;
+}
 .pdp-gallery__thumbs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: .75rem;
-  margin-top: 1rem;
+  margin-top: .75rem;
 }
 .pdp-info {
   position: sticky;
@@ -1884,7 +1894,7 @@ body.vetrina .vetrina-only { display: block; }
   color: var(--wf-muted);
   margin-top: .4rem;
 }
-.pdp-cta { width: 100%; padding: 1rem; font-size: 13px; letter-spacing: .08em; }
+.pdp-cta { width: 100%; padding: 1rem; font-size: 13px; letter-spacing: .08em; text-align: center; }
 .pdp-links {
   display: flex;
   gap: 1.5rem;
@@ -1913,36 +1923,68 @@ body.vetrina .vetrina-only { display: block; }
 .pdp-icons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  text-align: center;
+  gap: 0;
 }
+.pdp-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.75rem 2rem;
+  border-right: 1px solid var(--wf-border);
+}
+.pdp-icon:last-child { border-right: none; }
+.pdp-icon__gfx {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--wf-border);
+  border-radius: 50%;
+  color: var(--wf-terra);
+}
+.pdp-icon__gfx svg { width: 18px; height: 18px; }
+.pdp-icon__text { flex: 1; }
 .pdp-icon__title {
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: .1em;
+  letter-spacing: .09em;
   text-transform: uppercase;
-  color: var(--wf-muted);
-  margin-bottom: .5rem;
+  color: var(--wf-text);
+  margin-bottom: .35rem;
 }
 .pdp-icon__body {
   font-family: var(--font-sans);
-  font-size: 13px;
-  color: var(--wf-text);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--wf-muted);
 }
 /* wishlist PDP — stato saved */
 .btn--wishlist.active { border-color: var(--wf-clay); color: var(--wf-clay); }
 .btn--wishlist.active svg { fill: var(--wf-clay); stroke: var(--wf-clay); }
 .btn--wishlist.active:hover { border-color: var(--wf-terra); color: var(--wf-terra); }
+/* card sezione "potrebbe interessarti" — stessa struttura collections, leggermente più compatte */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
 /* responsive PDP */
 @media (max-width: 900px) {
   .pdp-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .pdp-gallery__main { height: auto; max-height: none; }
+  .pdp-gallery__main .img-ph { height: auto; aspect-ratio: 3/4; }
   .pdp-info { position: static; }
   .pdp-desc-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  .pdp-icons { grid-template-columns: 1fr; gap: 1.5rem; }
+  .pdp-icons { grid-template-columns: 1fr; }
+  .pdp-icon { border-right: none; border-bottom: 1px solid var(--wf-border); padding: 1.25rem 0; }
+  .pdp-icon:last-child { border-bottom: none; }
+  .related-grid { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 600px) {
-  .pdp-gallery__thumbs { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 560px) {
+  .related-grid { grid-template-columns: 1fr; }
 }
 
 /* ── Wordmark logo (civetta) ─────────────── */
@@ -2576,13 +2618,15 @@ img, svg, video, iframe { max-width: 100%; }
 
 /* ══ Breadcrumb ══════════════════════════════════════════════════════ */
 .breadcrumb {
+  width: 100%;
   border-bottom: 1px solid var(--wf-border);
-  background: var(--wf-surface);
+  background: var(--wf-bg);
 }
 .breadcrumb ol {
   display: flex;
   align-items: center;
   gap: .35rem;
+  padding: .65rem var(--pad);
   list-style: none;
   padding: .65rem 0;
   margin: 0;

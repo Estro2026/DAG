@@ -80,17 +80,14 @@
 <main>
 
 <!-- ══ BREADCRUMB ═════════════════════════════════════════════════ -->
-<div class="breadcrumb-bar">
-  <nav class="breadcrumb wrap" aria-label="Breadcrumb">
-    <a href="index.html">DAG</a>
-    <span class="breadcrumb__sep">/</span>
-    <a href="collections.html">Collezioni</a>
-    <span class="breadcrumb__sep">/</span>
-    <a href="collections.html#jaipur">Jaipur</a>
-    <span class="breadcrumb__sep">/</span>
-    <span aria-current="page">Muamara Jaipur</span>
-  </nav>
-</div>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">DAG</a></li>
+    <li><a href="collections.html">Collezioni</a></li>
+    <li><a href="collections.html#jaipur">Jaipur</a></li>
+    <li><span aria-current="page">Muamara Jaipur</span></li>
+  </ol>
+</nav>
 
 <!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
 <div class="dev-panel" id="devPanel">
@@ -131,14 +128,16 @@
 </div>
 
 <!-- ══ PRODUCT HERO ════════════════════════════════════════════════ -->
-<section class="section section--lg">
+<section class="section pdp-hero">
   <div class="wrap">
     <div class="pdp-layout">
 
       <!-- GALLERIA -->
       <div>
-        <div class="img-ph ar-3-4">
-          <span class="img-ph__label">Muamara Jaipur — immagine principale · bracciale su sfondo neutro [3:4]</span>
+        <div class="pdp-gallery__main">
+          <div class="img-ph" style="height:100%;">
+            <span class="img-ph__label">Muamara Jaipur — immagine principale · bracciale su sfondo neutro [3:4]</span>
+          </div>
         </div>
         <div class="pdp-gallery__thumbs">
           <div class="img-ph" style="aspect-ratio:1/1;">
@@ -248,33 +247,62 @@
 </section>
 
 <!-- ══ PRODUZIONE, SPEDIZIONE, PAGAMENTO ══════════════════════════ -->
-<section class="section band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);">
-  <div class="wrap">
+<section class="section band--surface" style="border-top:1px solid var(--wf-border);border-bottom:1px solid var(--wf-border);padding-block:0;">
+  <div class="wrap" style="padding-inline:0;max-width:100%;">
     <div class="pdp-icons">
-      <div>
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="1.4" aria-hidden="true" style="color:var(--wf-muted);margin-bottom:.75rem;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <p class="pdp-icon__title">Produzione su ordine</p>
-        <p class="pdp-icon__body">10–15 giorni lavorativi dalla conferma del pagamento.</p>
+
+      <div class="pdp-icon">
+        <div class="pdp-icon__gfx" aria-hidden="true">
+          <!-- orologio artigianale: corpo + lancette + scintilla -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <polyline points="12 7 12 12 15.5 14.5"/>
+            <path d="M5.5 5.5 4 4M18.5 5.5 20 4" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div class="pdp-icon__text">
+          <p class="pdp-icon__title">Produzione su ordine</p>
+          <p class="pdp-icon__body">10–15 giorni lavorativi dalla conferma del pagamento. Aggiornamenti via email a ogni fase.</p>
+        </div>
       </div>
-      <div>
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="1.4" aria-hidden="true" style="color:var(--wf-muted);margin-bottom:.75rem;"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <p class="pdp-icon__title">Spedizione</p>
-        <p class="pdp-icon__body">GLS Italia €7–10 · Europa €15–20. Tracciamento incluso.</p>
+
+      <div class="pdp-icon">
+        <div class="pdp-icon__gfx" aria-hidden="true">
+          <!-- pacco con freccia verso l'alto: consegna -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-6 9 6v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div class="pdp-icon__text">
+          <p class="pdp-icon__title">Spedizione tracciata</p>
+          <p class="pdp-icon__body">GLS · Italia €7–10 · Europa €15–20. Numero di tracking inviato alla spedizione.</p>
+        </div>
       </div>
-      <div>
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none" stroke-width="1.4" aria-hidden="true" style="color:var(--wf-muted);margin-bottom:.75rem;"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-        <p class="pdp-icon__title">Pagamento</p>
-        <p class="pdp-icon__body">PayPal Business — transazione sicura e protetta.</p>
+
+      <div class="pdp-icon">
+        <div class="pdp-icon__gfx" aria-hidden="true">
+          <!-- scudo con segno di spunta: pagamento sicuro -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l7 3.5v5C19 15.4 16 19.8 12 22 8 19.8 5 15.4 5 10.5V5.5z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="pdp-icon__text">
+          <p class="pdp-icon__title">Pagamento sicuro</p>
+          <p class="pdp-icon__body">PayPal Business — transazione protetta. Nessun dato di pagamento conservato da DAG.</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- ══ ALTRI MODELLI ══════════════════════════════════════════════ -->
-<section class="section section--lg">
+<section class="section">
   <div class="wrap">
-    <span class="t-label fade" style="display:block;margin-bottom:2.5rem;">Potrebbe interessarti</span>
-    <div class="grid-3" style="gap:2rem;">
+    <span class="t-label fade" style="display:block;margin-bottom:2rem;">Potrebbe interessarti</span>
+    <div class="related-grid">
 
       <div class="product-card fade">
         <div style="position:relative;">
@@ -286,8 +314,8 @@
           </button>
         </div>
         <div class="product-card__body">
-          <p class="product-card__category">Bracciale · Su ordine</p>
-          <p class="product-card__name">Muamara Star</p>
+          <p class="product-card__category">Muamara Star</p>
+          <p class="product-card__name">Bracciale · Taglia Unica</p>
           <p class="product-card__price">€ — <span class="wf-note">da definire</span></p>
           <a href="product.html?ref=star" class="btn btn--filled product-card__cta">Ordina</a>
         </div>
@@ -303,8 +331,8 @@
           </button>
         </div>
         <div class="product-card__body">
-          <p class="product-card__category">Bracciale · Su ordine</p>
-          <p class="product-card__name">Muamara Sun</p>
+          <p class="product-card__category">Muamara Sun</p>
+          <p class="product-card__name">Bracciale · Taglia Unica</p>
           <p class="product-card__price">€ — <span class="wf-note">da definire</span></p>
           <a href="product.html?ref=sun" class="btn btn--filled product-card__cta">Ordina</a>
         </div>
@@ -320,8 +348,8 @@
           </button>
         </div>
         <div class="product-card__body">
-          <p class="product-card__category">Bracciale · Su ordine</p>
-          <p class="product-card__name">Muamara Stones</p>
+          <p class="product-card__category">Muamara Stones</p>
+          <p class="product-card__name">Bracciale · Taglia Unica</p>
           <p class="product-card__price">€ — <span class="wf-note">da definire</span></p>
           <a href="product.html?ref=stones" class="btn btn--filled product-card__cta">Ordina</a>
         </div>
