@@ -34,6 +34,13 @@ closebtn?.addEventListener('click', close);
 overlay?.addEventListener('click', close);
 drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 
+/* ── Wishlist button toggle ─── */
+document.querySelectorAll('.wishlist-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('active');
+  });
+});
+
 /* ── Active nav link ─── */
 const page = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-link, .drawer-nav a').forEach(a => {

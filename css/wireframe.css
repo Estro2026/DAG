@@ -2100,6 +2100,8 @@ body.vetrina .vetrina-only { display: block; }
 
 /* ── Wishlist ─────────────────────────────── */
 .wl-layout .variants-grid { padding-inline: 0; }
+.wl-layout .wishlist-btn.active:hover svg { fill: var(--wf-terra); stroke: var(--wf-terra); opacity: .6; }
+.wl-layout .wishlist-btn.active:hover { background: #fff; transform: scale(1.08); }
 
 /* ── Fix globali ─────────────────────────── */
 html { -webkit-text-size-adjust: 100%; }
