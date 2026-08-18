@@ -1585,43 +1585,14 @@ body.vetrina .vetrina-only { display: block; }
   align-items: center;
   gap: .25rem;
 }
-/* ── Ecommerce header — desktop ───────────────────────────────── */
-/* nav-icons diventa trasparente: account+cart partecipano al gap 2.25rem di nav-split */
+/* ── Ecommerce header ─────────────────────────────────────────── */
+/* Desktop: nav-icons trasparente — account+cart sono figli diretti
+   di nav-split--right e ereditano il gap 2.25rem uguale alle voci testo.
+   Mobile: hamburger è fuori da nav-split--right (come nella vetrina),
+   nav-split--right è display:none (gestito dalle regole generali),
+   account+cart finiscono nel drawer. */
 .site-header--ecommerce .nav-icons {
   display: contents;
-}
-
-/* hamburger dentro nav-icons nascosto su desktop */
-.site-header--ecommerce .hamburger {
-  display: none;
-}
-
-/* ── Ecommerce header — mobile (<=1024px) ─────────────────────── */
-@media (max-width: 1024px) {
-  /* nav-split--right esce dal flusso: wordmark si centra, nessun overflow */
-  .site-header--ecommerce .nav-split--right {
-    display: flex !important;
-    position: absolute;
-    right: var(--pad);
-    top: 50%;
-    transform: translateY(-50%);
-    gap: 0;
-  }
-  /* nascondi le voci testo, mostra solo le icone e l'hamburger */
-  .site-header--ecommerce .nav-split--right .nav-link {
-    display: none;
-  }
-  /* nav-icons torna flex container su mobile (desktop usa display:contents) */
-  .site-header--ecommerce .nav-icons {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  /* hamburger dentro nav-icons torna visibile su mobile */
-  .site-header--ecommerce .hamburger {
-    display: flex;
-  }
 }
 
 /* ── Wishlist button (card overlay + PDP) ────────────────────────── */
