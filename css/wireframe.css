@@ -2098,6 +2098,9 @@ body.vetrina .vetrina-only { display: block; }
 /* ── Account ─────────────────────────────── */
 .account-hero .t-h1 { line-height: 1.05; }
 
+/* ── Wishlist ─────────────────────────────── */
+.wl-layout .variants-grid { padding-inline: 0; }
+
 /* ── Fix globali ─────────────────────────── */
 html { -webkit-text-size-adjust: 100%; }
 body { overflow-x: clip; }
