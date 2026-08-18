@@ -1586,6 +1586,12 @@ body.vetrina .vetrina-only { display: block; }
   align-items: center;
   gap: .25rem;
 }
+/* desktop: 4a colonna per nav-icons (non sovrascrive la regola mobile a 768px) */
+@media (min-width: 769px) {
+  .header-inner:has(.nav-icons) {
+    grid-template-columns: 1fr auto 1fr auto;
+  }
+}
 
 /* ── Wishlist button (card overlay + PDP) ────────────────────────── */
 .wishlist-btn {
