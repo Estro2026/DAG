@@ -397,6 +397,7 @@ img { display: block; max-width: 100%; }
 .drawer-nav { display: flex; flex-direction: column; gap: 1.5rem; }
 .drawer-nav a { font-family: var(--font-serif); font-size: 32px; font-weight: 500; color: var(--wf-text); }
 .drawer-nav a:hover { color: var(--wf-muted); }
+.drawer-nav a:active { opacity: 0.55; }
 .drawer-footer { margin-top: auto; padding-top: 2rem; border-top: 1px solid var(--wf-border); display: flex; flex-direction: column; gap: 0.75rem; }
 
 /* ── BUTTONS ─────────────────────────────── */
@@ -421,6 +422,7 @@ img { display: block; max-width: 100%; }
 .btn--outline:hover { background: var(--wf-clay); color: var(--wf-bg); border-color: var(--wf-clay); }
 .btn--outline-inv { background: transparent; color: var(--wf-bg); border-color: rgba(255,255,255,0.5); }
 .btn--outline-inv:hover { background: var(--wf-clay); border-color: var(--wf-clay); color: #F2EDE4; }
+.btn:active { opacity: 0.75; transform: scale(0.98); }
 /* bottoni pieni su fondi colorati: hover in clay #C6633E */
 .band--terra .btn--filled:hover,
 .band--clay  .btn--filled:hover,
@@ -1476,6 +1478,8 @@ img { display: block; max-width: 100%; }
   .hamburger { display: flex; }
   /* su mobile: wordmark centrato, hamburger a destra */
   .header-inner { grid-template-columns: 1fr auto 1fr; }
+  /* header-inner su mobile con nav-icons ecommerce */
+  .header-inner:has(.nav-icons) { grid-template-columns: 1fr auto auto auto; }
   .header-wordmark { grid-column: 2; justify-self: center; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .event-card { grid-template-columns: 1fr; }
@@ -1575,6 +1579,13 @@ body.vetrina .vetrina-only { display: block; }
 .site-header.on-hero .nav-cart { color: rgba(255,255,255,0.62); }
 .site-header.on-hero .nav-cart:hover { color: #fff; }
 .site-header.on-hero .nav-cart__count { background: rgba(255,255,255,0.9); color: #1a1a1a; }
+
+/* nav-icons: account + cart sempre visibili (desktop + mobile ecommerce) */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
 
 /* ── Wishlist button (card overlay + PDP) ────────────────────────── */
 .wishlist-btn {
