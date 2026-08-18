@@ -1478,15 +1478,7 @@ img { display: block; max-width: 100%; }
   .hamburger { display: flex; }
   /* su mobile: wordmark centrato, hamburger a destra */
   .header-inner { grid-template-columns: 1fr auto 1fr; }
-  /* header-inner su mobile con nav-icons ecommerce:
-     nav-icons esce dal flusso (position:absolute) → wordmark si centra perfettamente */
-  .header-inner:has(.nav-icons) .nav-icons {
-    position: absolute;
-    right: var(--pad);
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex; align-items: center; gap: .25rem;
-  }
+
   .header-wordmark { grid-column: 2; justify-self: center; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .event-card { grid-template-columns: 1fr; }
@@ -1593,15 +1585,30 @@ body.vetrina .vetrina-only { display: block; }
   align-items: center;
   gap: .25rem;
 }
-/* desktop: 4a colonna per nav-icons */
-@media (min-width: 1025px) {
-  .header-inner:has(.nav-icons) {
-    grid-template-columns: 1fr auto 1fr auto;
-  }
+/* ── Ecommerce header — desktop ───────────────────────────────── */
+/* 4a colonna per nav-icons (account + cart) — no :has() needed */
+.site-header--ecommerce .header-inner {
+  grid-template-columns: 1fr auto 1fr auto;
 }
-/* su desktop: hamburger dentro nav-icons rimane nascosto */
-@media (min-width: 1025px) {
-  .nav-icons .hamburger { display: none; }
+/* hamburger dentro nav-icons: nascosto su desktop */
+.site-header--ecommerce .nav-icons .hamburger {
+  display: none;
+}
+
+/* ── Ecommerce header — mobile (<=1024px) ─────────────────────── */
+@media (max-width: 1024px) {
+  /* nav-icons esce dal flusso → wordmark si centra, nessun overflow */
+  .site-header--ecommerce .nav-icons {
+    position: absolute;
+    right: var(--pad);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex; align-items: center; gap: .25rem;
+  }
+  /* hamburger dentro nav-icons: torna visibile su mobile */
+  .site-header--ecommerce .nav-icons .hamburger {
+    display: flex;
+  }
 }
 
 /* ── Wishlist button (card overlay + PDP) ────────────────────────── */
