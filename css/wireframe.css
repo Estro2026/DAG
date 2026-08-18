@@ -2527,7 +2527,6 @@ img, svg, video, iframe { max-width: 100%; }
   line-height: 1.75;
   color: var(--wf-muted);
   padding-bottom: 1.5rem;
-  max-width: 640px;
 }
 
 /* ══ Shipping ════════════════════════════════════════════════════════ */
