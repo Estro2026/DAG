@@ -1588,8 +1588,12 @@ body.vetrina .vetrina-only { display: block; }
   flex-shrink: 0;
 }
 .wishlist-btn:hover { background: #fff; transform: scale(1.08); }
-.wishlist-btn svg { width: 16px; height: 16px; stroke: var(--wf-text); fill: none; stroke-width: 1.5; }
-.wishlist-btn.active svg { fill: var(--wf-text); }
+.wishlist-btn svg { width: 16px; height: 16px; stroke: var(--wf-text); fill: none; stroke-width: 1.5; transition: fill .2s, stroke .2s; }
+.wishlist-btn.active svg { fill: var(--wf-clay); stroke: var(--wf-clay); }
+.wishlist-btn.active:hover { background: #fff; transform: scale(1.08); }
+.wishlist-btn.active:hover svg { fill: var(--wf-terra); stroke: var(--wf-terra); }
+@keyframes wl-pulse { 0%,100%{transform:scale(1)} 40%{transform:scale(1.22)} 70%{transform:scale(.95)} }
+.wishlist-btn.active { animation: wl-pulse .35s ease; }
 
 /* bottone wishlist secondario (PDP) */
 .btn--wishlist {
@@ -1764,7 +1768,6 @@ body.vetrina .vetrina-only { display: block; }
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 0;
-  order: -1;
   margin-bottom: .35rem;
 }
 .model-section .product-card__category {
