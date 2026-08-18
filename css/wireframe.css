@@ -1716,15 +1716,19 @@ body.vetrina .vetrina-only { display: block; }
 
 /* ══ Collections PLP — filter bar & model sections ═══════════════ */
 .filter-bar {
-  display: flex;
-  gap: .5rem;
-  flex-wrap: wrap;
-  padding: 1.1rem var(--pad);
   border-bottom: 1px solid var(--wf-border);
   position: sticky;
   top: var(--header-h);
   background: var(--wf-bg);
   z-index: 90;
+}
+.filter-bar__inner {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  padding: 1.1rem var(--pad);
+  max-width: var(--container);
+  margin-inline: auto;
 }
 .sf-filter {
   padding: .4rem 1rem;
@@ -1741,7 +1745,7 @@ body.vetrina .vetrina-only { display: block; }
 .sf-filter:hover { background: var(--wf-clay); color: #F2EDE4; border-color: var(--wf-clay); }
 
 .model-section { border-top: 1px solid var(--wf-border); }
-.model-header { padding: 3.5rem var(--pad) 2rem; max-width: var(--wrap-max); margin-inline: auto; }
+.model-header { padding: 3.5rem var(--pad) 2rem; max-width: var(--container); margin-inline: auto; }
 .model-header .t-label { display: block; margin-bottom: .75rem; }
 .model-header h2 { margin-bottom: .75rem; }
 .model-header p { max-width: 520px; color: var(--wf-muted); font-size: 15px; line-height: 1.65; }
@@ -1756,7 +1760,7 @@ body.vetrina .vetrina-only { display: block; }
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 0 var(--pad) 3.5rem;
-  max-width: var(--wrap-max);
+  max-width: var(--container);
   margin-inline: auto;
 }
 @media (max-width: 900px) { .variants-grid { grid-template-columns: repeat(2, 1fr); } }
