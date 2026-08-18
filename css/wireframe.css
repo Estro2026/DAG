@@ -1764,7 +1764,8 @@ body.vetrina .vetrina-only { display: block; }
 
 /* Collections PLP + PDP related — gerarchia: nome modello > colore > prezzo */
 .model-section .product-card__category,
-.related-grid .product-card__category {
+.related-grid .product-card__category,
+.products-grid .product-card__category {
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 500;
@@ -1774,7 +1775,8 @@ body.vetrina .vetrina-only { display: block; }
   margin-bottom: .2rem;
 }
 .model-section .product-card__name,
-.related-grid .product-card__name {
+.related-grid .product-card__name,
+.products-grid .product-card__name {
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 400;
@@ -1783,7 +1785,8 @@ body.vetrina .vetrina-only { display: block; }
   margin-bottom: .35rem;
 }
 .model-section .product-card__price,
-.related-grid .product-card__price {
+.related-grid .product-card__price,
+.products-grid .product-card__price {
   font-family: var(--font-sans);
   font-size: 13px;
   font-weight: 400;
