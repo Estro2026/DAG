@@ -1762,15 +1762,7 @@ body.vetrina .vetrina-only { display: block; }
 @media (max-width: 900px) { .variants-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .variants-grid { grid-template-columns: 1fr; } }
 
-/* Collections PLP + PDP related — gerarchia: prezzo > nome modello > colore */
-.model-section .product-card__price,
-.related-grid .product-card__price {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: 0;
-  margin-bottom: .35rem;
-}
+/* Collections PLP + PDP related — gerarchia: nome modello > colore > prezzo */
 .model-section .product-card__category,
 .related-grid .product-card__category {
   font-family: var(--font-sans);
@@ -1788,6 +1780,14 @@ body.vetrina .vetrina-only { display: block; }
   font-weight: 400;
   color: var(--wf-muted);
   letter-spacing: .03em;
+  margin-bottom: .35rem;
+}
+.model-section .product-card__price,
+.related-grid .product-card__price {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
   margin-bottom: .75rem;
 }
 
