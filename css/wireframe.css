@@ -1790,7 +1790,7 @@ body.vetrina .vetrina-only { display: block; }
 
 
 /* ══ Product Detail Page (PDP) ══════════════════════════════════════ */
-.pdp-hero { padding-top: 1.5rem; padding-bottom: 2rem; }
+.section.pdp-hero { padding-top: 1.5rem; padding-bottom: 2rem; }
 .pdp-layout {
   display: grid;
   grid-template-columns: 7fr 5fr;
@@ -1894,7 +1894,7 @@ body.vetrina .vetrina-only { display: block; }
   color: var(--wf-muted);
   margin-top: .4rem;
 }
-.pdp-cta { width: 100%; padding: 1rem; font-size: 13px; letter-spacing: .08em; text-align: center; }
+.pdp-cta { width: 100%; padding: 1rem; font-size: 13px; letter-spacing: .08em; justify-content: center; }
 .pdp-links {
   display: flex;
   gap: 1.5rem;
@@ -2626,6 +2626,8 @@ img, svg, video, iframe { max-width: 100%; }
   display: flex;
   align-items: center;
   gap: .35rem;
+  list-style: none;
+  margin: 0;
   max-width: var(--container);
   margin-inline: auto;
   padding: .65rem var(--pad);
