@@ -6,185 +6,6 @@
   <title>Wishlist — DAG Gioielli</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="../css/wireframe.css">
-  <style>
-    /* ── Wishlist layout ─────────────────────────────────────── */
-    .wl-layout {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    @media (max-width: 768px) { .wl-layout { grid-template-columns: 1fr; } }
-
-    /* sidebar liste */
-    .wl-sidebar {
-      position: sticky;
-      top: calc(var(--header-h) + 1.5rem);
-    }
-    .wl-sidebar__title {
-      font-family: var(--font-sans);
-      font-size: 10px; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--wf-ghost);
-      margin-bottom: 1rem;
-    }
-    .wl-list-item {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: .6rem .75rem;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: background 0.18s ease;
-      margin-bottom: 2px;
-    }
-    .wl-list-item:hover { background: var(--wf-surface); }
-    .wl-list-item.active { background: var(--wf-surface); }
-    .wl-list-item__name {
-      font-family: var(--font-sans); font-size: 13px;
-      color: var(--wf-text);
-    }
-    .wl-list-item.active .wl-list-item__name { font-weight: 500; }
-    .wl-list-item__count {
-      font-family: var(--font-sans); font-size: 11px;
-      color: var(--wf-ghost);
-      background: var(--wf-img); border-radius: 20px;
-      padding: 1px 7px;
-    }
-    .wl-new-list {
-      display: flex; align-items: center; gap: .4rem;
-      padding: .6rem .75rem;
-      font-family: var(--font-sans); font-size: 12px;
-      color: var(--wf-muted); cursor: pointer;
-      border: 1px dashed var(--wf-border); border-radius: 2px;
-      margin-top: .75rem; background: none;
-      width: 100%; text-align: left;
-      transition: border-color 0.18s ease, color 0.18s ease;
-    }
-    .wl-new-list:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
-
-    .wl-share {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--wf-border);
-    }
-    .wl-share__label {
-      font-family: var(--font-sans); font-size: 11px;
-      color: var(--wf-ghost); margin-bottom: .5rem;
-      text-transform: uppercase; letter-spacing: 0.1em;
-    }
-    .wl-share__url {
-      display: flex; align-items: center; gap: .5rem;
-    }
-    .wl-share__input {
-      font-family: var(--font-sans); font-size: 11px;
-      color: var(--wf-muted);
-      background: var(--wf-surface);
-      border: 1px solid var(--wf-border);
-      border-radius: 2px; padding: .4rem .6rem;
-      flex: 1; min-width: 0;
-    }
-    .wl-share__copy {
-      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
-      padding: .4rem .7rem;
-      border: 1px solid var(--wf-border); border-radius: 2px;
-      background: none; cursor: pointer; white-space: nowrap;
-      color: var(--wf-text);
-      transition: border-color 0.18s ease;
-    }
-    .wl-share__copy:hover { border-color: var(--wf-accent); }
-
-    /* main area */
-    .wl-header {
-      display: flex; align-items: baseline; justify-content: space-between;
-      margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
-    }
-    .wl-header__title {
-      font-family: var(--font-serif); font-size: 1.75rem;
-      color: var(--wf-text);
-    }
-    .wl-header__actions {
-      display: flex; align-items: center; gap: .75rem;
-    }
-    .wl-action-btn {
-      font-family: var(--font-sans); font-size: 11px; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: .45rem .85rem;
-      border: 1px solid var(--wf-border); border-radius: 2px;
-      background: none; cursor: pointer; color: var(--wf-text);
-      transition: border-color 0.18s ease, color 0.18s ease;
-    }
-    .wl-action-btn:hover { border-color: var(--wf-accent); color: var(--wf-accent); }
-    .wl-action-btn--filled {
-      background: var(--wf-accent); color: #fff; border-color: var(--wf-accent);
-    }
-    .wl-action-btn--filled:hover { background: #000; border-color: #000; color: #fff; }
-
-    /* product card wishlist variant */
-    .wl-card {
-      display: flex; flex-direction: column; position: relative;
-    }
-    .wl-card__remove {
-      position: absolute; top: 10px; left: 10px; z-index: 2;
-      background: rgba(255,255,255,0.88); border: none; border-radius: 50%;
-      width: 28px; height: 28px;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 14px; color: var(--wf-muted);
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .wl-card__remove:hover { background: #fff; color: var(--wf-text); }
-    .wl-card__img { position: relative; display: block; text-decoration: none; margin-bottom: 1rem; overflow: hidden; }
-    .wl-card__img .img-ph { transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
-    .wl-card__img:hover .img-ph { transform: scale(1.02); }
-    .wl-card__body { display: flex; flex-direction: column; gap: .35rem; }
-    .wl-card__category { font-family: var(--font-serif); font-size: 18px; color: var(--wf-text); }
-    .wl-card__ref { font-family: var(--font-sans); font-size: 10.5px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--wf-ghost); }
-    .wl-card__price { font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--wf-text); margin-top: .15rem; }
-    .wl-card__cta {
-      margin-top: .75rem;
-      font-family: var(--font-sans); font-size: 11.5px; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: .6rem 1rem;
-      border: 1px solid var(--wf-border); border-radius: 2px;
-      background: none; cursor: pointer; color: var(--wf-text);
-      transition: border-color 0.22s ease, background 0.22s ease, color 0.22s ease;
-      text-align: center;
-    }
-    .wl-card__cta:hover { background: var(--wf-accent); border-color: var(--wf-accent); color: #fff; }
-
-    /* stato vuoto */
-    .wl-empty {
-      text-align: center;
-      padding: 5rem 2rem;
-      border: 1px dashed var(--wf-border);
-      border-radius: 4px;
-    }
-    .wl-empty__icon { font-size: 2.5rem; margin-bottom: 1.25rem; opacity: .35; }
-    .wl-empty__title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--wf-text); margin-bottom: .6rem; }
-    .wl-empty__text { font-family: var(--font-sans); font-size: 13px; color: var(--wf-muted); max-width: 320px; margin: 0 auto 1.75rem; line-height: 1.7; }
-
-    /* modal crea lista */
-    .wl-modal-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.35);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 200; opacity: 0; pointer-events: none;
-      transition: opacity 0.22s ease;
-    }
-    .wl-modal-overlay.open { opacity: 1; pointer-events: all; }
-    .wl-modal {
-      background: var(--wf-bg); border: 1px solid var(--wf-border);
-      border-radius: 4px; padding: 2rem; width: 100%; max-width: 380px;
-      transform: translateY(12px); transition: transform 0.22s ease;
-    }
-    .wl-modal-overlay.open .wl-modal { transform: translateY(0); }
-    .wl-modal__title { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 1.25rem; }
-    .wl-modal__label { font-family: var(--font-sans); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wf-muted); margin-bottom: .4rem; display: block; }
-    .wl-modal__input {
-      width: 100%; padding: .65rem .8rem;
-      font-family: var(--font-sans); font-size: 13px;
-      border: 1px solid var(--wf-border); border-radius: 2px; background: var(--wf-surface);
-      color: var(--wf-text); margin-bottom: 1.25rem;
-    }
-    .wl-modal__input:focus { outline: none; border-color: var(--wf-accent); }
-    .wl-modal__actions { display: flex; gap: .75rem; justify-content: flex-end; }
-  </style>
 </head>
 <body>
 
@@ -195,10 +16,10 @@
       <a href="philosophy.html"  class="nav-link">Philosophy</a>
       <a href="collections.html" class="nav-link">Collezioni</a>
     </nav>
-    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home">DAG</a>
+    <a href="index.html" class="header-wordmark" aria-label="DAG Gioielli — Home"><img class="wordmark-logo wordmark-logo--light" src="../assets/dag_logo_bianco.webp" alt="DAG Gioielli"><img class="wordmark-logo wordmark-logo--dark" src="../assets/dag_logo.webp" alt="DAG Gioielli"></a>
     <nav class="nav-split nav-split--right" aria-label="Navigazione secondaria">
       <a href="stores.html"  class="nav-link">Stores</a>
-      <a href="events.html"  class="nav-link">Events</a>
+      <a href="events.html"  class="nav-link">Eventi</a>
       <a href="contact.html" class="nav-link">Contatti</a>
       <a href="account.html" class="nav-account" aria-label="Area riservata">
         <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" stroke="currentColor" fill="none" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -208,19 +29,19 @@
         <span class="nav-cart__count">0</span>
       </a>
     </nav>
-    <button class="hamburger" aria-label="Apri menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="hamburger" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 <div class="drawer-overlay"></div>
-<nav class="mobile-drawer" aria-label="Menu mobile">
-  <button class="drawer-close" aria-label="Chiudi">✕</button>
+<nav class="mobile-drawer">
+  <button class="drawer-close">✕</button>
   <div class="drawer-nav">
-    <a href="about.html">About</a>
-    <a href="philosophy.html">Philosophy</a>
+    <a href="about.html">About</a><a href="philosophy.html">Philosophy</a>
     <a href="collections.html">Collezioni</a>
     <a href="stores.html">Stores</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contatti</a>
+    <a href="events.html">Eventi</a><a href="contact.html">Contatti</a>
     <a href="account.html">Account</a>
   </div>
 </nav>
@@ -427,44 +248,23 @@
 
 </main>
 
-<!-- ══ FOOTER ECOMMERCE ═══════════════════════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
+  <div class="footer-grid" style="grid-template-columns:2fr 1fr 1fr 1fr 1fr;">
     <div>
-      <a href="index.html" class="footer-logo-ph" aria-label="DAG Gioielli"><span>DAG</span></a>
-      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano. Ogni pezzo nasce su ordine nel laboratorio milanese.</p>
+      <img src="../assets/dag_logo_bianco.webp" alt="DAG Gioielli" style="width:60px;height:auto;margin-bottom:1.25rem;opacity:.92;">
+      <p class="footer-tagline">Gioielli tessili realizzati a mano a Milano.</p>
     </div>
-    <div class="footer-col">
-      <p class="footer-col-title">Navigazione</p>
-      <a href="about.html">About</a>
-      <a href="philosophy.html">Philosophy</a>
-      <a href="collections.html">Collezioni</a>
-      <a href="stores.html">Stores</a>
-    </div>
-    <div class="footer-col">
-      <p class="footer-col-title">Acquisto</p>
-      <a href="faq.html">FAQ</a>
-      <a href="shipping.html">Spedizioni</a>
-      <a href="wishlist.html">Wishlist</a>
-      <a href="account.html">Il mio account</a>
-    </div>
-    <div class="footer-col">
-      <p class="footer-col-title">Contatti</p>
-      <a href="mailto:info@daggioielli.it">info@daggioielli.it</a>
-      <a href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener">Instagram</a>
-      <a href="contact.html">Contatti</a>
-    </div>
+    <div class="footer-col"><p class="footer-col-title">Navigazione</p><a href="about.html">About</a><a href="philosophy.html">Philosophy</a><a href="collections.html">Collezioni</a><a href="stores.html">Stores</a></div>
+    <div class="footer-col"><p class="footer-col-title">Acquisto</p><a href="faq.html">FAQ</a><a href="shipping.html">Spedizioni</a><a href="wishlist.html">Wishlist</a><a href="account.html">Il mio account</a></div>
+    <div class="footer-col"><p class="footer-col-title">Brand</p><a href="events.html">Eventi</a><a href="contact.html">Contatti</a><a href="stores.html">Trova un rivenditore</a></div>
+    <div class="footer-col"><p class="footer-col-title">Contatti</p><a href="mailto:info@daggioielli.it">info@daggioielli.it</a><span class="footer-phone">Telefono: +39 02 0000 0000</span><a class="footer-ig" href="https://www.instagram.com/daggioielli" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></a></div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 DAG Gioielli. Tutti i diritti riservati.</p>
-    <div style="display:flex;gap:1.5rem;">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="cookie.html">Cookie Policy</a>
-    </div>
+    <div style="display:flex;gap:1.5rem;"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div>
   </div>
 </footer>
 
 <script src="../js/main.js"></script>
-<script src="../js/version-switcher.js"></script>
 </body>
 </html>
