@@ -1946,7 +1946,7 @@ body.vetrina .vetrina-only { display: block; }
 .pdp-trust .grid-3 { max-width: 860px; margin-inline: auto; }
 .pdp-trust-item {
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: .9rem 1.25rem;
   border-right: 1px solid var(--wf-border);
 }
 .pdp-trust-item:last-child { border-right: none; }
@@ -1973,9 +1973,9 @@ body.vetrina .vetrina-only { display: block; }
 }
 .pdp-trust-item__body {
   font-family: var(--font-sans);
-  font-size: 12px;
-  line-height: 1.55;
-  color: var(--wf-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--wf-text);
 }
 /* wishlist PDP — stato saved */
 .btn--wishlist.active { border-color: var(--wf-clay); color: var(--wf-clay); }
