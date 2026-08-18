@@ -1632,6 +1632,15 @@ body.vetrina .vetrina-only { display: block; }
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .product-card__img:hover .img-ph { transform: scale(1.02); }
+.product-card__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background .3s;
+  pointer-events: none;
+}
+.product-card__img:hover::after { background: rgba(0,0,0,0.07); }
 
 .product-card__body { flex: 1; display: flex; flex-direction: column; }
 /* nome modello — protagonista */
@@ -1676,6 +1685,104 @@ body.vetrina .vetrina-only { display: block; }
 
 @media (max-width: 768px) {
   .grid-4.products-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── product-card__name (variante colore / nome su collections PLP) */
+.product-card__name {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--wf-text);
+  margin-bottom: .25rem;
+  line-height: 1.3;
+}
+
+/* ── color dots (varianti colore su PLP) */
+.product-card__variants { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: .85rem; }
+.color-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--wf-border);
+  border: 1px solid var(--wf-border);
+  cursor: pointer;
+  transition: transform .15s;
+}
+.color-dot.active { outline: 1.5px solid var(--wf-text); outline-offset: 2px; }
+.color-dot:hover { transform: scale(1.2); }
+
+/* ══ Collections PLP — filter bar & model sections ═══════════════ */
+.filter-bar {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  padding: 1.1rem var(--pad);
+  border-bottom: 1px solid var(--wf-border);
+  position: sticky;
+  top: var(--header-h);
+  background: var(--wf-bg);
+  z-index: 90;
+}
+.sf-filter {
+  padding: .4rem 1rem;
+  border: 1px solid var(--wf-border);
+  background: transparent;
+  color: var(--wf-text);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.sf-filter.active,
+.sf-filter:hover { background: var(--wf-clay); color: #F2EDE4; border-color: var(--wf-clay); }
+
+.model-section { border-top: 1px solid var(--wf-border); }
+.model-header { padding: 3.5rem var(--pad) 2rem; max-width: var(--wrap-max); margin-inline: auto; }
+.model-header .t-label { display: block; margin-bottom: .75rem; }
+.model-header h2 { margin-bottom: .75rem; }
+.model-header p { max-width: 520px; color: var(--wf-muted); font-size: 15px; line-height: 1.65; }
+.model-meta {
+  display: flex; gap: 1.5rem; margin-top: 1.25rem;
+  font-size: 11px; color: var(--wf-muted);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: .08em;
+  flex-wrap: wrap;
+}
+.variants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 0 var(--pad) 3.5rem;
+  max-width: var(--wrap-max);
+  margin-inline: auto;
+}
+@media (max-width: 900px) { .variants-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .variants-grid { grid-template-columns: 1fr; } }
+
+/* Collections PLP — gerarchia: prezzo > nome modello > colore */
+.model-section .product-card__price {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  order: -1;
+  margin-bottom: .35rem;
+}
+.model-section .product-card__category {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--wf-text);
+  letter-spacing: .03em;
+  text-transform: none;
+  margin-bottom: .2rem;
+}
+.model-section .product-card__name {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--wf-muted);
+  letter-spacing: .03em;
+  margin-bottom: .75rem;
 }
 
 
