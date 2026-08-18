@@ -155,7 +155,7 @@
       <!-- INFO -->
       <div class="pdp-info">
 
-        <span class="t-label" style="display:block;margin-bottom:.75rem;">Bracciale · Realizzato su ordine</span>
+        <span class="t-label" style="display:block;margin-bottom:.4rem;">Bracciale · Realizzato su ordine</span>
         <h1 class="pdp-title">Muamara Jaipur</h1>
 
         <p class="pdp-price">
@@ -163,7 +163,7 @@
         </p>
 
         <div class="pdp-badge">
-          <svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <svg viewBox="0 0 24 24" width="11" height="11" stroke="currentColor" fill="none" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           Realizzato su ordine · 10–15 giorni
         </div>
 
@@ -177,36 +177,37 @@
           <span class="color-dot" title="Variante 5"></span>
           <span class="color-dot" title="Variante 6"></span>
         </div>
-        <span class="wf-note" style="display:block;margin-top:-.5rem;margin-bottom:1rem;">DEV: WooCommerce product variations — attributo pa_colore</span>
+        <span class="wf-note" style="display:block;margin-top:-.3rem;margin-bottom:.75rem;">DEV: WooCommerce product variations — attributo pa_colore</span>
 
-        <!-- CTA — primo elemento visibile dopo la scelta colore -->
-        <button class="btn btn--filled pdp-cta" style="margin-bottom:.75rem;">Ordina ora</button>
+        <!-- Taglia -->
+        <div style="margin-bottom:.75rem;">
+          <p class="pdp-size-note" style="font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.25rem;">Taglia Unica</p>
+          <p class="pdp-size-note">Lunghezza standard: <strong style="color:var(--wf-text);">— cm</strong> <span class="wf-note">da definire</span></p>
+        </div>
 
-        <button class="btn--wishlist" id="pdpWishlist" aria-label="Salva in wishlist" style="margin-bottom:1.25rem;">
+        <!-- Misura personalizzata -->
+        <div style="margin-bottom:.9rem;">
+          <label class="pdp-field-label" for="wristSize">Misura polso (opzionale)</label>
+          <input id="wristSize" type="text" class="pdp-measure-input" placeholder="es. 17 cm — lascia vuoto per la misura standard">
+          <p class="pdp-measure-note">Se hai un polso fuori misura, indicalo qui. Senza costi aggiuntivi.</p>
+        </div>
+
+        <!-- Avviso produzione -->
+        <div class="production-notice">
+          <strong>Realizzato su ordine</strong> — Ogni gioiello DAG nasce a mano dopo la conferma. Tempi: 10–15 giorni lavorativi. Riceverai email a ogni fase.
+        </div>
+
+        <!-- CTA -->
+        <button class="btn btn--filled pdp-cta" style="margin-bottom:.6rem;">Ordina ora</button>
+
+        <button class="btn--wishlist" id="pdpWishlist" aria-label="Salva in wishlist" style="margin-bottom:.9rem;">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           Salva in wishlist
         </button>
 
         <!-- PayPal placeholder -->
-        <div class="img-ph" style="height:44px;margin-bottom:1.5rem;">
+        <div class="img-ph" style="height:40px;margin-bottom:.9rem;">
           <span class="img-ph__label" style="font-size:10px;">PayPal button — WooCommerce PayPal Payments plugin</span>
-        </div>
-
-        <!-- Avviso produzione — dopo la CTA -->
-        <div class="production-notice" style="margin-bottom:1.25rem;">
-          <strong>Realizzato su ordine</strong> — Ogni gioiello DAG nasce a mano dopo la conferma. Tempi: 10–15 giorni lavorativi. Riceverai email a ogni fase.
-        </div>
-
-        <!-- Taglia + misura -->
-        <div style="margin-bottom:1.25rem;">
-          <p class="pdp-size-note" style="font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.35rem;">Taglia Unica</p>
-          <p class="pdp-size-note">Lunghezza standard: <strong style="color:var(--wf-text);">— cm</strong> <span class="wf-note">da definire</span></p>
-        </div>
-
-        <div style="margin-bottom:1rem;">
-          <label class="pdp-field-label" for="wristSize">Misura polso (opzionale)</label>
-          <input id="wristSize" type="text" class="pdp-measure-input" placeholder="es. 17 cm — lascia vuoto per la misura standard">
-          <p class="pdp-measure-note">Se hai un polso fuori misura, indicalo qui. Senza costi aggiuntivi.</p>
         </div>
 
         <div class="pdp-links">

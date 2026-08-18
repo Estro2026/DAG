@@ -1798,8 +1798,8 @@ body.vetrina .vetrina-only { display: block; }
   align-items: start;
 }
 .pdp-gallery__main {
-  height: calc(100vh - var(--header-h) - 6rem);
-  max-height: 680px;
+  height: calc(100vh - var(--header-h) - 10rem);
+  max-height: 580px;
   overflow: hidden;
 }
 .pdp-gallery__main .img-ph {
@@ -1818,18 +1818,18 @@ body.vetrina .vetrina-only { display: block; }
 }
 .pdp-title {
   font-family: var(--font-serif);
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(22px, 2.5vw, 32px);
   font-weight: 400;
   line-height: 1.1;
   color: var(--wf-text);
-  margin-bottom: .75rem;
+  margin-bottom: .4rem;
 }
 .pdp-price {
   font-family: var(--font-sans);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--wf-text);
-  margin-bottom: 1rem;
+  margin-bottom: .55rem;
   display: flex;
   align-items: baseline;
   gap: .5rem;
@@ -1839,19 +1839,19 @@ body.vetrina .vetrina-only { display: block; }
   align-items: center;
   gap: .5rem;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: .07em;
   text-transform: uppercase;
   color: var(--wf-muted);
   border: 1px solid var(--wf-border);
-  padding: .35rem .75rem;
-  margin-bottom: 1.5rem;
+  padding: .25rem .65rem;
+  margin-bottom: .9rem;
 }
 .color-selector {
   display: flex;
   align-items: center;
   gap: .6rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: .6rem;
   flex-wrap: wrap;
 }
 .color-selector__label {
@@ -1892,9 +1892,16 @@ body.vetrina .vetrina-only { display: block; }
   font-family: var(--font-sans);
   font-size: 11px;
   color: var(--wf-muted);
-  margin-top: .4rem;
+  margin-top: .3rem;
 }
-.pdp-cta { width: 100%; padding: 1rem; font-size: 13px; letter-spacing: .08em; justify-content: center; }
+.pdp-cta { width: 100%; padding: .85rem 1rem; font-size: 13px; letter-spacing: .08em; justify-content: center; }
+/* production-notice compatto dentro pdp-info */
+.pdp-info .production-notice {
+  padding: .65rem .9rem;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: .85rem;
+}
 .pdp-links {
   display: flex;
   gap: 1.5rem;
