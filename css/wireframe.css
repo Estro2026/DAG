@@ -2150,7 +2150,10 @@ img, svg, video, iframe { max-width: 100%; }
   /* griglie editoriali inline → colonna singola */
   [style*="grid-template-columns:7fr 5fr"],
   [style*="grid-template-columns:5fr 7fr"] { grid-template-columns: 1fr !important; }
-/* colonne sticky (PDP, checkout) tornano statiche in colonna singola */
+  /* gap verticale ridotto quando le griglie 2-col collassano */
+  [style*="gap:6rem"] { gap: 2.5rem !important; }
+  [style*="gap:5rem"] { gap: 2rem !important; }
+  /* colonne sticky (PDP, checkout) tornano statiche in colonna singola */
   [style*="position:sticky"] { position: static !important; }
   .ci-section { padding-block: calc(var(--section-v) * 1.15); }
   .sl-bar { padding: 1.25rem; }
@@ -2225,6 +2228,22 @@ img, svg, video, iframe { max-width: 100%; }
   .card-col__body { padding: 1rem 0; }
   .sl-caption__text { font-size: clamp(20px, 6vw, 28px); }
   .sf-map { min-height: 280px; }
+  /* gap verticale ridotto per griglie già collassate */
+  [style*="gap:6rem"], [style*="gap:5rem"], [style*="gap:4rem"] { gap: 2rem !important; }
+  /* Wishlist header → stack verticale */
+  .wl-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .wl-header__actions { flex-direction: column; width: 100%; }
+  .wl-header__actions .btn { width: 100%; justify-content: center; }
+  /* Wishlist sidebar share input */
+  .wl-share__url { flex-direction: column; }
+  .wl-share__input, .wl-share__copy { width: 100%; }
+  /* PDP trust → già 1-col via grid-3, padding ridotto */
+  .pdp-trust-item { border-right: none; border-bottom: 1px solid var(--wf-border); padding: 1rem 0; }
+  .pdp-trust-item:last-child { border-bottom: none; }
+  /* Collections filter bar — bottoni scorrevoli */
+  .filter-bar__inner { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .75rem; }
+  /* Breadcrumb padding ridotto */
+  .breadcrumb ol { padding: .5rem var(--pad); }
 }
 
 /* ── ≤480px — mobile small ───────────────── */
