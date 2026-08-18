@@ -2092,6 +2092,9 @@ body.vetrina .vetrina-only { display: block; }
    Breakpoint: 1200 · 1024 · 900 · 768 · 640 · 480 · 380
    ════════════════════════════════════════════════════════════════════ */
 
+/* ── Account ─────────────────────────────── */
+.account-hero .t-h1 { line-height: 1.05; }
+
 /* ── Fix globali ─────────────────────────── */
 html { -webkit-text-size-adjust: 100%; }
 body { overflow-x: clip; }
