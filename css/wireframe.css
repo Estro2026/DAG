@@ -1980,9 +1980,9 @@ body.vetrina .vetrina-only { display: block; }
   color: var(--wf-text);
 }
 /* wishlist PDP — stato saved */
-.btn--wishlist.active { border-color: var(--wf-clay); color: var(--wf-clay); }
-.btn--wishlist.active svg { fill: var(--wf-clay); stroke: var(--wf-clay); }
-.btn--wishlist.active:hover { border-color: var(--wf-terra); color: var(--wf-terra); }
+#pdpWishlist.active { border-color: var(--wf-clay); color: var(--wf-clay); background: transparent; }
+#pdpWishlist.active svg { fill: var(--wf-clay); stroke: var(--wf-clay); }
+#pdpWishlist.active:hover { border-color: var(--wf-terra); color: var(--wf-terra); background: transparent; }
 /* card sezione "potrebbe interessarti" — stessa struttura collections, leggermente più compatte */
 .related-grid {
   display: grid;
