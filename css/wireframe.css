@@ -1586,8 +1586,10 @@ body.vetrina .vetrina-only { display: block; }
   gap: .25rem;
 }
 /* ── Ecommerce header — desktop ───────────────────────────────── */
-/* nav-icons dentro nav-split--right: gap standard 2.25rem verso Contatti,
-   gap compatto 0.25rem tra le icone (gestito da .nav-icons base) */
+/* nav-icons diventa trasparente: account+cart partecipano al gap 2.25rem di nav-split */
+.site-header--ecommerce .nav-icons {
+  display: contents;
+}
 
 /* hamburger dentro nav-icons nascosto su desktop */
 .site-header--ecommerce .hamburger {
@@ -1609,6 +1611,13 @@ body.vetrina .vetrina-only { display: block; }
   .site-header--ecommerce .nav-split--right .nav-link {
     display: none;
   }
+  /* nav-icons torna flex container su mobile (desktop usa display:contents) */
+  .site-header--ecommerce .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
   /* hamburger dentro nav-icons torna visibile su mobile */
   .site-header--ecommerce .hamburger {
     display: flex;
