@@ -1797,15 +1797,7 @@ body.vetrina .vetrina-only { display: block; }
   gap: 4rem;
   align-items: start;
 }
-.pdp-gallery__main {
-  height: calc(100vh - var(--header-h) - 10rem);
-  max-height: 580px;
-  overflow: hidden;
-}
-.pdp-gallery__main .img-ph {
-  height: 100%;
-  aspect-ratio: unset;
-}
+.pdp-gallery__main { overflow: visible; }
 .pdp-gallery__thumbs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
