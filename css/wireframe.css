@@ -2626,6 +2626,8 @@ img, svg, video, iframe { max-width: 100%; }
   display: flex;
   align-items: center;
   gap: .35rem;
+  max-width: var(--container);
+  margin-inline: auto;
   padding: .65rem var(--pad);
   list-style: none;
   padding: .65rem 0;
