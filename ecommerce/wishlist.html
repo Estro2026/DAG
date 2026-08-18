@@ -126,12 +126,14 @@
 
         <!-- Lista attiva -->
         <div class="wl-list-item active" role="button" tabindex="0" aria-pressed="true">
+          <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="1.6" aria-hidden="true" style="flex-shrink:0;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           <span class="wl-list-item__name">Lista principale</span>
           <span class="wl-list-item__count">3</span>
         </div>
 
         <!-- Seconda lista esempio -->
         <div class="wl-list-item" role="button" tabindex="0" aria-pressed="false">
+          <svg viewBox="0 0 24 24" width="13" height="13" stroke="currentColor" fill="none" stroke-width="1.6" aria-hidden="true" style="flex-shrink:0;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           <span class="wl-list-item__name">Regali</span>
           <span class="wl-list-item__count">1</span>
         </div>
@@ -160,54 +162,60 @@
         <div class="wl-header">
           <h1 class="wl-header__title">Lista principale <span style="font-family:var(--font-sans);font-size:14px;color:var(--wf-ghost);font-weight:400;">— 3 prodotti</span></h1>
           <div class="wl-header__actions">
-            <button class="wl-action-btn">Rinomina lista</button>
-            <button class="wl-action-btn wl-action-btn--filled">Aggiungi tutto al carrello</button>
+            <button class="btn btn--outline" style="font-size:12px;padding:.5rem 1rem;">Rinomina lista</button>
+            <button class="btn btn--filled" style="font-size:12px;padding:.5rem 1rem;">Aggiungi tutto al carrello</button>
           </div>
         </div>
         <span class="wf-note" style="display:block;margin-bottom:2rem;">DEV (YITH): "Aggiungi tutto al carrello" = funzione YITH Premium. "Rinomina lista" = YITH Premium. CTA singolo per prodotto = disponibile anche Free via shortcode.</span>
 
         <!-- Griglia prodotti wishlist (stato A: lista con prodotti) -->
-        <div class="grid-3" style="gap:2rem;">
+        <div class="grid-3" style="gap:1.5rem;">
 
           <!-- Prodotto 1 — Muamara Jaipur -->
-          <div class="wl-card fade">
-            <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
-            <a href="product.html?ref=muamara-jaipur" class="wl-card__img" aria-label="Muamara Jaipur">
-              <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Jaipur</span></div>
-            </a>
-            <div class="wl-card__body">
-              <p class="wl-card__category">Bracciale</p>
-              <p class="wl-card__ref">Muamara Jaipur</p>
-              <p class="wl-card__price">€ 185</p>
-              <button class="wl-card__cta">Aggiungi al carrello</button>
+          <div class="product-card fade">
+            <div class="product-card__img" style="position:relative;">
+              <a href="product.html?ref=muamara-jaipur" class="product-card__img" aria-label="Muamara Jaipur">
+                <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Jaipur</span></div>
+              </a>
+              <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category">Bracciale</p>
+              <p class="product-card__name">Muamara Jaipur</p>
+              <p class="product-card__price">€ 185</p>
+              <a href="product.html?ref=muamara-jaipur" class="btn btn--filled product-card__cta">Aggiungi al carrello</a>
             </div>
           </div>
 
           <!-- Prodotto 2 — Muamara Star -->
-          <div class="wl-card fade fade-d1">
-            <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
-            <a href="product.html?ref=muamara-star" class="wl-card__img" aria-label="Muamara Star">
-              <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Star</span></div>
-            </a>
-            <div class="wl-card__body">
-              <p class="wl-card__category">Bracciale</p>
-              <p class="wl-card__ref">Muamara Star</p>
-              <p class="wl-card__price">€ 210</p>
-              <button class="wl-card__cta">Aggiungi al carrello</button>
+          <div class="product-card fade fade-d1">
+            <div class="product-card__img" style="position:relative;">
+              <a href="product.html?ref=muamara-star" class="product-card__img" aria-label="Muamara Star">
+                <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Star</span></div>
+              </a>
+              <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category">Bracciale</p>
+              <p class="product-card__name">Muamara Star</p>
+              <p class="product-card__price">€ 210</p>
+              <a href="product.html?ref=muamara-star" class="btn btn--filled product-card__cta">Aggiungi al carrello</a>
             </div>
           </div>
 
           <!-- Prodotto 3 — Muamara Precious -->
-          <div class="wl-card fade fade-d2">
-            <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
-            <a href="product.html?ref=muamara-precious" class="wl-card__img" aria-label="Muamara Precious">
-              <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Precious</span></div>
-            </a>
-            <div class="wl-card__body">
-              <p class="wl-card__category">Bracciale</p>
-              <p class="wl-card__ref">Muamara Precious</p>
-              <p class="wl-card__price">€ 320</p>
-              <button class="wl-card__cta">Aggiungi al carrello</button>
+          <div class="product-card fade fade-d2">
+            <div class="product-card__img" style="position:relative;">
+              <a href="product.html?ref=muamara-precious" class="product-card__img" aria-label="Muamara Precious">
+                <div class="img-ph ar-3-4"><span class="img-ph__label">Bracciale Muamara Precious</span></div>
+              </a>
+              <button class="wl-card__remove" aria-label="Rimuovi dalla wishlist" title="Rimuovi">×</button>
+            </div>
+            <div class="product-card__body">
+              <p class="product-card__category">Bracciale</p>
+              <p class="product-card__name">Muamara Precious</p>
+              <p class="product-card__price">€ 320</p>
+              <a href="product.html?ref=muamara-precious" class="btn btn--filled product-card__cta">Aggiungi al carrello</a>
             </div>
           </div>
 
@@ -240,8 +248,8 @@
     <input class="wl-modal__input" id="wlListName" type="text" placeholder="es. Regali, Sogni, Per me…" maxlength="40">
     <span class="wf-note" style="display:block;margin-top:-.75rem;margin-bottom:1.25rem;">DEV: nome lista salvato via YITH AJAX — max 40 caratteri. Nomi duplicati: YITH aggiunge suffisso numerico.</span>
     <div class="wl-modal__actions">
-      <button class="wl-action-btn" onclick="document.getElementById('wlModal').classList.remove('open')">Annulla</button>
-      <button class="wl-action-btn wl-action-btn--filled" onclick="document.getElementById('wlModal').classList.remove('open')">Crea lista</button>
+      <button class="btn btn--outline" style="font-size:12px;padding:.5rem 1rem;" onclick="document.getElementById('wlModal').classList.remove('open')">Annulla</button>
+      <button class="btn btn--filled" style="font-size:12px;padding:.5rem 1rem;" onclick="document.getElementById('wlModal').classList.remove('open')">Crea lista</button>
     </div>
   </div>
 </div>

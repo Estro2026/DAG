@@ -2254,7 +2254,7 @@ img, svg, video, iframe { max-width: 100%; }
 .wl-sidebar { position: sticky; top: calc(var(--header-h) + 1.5rem); }
 .wl-sidebar__title { font-family: var(--font-sans); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wf-ghost); margin-bottom: 1rem; }
 
-.wl-list-item { display: flex; align-items: center; justify-content: space-between; padding: .6rem .75rem; border-radius: 2px; cursor: pointer; transition: background 0.18s ease; margin-bottom: 2px; }
+.wl-list-item { display: flex; align-items: center; gap: .5rem; justify-content: space-between; padding: .6rem .75rem; border-radius: 2px; cursor: pointer; transition: background 0.18s ease; margin-bottom: 2px; }
 .wl-list-item:hover { background: var(--wf-surface); }
 .wl-list-item.active { background: var(--wf-surface); }
 .wl-list-item__name { font-family: var(--font-sans); font-size: 13px; color: var(--wf-text); }
