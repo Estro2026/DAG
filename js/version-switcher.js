@@ -52,7 +52,7 @@
     /* sulle pagine hero il header si sovrappone all'immagine:
        il body non ha bisogno del padding dell'header, solo della barra switcher */
     var bodyPad = isHero ? total : (total + HEADER_H);
-    s.textContent = '.site-header { top: ' + total + 'px !important; } body { padding-top: ' + bodyPad + 'px !important; }';
+    s.textContent = ':root { --total-offset: ' + (total + HEADER_H) + 'px; } .site-header { top: ' + total + 'px !important; } body { padding-top: ' + bodyPad + 'px !important; }';
     document.head.appendChild(s);
   });
 })();

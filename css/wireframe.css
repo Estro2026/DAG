@@ -2788,8 +2788,12 @@ img, svg, video, iframe { max-width: 100%; }
 /* ══ Breadcrumb ══════════════════════════════════════════════════════ */
 .breadcrumb {
   width: 100%;
-  border-bottom: 1px solid var(--wf-border);
-  background: var(--wf-bg);
+}
+.hero .breadcrumb {
+  position: absolute;
+  top: var(--total-offset, var(--header-h));
+  left: 0; right: 0;
+  z-index: 10;
 }
 .breadcrumb ol {
   display: flex;
