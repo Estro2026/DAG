@@ -78,52 +78,6 @@
 
 <main style="padding-top:var(--header-h);">
 
-<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
-<div class="dev-panel" id="devPanel">
-  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
-    <span class="dev-panel__title">⚙ Dev Notes — stores.html (Store Locator)</span>
-    <span style="display:flex;align-items:center;gap:1.25rem;">
-      <span class="dev-panel__effort">★★★★ Effort alto</span>
-      <span class="dev-panel__pill">WordPress</span>
-      <span class="dev-panel__pill">ACF Pro</span>
-      <span class="dev-panel__pill">Google Maps API</span>
-    </span>
-    <span class="dev-panel__toggle">▾</span>
-  </div>
-  <div class="dev-panel__body">
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">SEO</p>
-      <ul class="dev-panel__list">
-        <li class="ok">Title, description, canonical, OG, Twitter Card ✓</li>
-        <li class="ok">JSON-LD: WebPage + Organization ✓</li>
-        <li class="warn">Creare Assets/og/og-stores.jpg (1200×630px)</li>
-        <li>In produzione: schema LocalBusiness per ogni rivenditore CPT</li>
-      </ul>
-    </div>
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Elementor / WordPress</p>
-      <ul class="dev-panel__list">
-        <li class="warn">Store Locator: usare plugin dedicato (non Elementor nativo)</li>
-        <li>Plugin consigliato: "Store Locator Plus" (gratuito) ★★</li>
-        <li>Alternativa premium: "Agile Store Locator" (UI moderna) ★★★</li>
-        <li class="warn">CPT "Rivenditori" + ACF (nome, città, regione, lat/lng) ★★★</li>
-        <li class="warn">Google Maps API Key richiesta → Google Cloud Console</li>
-        <li>Maps API: Maps JavaScript + Places API (pay-per-use oltre 28k req/mese)</li>
-        <li class="warn">Geolocalizzazione: solo su HTTPS + gestione GDPR cookie</li>
-        <li>js/stores.js è placeholder — sostituire con WP_Query in produzione</li>
-        <li>CTA boutique: Inner Section 2 col, Image + Text Editor ★</li>
-      </ul>
-    </div>
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Assets necessari</p>
-      <ul class="dev-panel__list">
-        <li>Database rivenditori definitivo (nome, indirizzo, città, regione)</li>
-        <li>1 foto landscape 4:3 (interno boutique)</li>
-        <li>OG image: og-stores.jpg 1200×630px</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <!--
   ╔══════════════════════════════════════════════════════════════════╗

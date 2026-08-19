@@ -93,43 +93,6 @@
 
 <main>
 
-<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
-<div class="dev-panel" id="devPanel">
-  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')">
-    <span class="dev-panel__title">⚙ Dev Notes — product.html (PDP — Pagina Prodotto)</span>
-    <span style="display:flex;align-items:center;gap:1.25rem;">
-      <span class="dev-panel__effort">★★★★★ Effort massimo</span>
-      <span class="dev-panel__pill">WooCommerce</span>
-      <span class="dev-panel__pill">Elementor Pro</span>
-      <span class="dev-panel__pill">ACF Pro</span>
-    </span>
-    <span class="dev-panel__toggle">▾</span>
-  </div>
-  <div class="dev-panel__body">
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">WooCommerce / Elementor</p>
-      <ul class="dev-panel__list">
-        <li>Template: WooCommerce single-product.php override nel tema child ★★★★</li>
-        <li>Galleria immagini: WooCommerce nativa (lightbox + thumbnail swiper) o Elementor Pro Product Gallery ★★★</li>
-        <li class="warn">Varianti colore: WooCommerce product attributes + variations — ogni variante = attributo colore (pa_colore) ★★★★</li>
-        <li class="warn">Aggiungi al carrello: WooCommerce nativo — non personalizzare senza test approfonditi ★★★</li>
-        <li class="warn">Avviso produzione su ordine: ACF global option + campo testo — obbligatorio Codice del Consumo art. 49 ★★</li>
-        <li>PayPal button: WooCommerce PayPal Payments (plugin ufficiale) — hook woocommerce_after_add_to_cart_button ★★</li>
-        <li>Wishlist: YITH WooCommerce Wishlist — bottone secondario sotto CTA ★★</li>
-        <li>URL: /prodotto/muamara-jaipur/ (permalink WooCommerce con base /prodotto/)</li>
-      </ul>
-    </div>
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Assets necessari</p>
-      <ul class="dev-panel__list">
-        <li>1 immagine principale 3:4 per variante (6 varianti = 6 foto principali)</li>
-        <li>3–4 immagini galleria: dettaglio intreccio, indossato, full length, dettaglio pietre</li>
-        <li class="warn">Prezzi finali: da confermare con il cliente prima del go-live</li>
-        <li class="warn">Lunghezza standard bracciale: da confermare con il cliente (campo misura opzionale)</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <!-- ══ PRODUCT HERO ════════════════════════════════════════════════ -->
 <section class="section pdp-hero">

@@ -55,40 +55,6 @@
 
 <main>
 
-<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
-<div class="dev-panel" id="devPanel">
-  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
-    <span class="dev-panel__title">⚙ Dev Notes — shop.html (PLP)</span>
-    <span style="display:flex;align-items:center;gap:1.25rem;">
-      <span class="dev-panel__effort" title="Effort di sviluppo">★★★★ Effort alto</span>
-      <span class="dev-panel__pill">WooCommerce</span>
-      <span class="dev-panel__pill">Elementor</span>
-      <span class="dev-panel__pill">ACF</span>
-    </span>
-    <span class="dev-panel__toggle">▾</span>
-  </div>
-  <div class="dev-panel__body">
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">WooCommerce / Elementor</p>
-      <ul class="dev-panel__list">
-        <li>Template: WooCommerce archive-product.php override nel tema child</li>
-        <li>Product cards = WooCommerce loop template (content-product.php)</li>
-        <li class="warn">Filtri categoria = product attribute taxonomy (pa_tipo) — richiede plugin o custom query</li>
-        <li class="warn">Banner made-to-order: ACF global option (Options Page) — campo testo ripetuto in più pagine</li>
-        <li class="warn">Avviso tempi di produzione: obbligatorio per legge — Codice del Consumo art. 49</li>
-        <li>Griglia prodotti: WooCommerce loop con woocommerce_product_loop_start/end hooks</li>
-        <li>Ordinamento e filtri: plugin FacetWP o WOOF (WooCommerce Products Filter)</li>
-      </ul>
-    </div>
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Assets necessari</p>
-      <ul class="dev-panel__list">
-        <li>6 foto prodotto 3:4 — Jaipur, Star, Precious, Holi, Madras, Sun</li>
-        <li>Ogni prodotto: minimo 3 scatti (frontale, dettaglio, indossato)</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <!-- ═══ HERO TESTUALE ════════════════════════════════════════════ -->
 <section class="section section--lg" style="text-align:center;padding-top:calc(var(--header-h) + 5rem);padding-bottom:3.5rem;">

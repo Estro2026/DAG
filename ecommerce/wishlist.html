@@ -62,61 +62,6 @@
 
 <main>
 
-<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
-<div class="dev-panel" id="devPanel">
-  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
-    <span class="dev-panel__title">⚙ Dev Notes — wishlist.html</span>
-    <span style="display:flex;align-items:center;gap:1.25rem;">
-      <span class="dev-panel__effort" title="Effort di sviluppo">★★★☆ Effort medio-alto</span>
-      <span class="dev-panel__pill">YITH Wishlist</span>
-      <span class="dev-panel__pill">WooCommerce</span>
-      <span class="dev-panel__pill">Account required</span>
-    </span>
-    <span class="dev-panel__toggle">▾</span>
-  </div>
-  <div class="dev-panel__body">
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Plugin consigliato: YITH WooCommerce Wishlist</p>
-      <ul class="dev-panel__list">
-        <li><strong>Free:</strong> una sola lista per utente — shortcode <code>[yith_wcwl_wishlist]</code> nella pagina wishlist</li>
-        <li class="warn"><strong>Premium (~€99/anno):</strong> liste multiple per utente, nomi personalizzabili, condivisione via link, wishlist pubblica/privata — necessario per questo wireframe</li>
-        <li>Alternativa: TI WooCommerce Wishlist (gratuito con liste multiple) — meno maturo, meno supporto Elementor</li>
-        <li class="warn">Senza account utente: wishlist salvata in cookie/localStorage — si perde al logout o cambio browser. Consigliare la registrazione</li>
-        <li>Il pulsante "Aggiungi alla wishlist" va aggiunto tramite hook WooCommerce: <code>woocommerce_after_add_to_cart_button</code> o con YITH automaticamente nei template</li>
-      </ul>
-    </div>
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Flusso utente (questo wireframe)</p>
-      <ul class="dev-panel__list">
-        <li><strong>Stato A (con prodotti):</strong> sidebar con le liste, griglia prodotti salvati, CTA "Aggiungi al carrello" per singolo item</li>
-        <li><strong>Stato B (lista vuota):</strong> empty state con CTA verso shop — mostrato quando lista attiva è vuota</li>
-        <li><strong>Creare lista:</strong> modal overlay → inserisci nome → crea → la lista appare nella sidebar (solo Premium)</li>
-        <li><strong>Rimuovere prodotto:</strong> tasto × in overlay sull'immagine → prodotto sparisce dalla lista (AJAX via YITH)</li>
-        <li><strong>Spostare prodotto tra liste:</strong> funzione Premium — non mostrata in wireframe ma da prevedere nel template</li>
-        <li><strong>Condivisione:</strong> URL univoco per wishlist pubblica — <code>/wishlist/[token]/</code> — YITH Premium genera il link automaticamente</li>
-        <li class="warn">Aggiunta al carrello dalla wishlist: AJAX — item rimane in wishlist fino a rimozione manuale (comportamento YITH default)</li>
-      </ul>
-    </div>
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Elementor / WordPress</p>
-      <ul class="dev-panel__list">
-        <li>Pagina wishlist: creare pagina WordPress "Wishlist" con slug <code>/wishlist/</code>, inserire shortcode YITH nel contenuto (o blocco Gutenberg)</li>
-        <li>Elementor: YITH fornisce widget nativo per Elementor nella versione Premium</li>
-        <li class="warn">Template sidebar con liste: richiede custom template YITH o override PHP in tema child</li>
-        <li>CSS wishlist: sovrascrivere stili YITH nel tema child — molti elementi hanno classi <code>.yith-wcwl-*</code></li>
-        <li>Impostare la pagina wishlist in: <em>YITH → Wishlist → Impostazioni → Pagina wishlist</em></li>
-      </ul>
-    </div>
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Permessi e stato login</p>
-      <ul class="dev-panel__list">
-        <li>Utente non loggato: mostrare modale di login prima di consentire l'aggiunta — evita wishlist anonime disperse</li>
-        <li>Configurabile in YITH: <em>Wishlist → Impostazioni → Wishlist per utenti non loggati → Reindirizza al login</em></li>
-        <li class="warn">Questo wireframe mostra lo stato "utente loggato" — wireframing separato per flow non autenticato non necessario, basta nota</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <!-- ══ MAIN LAYOUT ════════════════════════════════════════════════ -->
 <section class="section section--lg" style="padding-top:2.5rem;">

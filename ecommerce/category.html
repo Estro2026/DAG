@@ -65,42 +65,6 @@
 
 <main>
 
-<!-- ══ DEV PANEL ══════════════════════════════════════════════════ -->
-<div class="dev-panel" id="devPanel">
-  <div class="dev-panel__bar" onclick="this.closest('.dev-panel').classList.toggle('open')" aria-expanded="false">
-    <span class="dev-panel__title">⚙ Dev Notes — category.html (Categoria prodotto)</span>
-    <span style="display:flex;align-items:center;gap:1.25rem;">
-      <span class="dev-panel__effort">★★★ Effort medio</span>
-      <span class="dev-panel__pill">WooCommerce</span>
-      <span class="dev-panel__pill">ACF</span>
-    </span>
-    <span class="dev-panel__toggle">▾</span>
-  </div>
-  <div class="dev-panel__body">
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">WooCommerce / WordPress</p>
-      <ul class="dev-panel__list">
-        <li>Template: taxonomy-product_cat.php nel tema child (WooCommerce archive per categoria)</li>
-        <li>URL: /bracciali/ → WooCommerce product category slug</li>
-        <li>Griglia prodotti: WooCommerce loop template (content-product.php override)</li>
-        <li class="warn">Solo B2C — nessun riferimento a prezzi all'ingrosso o B2B</li>
-        <li class="warn">Produzione su ordine: banner obbligatorio in ogni pagina categoria</li>
-        <li>Filtri colore: plugin WooCommerce Product Filters o YITH WooCommerce Ajax Product Filter</li>
-        <li>Paginazione: WooCommerce nativa (6 prodotti per pagina, configurabile)</li>
-        <li>SEO: Rank Math o Yoast — categoria descrizione + meta per /bracciali/</li>
-      </ul>
-    </div>
-    <div class="dev-panel__section">
-      <p class="dev-panel__section-title">Struttura URL prevista</p>
-      <ul class="dev-panel__list">
-        <li>/shop/ → shop.html (tutte le categorie)</li>
-        <li>/bracciali/ → category.html (questa pagina)</li>
-        <li>/bracciali/muamara-jaipur/ → product.html (PDP)</li>
-        <li class="warn">In futuro: /orecchini/ · /collane/ (categorie da creare quando disponibili)</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 <!-- ═══ INTESTAZIONE CATEGORIA ════════════════════════════════════ -->
 <section class="section--sm">
