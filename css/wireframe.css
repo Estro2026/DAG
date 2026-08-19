@@ -36,9 +36,9 @@
   --transition: 220ms ease;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 /* Offset per header fisso: le pagine senza hero lasciano spazio in alto */
-body { padding-top: var(--header-h); }
+body { padding-top: var(--header-h); overflow-x: hidden; }
 body:has(.hero):not(:has(.breadcrumb)) { padding-top: 0; }
 /* Pannello Dev Notes rimosso in vetrina */
 .dev-panel { display: none !important; }
@@ -2185,6 +2185,8 @@ img, svg, video, iframe { max-width: 100%; }
 /* ── ≤900px ──────────────────────────────── */
 @media (max-width: 900px) and (min-width: 641px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  /* override inline style sul footer (specificità inline vince sulle classi) */
+  .footer-grid[style*="grid-template-columns"] { grid-template-columns: 1fr 1fr !important; }
 }
 @media (max-width: 900px) {
   /* griglia editoriale home 5/3/4 → 2 colonne, senza span verticali */
@@ -2237,6 +2239,8 @@ img, svg, video, iframe { max-width: 100%; }
   .site-footer { padding-block: 3rem; }
   .footer-bottom { justify-content: center; margin-top: 2rem; }
   .footer-tagline { max-width: 100%; }
+  /* footer inline grid: !important necessario per vincere su style="" */
+  .footer-grid { grid-template-columns: 1fr !important; gap: 1.5rem; }
   .mobile-drawer { padding: 1.5rem; overflow-y: auto; }
   .drawer-nav a { font-size: 26px; }
   .drawer-nav { gap: 1.25rem; }
@@ -2271,6 +2275,8 @@ img, svg, video, iframe { max-width: 100%; }
   :root { --pad: 1rem; --header-h: 58px; --gap: 1rem; }
   .wordmark-logo { height: 30px; }
   .t-h1 { font-size: clamp(30px, 10vw, 44px); }
+  /* drawer full-width su schermi piccoli */
+  .mobile-drawer { width: 100%; border-left: none; }
   .drawer-nav a { font-size: 23px; }
   .sl-card__specs > div { grid-template-columns: 1fr; gap: 0.15rem; }
   .sl-card__name { font-size: 23px; }
