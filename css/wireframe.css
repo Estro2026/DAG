@@ -2275,8 +2275,6 @@ img, svg, video, iframe { max-width: 100%; }
   :root { --pad: 1rem; --header-h: 58px; --gap: 1rem; }
   .wordmark-logo { height: 30px; }
   .t-h1 { font-size: clamp(30px, 10vw, 44px); }
-  /* drawer full-width su schermi piccoli */
-  .mobile-drawer { width: 100%; border-left: none; }
   .drawer-nav a { font-size: 23px; }
   .sl-card__specs > div { grid-template-columns: 1fr; gap: 0.15rem; }
   .sl-card__name { font-size: 23px; }
