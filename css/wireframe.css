@@ -1585,6 +1585,8 @@ body.vetrina .vetrina-only { display: block; }
   align-items: center;
   gap: .25rem;
 }
+#le-collezioni { padding-bottom: 0; }
+
 /* ── Ecommerce header ─────────────────────────────────────────── */
 /* Desktop: nav-icons trasparente — account+cart sono figli diretti
    di nav-split--right e ereditano il gap 2.25rem uguale alle voci testo.

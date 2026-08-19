@@ -568,18 +568,6 @@
 
 <script src="../js/main.js"></script>
 <script>
-(function(){
-  document.querySelectorAll('.wishlist-btn').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      var active = btn.classList.toggle('active');
-      btn.setAttribute('aria-label', active ? 'Rimosso dalla wishlist' : 'Salva in wishlist');
-    });
-  });
-})();
-</script>
-<script>
 /* Still life interattivo — pin → scheda prodotto */
 (function () {
   var scene = document.getElementById('slScene');
