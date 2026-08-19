@@ -385,14 +385,6 @@
       pdpWl.querySelector('svg path') && (pdpWl.querySelector('svg').style.transition = 'all .2s');
     });
   }
-  /* wishlist card correlate */
-  document.querySelectorAll('.wishlist-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      btn.classList.toggle('active');
-      btn.setAttribute('aria-label', btn.classList.contains('active') ? 'Rimuovi dalla wishlist' : 'Salva in wishlist');
-    });
-  });
   /* color dot selector */
   document.querySelectorAll('.color-dot').forEach(dot => {
     dot.addEventListener('click', () => {

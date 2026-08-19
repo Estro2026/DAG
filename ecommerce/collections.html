@@ -542,11 +542,12 @@
   <div class="model-header">
     <span class="t-label">Bracciale · Taglia Unica</span>
     <h2 class="t-h2 fade">Stones.</h2>
-    <p class="fade fade-d1">Pietre semipreziose selezionate, disposte secondo ritmi che ricordano la tessitura. Ogni pietra è unica, ogni bracciale è diverso dall'altro.</p>
+    <p class="fade fade-d1">Pietre semipreziose intrecciate a mano con argento 925 e filo di lurex. Ogni pezzo nasce da una selezione cromatica precisa e da un gesto artigianale irripetibile.</p>
     <div class="model-meta">
       <span>Materiali · Pietre semipreziose</span>
       <span>Argento 925</span>
       <span>Lurex</span>
+      <span>Tessitura a telaio</span>
     </div>
   </div>
   <div class="variants-grid">
@@ -784,10 +785,12 @@
   <div class="model-header">
     <span class="t-label">Bracciale · Taglia Unica</span>
     <h2 class="t-h2 fade">Textured.</h2>
-    <p class="fade fade-d1">La superficie irregolare del Textured è il risultato di una tecnica di tessitura densa che crea volume e tatto. Un gioiello che si sente prima ancora di essere visto.</p>
+    <p class="fade fade-d1">Tessuto, colore e forma in dialogo costante. Ogni pezzo porta il segno della mano e la memoria del telaio.</p>
     <div class="model-meta">
-      <span>Materiali · Pietre semipreziose</span>
-      <span>Argento 925</span>
+      <span>Materiali · Filo tessile</span>
+      <span>Lurex</span>
+      <span>Elementi in argento</span>
+      <span>Telaio artigianale</span>
     </div>
   </div>
   <div class="variants-grid">
@@ -936,13 +939,6 @@
       document.querySelectorAll('[data-cat]').forEach(el => {
         el.style.display = (f === 'all' || el.dataset.cat === f) ? '' : 'none';
       });
-    });
-  });
-  document.querySelectorAll('.wishlist-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      btn.classList.toggle('active');
-      btn.setAttribute('aria-label', btn.classList.contains('active') ? 'Rimuovi dalla wishlist' : 'Salva in wishlist');
     });
   });
 </script>

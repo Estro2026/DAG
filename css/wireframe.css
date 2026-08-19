@@ -1614,6 +1614,24 @@ body.vetrina .vetrina-only { display: block; }
 @keyframes wl-pulse { 0%,100%{transform:scale(1)} 40%{transform:scale(1.22)} 70%{transform:scale(.95)} }
 .wishlist-btn.active { animation: wl-pulse .35s ease; }
 
+/* ── Status badge "Salvato" sulla card quando liked ─────────────── */
+.product-card:has(.wishlist-btn.active)::before {
+  content: '♥ Salvato';
+  position: absolute;
+  top: .6rem; left: .6rem;
+  z-index: 3;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--wf-clay);
+  background: rgba(255,255,255,0.9);
+  padding: .25rem .55rem;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
 /* bottone wishlist secondario (PDP) */
 .btn--wishlist {
   display: flex; align-items: center; justify-content: center; gap: .5rem;
@@ -1644,6 +1662,7 @@ body.vetrina .vetrina-only { display: block; }
 .product-card {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .product-card__img {
   display: block;
@@ -1720,6 +1739,10 @@ body.vetrina .vetrina-only { display: block; }
   line-height: 1.3;
 }
 
+/* ── product-card__desc e __materials (Stones, Textured) */
+.product-card__desc { font-size: 13px; line-height: 1.55; color: var(--wf-muted); margin-bottom: .6rem; }
+.product-card__materials { font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--wf-muted); margin-bottom: .85rem; }
+
 /* ── color dots (varianti colore su PLP) */
 .product-card__variants { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: .85rem; }
 .color-dot {
@@ -1769,11 +1792,12 @@ body.vetrina .vetrina-only { display: block; }
 .model-header h2 { margin-bottom: .75rem; }
 .model-header p { max-width: 520px; color: var(--wf-muted); font-size: 15px; line-height: 1.65; }
 .model-meta {
-  display: flex; gap: 1.5rem; margin-top: 1.25rem;
-  font-size: 11px; color: var(--wf-muted);
-  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: .08em;
-  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  font-size: 14px; font-weight: 300; line-height: 1.75; color: var(--wf-muted);
+  font-family: var(--font-sans);
 }
+.model-meta span { display: inline; }
+.model-meta span + span::before { content: " · "; }
 .variants-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2254,6 +2278,24 @@ img, svg, video, iframe { max-width: 100%; }
   .sf-map { min-height: 280px; }
   /* gap verticale ridotto per griglie già collassate */
   [style*="gap:6rem"], [style*="gap:5rem"], [style*="gap:4rem"] { gap: 2rem !important; }
+  /* Ecommerce sezioni: padding rimosso su mobile */
+  #le-collezioni { padding-bottom: 0; }
+  /* Collezioni ecommerce: layout compatto */
+  .model-header { padding: 2rem var(--pad) 1.25rem; }
+  .model-header h2 { margin-bottom: .5rem; }
+  .model-header .t-label { margin-bottom: .4rem; }
+  .model-meta { margin-top: 1rem; }
+  .variants-grid { gap: 1rem; padding-bottom: 2rem; }
+  #eventi-teaser { padding-top: 102px; padding-bottom: 102px; }
+  /* FAQ: padding-bottom ridotto su mobile */
+  #faq-body { padding-bottom: 2.5rem; }
+  /* Account: grid login/registrazione → colonna su mobile */
+  .account-grid { grid-template-columns: 1fr !important; gap: 2rem; }
+  .account-hero { padding-top: calc(var(--header-h) + 1.5rem) !important; padding-bottom: 1.5rem; }
+  /* Collections lead: titolo + CTA sulla stessa riga */
+  .collections-lead { flex-wrap: nowrap; align-items: flex-end; }
+  .collections-lead > div { flex: 1 1 0; min-width: 0; }
+  .collections-lead > a { flex-shrink: 0; }
   /* Wishlist header → stack verticale */
   .wl-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .wl-header__actions { flex-direction: column; width: 100%; }
@@ -2264,8 +2306,8 @@ img, svg, video, iframe { max-width: 100%; }
   /* PDP trust → già 1-col via grid-3, padding ridotto */
   .pdp-trust-item { border-right: none; border-bottom: 1px solid var(--wf-border); padding: 1rem 0; }
   .pdp-trust-item:last-child { border-bottom: none; }
-  /* Collections filter bar — bottoni scorrevoli */
-  .filter-bar__inner { flex-wrap: nowrap; overflow-x: auto; padding-bottom: .75rem; }
+  /* Collections filter bar — bottoni a capo su mobile */
+  .filter-bar__inner { flex-wrap: wrap; overflow-x: visible; }
   /* Breadcrumb padding ridotto */
   .breadcrumb ol { padding: .5rem var(--pad); }
 }
@@ -2590,7 +2632,7 @@ img, svg, video, iframe { max-width: 100%; }
   gap: 1.5rem;
   padding: 1.25rem 0;
   font-family: var(--font-serif);
-  font-size: clamp(15px, 1.5vw, 17px);
+  font-size: clamp(17px, 1.5vw, 19px);
   font-weight: 400;
   color: var(--wf-text);
   cursor: pointer;
@@ -2683,7 +2725,8 @@ img, svg, video, iframe { max-width: 100%; }
 .wl-layout { display: grid; grid-template-columns: 260px 1fr; gap: 3rem; align-items: start; }
 @media (max-width: 768px) { .wl-layout { grid-template-columns: 1fr; } }
 
-.wl-sidebar { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+.wl-sidebar { position: sticky; top: calc(var(--header-h) + 1.5rem); background: var(--wf-bg); }
+@media (max-width: 768px) { .wl-sidebar { position: static; } }
 .wl-sidebar__title { font-family: var(--font-sans); font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wf-ghost); margin-bottom: 1rem; }
 
 .wl-list-item { display: flex; align-items: center; justify-content: space-between; padding: .6rem .75rem; border-radius: 2px; cursor: pointer; transition: background 0.18s ease; margin-bottom: 2px; }

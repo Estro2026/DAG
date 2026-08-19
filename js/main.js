@@ -36,8 +36,10 @@ drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 
 /* ── Wishlist button toggle ─── */
 document.querySelectorAll('.wishlist-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
     btn.classList.toggle('active');
+    btn.setAttribute('aria-label', btn.classList.contains('active') ? 'Rimuovi dalla wishlist' : 'Salva in wishlist');
   });
 });
 
