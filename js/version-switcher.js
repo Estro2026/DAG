@@ -9,6 +9,15 @@
   var bar  = document.createElement('div');
   bar.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:10000;display:flex;align-items:center;justify-content:center;gap:2rem;background:#1a1a1a;height:' + SW_H + 'px;font-family:system-ui,sans-serif;font-size:11px;';
 
+  /* Link wireframe a destra */
+  var wfLink = document.createElement('a');
+  wfLink.href = isEcommerce ? '../wireframe/ecommerce/' + page : 'wireframe/' + page;
+  wfLink.textContent = 'Wireframe →';
+  wfLink.style.cssText = 'position:absolute;right:1rem;color:rgba(255,255,255,0.45);text-decoration:none;letter-spacing:0.06em;font-size:10px;';
+  wfLink.onmouseenter = function() { wfLink.style.color = '#fff'; };
+  wfLink.onmouseleave = function() { wfLink.style.color = 'rgba(255,255,255,0.45)'; };
+  bar.appendChild(wfLink);
+
   [['Vetrina', isEcommerce ? '../' + page : null],
    ['E-commerce', isEcommerce ? null : 'ecommerce/' + page]
   ].forEach(function(item) {
